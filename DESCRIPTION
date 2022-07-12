@@ -1,0 +1,27 @@
+Package: ukbAid
+Title: Aid Steno Researchers Who Work on the UKB RAP.
+Version: 0.0.0.9000
+Authors@R: 
+    person("Luke", "Johnston", , "lwjohnst@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4169-2616"))
+Description: Contains multiple functions that aid a researcher with setting up 
+    an analysis project on the UK Biobank Research Analysis Platform. Almost 
+    entirely designed around our needs within the Steno Aarhus Epidemiology Group.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Imports: 
+    dplyr,
+    gert,
+    glue,
+    magrittr,
+    purrr,
+    readr,
+    rjson,
+    rstudio.prefs,
+    tibble,
+    usethis,
+    utils
+Suggests: 
+    ukbAid
