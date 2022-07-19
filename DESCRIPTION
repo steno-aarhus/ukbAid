@@ -12,16 +12,20 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Imports: 
+    cli,
+    desc,
     dplyr,
+    fs,
     gert,
     glue,
     magrittr,
+    prodigenr,
     purrr,
     readr,
     rjson,
-    rstudio.prefs,
     tibble,
     usethis,
-    utils
+    utils,
+    withr
 Suggests: 
     ukbAid
