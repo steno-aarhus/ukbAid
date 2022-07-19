@@ -29,3 +29,5 @@ Imports:
     withr
 Suggests: 
     ukbAid
+URL: https://github.com/steno-aarhus/ukbAid
+BugReports: https://github.com/steno-aarhus/ukbAid/issues
