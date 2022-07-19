@@ -1,3 +1,22 @@
+
+#' Add your name and email to Git's config settings.
+#'
+#' @param name Your full name, for instance "Luke W. Johnston".
+#' @param email Your most commonly used email.
+#'
+#' @return Tibble with changed config settings. Also has side effect of
+#'   modifying the user.name and user.email settings in Git.
+#' @export
+#'
+setup_git_config <- function(name, email) {
+    gert::git_config_global_set("user.name", name)
+    gert::git_config_global_set("user.email", email)
+    cli::cli_alert_success("Git config has been set, see output below")
+    gert::git_config_global() %>%
+        dplyr::filter(name %in% c("user.name", "user.email")) %>%
+        dplyr::select(name, value)
+}
+
 #' Get the local (not in the UKB RAP) RStudio configuration settings as a character vector.
 #'
 #' @return Character string of local config settings.
@@ -17,7 +36,6 @@ get_rstudio_config_as_text <- function() {
 #' Set basic configurations at the start of each new session in the UKB RAP.
 #'
 #' @return NULL. The function is used for its side effects.
-#' @export
 #'
 setup_rstudio_luke <- function() {
     # Use this code to paste config settings here
@@ -84,10 +102,7 @@ setup_rstudio_luke <- function() {
         purrr::iwalk(~rstudioapi::writeRStudioPreference(.y, .x))
     cli::cli_alert_success("Set the RStudio preferences.")
 
-    gert::git_config_global_set(
-        "user.name" = "Luke W. Johnston",
-        "user.email" = "lwjohnst@gmail.com"
-    )
+    setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
     cli::cli_alert_success("Set the Git config settings for user name and email.")
 
     clipr::write_clip("if (interactive()) {
@@ -99,3 +114,4 @@ setup_rstudio_luke <- function() {
     usethis::edit_r_profile(scope = "user")
     return(invisible(NULL))
 }
+
