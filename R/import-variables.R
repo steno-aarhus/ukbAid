@@ -56,12 +56,12 @@ import_clean_and_upload_database_variables <- function() {
         return(upload_success)
 }
 
-#' Downloads the CSV file with the list of database variables and saves to `data-raw/variables.csv`.
+#' Downloads the CSV file with the list of database variables and saves to `data-raw/rap-variables.csv`.
 #'
 #' You would run this function when you just start your project, in order to have
 #' a list of variables you want to use in your data analysis. You usually don't
 #' need to do this more than once, unless you made a mistake in the file.
-#' After downloading the variable list to `data-raw/variables.csv`, you'd then
+#' After downloading the variable list to `data-raw/rap-variables.csv`, you'd then
 #' Git commit the downloaded file and afterwards would open it and remove
 #' any variable you won't need.
 #'
@@ -69,8 +69,50 @@ import_clean_and_upload_database_variables <- function() {
 #' @export
 #'
 download_database_variables <- function() {
-    cli::cli_alert_info("Downloading {.val database-variables.csv} to {.val data-raw/variables.csv}.")
-    system("dx download database-variables.csv --output data-raw/variables.csv", intern = TRUE)
+    cli::cli_alert_info("Downloading {.val database-variables.csv} to {.val data-raw/rap-variables.csv}.")
+    system("dx download database-variables.csv --output data-raw/rap-variables.csv", intern = TRUE)
     cli::cli_alert_success("Downloaded!")
     return(invisible())
+}
+
+#' Commit the database variables to Git.
+#'
+#' @return Nothing. Adds and commits the `rap-variables.csv` file to Git.
+#' @export
+#'
+git_commit_database_variables <- function() {
+    gert::git_add(files = here::here("data-raw/rap-variables.csv"))
+    gert::git_commit("Added the variable list from the main RAP project into data-raw.")
+    cli::cli_alert_success("Committed rap variable list to Git.")
+    return(invisible())
+}
+
+#' Take the selected UKB variables from the protocol stage and subset the RAP specific variables list.
+#'
+#' This is done because RAP has a special naming system for their variables inside
+#' the UK Biobank dataset that is slightly different from how the UK Biobank names them.
+#'
+#' @param project_variables_file The file location for the project variable CSV file. Defaults to `data-raw/project-variables.csv`.
+#' @param rap_variables_file The file location for the RAP specific variable CSV file. Defaults to `data-raw/rap-variables.csv`.
+#' @param save Whether to save (and overwrite) the newly subsetted RAP variables.
+#'
+#' @return A tibble of the newly subsetted RAP variable list. Save (overwrite) original RAP csv file.
+#' @export
+#'
+subset_rap_variables <- function(project_variables_file = "data-raw/project-variables.csv",
+                                 rap_variables_file = "data-raw/rap-variables.csv", save = TRUE) {
+    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
+        dplyr::mutate(id = field_id)
+    rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE)
+
+    new_rap_vars <- rap_vars %>%
+        dplyr::mutate(id = stringr::str_extract(field_id, "^p[:digit:]+")) %>%
+        dplyr::right_join(proj_vars, by = "id") %>%
+        dplyr::select(-id)
+
+    if (save) {
+        readr::write_csv(here::here(rap_variables_file))
+    }
+
+    return(new_rap_vars)
 }
