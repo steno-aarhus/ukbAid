@@ -9,12 +9,44 @@
 #' @export
 #'
 setup_git_config <- function(name, email) {
+    if (check_if_git_config_already_exists(name = name, email = email)) {
+        cli::cli_alert_info("Git config has already been set correctly, see output below.")
+        return(list_git_config_user_and_email())
+    }
     gert::git_config_global_set("user.name", name)
     gert::git_config_global_set("user.email", email)
-    cli::cli_alert_success("Git config has been set, see output below")
+    cli::cli_alert_success("Git config has been set, see output below.")
+    list_git_config_user_and_email()
+}
+
+#' Search Git's global config settings and list the user's name and email.
+#'
+#' @return A tibble with the user's name and email.
+#' @noRd
+#'
+list_git_config_user_and_email <- function() {
     gert::git_config_global() %>%
         dplyr::filter(name %in% c("user.name", "user.email")) %>%
+        dplyr::arrange(name) %>%
         dplyr::select(name, value)
+}
+
+#' Check if the Git's global config has already been set correctly.
+#'
+#' @param name The user's full name.
+#' @param email The user's email.
+#'
+#' @return A logical, TRUE if the config has been set correctly.
+#' @noRd
+#'
+check_if_git_config_already_exists <- function(name, email) {
+    configs <- list_git_config_user_and_email()
+
+    already_exists <- FALSE
+    if (nrow(configs) == 2)
+        already_exists <- all(configs$value[1] == email, configs$value[2] == name)
+
+    return(already_exists)
 }
 
 #' Get the local (not in the UKB RAP) RStudio configuration settings as a character vector.
@@ -103,14 +135,13 @@ setup_rstudio_luke <- function() {
     cli::cli_alert_success("Set the RStudio preferences.")
 
     setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
-    cli::cli_alert_success("Set the Git config settings for user name and email.")
 
-    clipr::write_clip("if (interactive()) {
+    cli::cli_alert_info("Copy and paste this output into {.path .Rprofile}:")
+    cli::cat_line("if (interactive()) {
         suppressMessages(require(devtools))
         suppressMessages(require(usethis))
         suppressMessages(require(gert))
     }")
-    cli::cli_alert_info("Copied some basic settings to be pasted into {.path .Rprofile}.")
     usethis::edit_r_profile(scope = "user")
     return(invisible(NULL))
 }
