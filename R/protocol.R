@@ -10,8 +10,8 @@
 #' @export
 #'
 protocol_document <- function(toc = FALSE, toc_depth = 3, fig_width = 5, fig_height = 4) {
-    word_template <- fs::path_package("ukbAid", "templates", "protocol", "skeleton", "template.docx")
-    csl_template <- fs::path_package("ukbAid", "templates", "protocol", "skeleton", "vancouver.csl")
+    word_template <- fs::path_package("ukbAid", "templates", "protocol", "resources", "template.docx")
+    csl_template <- fs::path_package("ukbAid", "templates", "protocol", "resources", "vancouver.csl")
 
     rmarkdown::word_document(
         toc = toc,
