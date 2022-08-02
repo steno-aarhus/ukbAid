@@ -28,6 +28,10 @@ Imports:
     utils,
     withr
 Suggests: 
+    clipr,
     ukbAid
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
+Depends: 
+    R (>= 2.10)
+LazyData: true
