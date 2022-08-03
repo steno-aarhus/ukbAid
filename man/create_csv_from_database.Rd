@@ -6,7 +6,7 @@
 \usage{
 create_csv_from_database(
   variables_to_extract,
-  project_id = get_project_id(),
+  project_id = get_rap_project_id(),
   dataset_record_id = dare_project_record_id
 )
 }
@@ -19,7 +19,7 @@ don't want to keep. This is the file that contains the \code{variable_name} colu
 you would use for this argument.}
 
 \item{project_id}{The project's abbreviation. Defaults to using
-\code{get_project_id()}, which is the name of the project folder.}
+\code{get_rap_project_id()}, which is the name of the project folder.}
 
 \item{dataset_record_id}{The "record ID" of the database, found when clicking
 the \code{.dataset} file in the RAP project folder. Defaults to the ID for the

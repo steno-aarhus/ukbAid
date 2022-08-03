@@ -4,11 +4,14 @@
 \alias{download_project_data}
 \title{Downloads your UKB CSV data file to the \code{data/data.csv} folder.}
 \usage{
-download_project_data(project_id = get_project_id(), username = get_username())
+download_project_data(
+  project_id = get_rap_project_id(),
+  username = get_username()
+)
 }
 \arguments{
 \item{project_id}{The project's abbreviation. Defaults to using
-\code{get_project_id()}, which is the name of the project folder.}
+\code{get_rap_project_id()}, which is the name of the project folder.}
 
 \item{username}{A RAP username. Defaults to using \code{get_username()}.}
 }

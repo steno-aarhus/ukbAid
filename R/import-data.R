@@ -19,7 +19,7 @@ dare_project_record_id <- "record-G9zGPB0JbxZz4xPy60PBPk1Z"
 #'   the `.dataset` file in the RAP project folder. Defaults to the ID for the
 #'   Steno project `dare_project_record_id`.
 #' @param project_id The project's abbreviation. Defaults to using
-#'   `get_project_id()`, which is the name of the project folder.
+#'   `get_rap_project_id()`, which is the name of the project folder.
 #'
 #' @return Outputs whether the extraction and creation of the data was
 #'   successful or not. Used for the side effect of creating the CSV on the RAP
@@ -34,7 +34,7 @@ dare_project_record_id <- "record-G9zGPB0JbxZz4xPy60PBPk1Z"
 #'   pull(variable_name) %>%
 #'   create_csv_from_database()
 #' }
-create_csv_from_database <- function(variables_to_extract, project_id = get_project_id(), dataset_record_id = dare_project_record_id) {
+create_csv_from_database <- function(variables_to_extract, project_id = get_rap_project_id(), dataset_record_id = dare_project_record_id) {
     stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
 
     table_exporter_options <- list(
@@ -62,7 +62,7 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_proj
 #'   (and the same as the name of the `.Rproj` folder).
 #' @export
 #'
-get_project_id <- function() {
+get_rap_project_id <- function() {
     fs::path_file(usethis::proj_path())
 }
 
@@ -87,7 +87,7 @@ get_username <- function() {
 #' @return Downloads CSV to `data/data.csv`.
 #' @export
 #'
-download_project_data <- function(project_id = get_project_id(), username = get_username()) {
+download_project_data <- function(project_id = get_rap_project_id(), username = get_username()) {
     download_command <- glue::glue("dx download data-{username}-{project_id}.csv --output data/data.csv")
     cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
     system(download_command)
