@@ -44,8 +44,10 @@ setup_ukb_project <- function(path) {
         usethis::use_template("download-variables.R", "data-raw/download-variables.R", package = "ukbAid")
         usethis::use_template("download-data.R", "data-raw/download-data.R", package = "ukbAid")
         git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
-        readr::write_csv(variables, "data-raw/project-variables.csv")
-        git_commit_file("data-raw/project-variables.csv", "Add all UK Biobank variables that will be subsetted later for protocol")
+        readr::write_csv(project_variables, "data-raw/project-variables.csv")
+        git_commit_file("data-raw/project-variables.csv", "Add project variables as csv found in the project")
+        readr::write_csv(rap_variables, "data-raw/rap-variables.csv")
+        git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
         # Add protocol to `doc/` folder
         rmarkdown::draft(file = "doc/protocol.Rmd", template = "protocol", package = "ukbAid", edit = FALSE)
