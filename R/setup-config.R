@@ -89,7 +89,7 @@ setup_rstudio_luke <- function() {
         editor_keybindings = "vim",
         syntax_color_console = TRUE,
         posix_terminal_shell = "bash",
-        font_size_points = 12,
+        font_size_points = 12L,
         panes = list(
             quadrants = c("Source", "TabSet1", "Console", "TabSet2"),
             tabSet1 = c("Packages", "VCS", "Presentation"),
@@ -106,7 +106,7 @@ setup_rstudio_luke <- function() {
             hiddenTabSet = c("Connections", "Tutorial"),
             console_left_on_top = FALSE,
             console_right_on_top = TRUE,
-            additional_source_columns = 0
+            additional_source_columns = 0L
         ),
         show_doc_outline_rmd = TRUE,
         show_rmd_render_command = TRUE,
