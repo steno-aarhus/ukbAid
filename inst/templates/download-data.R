@@ -1,8 +1,6 @@
 
 # Keep only the necessary variables for RAP -------------------------------
 
-library(tidyverse)
-
 # After the variables have been properly selected in the `data-raw/project-variables.csv`
 # file, run this function so that only the selected variables are kept in the
 # `data-raw/rap-variables.csv` file. This file has the exact variable names used

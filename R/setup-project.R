@@ -21,6 +21,7 @@ setup_ukb_project <- function(path) {
         gert::git_commit("First commit and creation of project")
 
         # DESCRIPTION file changes
+        desc::desc_del_dep("distill")
         desc::desc_set_dep("tidyverse", type = "Depends")
         desc::desc_set_dep("here", type = "Imports")
         desc::desc_set_dep("gert", type = "Imports")

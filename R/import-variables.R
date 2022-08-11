@@ -56,37 +56,6 @@ import_clean_and_upload_database_variables <- function() {
         return(upload_success)
 }
 
-#' Downloads the CSV file with the list of database variables and saves to `data-raw/rap-variables.csv`.
-#'
-#' You would run this function when you just start your project, in order to have
-#' a list of variables you want to use in your data analysis. You usually don't
-#' need to do this more than once, unless you made a mistake in the file.
-#' After downloading the variable list to `data-raw/rap-variables.csv`, you'd then
-#' Git commit the downloaded file and afterwards would open it and remove
-#' any variable you won't need.
-#'
-#' @return Doesn't return anything. Used for the side effect of downloading the data.
-#' @export
-#'
-download_database_variables <- function() {
-    cli::cli_alert_info("Downloading {.val database-variables.csv} to {.val data-raw/rap-variables.csv}.")
-    system("dx download database-variables.csv --output data-raw/rap-variables.csv", intern = TRUE)
-    cli::cli_alert_success("Downloaded!")
-    return(invisible())
-}
-
-#' Commit the database variables to Git.
-#'
-#' @return Nothing. Adds and commits the `rap-variables.csv` file to Git.
-#' @export
-#'
-git_commit_database_variables <- function() {
-    gert::git_add(files = here::here("data-raw/rap-variables.csv"))
-    gert::git_commit("Added the variable list from the main RAP project into data-raw.")
-    cli::cli_alert_success("Committed rap variable list to Git.")
-    return(invisible())
-}
-
 #' Take the selected UKB variables from the protocol stage and subset the RAP specific variables list.
 #'
 #' This is done because RAP has a special naming system for their variables inside
