@@ -44,9 +44,9 @@ setup_ukb_project <- function(path) {
         fs::dir_create("data-raw")
         usethis::use_template("download-data.R", "data-raw/download-data.R", package = "ukbAid")
         git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
-        readr::write_csv(ukbAid::project_variables, "data-raw/project-variables.csv")
+        readr::write_csv(ukbAid:::project_variables, "data-raw/project-variables.csv")
         git_commit_file("data-raw/project-variables.csv", "Add project variables as csv found in the project")
-        readr::write_csv(ukbAid::rap_variables, "data-raw/rap-variables.csv")
+        readr::write_csv(ukbAid:::rap_variables, "data-raw/rap-variables.csv")
         git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
         # Add protocol to `doc/` folder
