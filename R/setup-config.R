@@ -119,13 +119,12 @@ setup_rstudio_luke <- function() {
         load_workspace = FALSE,
         restore_last_project = FALSE,
         jobs_tab_visibility = "shown",
-        num_spaces_for_tab = 4,
+        num_spaces_for_tab = 4L,
         default_encoding = "UTF-8",
         save_files_before_build = TRUE,
         always_save_history = FALSE,
         rmd_viewer_type = "pane",
         editor_theme = "Chrome",
-        quarto_enabled = "enabled",
         new_proj_git_init = TRUE,
         new_proj_use_renv = TRUE
     )
