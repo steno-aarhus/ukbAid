@@ -56,12 +56,15 @@ setup_ukb_project <- function(path) {
         # Add other misc items
         usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
         git_commit_file("_targets.R", "Add targets pipeline to project")
+
         old_readmes <- fs::dir_ls(regex = "README", recurse = TRUE)
         fs::file_delete(old_readmes)
         gert::git_rm(old_readmes)
         gert::git_commit("Remove all left over README files")
         usethis::use_template("project-readme.md", "README.md", package = "ukbAid")
         git_commit_file("README.md", "Update the README with the version from ukbAid")
+
+        fs::file_delete("TODO.md")
         usethis::use_template("todo.md", "TODO.md", package = "ukbAid")
         git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
 
