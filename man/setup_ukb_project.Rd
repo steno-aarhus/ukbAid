@@ -19,6 +19,6 @@ Setup the project structure for working within the RAP.
 
 # Run setup_git_config() first before running the setup_ukb_project() function.
 # ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
-setup_ukb_project(fs::path_temp("testproj5"))
+setup_ukb_project(fs::path_temp("testproj"))
 
 }

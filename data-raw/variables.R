@@ -14,5 +14,5 @@ project_variables <- rap_variables %>%
     distinct(id) %>%
     left_join(ukb_variables, by = "id")
 
-usethis::use_data(rap_variables, overwrite = TRUE, version = 3)
-usethis::use_data(project_variables, overwrite = TRUE, version = 3)
+usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3, internal = TRUE)
+usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3)
