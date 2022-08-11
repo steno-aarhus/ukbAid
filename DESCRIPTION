@@ -22,6 +22,7 @@ Imports:
     prodigenr,
     purrr,
     readr,
+    renv,
     rjson,
     tibble,
     usethis,
