@@ -42,23 +42,31 @@ setup_ukb_project <- function(path) {
 
         # Add processing files to the data-raw folder
         fs::dir_create("data-raw")
-        usethis::use_template("download-variables.R", "data-raw/download-variables.R", package = "ukbAid")
         usethis::use_template("download-data.R", "data-raw/download-data.R", package = "ukbAid")
         git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
-        readr::write_csv(project_variables, "data-raw/project-variables.csv")
+        readr::write_csv(ukbAid::project_variables, "data-raw/project-variables.csv")
         git_commit_file("data-raw/project-variables.csv", "Add project variables as csv found in the project")
-        readr::write_csv(rap_variables, "data-raw/rap-variables.csv")
+        readr::write_csv(ukbAid::rap_variables, "data-raw/rap-variables.csv")
         git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
         # Add protocol to `doc/` folder
         rmarkdown::draft(file = "doc/protocol.Rmd", template = "protocol", package = "ukbAid", edit = FALSE)
         git_commit_file("doc/protocol.Rmd", "Add the template protocol R Markdown document")
-        # targets::use_targets(open = FALSE)
+
+        # Add other misc items
+        usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
+        git_commit_file("_targets.R", "Add targets pipeline to project")
+        old_readmes <- fs::dir_ls(regex = "README", recurse = TRUE)
+        fs::file_delete(old_readmes)
+        gert::git_rm(old_readmes)
+        gert::git_commit("Remove all left over README files")
+        usethis::use_template("project-readme.md", "README.md", package = "ukbAid")
+        git_commit_file("README.md", "Update the README with the version from ukbAid")
+        usethis::use_template("todo.md", "TODO.md", package = "ukbAid")
+        git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
+
+        # Add renv setup (as recommended by RAP)
+        renv::init(settings = renv::settings$snapshot.type(value = "explicit"), restart = FALSE)
+        git_commit_file(".", "Add renv support files to project")
     })
-}
-
-# create readme/todo file that has steps to take.
-
-setup_renv <- function() {
-    renv::init(settings = renv::settings$snapshot.type(value = "explicit"))
 }
