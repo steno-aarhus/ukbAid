@@ -23,6 +23,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 <!-- badges: end -->
 
 The goal of ukbAid is to help our research group at Steno Diabetes
@@ -41,14 +42,23 @@ remotes::install_github("steno-aarhus/ukbAid")
 
 ## Using ukbAid
 
-Assumptions:
+When working on the UKB RAP, the easiest way (that we’ve found) is to do
+your work through Git and GitHub. This is due to a few reasons:
 
--   Each user has their own user folder inside `users/`, based on their
-    user name given by the RAP.
--   Each project is a `.tar.gz` file within the users own main folder,
-    for instance `users/lwjohnst/ecc-cmd-ukb.tar.gz`. The way the RAP
-    system works is that each project is backed up and restored into the
-    clean RStudio analysis workspace.
+1.  *Every* time you start up and enter into the UKB RAP, the working
+    computer environment is *completely* clean… No personal files, no R
+    packages installed, nothing. So we need some way of saving our work
+    to downloading it again when we next work in the RAP.
+
+2.  Whenever you finish working for the day, you *must* terminate your
+    RStudio session because we pay for the RStudio use every hour. So we
+    can’t just leave the session running all the time, we have to turn
+    it off. This forces us into the situation described in the point
+    above.
+
+3.  Since there are several of us working on this project and since we
+    want to be able to collaborate and help each other out TODO: finish
+    this section
 
 ### Steps when outside the UKB RAP
 
@@ -142,6 +152,8 @@ ready to start doing the data analysis on the RAP.
 file, which will direct you to fill in details in the `README.md` and
 `_targets.R` files.
 
+keep only year of birth p34
+
 ### Steps when inside the UKB RAP *for the first time*
 
 When you first open up UKB RAP, you won’t have your project files nor
@@ -174,19 +186,20 @@ install.packages("targets")
 targets::tar_make()
 ```
 
-``` r
-ukbAid::backup_project()
-```
+-   Each user has their own user folder inside `users/`, based on their
+    user name given by the RAP. This folder keeps the data used for the
+    project.
 
 ### Steps when resuming work in UKB RAP
 
 ``` r
 install.packages("remotes")
 remotes::install_github("steno-aarhus/ukbAid")
-ukbAid::restore_project()
+gitcreds::gitcreds_set()
+usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
 ```
 
-Then, open up the README.Rmd file and follow the instructions there.
+Then, open up the README.md file and follow the instructions there.
 
 <!-- Add instructions on saying what other packages to include in project using, like renv -->
 
