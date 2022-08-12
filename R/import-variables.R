@@ -80,7 +80,7 @@ subset_rap_variables <- function(project_variables_file = "data-raw/project-vari
         dplyr::select(-id)
 
     if (save) {
-        readr::write_csv(here::here(rap_variables_file))
+        readr::write_csv(new_rap_vars, here::here(rap_variables_file))
     }
 
     return(new_rap_vars)
