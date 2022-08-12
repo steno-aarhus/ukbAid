@@ -30,6 +30,9 @@ describing the study. Find checklists [here](https://www.equator-network.org/)*
 
 *Overall description of your project. Think of this as what you would reply if a colleague asked you what your project was about.*
 
+<!-- NOTE: Keep the inline R code below. This inserts the standard UKB statement. -->
+`r ukbAid::uk_protocol_statement`
+
 # Study Information
 
 ## Objectives and hypotheses 
