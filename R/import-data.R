@@ -89,7 +89,7 @@ get_username <- function() {
 #' @export
 #'
 download_project_data <- function(project_id = get_rap_project_id(), username = get_username()) {
-    download_command <- glue::glue("dx download/users/{username}/data-{username}-{project_id}.csv --output data/data.csv")
+    download_command <- glue::glue("dx download /users/{username}/data-{project_id}.csv --output data/data.csv")
     cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
     system(download_command)
     cli::cli_alert_success("Downloaded CSV!")
