@@ -22,7 +22,7 @@ setup_ukb_project <- function(path) {
 
         # DESCRIPTION file changes
         desc::desc_del_dep("distill")
-        desc::desc_set_dep("tidyverse", type = "Depends")
+        desc::desc_set_dep("tidyverse", type = "Imports")
         desc::desc_set_dep("here", type = "Imports")
         desc::desc_set_dep("remotes", type = "Imports")
         desc::desc_set_dep("gert", type = "Imports")
