@@ -18,7 +18,6 @@ Imports:
     fs,
     gert,
     glue,
-    lubridate,
     magrittr,
     prodigenr,
     purrr,
