@@ -70,8 +70,7 @@ import_clean_and_upload_database_variables <- function() {
 #'
 subset_rap_variables <- function(project_variables_file = "data-raw/project-variables.csv",
                                  rap_variables_file = "data-raw/rap-variables.csv", save = TRUE) {
-    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
-        dplyr::mutate(id = field_id)
+    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE)
     rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE)
 
     new_rap_vars <- rap_vars %>%
