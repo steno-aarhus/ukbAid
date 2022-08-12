@@ -17,6 +17,7 @@ Imports:
     dplyr,
     fs,
     gert,
+    gitcreds,
     glue,
     magrittr,
     prodigenr,
