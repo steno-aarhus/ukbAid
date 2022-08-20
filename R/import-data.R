@@ -58,7 +58,7 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
     return(relevant_results)
 }
 
-#' Title
+#' Get the RAP project ID, will be the project main folder.
 #'
 #' @return The project abbreviation/id, which is the name of the project folder
 #'   (and the same as the name of the `.Rproj` folder).
