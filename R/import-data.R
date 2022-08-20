@@ -65,6 +65,8 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
 #' @export
 #'
 get_rap_project_id <- function() {
+    options(usethis.quiet = TRUE)
+    on.exit(options(usethis.quiet = NULL))
     fs::path_file(usethis::proj_path())
 }
 
