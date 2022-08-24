@@ -152,7 +152,12 @@ ready to start doing the data analysis on the RAP.
 file, which will direct you to fill in details in the `README.md` and
 `_targets.R` files.
 
-keep only year of birth p34
+#### Notes about specific variables
+
+There are some variables in the list of variables we have that don’t
+exist in the RAP database, for instance like date of birth. This may be
+due to privacy concerns, so instead you would have to use year of birth
+(`p34`) to determine their age.
 
 ### Steps when inside the UKB RAP *for the first time*
 
