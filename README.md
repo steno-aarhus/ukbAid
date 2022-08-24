@@ -72,18 +72,10 @@ is always some of the most difficult stage of a project. But if you
 follow these tasks, you’ll have a solid foundation for doing your work
 within the special environment of the UK Biobank RAP.
 
-The very first tasks you’ll need to do are to install these packages
-below. In RStudio while on your computer (*not* in the RAP), copy and
-paste these commands into the Console:
-
-``` r
-install.packages("usethis")
-install.packages("gitcreds")
-```
-
-Then, we need to make sure that your computer has Git configured
-properly. In your Console, type out the below code, replacing my name
-(Luke) and my email with your own name:
+The very first tasks you’ll need to do is to install the ukbAid package,
+as described above. After that, we need to make sure that your computer
+has Git configured properly. In your Console, type out the below code,
+replacing my name (Luke) and my email with your own name:
 
 ``` r
 ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
