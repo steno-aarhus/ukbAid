@@ -7,12 +7,8 @@
         -   <a href="#steps-when-outside-the-ukb-rap"
             id="toc-steps-when-outside-the-ukb-rap">Steps when outside the UKB
             RAP</a>
-        -   <a href="#steps-when-inside-the-ukb-rap-for-the-first-time"
-            id="toc-steps-when-inside-the-ukb-rap-for-the-first-time">Steps when
-            inside the UKB RAP <em>for the first time</em></a>
-        -   <a href="#steps-when-resuming-work-in-ukb-rap"
-            id="toc-steps-when-resuming-work-in-ukb-rap">Steps when resuming work in
-            UKB RAP</a>
+        -   <a href="#steps-when-inside-the-ukb-rap"
+            id="toc-steps-when-inside-the-ukb-rap">Steps when inside the UKB RAP</a>
         -   <a href="#notes-about-specific-variables"
             id="toc-notes-about-specific-variables">Notes about specific
             variables</a>
@@ -160,22 +156,35 @@ ready to start doing the data analysis on the RAP.
 file, which will direct you to fill in details in the `README.md` and
 `_targets.R` files.
 
-### Steps when inside the UKB RAP *for the first time*
+After you’ve done the TODO items, start working towards writing the
+protocol and analysis plan before beginning your work in the UKB RAP.
 
-When you first open up UKB RAP, you won’t have your project files nor
-have any packages installed. So you’ll need to do a few set up tasks. In
-the RStudio R Console, install the remotes and ukbAid packages:
+### Steps when inside the UKB RAP
+
+Whenever you open up the UKB RAP, you won’t have your project files nor
+have any packages installed. So you’ll need to do a few set up tasks
+*each time* you work in the RAP. In the RStudio R Console, install the
+remotes and ukbAid packages:
 
 ``` r
 install.packages("remotes")
 remotes::install_github("steno-aarhus/ukbAid")
 ```
 
+Since UKB RAP deletes everything when you Terminate the session, you’ll
+be backing up your project on GitHub. In order to connect to GitHub, you
+have to let Git know that you are you (authentication). Like you did on
+your computer, run in the Console and paste your secret PAT:
+
+``` r
+gitcreds::gitcreds_set()
+```
+
 Next, we’ll need to upload your project onto the RAP from GitHub. You’ll
 have to give the function your GitHub user name and the repository name
 for your project. Mine is
 [`"lwjohnst86/ecc-cmd-ukb"`](https://github.com/lwjohnst86/ecc-cmd-ukb).
-You’ll have to replace mine with your own. Type out:
+**You’ll have to replace mine with your own**. Type out:
 
 ``` r
 usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
@@ -185,29 +194,10 @@ This will download the project from GitHub and create the project in the
 RAP. The project should already open up for you, but if not, open the
 project by clicking the `.Rproj` file inside the project folder.
 
-Once inside the RStudio project, type out this command in the Console:
-
-``` r
-install.packages("targets")
-targets::tar_make()
-```
-
--   Each user has their own user folder inside `users/`, based on their
-    user name given by the RAP. This folder keeps the data used for the
-    project.
-
-### Steps when resuming work in UKB RAP
-
-``` r
-install.packages("remotes")
-remotes::install_github("steno-aarhus/ukbAid")
-gitcreds::gitcreds_set()
-usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
-```
-
-Then, open up the README.md file and follow the instructions there.
-
-<!-- Add instructions on saying what other packages to include in project using, like renv -->
+Then, open up the README.md file in your project and follow the
+instructions there. When you are ready to create the dataset necessary
+for your project, open up the `data-raw/download-data.R` script and
+follow the instructions there.
 
 ### Notes about specific variables
 
