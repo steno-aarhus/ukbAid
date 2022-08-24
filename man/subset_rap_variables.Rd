@@ -7,6 +7,7 @@
 subset_rap_variables(
   project_variables_file = "data-raw/project-variables.csv",
   rap_variables_file = "data-raw/rap-variables.csv",
+  instances = 0:9,
   save = TRUE
 )
 }
@@ -14,6 +15,12 @@ subset_rap_variables(
 \item{project_variables_file}{The file location for the project variable CSV file. Defaults to \code{data-raw/project-variables.csv}.}
 
 \item{rap_variables_file}{The file location for the RAP specific variable CSV file. Defaults to \code{data-raw/rap-variables.csv}.}
+
+\item{instances}{An "instance" in UK Biobank is a time point of collection
+for the variable. So a variable with Instance 0 and Instance 1 means that
+the variable was collected twice at two different times. The default is to
+select all the time points. Max is 9 instances, and while many variables
+have up to 4 instances, the majority only have one (e.g. 0).}
 
 \item{save}{Whether to save (and overwrite) the newly subsetted RAP variables.}
 }

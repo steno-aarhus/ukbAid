@@ -2,7 +2,7 @@
 % Please edit documentation in R/import-data.R
 \name{get_rap_project_id}
 \alias{get_rap_project_id}
-\title{Title}
+\title{Get the RAP project ID, will be the project main folder.}
 \usage{
 get_rap_project_id()
 }
@@ -11,5 +11,5 @@ The project abbreviation/id, which is the name of the project folder
 (and the same as the name of the \code{.Rproj} folder).
 }
 \description{
-Title
+Get the RAP project ID, will be the project main folder.
 }
