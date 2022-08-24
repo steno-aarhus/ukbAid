@@ -13,6 +13,9 @@
         -   <a href="#steps-when-resuming-work-in-ukb-rap"
             id="toc-steps-when-resuming-work-in-ukb-rap">Steps when resuming work in
             UKB RAP</a>
+        -   <a href="#notes-about-specific-variables"
+            id="toc-notes-about-specific-variables">Notes about specific
+            variables</a>
     -   <a href="#for-admin-users" id="toc-for-admin-users">For admin users</a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -152,13 +155,6 @@ ready to start doing the data analysis on the RAP.
 file, which will direct you to fill in details in the `README.md` and
 `_targets.R` files.
 
-#### Notes about specific variables
-
-There are some variables in the list of variables we have that don’t
-exist in the RAP database, for instance like date of birth. This may be
-due to privacy concerns, so instead you would have to use year of birth
-(`p34`) to determine their age.
-
 ### Steps when inside the UKB RAP *for the first time*
 
 When you first open up UKB RAP, you won’t have your project files nor
@@ -207,6 +203,13 @@ usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
 Then, open up the README.md file and follow the instructions there.
 
 <!-- Add instructions on saying what other packages to include in project using, like renv -->
+
+### Notes about specific variables
+
+There are some variables in the list of variables we have that don’t
+exist in the RAP database, for instance like date of birth. This may be
+due to privacy concerns, so instead you would have to use year of birth
+(`p34`) to determine their age.
 
 ## For admin users
 
