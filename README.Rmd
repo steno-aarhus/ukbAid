@@ -110,6 +110,7 @@ usethis::create_github_token()
 
 This will send you to your GitHub account and create a basic PAT for
 you. Change the token's description to something like "For UKB project".
+Set the "Expiry date" to 90 days (this is a good security feature).
 Create the token, which will change pages and you'll be shown a string
 of letters starting with `ghp_`. Copy this token and save it somewhere
 safe, preferably in a password manager. This token acts a bit like your
@@ -120,11 +121,24 @@ somewhere, go back to RStudio and than run this command in the Console:
 gitcreds::gitcreds_set()
 ```
 
-And then paste the token into the prompt in the Console. Doing this is a
+And then paste the token into the prompt in the Console. If it asks to replace
+an existing one, select the "yes" option. Doing this is a
 bit like using the 2FA message with the temporary passcode you get sent
 whenever you have to open your work's email or when you use MitID or
 NemID (in Denmark). Every time you open RStudio, you need to run this
 command and give R the token so that it can connect to GitHub securely.
+
+Why do we need to do this on our computer? Because whenever you connect to
+GitHub through RStudio (like uploading and downloading your changes), 
+GitHub needs you to authenticate that it is you and not someone else. In order to
+do that, you need to give GitHub a password to do that. In the past, you could
+use your same password connected to your GitHub account, but the problem with this
+method is that your password gets sent over the Internet many times, which increases
+the risk for someone maliciously obtaining your password. So instead, we use a
+temporary, restricted-access token that we can easily create and delete. This 
+token only has limited access to your account, so it is safer to send over the
+Internet.
+
 After you've done this, run the next function:
 
 ```{r}
@@ -133,7 +147,46 @@ usethis::use_github()
 
 This will take your project and upload it to GitHub. Now, whenever you
 use Git and save your changes to the Git history, whenever you "Push"
-your changes it will be sent to your project on GitHub.
+your changes it will be sent to your project on GitHub. The diagram below
+shows how it conceptually looks like:
+
+```mermaid
+graph LR;
+    Local -->|Push| GitHub
+    GitHub -->|Pull| Local
+    UKB-RAP -->|Push| GitHub
+    GitHub -->|Pull| UKB-RAP
+```
+
+The "Local" is your own computer. Whenever you "push" to GitHub, it means it
+will upload your file changes (like synchronizing in Dropbox). Whenever
+you "pull" from GitHub, it takes any changes made on GitHub and downloads them 
+to your "Local" computer.
+
+When you work on the UKB-RAP, you will "pull" (download) your project from
+GitHub. As you work on it and save changes in your Git history, you "push" (upload)
+to GitHub often in order to keep your changes backed up. Then, when you get 
+to the manusript writing stage, you can pull your results from GitHub to 
+your local so you can work without getting charged.
+
+Why do we do it this way? For one, it is honestly the easiest that we could
+think of because the UKB RAP is a special environment that requires special
+steps to take. Plus, it makes it easier to have others (like me) collaborate
+on your project and help you out. So hypothetically, if you need help,
+I (Luke) could download from your GitHub and make changes there. Conceptually
+it would look like:
+
+```mermaid
+graph TD;
+    UKB-RAP -->|Push| GitHub
+    GitHub -->|Pull| UKB-RAP
+    You -->|Push| GitHub
+    GitHub -->|Pull| You
+    Luke -->|Push| GitHub
+    GitHub -->|Pull| Luke
+```
+
+That way it makes it super easy for me (or others) to help out.
 
 As you work on the project, specifically the protocol and selecting the
 variables for your project from the `data-raw/project-variables.csv`
@@ -186,12 +239,15 @@ Then, open up the README.md file in your project and follow the instructions
 there. When you are ready to create the dataset necessary for your project,
 open up the `data-raw/download-data.R` script and follow the instructions there.
 
-### Notes about specific variables
+### Misc notes 
 
-There are some variables in the list of variables we have that don't exist in
-the RAP database, for instance like date of birth. This may be due to privacy
-concerns, so instead you would have to use year of birth (`p34`) to determine
-their age.
+- **About specific variables**: There are some variables in the list of
+variables we have that don't exist in the RAP database, for instance like date
+of birth. This may be due to privacy concerns, so instead you would have to use
+year of birth (`p34`) to determine their age.
+
+- **Save your changes in the Git history and push to your GitHub BEFORE Terminating
+your UKB-RAP project**:
 
 ## For admin users
 
