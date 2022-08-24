@@ -1,6 +1,4 @@
-TODO: Add more to the title of your project here
-
-# testproj3:
+# TODO: Write your project abbreviated title and full title here.
 
 TODO: Give a brief description of what your project is about
 
