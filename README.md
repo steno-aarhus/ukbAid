@@ -253,7 +253,8 @@ follow the instructions there.
     their age.
 
 -   **Save your changes in the Git history and push to your GitHub
-    BEFORE Terminating your UKB-RAP project**:
+    BEFORE Terminating your UKB-RAP project**: If you terminate before
+    saving and pushing to GitHub, you *will* lose your work!
 
 ## For admin users
 
