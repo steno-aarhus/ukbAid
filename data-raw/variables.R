@@ -76,13 +76,14 @@ rap_variables <- future_map_dfr(rap_variables_chunked,
                                 create_rap_specific_variables_and_ids)
 plan(sequential)
 
+# Include a dataframe of variables that are NOT in the very long format.
 project_variables <- ukb_variables %>%
     select(id = field_id,
            ukb_variable_description = field,
            sample_size = participants,
            link) %>%
     mutate(id = glue::glue("p{id}")) %>%
-    distinct(id)
+    distinct()
 
 usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3, internal = TRUE)
 usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3)
