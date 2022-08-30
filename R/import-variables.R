@@ -78,7 +78,9 @@ subset_rap_variables <- function(project_variables_file = "data-raw/project-vari
     instance_pattern <- glue::glue("Instance [{min(instances)}-{max(instances)}]")
     proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE)
     rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE) %>%
-        dplyr::filter(stringr::str_detect(rap_variable_name, instance_pattern))
+        dplyr::filter(stringr::str_detect(rap_variable_name, instance_pattern) |
+                          # To keep also variables like Sex that don't have instances
+                          stringr::str_detect(rap_variable_name, " \\| Instance", negate = TRUE))
 
     new_rap_vars <- rap_vars %>%
         dplyr::mutate(id = stringr::str_extract(field_id, "^p[:digit:]+")) %>%
