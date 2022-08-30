@@ -73,7 +73,8 @@ create_rap_specific_variables_and_ids <- function(data) {
 library(furrr)
 plan(multisession)
 rap_variables <- future_map_dfr(rap_variables_chunked,
-                                create_rap_specific_variables_and_ids)
+                                create_rap_specific_variables_and_ids) %>%
+    rename(rap_variable_name = field)
 plan(sequential)
 
 # Include a dataframe of variables that are NOT in the very long format.
