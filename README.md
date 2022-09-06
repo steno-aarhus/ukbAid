@@ -141,10 +141,13 @@ restricted-access token that we can easily create and delete. This token
 only has limited access to your account, so it is safer to send over the
 Internet.
 
-After you’ve done this, run the next function:
+After you’ve done this, run the next function. If you are new to Git and GitHub,
+we strongly recommend starting your first project as private, in case you 
+accidentally add files you aren't supposed. And it will also help get you
+feeling comfortable with using Git and GitHub.
 
 ``` r
-usethis::use_github()
+usethis::use_github(private = TRUE)
 ```
 
 This will take your project and upload it to GitHub. Now, whenever you
