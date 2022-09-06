@@ -31,9 +31,12 @@ Imports:
     withr
 Suggests: 
     clipr,
+    prereg (>= 0.5.0),
     ukbAid
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
 Depends: 
     R (>= 4.0.0)
 LazyData: true
+Remotes: 
+    crsh/prereg
