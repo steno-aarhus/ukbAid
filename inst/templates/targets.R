@@ -8,14 +8,6 @@ library(targets)
 
 # Things to run in order to work.
 list(
-    tar_target(
-        name = install_renv,
-        command = install.packages("renv")
-    ),
-    tar_target(
-        name = install_packages_with_renv,
-        command = renv::restore()
-    ),
     # # Uncomment this only while inside the RAP environment.
     # tar_target(
     #     name = set_git_config_global,

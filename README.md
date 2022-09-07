@@ -219,6 +219,13 @@ install.packages("remotes")
 remotes::install_github("steno-aarhus/ukbAid")
 ```
 
+Next step is to tell Git who you are (obviously changing the values to your own
+name and email):
+
+``` r
+ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
+```
+
 Since UKB RAP deletes everything when you Terminate the session, you’ll
 be backing up your project on GitHub. In order to connect to GitHub, you
 have to let Git know that you are you (authentication). Like you did on
@@ -235,7 +242,7 @@ for your project. Mine is
 **You’ll have to replace mine with your own**. Type out:
 
 ``` r
-usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
+usethis::create_from_github("lwjohnst86/ecc-cmd-ukb", open = FALSE)
 ```
 
 This will download the project from GitHub and create the project in the

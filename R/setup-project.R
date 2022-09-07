@@ -26,7 +26,6 @@ setup_ukb_project <- function(path) {
         desc::desc_set_dep("here", type = "Imports")
         desc::desc_set_dep("remotes", type = "Imports")
         desc::desc_set_dep("gert", type = "Imports")
-        desc::desc_set_dep("renv", type = "Imports")
         desc::desc_set_dep("targets", type = "Imports")
         desc::desc_set_dep("usethis", type = "Imports")
         desc::desc_set_dep("ukbAid", type = "Imports")
@@ -67,7 +66,8 @@ setup_ukb_project <- function(path) {
         git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
 
         # Add renv setup (as recommended by RAP)
-        renv::init(settings = renv::settings$snapshot.type(value = "explicit"), restart = FALSE)
-        git_commit_file(".", "Add renv support files to project")
+        # TODO: This seems to cause some problems...
+        # renv::init(settings = renv::settings$snapshot.type(value = "explicit"), restart = FALSE)
+        # git_commit_file(".", "Add renv support files to project")
     })
 }
