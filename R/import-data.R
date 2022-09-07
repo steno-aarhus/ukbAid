@@ -46,7 +46,7 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
     data_file_name <- glue::glue("data-{get_username()}-{project_id}")
     table_exporter_options <- rjson::toJSON(table_exporter_options)
     table_exporter_command <- glue::glue(
-        "dx run app-table-exporter -ientity=participant --brief --wait -y -j '{table_exporter_options}' -ioutput={data_file_name}"
+        "dx run app-table-exporter --brief --wait -y -j '{table_exporter_options}' -ioutput={data_file_name}"
     )
     cli::cli_alert_info("Started extracting the variables and converting to CSV.")
     cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
