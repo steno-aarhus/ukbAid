@@ -26,7 +26,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of ukbAid is to help our research group at Steno Diabetes
-Center Aarhus that is working on the UK Biobank on the RAP.
+Center Aarhus (SDCA) that is working on the UK Biobank (UKB) on the research analysis platform (RAP).
 
 This package and the general workflow we are using will help us be as
 reproducible as possible, but without sharing any data that is not permitted.
@@ -59,7 +59,13 @@ the session running all the time, we have to turn it off. This forces us into
 the situation described in the point above.
 
 3. Since there are several of us working on this project and since we want to be
-able to collaborate and help each other out TODO: finish this section
+able to collaborate and help each other out the organizing committee for UKB at SDCA
+will review all project proposals on our UKB Trello page and connect related proejcts.
+We will also initiate a monthly "coding café" where we can discuss specific coding 
+issues related to UKB and other projects. We are also planning to make a repository
+for all relevant code in UKB that is relevant to share among us. That could be creation
+of specific variables like diabetes incidence or similar. Further activities will be 
+planned if needed. 
 
 ### Steps when outside the UKB RAP
 
@@ -81,7 +87,8 @@ ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 You should get an output showing your `user.email` and `user.name`.
 Next, we need to create the folder and file structure. In the Console,
 type out this, replacing my project abbreviated name (`ecc-cmd-ukb`)
-with your project abbreviated name:
+with your project abbreviated name. Note that you should use the same
+abbreviation as the one you have given your project on Trello:
 
 ```{r}
 ukbAid::setup_ukb_project("~/Desktop/ecc-cmd-ukb")
