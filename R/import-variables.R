@@ -76,7 +76,8 @@ import_clean_and_upload_database_variables <- function() {
 subset_rap_variables <- function(project_variables_file = "data-raw/project-variables.csv",
                                  rap_variables_file = "data-raw/rap-variables.csv", instances = 0:9, save = TRUE) {
     instance_pattern <- glue::glue("Instance [{min(instances)}-{max(instances)}]")
-    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE)
+    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
+        dplyr::select(id)
     rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE) %>%
         dplyr::filter(stringr::str_detect(rap_variable_name, instance_pattern) |
                           # To keep also variables like Sex that don't have instances
@@ -84,8 +85,7 @@ subset_rap_variables <- function(project_variables_file = "data-raw/project-vari
 
     new_rap_vars <- rap_vars %>%
         dplyr::mutate(id = stringr::str_extract(field_id, "^p[:digit:]+")) %>%
-        dplyr::right_join(proj_vars, by = "id") %>%
-        dplyr::select(-id, -link, -ukb_variable_description)
+        dplyr::right_join(proj_vars, by = "id")
 
     if (save) {
         cli::cli_alert_info("Updated the {.val {rap_variables_file}} based on the selected project variables.")
