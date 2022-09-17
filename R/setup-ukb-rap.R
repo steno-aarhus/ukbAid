@@ -9,8 +9,8 @@ setup_ukb_rap <- function() {
         return(invisible(NULL))
     }
 
-    # options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
-    # try(rspm::enable(), silent = TRUE)
+    options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
+    try(rspm::enable(), silent = TRUE)
     install.packages("yesno", quiet = TRUE)
     if (yesno::yesno2("Install the ukbAid package, along with the remotes package?")) {
         install.packages("remotes", quiet = TRUE)
@@ -31,7 +31,7 @@ setup_ukb_rap <- function() {
 
     cli::cli_rule()
     cli::cli_alert_info("Lastly, we need to download your project. Please answer this question.")
-    project_repo <- rstudioapi::showPrompt("Git repository for project", "What is the GitHub repository location for your project? It should be in the form 'username/reponame', for instance, mine is 'lwjohnst86/mesh'.")
+    project_repo <- rstudioapi::showPrompt("Git repository for project", "What is the GitHub repository location for your project? It should be in the form 'username/reponame', for instance, mine is lwjohnst86/mesh (without quotes).")
     usethis::create_from_github(project_repo, open = FALSE)
     cli::cli_alert_success("Done! Now you can open the project by clicking the `.Rproj` file and following the instructions in the `README.md` file.")
     return(invisible(NULL))
