@@ -89,7 +89,7 @@ setup_rstudio_luke <- function() {
         editor_keybindings = "vim",
         syntax_color_console = TRUE,
         posix_terminal_shell = "bash",
-        font_size_points = 12L,
+        font_size_points = 12,
         panes = list(
             quadrants = c("Source", "TabSet1", "Console", "TabSet2"),
             tabSet1 = c("Packages", "VCS", "Presentation"),
