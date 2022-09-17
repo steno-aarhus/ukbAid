@@ -9,6 +9,8 @@
             RAP</a>
         -   <a href="#steps-when-inside-the-ukb-rap"
             id="toc-steps-when-inside-the-ukb-rap">Steps when inside the UKB RAP</a>
+        -   <a href="#next-time-you-go-into-ukb-rap"
+            id="toc-next-time-you-go-into-ukb-rap">Next time you go into UKB RAP</a>
         -   <a href="#misc-notes" id="toc-misc-notes">Misc notes</a>
     -   <a href="#for-admin-users" id="toc-for-admin-users">For admin users</a>
 
@@ -24,7 +26,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of ukbAid is to help our research group at Steno Diabetes
-Center Aarhus that is working on the UK Biobank on the RAP.
+Center Aarhus (SDCA) that is working on the UK Biobank (UKB) on the
+research analysis platform (RAP).
 
 This package and the general workflow we are using will help us be as
 reproducible as possible, but without sharing any data that is not
@@ -59,8 +62,15 @@ your work through Git and GitHub. This is due to a few reasons:
     above.
 
 3.  Since there are several of us working on this project and since we
-    want to be able to collaborate and help each other out TODO: finish
-    this section
+    want to be able to collaborate and help each other out. The
+    organizing committee for UKB at SDCA will review all project
+    proposals on our UKB Trello page and connect related projects. We
+    will also initiate a monthly “coding café” where we can discuss
+    specific coding issues related to UKB and other projects. We are
+    also planning to make a repository for all relevant code in UKB that
+    is relevant to share among us. That could be creation of specific
+    variables like diabetes incidence or similar. Further activities
+    will be planned if needed.
 
 ### Steps when outside the UKB RAP
 
@@ -82,7 +92,8 @@ ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 You should get an output showing your `user.email` and `user.name`.
 Next, we need to create the folder and file structure. In the Console,
 type out this, replacing my project abbreviated name (`ecc-cmd-ukb`)
-with your project abbreviated name:
+with your project abbreviated name. Note that you should use the same
+abbreviation as the one you have given your project on Trello:
 
 ``` r
 ukbAid::setup_ukb_project("~/Desktop/ecc-cmd-ukb")
@@ -219,9 +230,14 @@ remotes::install_github("steno-aarhus/ukbAid")
 Since UKB RAP deletes everything when you Terminate the session, you’ll
 be backing up your project on GitHub. In order to connect to GitHub, you
 have to let Git know that you are you (authentication). Like you did on
-your computer, run in the Console and paste your secret PAT:
+your computer, run in the Console and paste your secret PAT. If the
+system still does not recognize you, you probably didn’t setup your user
+name and email with the Git config setup above:
 
 ``` r
+# If necessary add username and email again but uncommenting the code below
+# and adding your own user.name and email
+# ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 gitcreds::gitcreds_set()
 ```
 
@@ -242,7 +258,37 @@ project by clicking the `.Rproj` file inside the project folder.
 Then, open up the README.md file in your project and follow the
 instructions there. When you are ready to create the dataset necessary
 for your project, open up the `data-raw/create-data.R` script and follow
-the instructions there.
+the instructions there to create your dataset.
+
+Remember to push your code to your GitHub. Otherwise all your work on
+the RAP will be lost next time you login. Also remember to terminate
+your session when you are done.
+
+### Next time you go into UKB RAP
+
+Next time you open up the RAP you will need to follow these steps below.
+
+1.  Download the ukbAid package:
+
+``` r
+install.packages("remotes")
+remotes::install_github("steno-aarhus/ukbAid")
+```
+
+2.  Setup GitHub credentials using your personal access token:
+
+``` r
+gitcreds::gitcreds_set()
+```
+
+3.  Run the ‘targets.R’ script to install all your packages, setup
+    GitHub link and download your dataset from the database.
+
+When you have done this, you should be ready to continue with your
+analysis. Remember to push any changes to the code to GitHub to save
+changes. And remember not to save any datasets unless you have an
+agreement with the organizing committee. You are allowed to save results
+tables and figures of estimates.
 
 ### Misc notes
 
