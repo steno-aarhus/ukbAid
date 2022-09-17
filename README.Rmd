@@ -206,49 +206,34 @@ Once your protocol has been reviewed and uploaded to OSF, you're now
 ready to start doing the data analysis on the RAP.
 
 **But before doing anything else**, complete the tasks in the `TODO.md`
-file, which will direct you to fill in details in the `README.md` and
-`_targets.R` files.
+file, which will direct you to fill in details in the `README.md`.
 
 After you've done the TODO items, start working towards writing the protocol
 and analysis plan before beginning your work in the UKB RAP.
 
-### Steps when inside the UKB RAP
+### Steps everytime you enter into the UKB RAP
 
 Whenever you open up the UKB RAP, you won't have your project files nor have any
 packages installed. So you'll need to do a few set up tasks *each time* you work
-in the RAP. In the RStudio R Console, install the remotes and ukbAid packages:
+in the RAP. I've written a function that you can source directly that will take
+you through the steps needed to have everything set up. Run these two lines of
+code in the R Console, and afterwards follow the instructions on the Console.
 
 ```{r}
-install.packages("remotes")
-remotes::install_github("steno-aarhus/ukbAid")
+source("https://raw.githubusercontent.com/steno-aarhus/ukbAid/main/R/setup-ukb-rap.R")
+setup_ukb_rap()
 ```
 
 Since UKB RAP deletes everything when you Terminate the session, you'll be
-backing up your project on GitHub. In order to connect to GitHub, you have
-to let Git know that you are you (authentication). Like you did on your computer,
-run in the Console and paste your secret PAT. If the system still does not recognize
-you, you probably didn't setup your user name and email with the Git config setup above:
+backing up your project on GitHub. What this function above does is install
+the necessary packages, installs the ukbAid package, sets up your Git config,
+sets up your authentication (credentials) to connect to GitHub, and finally 
+downloads your GitHub repository into the RAP environment. This last point, 
+you would give the repository location in the form of `github_username/repository_name`.
+For instance, my repository is [`lwjohnst86/mesh`](https://github.com/lwjohnst86/mesh).
 
-```{r}
-# If necessary add username and email again but uncommenting the code below
-# and adding your own user.name and email
-# ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
-gitcreds::gitcreds_set()
-```
-
-Next, we'll need to upload your project onto the RAP from GitHub. You'll
-have to give the function your GitHub user name and the repository name
-for your project. Mine is
-[`"lwjohnst86/mesh"`](https://github.com/lwjohnst86/mesh).
-**You'll have to replace mine with your own**. Type out:
-
-```{r}
-usethis::create_from_github("lwjohnst86/mesh")
-```
-
-This will download the project from GitHub and create the project in the
-RAP. The project should already open up for you, but if not, open the
-project by clicking the `.Rproj` file inside the project folder.
+Once the project is downloaded from GitHub and created the project in the
+RAP, you can open it by clicking the `.Rproj` file inside the project folder.
 
 Then, open up the README.md file in your project and follow the instructions
 there. When you are ready to create the dataset necessary for your project,
@@ -259,32 +244,19 @@ Remember to push your code to your GitHub. Otherwise all your work on the RAP
 will be lost next time you login. Also remember to terminate your session when
 you are done. 
 
-### Next time you go into UKB RAP
-
-Next time you open up the RAP you will need to follow these steps below.
-
-1. Download the ukbAid package:
-
-```{r}
-install.packages("remotes")
-remotes::install_github("steno-aarhus/ukbAid")
-```
-
-2. Setup GitHub credentials using your personal access token:
+Depending on how long you work inside the RAP environment, you *might* have to 
+update the credentials. You do this as you normally would on your local computer,
+using this code:
 
 ```{r}
 gitcreds::gitcreds_set()
 ```
 
-3. Run the 'targets.R' script to install all your packages, setup GitHub link
-and download your dataset from the database.
+Remember, do not save any data in the Git history unless you have discussed it
+with the organizing committee. You can save results for tables and figures, 
+as long as they are aggregate or statistical results.
 
-When you have done this, you should be ready to continue with your analysis. 
-Remember to push any changes to the code to GitHub to save changes. And remember
-not to save any datasets unless you have an agreement with the organizing committee.
-You are allowed to save results tables and figures of estimates.
-
-### Misc notes 
+## Misc notes 
 
 - **About specific variables**: There are some variables in the list of
 variables we have that don't exist in the RAP database, for instance like date
