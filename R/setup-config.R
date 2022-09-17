@@ -89,7 +89,7 @@ setup_rstudio_luke <- function() {
         editor_keybindings = "vim",
         syntax_color_console = TRUE,
         posix_terminal_shell = "bash",
-        font_size_points = 12,
+        font_size_points = 12L,
         panes = list(
             quadrants = c("Source", "TabSet1", "Console", "TabSet2"),
             tabSet1 = c("Packages", "VCS", "Presentation"),
@@ -132,16 +132,6 @@ setup_rstudio_luke <- function() {
     rstudio_preferences %>%
         purrr::iwalk(~rstudioapi::writeRStudioPreference(.y, .x))
     cli::cli_alert_success("Set the RStudio preferences.")
-
-    setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
-
-    cli::cli_alert_info("Copy and paste this output into {.path .Rprofile}:")
-    cli::cat_line("if (interactive()) {
-        suppressMessages(require(devtools))
-        suppressMessages(require(usethis))
-        suppressMessages(require(gert))
-    }")
-    usethis::edit_r_profile(scope = "user")
     return(invisible(NULL))
 }
 
