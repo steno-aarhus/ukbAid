@@ -59,8 +59,8 @@ the session running all the time, we have to turn it off. This forces us into
 the situation described in the point above.
 
 3. Since there are several of us working on this project and since we want to be
-able to collaborate and help each other out the organizing committee for UKB at SDCA
-will review all project proposals on our UKB Trello page and connect related proejcts.
+able to collaborate and help each other out. The organizing committee for UKB at SDCA
+will review all project proposals on our UKB Trello page and connect related projects.
 We will also initiate a monthly "coding café" where we can discuss specific coding 
 issues related to UKB and other projects. We are also planning to make a repository
 for all relevant code in UKB that is relevant to share among us. That could be creation
@@ -223,14 +223,13 @@ Since UKB RAP deletes everything when you Terminate the session, you'll be
 backing up your project on GitHub. In order to connect to GitHub, you have
 to let Git know that you are you (authentication). Like you did on your computer,
 run in the Console and paste your secret PAT. If the system still does not recognize
-you, you can additionally setup your username and email:
+you, you probably didn't setup your user name and email with the Git config setup above:
 
 ```{r}
+# If necessary add username and email again but uncommenting the code below
+# and adding your own user.name and email
+# ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 gitcreds::gitcreds_set()
-
-#if necessary add username and email again but uncommenting the code below
-#and adding your own user.name and email
-#ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 ```
 
 Next, we'll need to upload your project onto the RAP from GitHub. You'll
@@ -258,7 +257,7 @@ you are done.
 
 ### Next time you go into UKB RAP
 
-Next time you open up the RAP you will:
+Next time you open up the RAP you will need to follow these steps below.
 
 1. Download the ukbAid package:
 
