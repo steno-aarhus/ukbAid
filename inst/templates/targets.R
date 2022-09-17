@@ -8,15 +8,10 @@ library(targets)
 
 # Things to run in order to work.
 list(
-    # # Uncomment this only while inside the RAP environment.
-    # tar_target(
-    #     name = set_git_config_global,
-    #     # TODO: replace "FULL NAME" with your name
-    #     # TODO: replace "youremail@email.com" with your email address
-    #     command = ukbAid::setup_git_config("FULL NAME", "youremail@email.com")
-    # ),
+    # TODO: Uncomment this *after* finishing running `data-raw/create-data.R`
     # tar_target(
     #     name = download_project_data,
-    #     command = source(here::here("data-raw/download-data.R"))
+    #     command = ukbAid::download_project_data(),
+    #     format = "file"
     # )
 )
