@@ -42,7 +42,7 @@ setup_ukb_project <- function(path) {
 
         # Add processing files to the data-raw folder
         fs::dir_create("data-raw")
-        usethis::use_template("download-data.R", "data-raw/download-data.R", package = "ukbAid")
+        usethis::use_template("create-data.R", "data-raw/create-data.R", package = "ukbAid")
         git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
         readr::write_csv(project_variables, "data-raw/project-variables.csv")
         git_commit_file("data-raw/project-variables.csv", "Add project variables as csv found in the project")

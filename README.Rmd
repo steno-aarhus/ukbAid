@@ -237,7 +237,7 @@ project by clicking the `.Rproj` file inside the project folder.
 
 Then, open up the README.md file in your project and follow the instructions
 there. When you are ready to create the dataset necessary for your project,
-open up the `data-raw/download-data.R` script and follow the instructions there.
+open up the `data-raw/create-data.R` script and follow the instructions there.
 
 ### Misc notes 
 

@@ -141,13 +141,10 @@ restricted-access token that we can easily create and delete. This token
 only has limited access to your account, so it is safer to send over the
 Internet.
 
-After you’ve done this, run the next function. If you are new to Git and GitHub,
-we strongly recommend starting your first project as private, in case you 
-accidentally add files you aren't supposed. And it will also help get you
-feeling comfortable with using Git and GitHub.
+After you’ve done this, run the next function:
 
 ``` r
-usethis::use_github(private = TRUE)
+usethis::use_github()
 ```
 
 This will take your project and upload it to GitHub. Now, whenever you
@@ -219,13 +216,6 @@ install.packages("remotes")
 remotes::install_github("steno-aarhus/ukbAid")
 ```
 
-Next step is to tell Git who you are (obviously changing the values to your own
-name and email):
-
-``` r
-ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
-```
-
 Since UKB RAP deletes everything when you Terminate the session, you’ll
 be backing up your project on GitHub. In order to connect to GitHub, you
 have to let Git know that you are you (authentication). Like you did on
@@ -242,7 +232,7 @@ for your project. Mine is
 **You’ll have to replace mine with your own**. Type out:
 
 ``` r
-usethis::create_from_github("lwjohnst86/ecc-cmd-ukb", open = FALSE)
+usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
 ```
 
 This will download the project from GitHub and create the project in the
@@ -251,8 +241,8 @@ project by clicking the `.Rproj` file inside the project folder.
 
 Then, open up the README.md file in your project and follow the
 instructions there. When you are ready to create the dataset necessary
-for your project, open up the `data-raw/download-data.R` script and
-follow the instructions there.
+for your project, open up the `data-raw/create-data.R` script and follow
+the instructions there.
 
 ### Misc notes
 
