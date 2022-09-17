@@ -96,5 +96,5 @@ download_project_data <- function(project_id = get_rap_project_id(), username = 
     cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
     system(download_command)
     cli::cli_alert_success("Downloaded CSV!")
-    return(invisible())
+    return(here::here("data/data.csv"))
 }
