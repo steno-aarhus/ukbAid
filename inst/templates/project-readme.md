@@ -12,6 +12,13 @@ through the `DESCRIPTION` file, installing dependencies is as easy as opening th
 
 ``` r
 remotes::install_deps()
+```
+
+Once you've created your dataset using `data-raw/create-data.R`, you can uncomment
+the lines in the `_targets.R` file and afterwards run this code whenever you 
+enter the RAP project.
+
+``` r
 targets::tar_make()
 ```
 
