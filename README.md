@@ -152,10 +152,14 @@ restricted-access token that we can easily create and delete. This token
 only has limited access to your account, so it is safer to send over the
 Internet.
 
-After you’ve done this, run the next function:
+After you’ve done this, run the next function. If you are new to Git and
+GitHub, we strongly recommend starting your first project as private, in
+case you accidentally add files you aren’t supposed. And it will also
+help get you feeling comfortable with using Git and GitHub. After you’ve
+done this, run the next function:
 
 ``` r
-usethis::use_github()
+usethis::use_github(private = TRUE)
 ```
 
 This will take your project and upload it to GitHub. Now, whenever you
@@ -244,11 +248,11 @@ gitcreds::gitcreds_set()
 Next, we’ll need to upload your project onto the RAP from GitHub. You’ll
 have to give the function your GitHub user name and the repository name
 for your project. Mine is
-[`"lwjohnst86/ecc-cmd-ukb"`](https://github.com/lwjohnst86/ecc-cmd-ukb).
-**You’ll have to replace mine with your own**. Type out:
+[`"lwjohnst86/mesh"`](https://github.com/lwjohnst86/mesh). **You’ll have
+to replace mine with your own**. Type out:
 
 ``` r
-usethis::create_from_github("lwjohnst86/ecc-cmd-ukb")
+usethis::create_from_github("lwjohnst86/mesh")
 ```
 
 This will download the project from GitHub and create the project in the
