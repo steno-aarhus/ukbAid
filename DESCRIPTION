@@ -25,6 +25,7 @@ Imports:
     readr,
     renv,
     rjson,
+    rstudioapi,
     tibble,
     usethis,
     utils,
