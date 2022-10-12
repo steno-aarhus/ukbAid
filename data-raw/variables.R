@@ -49,7 +49,7 @@ create_rap_specific_variables_and_ids <- function(data) {
                 !instanced &
                     !arrayed ~ glue::glue("p{field_id}")
             ),
-            field = dplyr::case_when(
+            title = dplyr::case_when(
                 instanced &
                     arrayed ~ glue::glue("{title} | Instance {instance} | Array {array}"),
                 instanced &
