@@ -76,8 +76,10 @@ project_variables <- ukb_variables %>%
     select(id = field_id,
            ukb_variable_description = title,
            number_participants = num_participants) %>%
-    mutate(id = glue::glue("p{id}"),
-           link = glue::glue("https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id={id}")) %>%
+    mutate(
+        link = glue::glue("https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id={id}"),
+        id = glue::glue("p{id}")
+    ) %>%
     distinct()
 
 usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3, internal = TRUE)
