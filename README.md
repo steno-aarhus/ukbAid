@@ -11,7 +11,6 @@
             id="toc-steps-everytime-you-enter-into-the-ukb-rap">Steps everytime you
             enter into the UKB RAP</a>
     -   <a href="#misc-notes" id="toc-misc-notes">Misc notes</a>
-    -   <a href="#for-admin-users" id="toc-for-admin-users">For admin users</a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -82,7 +81,7 @@ within the special environment of the UK Biobank RAP.
 The very first tasks you’ll need to do is to install the ukbAid package,
 as described above. After that, we need to make sure that your computer
 has Git configured properly. In your Console, type out the below code,
-replacing my name (Luke) and my email with your own name:
+replacing my name (Luke) and my email with your own:
 
 ``` r
 ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
@@ -90,12 +89,12 @@ ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 
 You should get an output showing your `user.email` and `user.name`.
 Next, we need to create the folder and file structure. In the Console,
-type out this, replacing my project abbreviated name (`ecc-cmd-ukb`)
-with your project abbreviated name. Note that you should use the same
-abbreviation as the one you have given your project on Trello:
+type out this, replacing my project abbreviated name (`mesh`) with your
+project abbreviated name. Note that you should use the same abbreviation
+as the one you have given your project on Trello:
 
 ``` r
-ukbAid::setup_ukb_project("~/Desktop/ecc-cmd-ukb")
+ukbAid::setup_ukb_project("~/Desktop/mesh")
 ```
 
 From here, go to the Desktop or wherever you created the project and
@@ -145,15 +144,16 @@ GitHub needs you to authenticate that it is you and not someone else. In
 order to do that, you need to give GitHub a password to do that. In the
 past, you could use your same password connected to your GitHub account,
 but the problem with this method is that your password gets sent over
-the Internet many times, which increases the risk for someone
-maliciously obtaining your password. So instead, we use a temporary,
+the Internet many times, which increases the risk that someone will
+maliciously obtain your password. So instead, we use a temporary,
 restricted-access token that we can easily create and delete. This token
 only has limited access to your account, so it is safer to send over the
-Internet.
+Internet, and it can be very easy to delete without affecting your
+account.
 
 After you’ve done this, run the next function. If you are new to Git and
 GitHub, we strongly recommend starting your first project as private, in
-case you accidentally add files you aren’t supposed. And it will also
+case you accidentally add files you aren’t supposed to. It will also
 help get you feeling comfortable with using Git and GitHub. After you’ve
 done this, run the next function:
 
@@ -183,15 +183,15 @@ When you work on the UKB-RAP, you will “pull” (download) your project
 from GitHub. As you work on it and save changes in your Git history, you
 “push” (upload) to GitHub often in order to keep your changes backed up.
 Then, when you get to the manusript writing stage, you can pull your
-results from GitHub to your local so you can work without getting
+results from GitHub to your “Local” so you can work without getting
 charged.
 
 Why do we do it this way? For one, it is honestly the easiest that we
 could think of because the UKB RAP is a special environment that
 requires special steps to take. Plus, it makes it easier to have others
 (like me) collaborate on your project and help you out. So
-hypothetically, if you need help, I (Luke) could download from your
-GitHub and make changes there. Conceptually it would look like:
+hypothetically, if you need help, I (Luke) could download your project
+from GitHub and make changes there. Conceptually it would look like:
 
 ``` mermaid
 graph TD;
@@ -277,11 +277,3 @@ results.
 -   **Save your changes in the Git history and push to your GitHub
     BEFORE Terminating your UKB-RAP project**: If you terminate before
     saving and pushing to GitHub, you *will* lose your work!
-
-## For admin users
-
-This is code used only by the admins.
-
-``` r
-ukbAid:::import_clean_and_upload_database_variables()
-```
