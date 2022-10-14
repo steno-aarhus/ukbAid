@@ -1,4 +1,4 @@
-dare_project_record_id <- "record-G9zGPB0JbxZz4xPy60PBPk1Z"
+dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 
 #' Extract variables you want from the UKB database and create a CSV file to later upload to your own project.
 #'
