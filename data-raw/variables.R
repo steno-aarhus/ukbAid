@@ -23,6 +23,10 @@ ukb_variables <-
 # for parallel processing since it can sometimes take a while.
 rap_variables_chunked <- ukb_variables %>%
     select(-num_participants) %>%
+    mutate(array_max = case_when(
+        str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
+        TRUE ~ array_max
+    )) %>%
     pivot_longer(
         cols = -c(field_id, title, instanced, arrayed),
         names_to = c(".value", "range"),
