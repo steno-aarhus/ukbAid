@@ -20,6 +20,8 @@ dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 #'   Steno project `dare_project_record_id`.
 #' @param project_id The project's abbreviation. Defaults to using
 #'   `get_rap_project_id()`, which is the name of the project folder.
+#' @param username The username to set where the dataset is saved to. Defaults to using
+#'   `get_username()`, which is the name of the current user of the session.
 #'
 #' @return Outputs whether the extraction and creation of the data was
 #'   successful or not. Used for the side effect of creating the CSV on the RAP
@@ -34,7 +36,9 @@ dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 #'   pull(variable_name) %>%
 #'   create_csv_from_database()
 #' }
-create_csv_from_database <- function(variables_to_extract, project_id = get_rap_project_id(), dataset_record_id = dare_project_record_id) {
+create_csv_from_database <- function(variables_to_extract, project_id = get_rap_project_id(),
+                                     dataset_record_id = dare_project_record_id,
+                                     username = get_username()) {
     stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
 
     table_exporter_options <- list(
@@ -43,7 +47,7 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
         header_style = "FIELD-TITLE"
     )
 
-    data_file_name <- glue::glue("data-{get_username()}-{project_id}")
+    data_file_name <- glue::glue("data-{username}-{project_id}")
     table_exporter_options <- rjson::toJSON(table_exporter_options)
     table_exporter_command <- glue::glue(
         "dx run app-table-exporter --brief --wait -y -j '{table_exporter_options}' -ioutput={data_file_name}"
@@ -51,8 +55,8 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
     cli::cli_alert_info("Started extracting the variables and converting to CSV.")
     cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
     table_exporter_results <- system(table_exporter_command, intern = TRUE)
-    system(glue::glue("dx mv {data_file_name}.csv /users/{get_username()}/data-{project_id}.csv"))
-    user_path <- glue::glue("/mnt/project/users/{get_username()}")
+    system(glue::glue("dx mv {data_file_name}.csv /users/{username}/data-{project_id}.csv"))
+    user_path <- glue::glue("/mnt/project/users/{username}")
     cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
     relevant_results <- tail(table_exporter_results, 3)[1:2]
     return(relevant_results)
