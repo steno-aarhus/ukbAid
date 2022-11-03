@@ -35,22 +35,24 @@ dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 #' read_csv("data-raw/rap-variables.csv") %>%
 #'   pull(variable_name) %>%
 #'   create_csv_from_database()
+#' # rap_variables %>%
+#' #   pull(field_id) %>%
+#' #   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
 #' }
 create_csv_from_database <- function(variables_to_extract, project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = get_username()) {
     stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
 
-    table_exporter_options <- list(
-        dataset_or_cohort_or_dashboard = list(`$dnanexus_link` = dataset_record_id),
-        field_titles = variables_to_extract,
-        header_style = "FIELD-TITLE"
-    )
-
+    field_names <- paste0(glue::glue("-ifield_names='{variables_to_extract}'"), collapse = " ")
     data_file_name <- glue::glue("data-{username}-{project_id}")
-    table_exporter_options <- rjson::toJSON(table_exporter_options)
     table_exporter_command <- glue::glue(
-        "dx run app-table-exporter --brief --wait -y -j '{table_exporter_options}' -ioutput={data_file_name}"
+        paste0(c("dx run app-table-exporter --brief --wait -y",
+          "-idataset_or_cohort_or_dashboard={dataset_record_id}",
+          "-header_style='FIELD-TITLE'",
+          "{field_names}",
+          "-ioutput={data_file_name}"),
+          collapse = " ")
     )
     cli::cli_alert_info("Started extracting the variables and converting to CSV.")
     cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
