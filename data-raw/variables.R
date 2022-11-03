@@ -27,6 +27,7 @@ rap_variables_chunked <- ukb_variables %>%
         array_max = case_when(
             str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
             str_detect(title, "Medication for cholesterol, blood pressure or diabetes") ~ 0,
+            str_detect(title, "Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones") ~ 0,
             str_detect(title, "^Qualifications$") ~ 0,
             TRUE ~ array_max),
         arrayed = !(array_min == array_max)
