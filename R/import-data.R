@@ -49,7 +49,7 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
     table_exporter_command <- glue::glue(
         paste0(c("dx run app-table-exporter --brief --wait -y",
           "-idataset_or_cohort_or_dashboard={dataset_record_id}",
-          "-header_style='FIELD-TITLE'",
+          "-iheader_style='FIELD-TITLE'",
           "{field_names}",
           "-ioutput={data_file_name}"),
           collapse = " ")
