@@ -24,8 +24,11 @@ ukb_variables <-
 rap_variables_chunked <- ukb_variables %>%
     select(-num_participants) %>%
     mutate(
-        array_max = case_when(str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
-                              TRUE ~ array_max),
+        array_max = case_when(
+            str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
+            str_detect(title, "Medication for cholesterol, blood pressure or diabetes") ~ 0,
+            str_detect(title, "^Qualifications$") ~ 0,
+            TRUE ~ array_max),
         arrayed = !(array_min == array_max)
     ) %>%
     pivot_longer(
