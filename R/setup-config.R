@@ -89,7 +89,7 @@ setup_rstudio_luke <- function() {
         editor_keybindings = "vim",
         syntax_color_console = TRUE,
         posix_terminal_shell = "bash",
-        font_size_points = 12L,
+        font_size_points = 12,
         panes = list(
             quadrants = c("Source", "TabSet1", "Console", "TabSet2"),
             tabSet1 = c("Packages", "VCS", "Presentation"),
@@ -124,13 +124,10 @@ setup_rstudio_luke <- function() {
         save_files_before_build = TRUE,
         always_save_history = FALSE,
         rmd_viewer_type = "pane",
-        editor_theme = "Chrome",
-        new_proj_git_init = TRUE,
-        new_proj_use_renv = TRUE
+        editor_theme = "Chrome"
     )
 
-    rstudio_preferences %>%
-        purrr::iwalk(~rstudioapi::writeRStudioPreference(.y, .x))
+    purrr::iwalk(rstudio_preferences, ~rstudioapi::writeRStudioPreference(.y, .x))
     cli::cli_alert_success("Set the RStudio preferences.")
     return(invisible(NULL))
 }
