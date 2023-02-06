@@ -32,7 +32,9 @@ Imports:
     withr
 Suggests: 
     clipr,
+    knitr,
     prereg (>= 0.5.0),
+    rmarkdown,
     ukbAid
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
@@ -41,3 +43,4 @@ Depends:
 LazyData: true
 Remotes: 
     crsh/prereg
+VignetteBuilder: knitr
