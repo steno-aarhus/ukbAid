@@ -1,16 +1,16 @@
 
--   <a href="#ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap"
-    id="toc-ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap">ukbAid: Aid
-    in doing analyses on the UK Biobank RAP</a>
-    -   <a href="#installation" id="toc-installation">Installation</a>
-    -   <a href="#using-ukbaid" id="toc-using-ukbaid">Using ukbAid</a>
-        -   <a href="#steps-when-outside-the-ukb-rap"
-            id="toc-steps-when-outside-the-ukb-rap">Steps when outside the UKB
-            RAP</a>
-        -   <a href="#steps-everytime-you-enter-into-the-ukb-rap"
-            id="toc-steps-everytime-you-enter-into-the-ukb-rap">Steps everytime you
-            enter into the UKB RAP</a>
-    -   <a href="#misc-notes" id="toc-misc-notes">Misc notes</a>
+- <a href="#ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap"
+  id="toc-ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap">ukbAid: Aid
+  in doing analyses on the UK Biobank RAP</a>
+  - <a href="#installation" id="toc-installation">Installation</a>
+  - <a href="#using-ukbaid" id="toc-using-ukbaid">Using ukbAid</a>
+    - <a href="#steps-when-outside-the-ukb-rap"
+      id="toc-steps-when-outside-the-ukb-rap">Steps when outside the UKB
+      RAP</a>
+    - <a href="#steps-everytime-you-enter-into-the-ukb-rap"
+      id="toc-steps-everytime-you-enter-into-the-ukb-rap">Steps everytime you
+      enter into the UKB RAP</a>
+  - <a href="#misc-notes" id="toc-misc-notes">Misc notes</a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -38,9 +38,9 @@ You can install the development version of ukbAid inside RStudio in the
 R Console like so:
 
 ``` r
-# If remotes package isn't installed, first install with (without the `#` comment):
-# install.packages("remotes")
-remotes::install_github("steno-aarhus/ukbAid")
+# Install pak if not installed already.
+# install.packages("pak")
+pak::pkg_install("steno-aarhus/ukbAid")
 ```
 
 ## Using ukbAid
@@ -268,12 +268,11 @@ results.
 
 ## Misc notes
 
--   **About specific variables**: There are some variables in the list
-    of variables we have that don’t exist in the RAP database, for
-    instance like date of birth. This may be due to privacy concerns, so
-    instead you would have to use year of birth (`p34`) to determine
-    their age.
+- **About specific variables**: There are some variables in the list of
+  variables we have that don’t exist in the RAP database, for instance
+  like date of birth. This may be due to privacy concerns, so instead
+  you would have to use year of birth (`p34`) to determine their age.
 
--   **Save your changes in the Git history and push to your GitHub
-    BEFORE Terminating your UKB-RAP project**: If you terminate before
-    saving and pushing to GitHub, you *will* lose your work!
+- **Save your changes in the Git history and push to your GitHub BEFORE
+  Terminating your UKB-RAP project**: If you terminate before saving and
+  pushing to GitHub, you *will* lose your work!
