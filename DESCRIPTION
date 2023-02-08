@@ -34,6 +34,7 @@ Suggests:
     clipr,
     knitr,
     prereg (>= 0.5.0),
+    quarto,
     rmarkdown,
     ukbAid
 URL: https://github.com/steno-aarhus/ukbAid
