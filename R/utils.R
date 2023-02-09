@@ -12,3 +12,13 @@ git_commit_file <- function(file, message) {
     gert::git_commit(message)
     return(invisible())
 }
+
+build_website <- function() {
+  if (!requireNamespace("quarto", quietly = TRUE)) {
+    rlang::abort("Please install Quarto to use this function.")
+  }
+
+  quarto::quarto_render("vignettes/index.Rmd")
+}
+
+

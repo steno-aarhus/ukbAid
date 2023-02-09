@@ -1,0 +1,11 @@
+---
+title: "governance"
+---
+
+## Steering committee
+
+-   Christina Dahm
+-   Daniel Ibsen
+-   Luke W. Johnston
+-   Alisa Kjaergaard
+-   Daniel Witte
