@@ -12,9 +12,9 @@ setup_ukb_rap <- function() {
     options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
     try(rspm::enable(), silent = TRUE)
     install.packages("yesno", quiet = TRUE)
-    if (yesno::yesno2("Install the ukbAid package, along with the remotes package?")) {
-        install.packages("remotes", quiet = TRUE)
-        remotes::install_github("steno-aarhus/ukbAid")
+    if (yesno::yesno2("Install the ukbAid package, along with the pak package?")) {
+        install.packages("pak", quiet = TRUE)
+        pak::pak_install("steno-aarhus/ukbAid")
     } else {
         stop("You need to install the necessary packages to continue with the setup. Please re-run the function.")
     }
