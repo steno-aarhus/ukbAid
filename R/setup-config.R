@@ -70,6 +70,7 @@ get_rstudio_config_as_text <- function() {
 #' @return NULL. The function is used for its side effects.
 #'
 setup_rstudio_luke <- function() {
+  # TODO: Move this into lwj repo
     # Use this code to paste config settings here
     # get_rstudio_config_as_text() %>%
     #     clipr::write_clip()
@@ -119,7 +120,7 @@ setup_rstudio_luke <- function() {
         load_workspace = FALSE,
         restore_last_project = FALSE,
         jobs_tab_visibility = "shown",
-        num_spaces_for_tab = 4L,
+        num_spaces_for_tab = 2L,
         default_encoding = "UTF-8",
         save_files_before_build = TRUE,
         always_save_history = FALSE,
