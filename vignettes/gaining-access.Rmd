@@ -5,3 +5,64 @@ title: "How to get access to UK Biobank with SDCA"
 > First and foremost, you must be employed by either Aarhus University
 > or by Region Midt and you're research topic must fall under our UK
 > Biobank project application.
+
+# Proposal and registration of the project
+
+1.  Get familiar with this Trello board. There is a lot of useful
+    information.
+
+2.  Create a card from "Project template" under How-to list and move it
+    to Project proposals list. Since this card serves as a proposal to
+    be reviewed by the UKBB steering committee, notify the members
+    (e.g., @lwjohnst @danielibsen @danielwitte6 @christinadahm @alisa_dk
+    please review proposal) via comment (Activity fields at the bottom
+    of the card). The committee members will approve the access via the
+    card (comment, attachments if needed, etc), so everything is
+    traceable here at Trello, minimizing the need of unstructured email
+    communication.
+
+3.  Make sure your project is listed/covered by FORTEGNELSER (see card
+    under Admin). If not, you need to register your project (links in
+    FORTEGNELSER) and wait for this to go through before accessing the
+    data. If you encounter challenges, notify (with a brief description)
+    the committee members via Trello (preferably) or email.
+
+4.  When all of this is in place, you can apply for data access, as
+    described below.
+
+# Data access
+
+For the access to data, follow these easy steps, one by one.
+Importantly, you have to wait for approval of Step 1 before you can
+continue with Step 2. STEP 1: Register at UK Biobank (UKB):
+https://www.ukbiobank.ac.uk/enable-your-research/register This may take
+a few weeks. Note that you must register under either Aarhus University
+Hospital or Aarhus University as the affiliated institution, as we only
+have project access through those, and NOT SDCA. If you have registered
+under SDCA, no worries, you can easily change this afterwards.
+
+STEP 2: Use same info to register for the UKB Research Analysis Platform
+(UKB RAP): https://platform.dnanexus.com/register
+
+STEP 3: Log in on the UKB RAP (DNAnexus) platform, and check your
+username and email you have registered with (same as for UKB?!). Take a
+screen shot of the successful login.
+
+# Important:
+
+Make sure you have executed all the prior steps before proceeding with
+STEP 4!
+
+STEP 4: Send your username and e-mail (screen shot from STEP 3) you have
+registered with at the UKB RAP to: Alisa.kjaergaard\@auh.rm.dk to be
+added to the AUH/AU project. Remember to provide documentation for
+granted access and name of your supervisor (if any).
+
+NOTE to Alisa: Two-step process. 1. UKB AMS: edit application, add
+member form a scroll down menu under AUH or AU. 2. DNAnexus:
+project-\>share project (people icon to top right, add by username or
+email address).
+
+Now you can log in: https://ukbiobank.dnanexus.com/login
+
+STEP 5: Register your project under the "Ongoing projects" list
