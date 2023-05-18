@@ -34,9 +34,17 @@ reasons:
     student, postdoc, or researcher can better make use of all the
     efforts everyone is doing.
 
+Because of these reasons, we expect everyone working on the Steno UK
+Biobank project to use Git and use Steno's GitHub account to store their
+project.
+
 ## Steps to take when outside the UKB RAP
 
 ::: callout-note
+This step really only needs to be done once.
+:::
+
+::: callout-tip
 Some of these tasks can be really difficult to understand what's going
 on, and that's ok and totally normal. The very start of a project is
 always some of the most difficult stage of a project. But if you follow
@@ -130,6 +138,7 @@ the project, and especially at this stage, the `doc/protocol.Rmd` and
 the `data-raw/project-variables.csv` files. You'll be working on these
 files before beginning to use the RAP and doing analyses.
 
+::: callout-tip
 Most likely, you are new to Git and GitHub. Git is a very powerful way
 of managing your files and your projects, but it also requires some
 major conceptual rewiring of how you work with files and computers. It
@@ -159,6 +168,7 @@ from GitHub. As you work on it and save changes in your Git history, you
 "push" (upload) to GitHub often in order to keep your changes backed up.
 Then, when you get to the paper writing stage, you can pull your results
 from GitHub to your "Local" so you can work without getting charged.
+:::
 
 ::: callout-note
 Why do we do it this way? For one, it is honestly the easiest that we
@@ -188,7 +198,7 @@ list, you'll use Git to save the changes made and push up to GitHub.
 Once your protocol has been reviewed and uploaded to OSF, you're now
 ready to start doing the data analysis on the RAP.
 
-**But before doing anything else**, complete the tasks in the `TODO.md`
+**But before doing anything else**, complete the tasks in the `todo.md`
 file, which will direct you to fill in details in the `README.md`.
 
 After you've done the TODO items, start working towards writing the
@@ -196,57 +206,58 @@ protocol and analysis plan before beginning your work in the UKB RAP.
 
 ## Steps everytime you enter into the UKB RAP
 
-Whenever you open up the UKB RAP, you won't have your project files nor
-have any packages installed. So you'll need to do a few set up tasks
-*each time* you work in the RAP. I've written a function that you can
-source directly that will take you through the steps needed to have
-everything set up. Run these two lines of code in the R Console, and
-afterwards follow the instructions on the Console.
+1.  Whenever you open up the UKB RAP, you won't have your project files
+    nor have any packages installed. So you'll need to do a few set up
+    tasks *each time* you work in the RAP. I've written a function that
+    you can source directly that will take you through the steps needed
+    to have everything set up. Run these two lines of code in the R
+    Console, and afterwards follow the instructions on the Console.
 
-```{r}
-source("https://raw.githubusercontent.com/steno-aarhus/ukbAid/main/R/setup-ukb-rap.R")
-setup_ukb_rap()
-```
+    ```{r}
+    source("https://raw.githubusercontent.com/steno-aarhus/ukbAid/main/R/setup-ukb-rap.R")
+    setup_ukb_rap()
+    ```
 
-Since UKB RAP deletes everything when you Terminate the session, you'll
-be backing up your project on GitHub. What this function above does is
-install the necessary packages, installs the ukbAid package, sets up
-your Git config, sets up your authentication (credentials) to connect to
-GitHub, and finally downloads your GitHub repository into the RAP
-environment. This last point, you would give the repository location in
-the form of `github_username/repository_name`. For instance, my
-repository is
-[`steno-aarhus/mesh`](https://github.com/steno-aarhus/mesh).
+    ::: callout-note
+    Since UKB RAP deletes everything when you Terminate the session,
+    you'll be backing up your project on GitHub. What this function
+    above does is install the necessary packages, installs the ukbAid
+    package, sets up your Git config, sets up your authentication
+    (credentials) to connect to GitHub, and finally downloads your
+    GitHub repository into the RAP environment.
+    :::
 
-<!-- TODO: Change the function to only look in steno-aarhus -->
+2.  Once the project is downloaded from GitHub and created the project
+    in the RAP, you can open it by clicking the `.Rproj` file inside the
+    project folder.
 
-Once the project is downloaded from GitHub and created the project in
-the RAP, you can open it by clicking the `.Rproj` file inside the
-project folder.
+3.  You *may* have to update your credentials after opening up your
+    project, so run this code to paste in your GitHub PAT token.
 
-Then, open up the README.md file in your project and follow the
-instructions there. When you are ready to create the dataset necessary
-for your project, open up the `data-raw/create-data.R` script and follow
-the instructions there to create your dataset.
+    ```{r}
+    gitcreds::gitcreds_set()
+    ```
 
-Remember to push your code to your GitHub. Otherwise all your work on
-the RAP will be lost next time you login. Also remember to terminate
-your session when you are done.
+4.  Then, run these two lines of code in the Console while inside your
+    RStudio Project:
 
-Depending on how long you work inside the RAP environment, you *might*
-have to update the credentials. You do this as you normally would on
-your local computer, using this code:
+    ```{r}
+    pak::pak()
+    targets::tar_make()
+    ```
 
-```{r}
-gitcreds::gitcreds_set()
-```
+    More details about this step is also found in your own project's
+    main `README.md` file.
 
-Remember, do not save any data in the Git history unless you have
-discussed it with the organizing committee. You can save results for
-tables and figures, as long as they are aggregate or statistical
-results.
+5.  When you've finished selecting the variables you want in the
+    `data-raw/project-variables.csv`, you will need to open up the
+    `data-raw/create-data.R` script and follow the instructions there to
+    create your dataset.
 
-## Misc notes
+Remember to frequently commit and push your file changes to your GitHub.
+Otherwise all your work on the RAP will be lost next time you login.
+
+## Other notes
 
 -   **About specific variables**: There are some variables in the list
     of variables we have that don't exist in the RAP database, for
@@ -258,3 +269,7 @@ results.
     BEFORE Terminating your UKB-RAP project**: If you terminate before
     saving and pushing to GitHub, you *will* lose your work!
 
+-   **Remember**, do not save any data in the Git history unless you
+    have discussed it with the organizing committee. You can save
+    results for tables and figures, as long as they are aggregate or
+    statistical results.
