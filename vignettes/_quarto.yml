@@ -10,6 +10,9 @@ website:
         menu:
           - request-access.qmd
           - using-rap.qmd
+      - text: "Admin"
+        menu:
+          - admin.qmd
 
 date: last-modified
 
