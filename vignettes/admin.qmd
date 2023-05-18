@@ -1,11 +1,6 @@
 ---
-title: "admin"
+title: "Administration"
 ---
-
--   Admin
-
-    -   Fortegnelser
-    -   MTA?
 
 ## Adding users to projects
 
