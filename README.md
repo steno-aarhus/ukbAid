@@ -1,11 +1,3 @@
-
-- <a href="#ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap"
-  id="toc-ukbaid-aid-in-doing-analyses-on-the-uk-biobank-rap">ukbAid: Aid
-  in doing analyses on the UK Biobank RAP</a>
-  - <a href="#installation" id="toc-installation">Installation</a>
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # ukbAid: Aid in doing analyses on the UK Biobank RAP
 
 <!-- badges: start -->
@@ -21,16 +13,17 @@ research analysis platform (RAP).
 
 This package and the general workflow we are using will help us be as
 reproducible as possible, but without sharing any data that is not
-permitted. It’s a way for us to start moving in the direction of better
-research practices.
+permitted. It's a way for us to start moving in the direction of better
+research practices. More details are on the
+[website](https://steno-aarhus.github.io/ukbAid).
 
 ## Installation
 
 You can install the development version of ukbAid inside RStudio in the
 R Console like so:
 
-``` r
+```{r}
 # Install pak if not installed already.
 # install.packages("pak")
-pak::pkg_install("steno-aarhus/ukbAid")
+pak::pak("steno-aarhus/ukbAid")
 ```
