@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "governance.html",
+    "href": "governance.html",
+    "title": "governance",
+    "section": "",
+    "text": "Christina Dahm\nDaniel Ibsen\nLuke W. Johnston\nAlisa Kjaergaard\nDaniel Witte"
+  },
+  {
+    "objectID": "governance.html#steering-committee",
+    "href": "governance.html#steering-committee",
+    "title": "governance",
+    "section": "",
+    "text": "Christina Dahm\nDaniel Ibsen\nLuke W. Johnston\nAlisa Kjaergaard\nDaniel Witte"
+  },
+  {
+    "objectID": "workflow.html",
+    "href": "workflow.html",
+    "title": "workflow",
+    "section": "",
+    "text": "Workflow:\n\nRAP\nImportant notes: DON’T SAVE Data\nGeneral research"
+  },
+  {
+    "objectID": "workflow.html#the-process",
+    "href": "workflow.html#the-process",
+    "title": "workflow",
+    "section": "The process",
+    "text": "The process\n\nUpload project proposal on Trello under ‘Project proposals’\nGet acceptance of the proposal from the organizing committee\nAdd project description to Trello under ‘Ongoing projects’\nUpload study protocol on osf.io and add link to project on Trello\nStatistical analyses completed\nGet analysis code reviewed\nUpload study manuscript to pre-print server and add link on Trello\nAdd link to manuscript on Trello once published\nData documentation"
+  },
+  {
+    "objectID": "workflow.html#upload-project-proposal-on-trello-under-project-proposals",
+    "href": "workflow.html#upload-project-proposal-on-trello-under-project-proposals",
+    "title": "workflow",
+    "section": "1. Upload project proposal on Trello under ‘Project proposals’",
+    "text": "1. Upload project proposal on Trello under ‘Project proposals’\nin Trello Use the template and fill in:\n\naim\npopulation\nintervention/exposure\ncomparison\noutcome\n\nFor this stage you do not have to be very detailed about the description. This is just to give an overview of what your project is about. We recommend that you search online for any similar project proposals or published protocols using UKB data online, e.g. on OFS registries, and check ongoing and previous projects here on Trello. You also need to make sure that your project falls under the aim of the overall SDCA UKB Application (See here: https://trello.com/c/INDKm9cV)\nMove this card to ‘Project proposals’ here on Trello and either tag or send an email to the people on the SDCA UKB RAP steering committee (Daniel Witte, Christina Dahm, Alisa Kjærgaard, Luke Johnston or Daniel Ibsen)."
+  },
+  {
+    "objectID": "workflow.html#get-acceptance-of-the-proposal-from-the-organizing-committee",
+    "href": "workflow.html#get-acceptance-of-the-proposal-from-the-organizing-committee",
+    "title": "workflow",
+    "section": "2. Get acceptance of the proposal from the organizing committee",
+    "text": "2. Get acceptance of the proposal from the organizing committee\non Trello Once the card has been added to ‘Project proposal,’ the organizing committee will briefly discuss the project at one of our regular meetings. This is mainly to make sure there is not a huge overlap between other projects and to find potential for collaborations. You may also get a few comments on things to consider in your project and specific issues with the data you may need.\nOne from the organizing committee will be assigned to you as a contact person. Because this person will contribute to your project, this person will also be part of any publications from your UKB project."
+  },
+  {
+    "objectID": "workflow.html#add-project-description-to-trello-under-ongoing-projects",
+    "href": "workflow.html#add-project-description-to-trello-under-ongoing-projects",
+    "title": "workflow",
+    "section": "3. Add project description to Trello under ‘Ongoing projects’",
+    "text": "3. Add project description to Trello under ‘Ongoing projects’\non Trello After approval your project will be moved to ‘Ongoing projects’ and you can add further details to your description if necessary.\nAdd collaborators to your card and indicate in a comment on the card who should have access to the data. Tag Luke and Alisa in your comment and Luke will make the github repository for your project (add github user IDs) and Alisa will register you at UKB and DNA Nexus (see here for procedures: https://trello.com/c/p4uKUQRX)"
+  },
+  {
+    "objectID": "workflow.html#upload-study-protocol-on-osf.io-and-add-link-to-project-on-trello",
+    "href": "workflow.html#upload-study-protocol-on-osf.io-and-add-link-to-project-on-trello",
+    "title": "workflow",
+    "section": "4. Upload study protocol on osf.io and add link to project on Trello",
+    "text": "4. Upload study protocol on osf.io and add link to project on Trello\nin R using UKB aid R package We have decided that all projects should include a pre-registered protocol of the study. This is to encourage more open research and, because there are so many projects being conducted in the UKB, to ensure that you can later claim to have been first with the research idea, if necessary. This is also good research practice and forces one to carefully think about the study before conducting analyses.\nIn addition to the protocol, we encourage that most will also include a detailed statistical analysis plan. This also makes it easier to perform the analysis, as there is a clear direction from the beginning. The analysis plan should be of a similar detail as how you would describe your analysis in a manuscript.\nNote that as an employee at the Region or Aarhus University you have access to get your analysis plan reviewed by a statistician as part of the CONNECT initiative. If you are doing new or more complicated analyses, we encourage you to use this offer.\nThe protocol can be written in R markdown using the template provided in the ukbAid R package. At this point, you will download the ukbAid R package on your own (local) computer."
+  },
+  {
+    "objectID": "workflow.html#statistical-analyses-completed",
+    "href": "workflow.html#statistical-analyses-completed",
+    "title": "workflow",
+    "section": "5. Statistical analyses completed",
+    "text": "5. Statistical analyses completed\nin R on UKB RAP At one point you will have conducted all your analyses. We acknowledge that it is an iterative process, but at one point you will be more or less done with the analysis part.\nAt SDCA we are working on establishing a “code cafe” where you can bring your coding problems and we can review code together. This can be used throughout your UKB analysis.\nBefore you save any results, tables or figures on Github and make the public, you should consult with your contact person from the organizing committee to make sure we follow the GDPR regulations. You are required to be familiar with these before doing data analysis."
+  },
+  {
+    "objectID": "workflow.html#get-code-analysis-reviewed",
+    "href": "workflow.html#get-code-analysis-reviewed",
+    "title": "workflow",
+    "section": "6. Get code analysis reviewed",
+    "text": "6. Get code analysis reviewed\nin R on Github Once you have finished your analysis the organizing committee will either themselves or find someone to review the code in terms of its content, readability and whether it produces what you write in your statistical analysis plan. This is to make sure there are no major mistakes in the code."
+  },
+  {
+    "objectID": "workflow.html#upload-study-manuscript-to-pre-print-server-and-add-link-on-trello",
+    "href": "workflow.html#upload-study-manuscript-to-pre-print-server-and-add-link-on-trello",
+    "title": "workflow",
+    "section": "7. Upload study manuscript to pre-print server and add link on Trello",
+    "text": "7. Upload study manuscript to pre-print server and add link on Trello\non Trello Once you have a draft of the manuscript that is ready for publication, this should be uploaded to a preprint server, again to encourage more open science research practices. There can be reasons for not doing this. Please state this in the project on Trello if that is the case."
+  },
+  {
+    "objectID": "workflow.html#add-link-to-manuscript-on-trello-once-published",
+    "href": "workflow.html#add-link-to-manuscript-on-trello-once-published",
+    "title": "workflow",
+    "section": "8. Add link to manuscript on Trello once published",
+    "text": "8. Add link to manuscript on Trello once published\non Trello Congratulations. Your study is published. Please upload the link to the study on the project and move the project to ‘Completed project’"
+  },
+  {
+    "objectID": "workflow.html#data-documentation",
+    "href": "workflow.html#data-documentation",
+    "title": "workflow",
+    "section": "9, Data documentation",
+    "text": "9, Data documentation\nin R on Github As a final step, we would like you to add relevant code to the common code files (note, this is under construction at the moment). If you have made new variables, functions of types of analyses, that could be of interest to everyone. This step is important because if we all help build these documents, we can as a research unit be much more efficient and aligned in our research practices. In the end, this will be better use of research and give better prevention and care for our patients.\nLast updated: 8 September, 2022. DBI"
+  },
+  {
+    "objectID": "using-rap.html",
+    "href": "using-rap.html",
+    "title": "Working in Research Analysis Platform (RAP)",
+    "section": "",
+    "text": "When working on the UKB RAP, the easiest way (that we’ve found) is to do your work through Git and GitHub on the SDCA account. This is due to a few reasons:\nBecause of these reasons, we expect everyone working on the Steno UK Biobank project to use Git and use Steno’s GitHub account to store their project."
+  },
+  {
+    "objectID": "using-rap.html#steps-to-take-when-outside-the-ukb-rap",
+    "href": "using-rap.html#steps-to-take-when-outside-the-ukb-rap",
+    "title": "Working in Research Analysis Platform (RAP)",
+    "section": "Steps to take when outside the UKB RAP",
+    "text": "Steps to take when outside the UKB RAP\n\n\n\n\n\n\nNote\n\n\n\nThis step really only needs to be done once.\n\n\n\n\n\n\n\n\nTip\n\n\n\nSome of these tasks can be really difficult to understand what’s going on, and that’s ok and totally normal. The very start of a project is always some of the most difficult stage of a project. But if you follow these tasks, you’ll have a solid foundation for doing your work within the special environment of the UK Biobank RAP.\n\n\nThe very first tasks you’ll need to do is to install the ukbAid package:\n\n# Install the pak package if you haven't already.\n# install.packages(\"pak\")\npak::pak(\"steno-aarhus/ukbAid\")\n\nAfter that, we need to make sure that your computer has Git configured properly. In your Console, type out the below code, replacing my name (Luke) and my email with your own:\n\nukbAid::setup_git_config(\"Luke W. Johnston\", \"lwjohnst@gmail.com\")\n\nYou should get an output showing your user.email and user.name.\nlet’s connect your project to GitHub right from the beginning. To do that in a relatively easy way, we have to create a thing called a Personal Access Token (PAT) in GitHub in order for Git on your computer to know how to connect your project to GitHub.\nIf you don’t have a GitHub account, create one first. After that (or if you already have one), when in your RStudio project, in the Console type out this command:\n\nusethis::create_github_token()\n\nThis will send you to your GitHub account and create a basic PAT for you. Change the token’s description to something like “For UKB project”. Set the “Expiry date” to 90 days (this is a good security feature). Create the token, which will change pages and you’ll be shown a string of letters starting with ghp_. Copy this token and save it somewhere safe, preferably in a password manager. This token acts a bit like your password but is safer to use than your password. Once you’ve saved it somewhere, go back to RStudio and than run this command in the Console:\n\ngitcreds::gitcreds_set()\n\nAnd then paste the token into the prompt in the Console. If it asks to replace an existing one, select the “yes” option. Doing this is a bit like using the 2FA message with the temporary passcode you get sent whenever you have to open your work’s email or when you use MitID or NemID (in Denmark). Every time you open RStudio (or start your computer), you need to run this command and give R the token so that it can connect to GitHub securely.\n\n\n\n\n\n\nImportant\n\n\n\nWhy do we need to do this on our computer? Because whenever you connect to GitHub through RStudio (like uploading and downloading your changes), GitHub needs you to authenticate that it is you and not someone else. In order to do that, you need to give GitHub a password to do that. In the past, you could use your same password connected to your GitHub account, but the problem with this method is that your password gets sent over the Internet many times, which increases the risk that someone will maliciously obtain your password. So instead, we use a temporary, restricted-access token that we can easily create and delete. This token only has limited access to your account, so it is safer to send over the Internet, and it can be very easy to delete without affecting your account.\n\n\nNext, you will need to download (“clone” in Git language) the project repository that was created for you. In the Console, type out this, replacing my project abbreviated name (mesh) with your project abbreviated name. Note that you should use the same abbreviation as the one you used when you submitted the “Project Request” form:\n\nusethis::create_from_github(\"steno-aarhus/mesh\")\n\nFrom here, go to the Desktop or wherever you created the project and open up the RStudio .Rproj file so that the project starts up in RStudio. In this project will be the files you need to get started on the project, and especially at this stage, the doc/protocol.Rmd and the data-raw/project-variables.csv files. You’ll be working on these files before beginning to use the RAP and doing analyses.\n\n\n\n\n\n\nTip\n\n\n\nMost likely, you are new to Git and GitHub. Git is a very powerful way of managing your files and your projects, but it also requires some major conceptual rewiring of how you work with files and computers. It takes some time to learn! Your project is on GitHub, and you just downloaded it to your computer. Unlike Dropbox or OneDrive, the files in your project on your computer don’t automatically synchronize with those on GitHub. You have to do it manually. Whenever you use Git and save your changes to the Git history, you need to “Push” your changes to your project files to GitHub. The diagram below shows how it conceptually looks like:\n\n\n\n\n\n\n\n\n\nThe “Local” is your own computer. Whenever you “push” to GitHub, it means it will upload your file changes (like synchronizing in Dropbox). Whenever you “pull” from GitHub, it takes any changes made on GitHub and downloads them to your “Local” computer.\nWhen you work on the UKB-RAP, you will “pull” (download) your project from GitHub. As you work on it and save changes in your Git history, you “push” (upload) to GitHub often in order to keep your changes backed up. Then, when you get to the paper writing stage, you can pull your results from GitHub to your “Local” so you can work without getting charged.\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhy do we do it this way? For one, it is honestly the easiest that we could think of because the UKB RAP is a special environment that requires special steps to work in. Plus, using Git and GitHub makes it easier to have others (like me) collaborate on your project and help you out. So hypothetically, if you need help, I (Luke) could download your project from GitHub and make changes there. Conceptually it would look like:\n\n\n\n\n\n\n\n\n\nThat way it makes it super easy for me (or others) to help out.\n\n\nAs you work on the project, specifically the protocol and selecting the variables for your project from the data-raw/project-variables.csv list, you’ll use Git to save the changes made and push up to GitHub. Once your protocol has been reviewed and uploaded to OSF, you’re now ready to start doing the data analysis on the RAP.\nBut before doing anything else, complete the tasks in the todo.md file, which will direct you to fill in details in the README.md.\nAfter you’ve done the TODO items, start working towards writing the protocol and analysis plan before beginning your work in the UKB RAP."
+  },
+  {
+    "objectID": "using-rap.html#steps-everytime-you-enter-into-the-ukb-rap",
+    "href": "using-rap.html#steps-everytime-you-enter-into-the-ukb-rap",
+    "title": "Working in Research Analysis Platform (RAP)",
+    "section": "Steps everytime you enter into the UKB RAP",
+    "text": "Steps everytime you enter into the UKB RAP\n\nWhenever you open up the UKB RAP, you won’t have your project files nor have any packages installed. So you’ll need to do a few set up tasks each time you work in the RAP. I’ve written a function that you can source directly that will take you through the steps needed to have everything set up. Run these two lines of code in the R Console, and afterwards follow the instructions on the Console.\n\nsource(\"https://raw.githubusercontent.com/steno-aarhus/ukbAid/main/R/setup-ukb-rap.R\")\nsetup_ukb_rap()\n\n\n\n\n\n\n\nNote\n\n\n\nSince UKB RAP deletes everything when you Terminate the session, you’ll be backing up your project on GitHub. What this function above does is install the necessary packages, installs the ukbAid package, sets up your Git config, sets up your authentication (credentials) to connect to GitHub, and finally downloads your GitHub repository into the RAP environment.\n\n\nOnce the project is downloaded from GitHub and created the project in the RAP, you can open it by clicking the .Rproj file inside the project folder.\nYou may have to update your credentials after opening up your project, so run this code to paste in your GitHub PAT token.\n\ngitcreds::gitcreds_set()\n\nThen, run these two lines of code in the Console while inside your RStudio Project:\n\npak::pak()\ntargets::tar_make()\n\nMore details about this step is also found in your own project’s main README.md file.\nWhen you’ve finished selecting the variables you want in the data-raw/project-variables.csv, you will need to open up the data-raw/create-data.R script and follow the instructions there to create your dataset.\n\nRemember to frequently commit and push your file changes to your GitHub. Otherwise all your work on the RAP will be lost next time you login."
+  },
+  {
+    "objectID": "using-rap.html#other-notes",
+    "href": "using-rap.html#other-notes",
+    "title": "Working in Research Analysis Platform (RAP)",
+    "section": "Other notes",
+    "text": "Other notes\n\nAbout specific variables: There are some variables in the list of variables we have that don’t exist in the RAP database, for instance like date of birth. This may be due to privacy concerns, so instead you would have to use year of birth (p34) to determine their age.\nSave your changes in the Git history and push to your GitHub BEFORE Terminating your UKB-RAP project: If you terminate before saving and pushing to GitHub, you will lose your work!\nRemember, do not save any data in the Git history unless you have discussed it with the organizing committee. You can save results for tables and figures, as long as they are aggregate or statistical results."
+  },
+  {
+    "objectID": "request-access.html",
+    "href": "request-access.html",
+    "title": "Requesting access to the UK Biobank through SDCA’s project",
+    "section": "",
+    "text": "Warning\n\n\n\nFirst and foremost, you must be employed by either Aarhus University or by Region Midt and you’re research topic must fall under our UK Biobank project application.\n\n\nFor the access to data, follow these easy steps, one by one. Importantly, you have to wait for approval of step 1 before you can continue with step 2. And you need to complete step 3 before moving on the the next steps.\n\nRegister yourself at UK Biobank. This may take a few weeks. You must register under either Aarhus University Hospital or Aarhus University as the affiliated institution, as we only have project access through those, and NOT SDCA. If you have registered under SDCA, no worries, you can easily change this afterwards.\nUse the same details to register for the UKB Research Analysis Platform (UKB RAP), that is hosted by DNAnexus.\nLog in on the UKB RAP and check that your username and email have been registered. You will need these details when you fill in the request form.\nFill in this Google Form. This form will automatically create a Project Proposal in the ukbAid repository as well as creating an Issue that the organizing committee will ask for more details about before approving the project.\n\n\n\nOnce your project has been approved and your project GitHub repository created for you, you can log into the RAP and then follow the instructions on the Using the RAP page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "Welcome to our documentation on working with the UK Biobank in the Research Analysis Platform environment! We hope these documentation, as well as the ukbAid package, can help streamline and automate many of the challenging aspects of working in the RAP server environment, on top of working with such a large dataset like the UK Biobank."
+  },
+  {
+    "objectID": "index.html#purpose-and-aims",
+    "href": "index.html#purpose-and-aims",
+    "title": "Welcome!",
+    "section": "Purpose and aims",
+    "text": "Purpose and aims\nWe started this overall project for two main reason:\n\nTo build up a process and workflow for effective collaboration that follows best practices and principles in openness, reproducibility, and scientific rigor.\nTo build a community around a shared project at Steno Aarhus in order to create a better research culture that embraces these principles listed in the first reason above, as well as in sharing and contributing.\n\nIn that regard, we follow the principle that anyone who participates in the community and on sub-projects is considered a collaborator. There are multiple opportunities for people to participate, such as through frequent code reviews, administration around the community, providing feedback on the project, and making edits and suggestions, among others."
+  },
+  {
+    "objectID": "index.html#what-is-the-uk-biobank",
+    "href": "index.html#what-is-the-uk-biobank",
+    "title": "Welcome!",
+    "section": "What is the UK Biobank?",
+    "text": "What is the UK Biobank?\nUK Biobank is a large-scale biomedical database and research resource, containing in-depth genetic and health information from half a million UK participants. The database is regularly augmented with additional data and is globally accessible to approved researchers. Variables can be browsed on the Showcase page. Almost anything you can think of is available. With our project, we have access to all the data. However, even though we have access, we can’t just do any analysis, it has to still fall under the project description."
+  },
+  {
+    "objectID": "index.html#who-can-join",
+    "href": "index.html#who-can-join",
+    "title": "Welcome!",
+    "section": "Who can join?",
+    "text": "Who can join?\nAll researchers (including PhD students) at AUH and AU who are interested are welcome to join. The project description and application to UK Biobank was deliberately very broad, so if you have ideas for your application and they fit under the project description, then please check out the Next Steps below!"
+  },
+  {
+    "objectID": "index.html#what-do-you-get-when-you-join",
+    "href": "index.html#what-do-you-get-when-you-join",
+    "title": "Welcome!",
+    "section": "What do you get when you join?",
+    "text": "What do you get when you join?\n\nAccess to documentation and tools to make it easier for you do to research using the UK Biobank.\nA community of people, both novice and experienced, who have knowledge and skills in a range of areas and who all have a shared vision for collaborating, sharing, learning, and teaching.\nAn educational opportunity to learn better research practices, better coding skills and knowledge, better statistical knowledge, and better teamworking and collaboration skills.\nFrequent code reviews of your analysis, to help you along the way and make sure you’re doing things right/better.\nShared code from others on the project that you can use in your own project as well as for inspiration and learning."
+  },
+  {
+    "objectID": "index.html#expectations",
+    "href": "index.html#expectations",
+    "title": "Welcome!",
+    "section": "Expectations",
+    "text": "Expectations\n\nContributions: Because of the nature of the project and the range of different tasks involved, there are many things to do related to this project that don’t always directly relate to research. Like adding documentation, contributing to the ukbAid package code, organizing meetings and activities, or doing reviews of code or text, there is something for everyone! In this way, we expect that anyone doing a project with us also contribute to the community and other activities, including looking over others’ projects.\nAuthorship: We follow the principle of “if you’ve contributed on a fairly regular basis to this community, you deserve authorship on any outputs from this project”. Authorship is a strange, archaic concept that doesn’t easily fit into the modern research environment. So we instead view it as “contributorship” and leave the decision of being a “formal author” on any output to the contributors. These decisions will happen at the end of a projects lifecycle before uploading to an archive (like a preprint archive).\nProject activities: Activities like writing the paper, or coding for the analysis, or any thing else related to the project, must be done through Git and GitHub on the our steno-aarhus organization. You can have a “fork”/copy of the repository on your personal GitHub, but do your main work through the Steno account. We expect this because, in order to help troubleshoot and deal with any technical issues, it is significantly easier for us if it is on the Steno account."
+  },
+  {
+    "objectID": "index.html#next-steps",
+    "href": "index.html#next-steps",
+    "title": "Welcome!",
+    "section": "Next steps",
+    "text": "Next steps\n\nReview the Project Description page.\nDo the steps in the Requesting Access page."
+  },
+  {
+    "objectID": "admin.html",
+    "href": "admin.html",
+    "title": "Administration",
+    "section": "",
+    "text": "In the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.\nIn DNAnexus, go to “Project -&gt; Share project” (people icon to top right, add by username or email address)."
+  },
+  {
+    "objectID": "admin.html#adding-users-to-projects",
+    "href": "admin.html#adding-users-to-projects",
+    "title": "Administration",
+    "section": "",
+    "text": "In the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.\nIn DNAnexus, go to “Project -&gt; Share project” (people icon to top right, add by username or email address)."
+  },
+  {
+    "objectID": "project-description.html",
+    "href": "project-description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "Note\n\n\n\nThis project description is the application we submitted to UK Biobank."
+  },
+  {
+    "objectID": "project-description.html#a1.-project-title",
+    "href": "project-description.html#a1.-project-title",
+    "title": "Project description",
+    "section": "A1. Project title",
+    "text": "A1. Project title\nIdentifying preventable risk factors and potential drug-targets in diabetes and associated diseases"
+  },
+  {
+    "objectID": "project-description.html#a2.-research-questions-and-aims",
+    "href": "project-description.html#a2.-research-questions-and-aims",
+    "title": "Project description",
+    "section": "A2. Research question(s) and aim(s)",
+    "text": "A2. Research question(s) and aim(s)\nThe overarching aim of this project is to investigate the association between genetic and environmental factors and diabetes and associated diseases/conditions (e.g., cardiovascular, kidney and thyroid diseases, obesity and related diseases, e.g., cancers and mental health disorders, including cognitive function). To examine the nature of the investigated associations, we will integrate results from different statistical methods, where each of the methods has different and largely unrelated sources of potential bias, i.e., triangulation. Besides common regression analyses, the methods will include, but not be restricted to dyadic multilevel modeling, instrumental variable approach, mediation analyses, artificial intelligence (AI), machine learning and image analyses. This will enable us to estimate the relative contribution of heritability (genetic variants as instruments for exposure) and environmental exposures (early life, adult lifestyle, parental and spousal/household exposure) on the risk of developing diabetes and associated diseases/conditions. This could potentially help identify preventable risk factors and potential drug-targets in diabetes and associated diseases."
+  },
+  {
+    "objectID": "project-description.html#a3.-the-background-and-scientific-rationale-of-the-proposed-research-project-in-general",
+    "href": "project-description.html#a3.-the-background-and-scientific-rationale-of-the-proposed-research-project-in-general",
+    "title": "Project description",
+    "section": "A3. The background and scientific rationale of the proposed research project in general",
+    "text": "A3. The background and scientific rationale of the proposed research project in general\nDiabetes is a major public health burden with an estimated global prevalence of 463 million people. An estimated half of all people with diabetes are unaware of their disease and consequently will delay the onset of treatment and increase the risk of developing complications and comorbidities. These complications and comorbidities include certain types of cancers and mental health disorders (Parkinson’s disease, dementia, mood disorders), cardiovascular disease (CVD), gastro-intestinal disorders, nephropathy, neuropathy, and retinopathy. These complications also often share the same risk factors as diabetes, such as obesity, smoking, sedentary lifestyle, hypertension, and dyslipidemia, making it difficult to disentangle the relative contribution that diabetes might have on the risk for complications. For instance, people with diabetes have a higher prevalence of thyroid disorders compared with the normal population (10.8% vs. 6.6%). Diabetes and thyroid disorders have been shown to mutually influence each other: thyroid hormones contribute to the regulation of carbohydrate metabolism and pancreatic function, and diabetes affects thyroid function tests to variable extents. The presence of thyroid dysfunction may affect diabetes control, such as for the relationship between hyperthyroidism and worsening glycemic control and increased insulin requirements."
+  },
+  {
+    "objectID": "project-description.html#a4.-a-brief-description-of-the-methods-to-be-used",
+    "href": "project-description.html#a4.-a-brief-description-of-the-methods-to-be-used",
+    "title": "Project description",
+    "section": "A4. A brief description of the method(s) to be used",
+    "text": "A4. A brief description of the method(s) to be used\nIn addition to simple regression analyses in observational studies, we will employ several other statistical methods. While observational studies are prone to confounding and reverse causation, the genetic methods are largely free from both, and thus allow for inference on causality. For the genetic analysis we will use one-sample (e.g., Wald ratio) as well as two-sample Mendelian Randomization (MR) methods (inverse variance weighted, weighted median, MR-Egger, MR-PRESSO, MR Steiger), as the latter method performs well even within a single large sample such as the UK Biobank. Since the different two-sample MR methods make different assumptions about horizontal pleiotropy (when a genetic variant affects the outcome of interest through traits or pathways other than or in addition to the intermediate phenotype under investigation), we will apply them all in order to lower risk of false positive findings and bias.\nTo examine the pathways through which an exposure affects an outcome, we will employ mediation analyses: multivariable MR (MVMR) and the NetCoupler-algorithm. MVMR allows for equivalent analysis to mediation within the MR framework, and can therefore estimate mediation effects. NetCoupler is an algorithm that estimates causal pathways between a set of -omic (e.g., metabolomics, lipidomics) or other high-dimensional metabolic data and either a disease outcome, an exposure, or both.\nDyadic multilevel analysis will be used to identify hour-by-hour patterns of covariation in daily physical activity and sleep between couples over a seven day time window. Image analyses based on different established as well as novel modalities will be used to investigate the associations between metabolic phenotypes and diabetes with cardiovascular and cerebral/cognitive complications, i.e. target organ damage (e.g., cardiac function, vascular integrity, carotid remodeling, structural cerebral change) and clinical complications (cardiovascular event, cognitive function)."
+  },
+  {
+    "objectID": "project-description.html#a5.-the-type-and-size-of-dataset-required",
+    "href": "project-description.html#a5.-the-type-and-size-of-dataset-required",
+    "title": "Project description",
+    "section": "A5. The type and size of dataset required",
+    "text": "A5. The type and size of dataset required\nOur request is for data for the whole cohort. It would include the following information: population characteristics, employment, demographics, comorbidities, hospital inpatient data, critical care data, primary care data, ECG, accelerometer, genomic and metabolomic data, biochemical markers, lifestyle and environmental exposures (including diet), health outcomes and imaging data."
+  },
+  {
+    "objectID": "project-description.html#a6.-the-expected-value-of-the-research",
+    "href": "project-description.html#a6.-the-expected-value-of-the-research",
+    "title": "Project description",
+    "section": "A6. The expected value of the research",
+    "text": "A6. The expected value of the research\nWe expect to be able to estimate the relative contribution of heritability (genetic variants as instruments for exposure) and environmental exposures (early life, adult lifestyle and parental and spousal/household exposure) on the risk of developing diabetes and associated diseases/conditions. Identifying potentially preventable risk factors and potential drug-targets in diabetes and associated diseases/conditions has the potential to improve prevention and treatment of these diseases/conditions."
+  },
+  {
+    "objectID": "project-description.html#a7.-keywords-summarising-proposed-research-project",
+    "href": "project-description.html#a7.-keywords-summarising-proposed-research-project",
+    "title": "Project description",
+    "section": "A7. Keywords summarising proposed research project",
+    "text": "A7. Keywords summarising proposed research project\nDiabetes, aetiology, comorbidities, complications, life course"
+  },
+  {
+    "objectID": "project-description.html#a8.-please-provide-a-lay-summary-of-your-research-project",
+    "href": "project-description.html#a8.-please-provide-a-lay-summary-of-your-research-project",
+    "title": "Project description",
+    "section": "A8. Please provide a lay summary of your research project",
+    "text": "A8. Please provide a lay summary of your research project\nThe number of people living with diabetes is increasing worldwide. People with diabetes are at a higher risk for getting other health complications like cardiovascular disease, kidney and thyroid diseases, cancer, and mental health disorders. These complications also often share the same risk factors as diabetes, such as obesity, smoking, sedentary lifestyle, hypertension, and dyslipidemia. We want to understand how diabetes contributes to these complications/conditions (and vice versa) so that we can use that information in trying to find potential treatments with drugs or other interventions. For instance, if diabetes impacts a certain disease because of genes, this might be a good place to consider how drugs might help. Or if we find that a specific lifestyle behaviour or feature in the environment, an intervention might be a better approach to use. The project is going to last at least three years."
+  },
+  {
+    "objectID": "important-notes.html",
+    "href": "important-notes.html",
+    "title": "Important notes",
+    "section": "",
+    "text": "Note\n\n\n\nThis notice was emailed to us from UK Biobank.\n\n\nUse of 3rd party code-sharing repositories (e.g. GitHub)\nIt has come to our attention that researchers are increasingly uploading software tools and analysis scripts - which is an acceptable practice and required by some journals - to web-based repositories (such as GitHub). Given that such scripts may have been run on underlying UK Biobank data, please ensure that no UK Biobank data are uploaded to these repositories (either as a result of being incorporated within the analysis code, or otherwise being referenced in a manner that leads to its inclusion).\nMaking any participant-level UK Biobank data available on a web-based repository is not acceptable. As such, UK Biobank would re-iterate that all researchers exercise appropriate oversight, care and control to ensure that such uploads of data do not occur.\nUK Biobank considers that the great majority of researchers are aware of UK Biobank’s requirements with regard to processing and storing of its data, and reminds all researchers that UK Biobank participant data must always be treated in a manner consistent with the provisions of the Access Procedures and the MTA (and the data security provisions of the MTA) and specifically:\n\nmay not be shared (directly or indirectly) with other third parties (outside of an approved application).\nmay not be uploaded (directly or indirectly) to web-based or other repositories accessible by third parties.\n\nAside from any legal consequences, any default in complying with these obligations may lead to applications and registrations being terminated.\nA guide to researcher best practice for use of 3rd party code sharing repositories is available on the UK Biobank website here: https://www.ukbiobank.ac.uk/media/1vhh2vip/github-3rd-party-sharing.pdf\nBest wishes,\nUK Biobank"
+  },
+  {
+    "objectID": "important-notes.html#caution-when-using-github",
+    "href": "important-notes.html#caution-when-using-github",
+    "title": "Important notes",
+    "section": "",
+    "text": "Note\n\n\n\nThis notice was emailed to us from UK Biobank.\n\n\nUse of 3rd party code-sharing repositories (e.g. GitHub)\nIt has come to our attention that researchers are increasingly uploading software tools and analysis scripts - which is an acceptable practice and required by some journals - to web-based repositories (such as GitHub). Given that such scripts may have been run on underlying UK Biobank data, please ensure that no UK Biobank data are uploaded to these repositories (either as a result of being incorporated within the analysis code, or otherwise being referenced in a manner that leads to its inclusion).\nMaking any participant-level UK Biobank data available on a web-based repository is not acceptable. As such, UK Biobank would re-iterate that all researchers exercise appropriate oversight, care and control to ensure that such uploads of data do not occur.\nUK Biobank considers that the great majority of researchers are aware of UK Biobank’s requirements with regard to processing and storing of its data, and reminds all researchers that UK Biobank participant data must always be treated in a manner consistent with the provisions of the Access Procedures and the MTA (and the data security provisions of the MTA) and specifically:\n\nmay not be shared (directly or indirectly) with other third parties (outside of an approved application).\nmay not be uploaded (directly or indirectly) to web-based or other repositories accessible by third parties.\n\nAside from any legal consequences, any default in complying with these obligations may lead to applications and registrations being terminated.\nA guide to researcher best practice for use of 3rd party code sharing repositories is available on the UK Biobank website here: https://www.ukbiobank.ac.uk/media/1vhh2vip/github-3rd-party-sharing.pdf\nBest wishes,\nUK Biobank"
+  }
+]
