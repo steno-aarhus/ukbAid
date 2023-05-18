@@ -8,10 +8,6 @@ title: "workflow"
     -   Important notes: DON'T SAVE Data
     -   General research
 
-Updated: 11-01-2023
-
-Updated: 11-01-2023
-
 # Overview
 
 This is the current workflow of how you start with an idea for a project

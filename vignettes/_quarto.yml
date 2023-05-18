@@ -6,7 +6,7 @@ website:
   title: "ukbAid"
   navbar:
     right:
-      - index.Rmd
+      - index.qmd
       - project-description.qmd
       - text: "Getting started"
         menu:
