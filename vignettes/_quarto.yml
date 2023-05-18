@@ -6,6 +6,7 @@ website:
   navbar:
     right:
       - index.Rmd
+      - project-description.qmd
       - text: "Getting started"
         menu:
           - request-access.qmd

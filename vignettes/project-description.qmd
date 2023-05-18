@@ -1,0 +1,171 @@
+---
+title: "Project description"
+---
+
+::: callout-note
+This project description is the application we submitted to UK Biobank.
+:::
+
+## A1. Project title
+
+::: content-hidden
+Max 200 characters.
+:::
+
+Identifying preventable risk factors and potential drug-targets in
+diabetes and associated diseases
+
+## A2. Research question(s) and aim(s)
+
+::: content-hidden
+Max up to 5000 characters or 200 words.
+:::
+
+The overarching aim of this project is to investigate the association
+between genetic and environmental factors and diabetes and associated
+diseases/conditions (e.g., cardiovascular, kidney and thyroid diseases,
+obesity and related diseases, e.g., cancers and mental health disorders,
+including cognitive function). To examine the nature of the investigated
+associations, we will integrate results from different statistical
+methods, where each of the methods has different and largely unrelated
+sources of potential bias, i.e., triangulation. Besides common
+regression analyses, the methods will include, but not be restricted to
+dyadic multilevel modeling, instrumental variable approach, mediation
+analyses, artificial intelligence (AI), machine learning and image
+analyses. This will enable us to estimate the relative contribution of
+heritability (genetic variants as instruments for exposure) and
+environmental exposures (early life, adult lifestyle, parental and
+spousal/household exposure) on the risk of developing diabetes and
+associated diseases/conditions. This could potentially help identify
+preventable risk factors and potential drug-targets in diabetes and
+associated diseases.
+
+## A3. The background and scientific rationale of the proposed research project in general
+
+::: content-hidden
+Max up to 5000 characters or 300 words.
+:::
+
+Diabetes is a major public health burden with an estimated global
+prevalence of 463 million people. An estimated half of all people with
+diabetes are unaware of their disease and consequently will delay the
+onset of treatment and increase the risk of developing complications and
+comorbidities. These complications and comorbidities include certain
+types of cancers and mental health disorders (Parkinson's disease,
+dementia, mood disorders), cardiovascular disease (CVD),
+gastro-intestinal disorders, nephropathy, neuropathy, and retinopathy.
+These complications also often share the same risk factors as diabetes,
+such as obesity, smoking, sedentary lifestyle, hypertension, and
+dyslipidemia, making it difficult to disentangle the relative
+contribution that diabetes might have on the risk for complications. For
+instance, people with diabetes have a higher prevalence of thyroid
+disorders compared with the normal population (10.8% vs. 6.6%). Diabetes
+and thyroid disorders have been shown to mutually influence each other:
+thyroid hormones contribute to the regulation of carbohydrate metabolism
+and pancreatic function, and diabetes affects thyroid function tests to
+variable extents. The presence of thyroid dysfunction may affect
+diabetes control, such as for the relationship between hyperthyroidism
+and worsening glycemic control and increased insulin requirements.
+
+## A4. A brief description of the method(s) to be used
+
+::: content-hidden
+Max up to 5000 characters or 300 words.
+:::
+
+In addition to simple regression analyses in observational studies, we
+will employ several other statistical methods. While observational
+studies are prone to confounding and reverse causation, the genetic
+methods are largely free from both, and thus allow for inference on
+causality. For the genetic analysis we will use one-sample (e.g., Wald
+ratio) as well as two-sample Mendelian Randomization (MR) methods
+(inverse variance weighted, weighted median, MR-Egger, MR-PRESSO, MR
+Steiger), as the latter method performs well even within a single large
+sample such as the UK Biobank. Since the different two-sample MR methods
+make different assumptions about horizontal pleiotropy (when a genetic
+variant affects the outcome of interest through traits or pathways other
+than or in addition to the intermediate phenotype under investigation),
+we will apply them all in order to lower risk of false positive findings
+and bias.
+
+To examine the pathways through which an exposure affects an outcome, we
+will employ mediation analyses: multivariable MR (MVMR) and the
+NetCoupler-algorithm. MVMR allows for equivalent analysis to mediation
+within the MR framework, and can therefore estimate mediation effects.
+NetCoupler is an algorithm that estimates causal pathways between a set
+of -omic (e.g., metabolomics, lipidomics) or other high-dimensional
+metabolic data and either a disease outcome, an exposure, or both.
+
+Dyadic multilevel analysis will be used to identify hour-by-hour
+patterns of covariation in daily physical activity and sleep between
+couples over a seven day time window. Image analyses based on different
+established as well as novel modalities will be used to investigate the
+associations between metabolic phenotypes and diabetes with
+cardiovascular and cerebral/cognitive complications, i.e. target organ
+damage (e.g., cardiac function, vascular integrity, carotid remodeling,
+structural cerebral change) and clinical complications (cardiovascular
+event, cognitive function).
+
+## A5. The type and size of dataset required
+
+::: content-hidden
+For instance, men only, imaging data only, whole cohort, etc.
+
+Max up to 5000 characters or 100 words.
+:::
+
+Our request is for data for the whole cohort. It would include the
+following information: population characteristics, employment,
+demographics, comorbidities, hospital inpatient data, critical care
+data, primary care data, ECG, accelerometer, genomic and metabolomic
+data, biochemical markers, lifestyle and environmental exposures
+(including diet), health outcomes and imaging data.
+
+## A6. The expected value of the research
+
+::: content-hidden
+(taking into account the public interest requirement) (up to 5000
+characters or 100 words):
+:::
+
+We expect to be able to estimate the relative contribution of
+heritability (genetic variants as instruments for exposure) and
+environmental exposures (early life, adult lifestyle and parental and
+spousal/household exposure) on the risk of developing diabetes and
+associated diseases/conditions. Identifying potentially preventable risk
+factors and potential drug-targets in diabetes and associated
+diseases/conditions has the potential to improve prevention and
+treatment of these diseases/conditions.
+
+## A7. Keywords summarising proposed research project
+
+::: content-hidden
+Provide up to 6 keywords which best summarise your proposed research
+project.
+:::
+
+Diabetes, aetiology, comorbidities, complications, life course
+
+## A8. Please provide a lay summary of your research project
+
+::: content-hidden
+In plain English, stating the aims, scientific rationale, project
+duration and public health impact.
+
+Max up to 5000 characters or 400 words.
+:::
+
+The number of people living with diabetes is increasing worldwide.
+People with diabetes are at a higher risk for getting other health
+complications like cardiovascular disease, kidney and thyroid diseases,
+cancer, and mental health disorders. These complications also often
+share the same risk factors as diabetes, such as obesity, smoking,
+sedentary lifestyle, hypertension, and dyslipidemia. We want to
+understand how diabetes contributes to these complications/conditions
+(and vice versa) so that we can use that information in trying to find
+potential treatments with drugs or other interventions. For instance, if
+diabetes impacts a certain disease because of genes, this might be a
+good place to consider how drugs might help. Or if we find that a
+specific lifestyle behaviour or feature in the environment, an
+intervention might be a better approach to use. The project is going to
+last at least three years.
