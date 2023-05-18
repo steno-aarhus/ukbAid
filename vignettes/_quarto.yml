@@ -6,6 +6,10 @@ website:
   navbar:
     right:
       - index.Rmd
+      - text: "Getting started"
+        menu:
+          - request-access.qmd
+          - using-rap.qmd
 
 date: last-modified
 
