@@ -1,11 +1,23 @@
 project:
   type: website
+  output-dir: "../public"
 
 website:
   title: "ukbAid"
   navbar:
     right:
-      - index.Rmd
+      - index.qmd
+      - project-description.qmd
+      - text: "Getting started"
+        menu:
+          - request-access.qmd
+          - using-rap.qmd
+          - important-notes.qmd
+      - text: "Admin"
+        menu:
+          - admin.qmd
+
+date: last-modified
 
 format:
   html:

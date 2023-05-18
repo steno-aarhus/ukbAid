@@ -1,0 +1,10 @@
+---
+title: "Administration"
+---
+
+## Adding users to projects
+
+1.  In the UKB AMS go to "Edit application", then go to the "Add member"
+    form and select the scroll down menu, using either AUH or AU.
+2.  In DNAnexus, go to "Project -\> Share project" (people icon to top
+    right, add by username or email address).

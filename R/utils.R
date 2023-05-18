@@ -18,7 +18,14 @@ build_website <- function() {
     rlang::abort("Please install Quarto to use this function.")
   }
 
-  quarto::quarto_render("vignettes/index.Rmd")
+  withr::with_dir(
+    new = fs::path_package("vignettes", package = "ukbAid"),
+    {quarto::quarto_render()}
+  )
+  # pkgdown::init_site()
+  # pkgdown::build_home()
+  # pkgdown::build_reference()
+  # pkgdown::build_news()
 }
 
 

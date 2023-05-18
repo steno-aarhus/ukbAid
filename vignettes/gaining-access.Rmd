@@ -1,7 +1,0 @@
----
-title: "How to get access to UK Biobank with SDCA"
----
-
-> First and foremost, you must be employed by either Aarhus University
-> or by Region Midt and you're research topic must fall under our UK
-> Biobank project application.

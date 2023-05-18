@@ -1,0 +1,48 @@
+---
+title: Important notes
+---
+
+## Caution when using GitHub
+
+::: callout-note
+This notice was emailed to us from UK Biobank.
+:::
+
+Use of 3rd party code-sharing repositories (e.g. GitHub)
+
+It has come to our attention that researchers are increasingly uploading
+software tools and analysis scripts - which is an acceptable practice
+and required by some journals - to web-based repositories (such as
+GitHub). Given that such scripts may have been run on underlying UK
+Biobank data, please ensure that **no UK Biobank data are uploaded** to
+these repositories (either as a result of being incorporated within the
+analysis code, or otherwise being referenced in a manner that leads to
+its inclusion).
+
+Making any participant-level UK Biobank data available on a web-based
+repository is not acceptable. As such, UK Biobank would re-iterate that
+all researchers exercise appropriate oversight, care and control to
+ensure that such uploads of data do not occur.
+
+UK Biobank considers that the great majority of researchers are aware of
+UK Biobank's requirements with regard to processing and storing of its
+data, and reminds all researchers that UK Biobank participant data must
+always be treated in a manner consistent with the provisions of the
+Access Procedures and the MTA (and the data security provisions of the
+MTA) and specifically:
+
+-   may not be shared (directly or indirectly) with other third parties
+    (outside of an approved application).
+-   may not be uploaded (directly or indirectly) to web-based or other
+    repositories accessible by third parties.
+
+Aside from any legal consequences, any default in complying with these
+obligations may lead to applications and registrations being terminated.
+
+A guide to researcher best practice for use of 3rd party code sharing
+repositories is available on the UK Biobank website here:
+https://www.ukbiobank.ac.uk/media/1vhh2vip/github-3rd-party-sharing.pdf
+
+Best wishes,
+
+UK Biobank

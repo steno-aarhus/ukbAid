@@ -1,0 +1,42 @@
+---
+title: "Requesting access to the UK Biobank through SDCA's project"
+---
+
+::: callout-warning
+First and foremost, you must be employed by either Aarhus University or
+by Region Midt and you're research topic must fall under our UK Biobank
+project application.
+:::
+
+For the access to data, follow these easy steps, one by one.
+Importantly, you have to wait for approval of step 1 before you can
+continue with step 2. And you need to complete step 3 before moving on
+the the next steps.
+
+1.  Register yourself at [UK
+    Biobank](https://www.ukbiobank.ac.uk/enable-your-research/register).
+    This may take a few weeks. You **must** register under either Aarhus
+    University Hospital or Aarhus University as the affiliated
+    institution, as we only have project access through those, and NOT
+    SDCA. If you have registered under SDCA, no worries, you can easily
+    change this afterwards.
+
+2.  Use the same details to
+    [register](https://platform.dnanexus.com/register) for the UKB
+    Research Analysis Platform (UKB RAP), that is hosted by DNAnexus.
+
+3.  Log in on the UKB RAP and check that your username and email have
+    been registered. You will need these details when you fill in the
+    request form.
+
+4.  Fill in this [Google Form](). This form will automatically create a
+    Project Proposal in the ukbAid repository as well as creating an
+    Issue that the organizing committee will ask for more details about
+    before approving the project.
+
+<!-- TODO: Add links to where proposals will be. -->
+
+5.  Once your project has been approved and your project GitHub
+    repository created for you, you can log into the
+    [RAP](https://ukbiobank.dnanexus.com/login) and then follow the
+    instructions on the [Using the RAP](using-rap.qmd) page.

@@ -1,0 +1,98 @@
+---
+title: "Welcome!"
+---
+
+Welcome to our documentation on working with the UK Biobank in the
+Research Analysis Platform environment! We hope these documentation, as
+well as the ukbAid package, can help streamline and automate many of the
+challenging aspects of working in the RAP server environment, on top of
+working with such a large dataset like the UK Biobank.
+
+## Purpose and aims
+
+We started this overall project for two main reason:
+
+1.  To build up a process and workflow for effective collaboration that
+    follows best practices and principles in openness, reproducibility,
+    and scientific rigor.
+2.  To build a community around a shared project at Steno Aarhus in
+    order to create a better research culture that embraces these
+    principles listed in the first reason above, as well as in sharing
+    and contributing.
+
+In that regard, we follow the principle that anyone who participates in
+the community and on sub-projects is considered a collaborator. There
+are multiple opportunities for people to participate, such as through
+frequent code reviews, administration around the community, providing
+feedback on the project, and making edits and suggestions, among others.
+
+## What is the UK Biobank?
+
+[UK Biobank](https://www.ukbiobank.ac.uk/) is a large-scale biomedical
+database and research resource, containing in-depth genetic and health
+information from half a million UK participants. The database is
+regularly augmented with additional data and is globally accessible to
+approved researchers. Variables can be browsed on the
+[Showcase](https://biobank.ndph.ox.ac.uk/showcase/browse.cgi?id=0&cd=browse)
+page. Almost anything you can think of is available. With our project,
+we have access to all the data. However, even though we have access, we
+can't just do *any* analysis, it has to still fall under the project
+[description](project-description.qmd).
+
+## Who can join?
+
+All researchers (including PhD students) at AUH and AU who are
+interested are welcome to join. The [project
+description](project-description.qmd) and application to UK Biobank was
+deliberately very broad, so if you have ideas for your application and
+they fit under the [project description](project-description.qmd), then
+please check out the [Next Steps](#next-steps) below!
+
+## What do you get when you join?
+
+-   Access to documentation and tools to make it easier for you do to
+    research using the UK Biobank.
+-   A community of people, both novice and experienced, who have
+    knowledge and skills in a range of areas and who all have a shared
+    vision for collaborating, sharing, learning, and teaching.
+-   An educational opportunity to learn better research practices,
+    better coding skills and knowledge, better statistical knowledge,
+    and better teamworking and collaboration skills.
+-   Frequent code reviews of your analysis, to help you along the way
+    and make sure you're doing things right/better.
+-   Shared code from others on the project that you can use in your own
+    project as well as for inspiration and learning.
+
+## Expectations
+
+-   **Contributions**: Because of the nature of the project and the
+    range of different tasks involved, there are many things to do
+    related to this project that don't always directly relate to
+    research. Like adding documentation, contributing to the ukbAid
+    package code, organizing meetings and activities, or doing reviews
+    of code or text, there is something for everyone! In this way, we
+    expect that anyone doing a project with us also contribute to the
+    community and other activities, including looking over others'
+    projects.
+-   **Authorship**: We follow the principle of "if you've contributed on
+    a fairly regular basis to this community, you deserve authorship on
+    any outputs from this project". Authorship is a strange, archaic
+    concept that doesn't easily fit into the modern research
+    environment. So we instead view it as "contributorship" and leave
+    the decision of being a "formal author" on any output to the
+    contributors. These decisions will happen at the end of a projects
+    lifecycle before uploading to an archive (like a preprint archive).
+-   **Project activities**: Activities like writing the paper, or coding
+    for the analysis, or any thing else related to the project, *must*
+    be done through Git and GitHub on the our
+    [`steno-aarhus`](https://github.com/steno-aarhus) organization. You
+    can have a "fork"/copy of the repository on your personal GitHub,
+    but do your main work through the Steno account. We expect this
+    because, in order to help troubleshoot and deal with any technical
+    issues, it is *significantly easier* for us if it is on the Steno
+    account.
+
+## Next steps {#next-steps}
+
+1.  Review the [Project Description](project-description.qmd) page.
+2.  Do the steps in the [Requesting Access](request-access.qmd) page.
