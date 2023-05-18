@@ -12,6 +12,7 @@ website:
         menu:
           - request-access.qmd
           - using-rap.qmd
+          - important-notes.qmd
       - text: "Admin"
         menu:
           - admin.qmd
