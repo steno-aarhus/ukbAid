@@ -1,12 +1,13 @@
 ---
-title: "Working in RAP"
-format: html
+title: "Working in Research Analysis Platform (RAP)"
+execute: 
+  eval: false
 ---
 
-## Using ukbAid
-
 When working on the UKB RAP, the easiest way (that we've found) is to do
-your work through Git and GitHub. This is due to a few reasons:
+your work through Git and GitHub on the [SDCA
+account](https://github.com/steno-aarhus/). This is due to a few
+reasons:
 
 1.  *Every* time you start up and enter into the UKB RAP, the working
     computer environment is *completely* clean... No personal files, no
@@ -19,56 +20,52 @@ your work through Git and GitHub. This is due to a few reasons:
     it off. This forces us into the situation described in the point
     above.
 
-3.  Since there are several of us working on this project and since we
-    want to be able to collaborate and help each other out. The
-    organizing committee for UKB at SDCA will review all project
-    proposals on our UKB Trello page and connect related projects. We
-    will also initiate a monthly "coding café" where we can discuss
-    specific coding issues related to UKB and other projects. We are
-    also planning to make a repository for all relevant code in UKB that
-    is relevant to share among us. That could be creation of specific
-    variables like diabetes incidence or similar. Further activities
-    will be planned if needed.
+3.  There are several of us working on this project and we want to be
+    able to easily collaborate and help each other out. We will also
+    have frequent code reviews of analyses. Both the collaboration and
+    reviews are best done through Git and GitHub.
 
-### Steps when outside the UKB RAP
+4.  The UKB organizing committee will review all project proposals and
+    do some basic admin tasks, so keeping things organized and
+    centralized on GitHub will help us be effective in our tasks.
 
-*Note*: Some of these tasks can be really difficult to understand what's
-going on, and that's ok and totally normal. The very start of a project
-is always some of the most difficult stage of a project. But if you
-follow these tasks, you'll have a solid foundation for doing your work
-within the special environment of the UK Biobank RAP.
+5.  Because all code will be stored on the SDCA GitHub, it will be
+    easier to share code and how we do things through it. So you the PhD
+    student, postdoc, or researcher can better make use of all the
+    efforts everyone is doing.
 
-The very first tasks you'll need to do is to install the ukbAid package,
-as described above. After that, we need to make sure that your computer
-has Git configured properly. In your Console, type out the below code,
-replacing my name (Luke) and my email with your own:
+## Steps to take when outside the UKB RAP
+
+::: callout-note
+Some of these tasks can be really difficult to understand what's going
+on, and that's ok and totally normal. The very start of a project is
+always some of the most difficult stage of a project. But if you follow
+these tasks, you'll have a solid foundation for doing your work within
+the special environment of the UK Biobank RAP.
+:::
+
+The very first tasks you'll need to do is to install the ukbAid package:
+
+```{r}
+# Install the pak package if you haven't already.
+# install.packages("pak")
+pak::pak("steno-aarhus/ukbAid")
+```
+
+After that, we need to make sure that your computer has Git configured
+properly. In your Console, type out the below code, replacing my name
+(Luke) and my email with your own:
 
 ```{r}
 ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 ```
 
 You should get an output showing your `user.email` and `user.name`.
-Next, we need to create the folder and file structure. In the Console,
-type out this, replacing my project abbreviated name (`mesh`) with your
-project abbreviated name. Note that you should use the same abbreviation
-as the one you have given your project on Trello:
 
-```{r}
-ukbAid::setup_ukb_project("~/Desktop/mesh")
-```
-
-From here, go to the Desktop or wherever you created the project and
-open up the RStudio `.Rproj` file so that the project starts up in
-RStudio. In this project will be the files you need to get started on
-the project, and especially at this stage, the `doc/protocol.Rmd` and
-the `data-raw/project-variables.csv` files. You'll be working on these
-files before beginning to use the RAP and doing analyses, but once you
-are ready, you'd need to have your project on GitHub to make it easier
-to import into the RAP. So, before continuing further, let's connect
-your project to GitHub right from the beginning. To do that in a
-relatively easy way, we have to create a thing called a Personal Access
-Token (PAT) in GitHub in order for Git on your computer to know how to
-connect your project to GitHub.
+let's connect your project to GitHub right from the beginning. To do
+that in a relatively easy way, we have to create a thing called a
+Personal Access Token (PAT) in GitHub in order for Git on your computer
+to know how to connect your project to GitHub.
 
 If you don't have a GitHub account, create one first. After that (or if
 you already have one), when in your RStudio project, in the Console type
@@ -83,9 +80,11 @@ you. Change the token's description to something like "For UKB project".
 Set the "Expiry date" to 90 days (this is a good security feature).
 Create the token, which will change pages and you'll be shown a string
 of letters starting with `ghp_`. Copy this token and save it somewhere
-safe, preferably in a password manager. This token acts a bit like your
-password but is safer to use than your password. Once you've saved it
-somewhere, go back to RStudio and than run this command in the Console:
+safe, preferably in a [password
+manager](https://www.pcmag.com/picks/the-best-password-managers). This
+token acts a bit like your password but is safer to use than your
+password. Once you've saved it somewhere, go back to RStudio and than
+run this command in the Console:
 
 ```{r}
 gitcreds::gitcreds_set()
@@ -95,9 +94,11 @@ And then paste the token into the prompt in the Console. If it asks to
 replace an existing one, select the "yes" option. Doing this is a bit
 like using the 2FA message with the temporary passcode you get sent
 whenever you have to open your work's email or when you use MitID or
-NemID (in Denmark). Every time you open RStudio, you need to run this
-command and give R the token so that it can connect to GitHub securely.
+NemID (in Denmark). Every time you open RStudio (or start your
+computer), you need to run this command and give R the token so that it
+can connect to GitHub securely.
 
+::: callout-important
 Why do we need to do this on our computer? Because whenever you connect
 to GitHub through RStudio (like uploading and downloading your changes),
 GitHub needs you to authenticate that it is you and not someone else. In
@@ -110,23 +111,37 @@ restricted-access token that we can easily create and delete. This token
 only has limited access to your account, so it is safer to send over the
 Internet, and it can be very easy to delete without affecting your
 account.
+:::
 
-After you've done this, run the next function. If you are new to Git and
-GitHub, we strongly recommend starting your first project as private, in
-case you accidentally add files you aren't supposed to. It will also
-help get you feeling comfortable with using Git and GitHub. After you've
-done this, run the next function:
+Next, you will need to download ("clone" in Git language) the project
+repository that was created for you. In the Console, type out this,
+replacing my project abbreviated name (`mesh`) with your project
+abbreviated name. Note that you should use the same abbreviation as the
+one you used when you submitted the "Project Request" form:
 
 ```{r}
-usethis::use_github(private = TRUE)
+usethis::create_from_github("steno-aarhus/mesh")
 ```
 
-This will take your project and upload it to GitHub. Now, whenever you
-use Git and save your changes to the Git history, whenever you "Push"
-your changes it will be sent to your project on GitHub. The diagram
-below shows how it conceptually looks like:
+From here, go to the Desktop or wherever you created the project and
+open up the RStudio `.Rproj` file so that the project starts up in
+RStudio. In this project will be the files you need to get started on
+the project, and especially at this stage, the `doc/protocol.Rmd` and
+the `data-raw/project-variables.csv` files. You'll be working on these
+files before beginning to use the RAP and doing analyses.
 
-``` mermaid
+Most likely, you are new to Git and GitHub. Git is a very powerful way
+of managing your files and your projects, but it also requires some
+major conceptual rewiring of how you work with files and computers. It
+takes some time to learn! Your project is on GitHub, and you just
+downloaded it to your computer. Unlike Dropbox or OneDrive, the files in
+your project on your computer don't automatically synchronize with those
+on GitHub. You have to do it manually. Whenever you use Git and save
+your changes to the Git history, you need to "Push" your changes to your
+project files to GitHub. The diagram below shows how it conceptually
+looks like:
+
+```{mermaid}
 graph LR;
     Local -->|Push| GitHub
     GitHub -->|Pull| Local
@@ -142,18 +157,19 @@ downloads them to your "Local" computer.
 When you work on the UKB-RAP, you will "pull" (download) your project
 from GitHub. As you work on it and save changes in your Git history, you
 "push" (upload) to GitHub often in order to keep your changes backed up.
-Then, when you get to the manusript writing stage, you can pull your
-results from GitHub to your "Local" so you can work without getting
-charged.
+Then, when you get to the paper writing stage, you can pull your results
+from GitHub to your "Local" so you can work without getting charged.
 
+::: callout-note
 Why do we do it this way? For one, it is honestly the easiest that we
 could think of because the UKB RAP is a special environment that
-requires special steps to take. Plus, it makes it easier to have others
-(like me) collaborate on your project and help you out. So
-hypothetically, if you need help, I (Luke) could download your project
-from GitHub and make changes there. Conceptually it would look like:
+requires special steps to work in. Plus, using Git and GitHub makes it
+easier to have others (like me) collaborate on your project and help you
+out. So hypothetically, if you need help, I (Luke) could download your
+project from GitHub and make changes there. Conceptually it would look
+like:
 
-``` mermaid
+```{mermaid}
 graph TD;
     UKB-RAP -->|Push| GitHub
     GitHub -->|Pull| UKB-RAP
@@ -164,6 +180,7 @@ graph TD;
 ```
 
 That way it makes it super easy for me (or others) to help out.
+:::
 
 As you work on the project, specifically the protocol and selecting the
 variables for your project from the `data-raw/project-variables.csv`
@@ -177,7 +194,7 @@ file, which will direct you to fill in details in the `README.md`.
 After you've done the TODO items, start working towards writing the
 protocol and analysis plan before beginning your work in the UKB RAP.
 
-### Steps everytime you enter into the UKB RAP
+## Steps everytime you enter into the UKB RAP
 
 Whenever you open up the UKB RAP, you won't have your project files nor
 have any packages installed. So you'll need to do a few set up tasks
@@ -198,7 +215,10 @@ your Git config, sets up your authentication (credentials) to connect to
 GitHub, and finally downloads your GitHub repository into the RAP
 environment. This last point, you would give the repository location in
 the form of `github_username/repository_name`. For instance, my
-repository is [`lwjohnst86/mesh`](https://github.com/lwjohnst86/mesh).
+repository is
+[`steno-aarhus/mesh`](https://github.com/steno-aarhus/mesh).
+
+<!-- TODO: Change the function to only look in steno-aarhus -->
 
 Once the project is downloaded from GitHub and created the project in
 the RAP, you can open it by clicking the `.Rproj` file inside the
@@ -237,3 +257,4 @@ results.
 -   **Save your changes in the Git history and push to your GitHub
     BEFORE Terminating your UKB-RAP project**: If you terminate before
     saving and pushing to GitHub, you *will* lose your work!
+
