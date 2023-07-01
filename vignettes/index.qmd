@@ -10,7 +10,7 @@ working with such a large dataset like the UK Biobank.
 
 ## Purpose and aims
 
-We started this overall project for two main reason:
+We started this overall project with two aim goals:
 
 1.  To build up a process and workflow for effective collaboration that
     follows best practices and principles in openness, reproducibility,
@@ -72,8 +72,9 @@ AU/AUH and their ethics consideration:
 -   An educational opportunity to learn better research practices,
     better coding skills and knowledge, better statistical knowledge,
     and better teamworking and collaboration skills.
--   Frequent code reviews of your analysis, to help you along the way
-    and make sure you're doing things right/better.
+-   Frequent code reviews of your analysis, to help you along the way in
+    learning best practices and checking that the code does as you
+    intend it to.
 -   Shared code from others on the project that you can use in your own
     project as well as for inspiration and learning.
 
@@ -84,10 +85,10 @@ AU/AUH and their ethics consideration:
     related to this project that don't always directly relate to
     research. Like adding documentation, contributing to the ukbAid
     package code, organizing meetings and activities, or doing reviews
-    of code or text, there is something for everyone! In this way, we
-    expect that anyone doing a project with us also contribute to the
-    community and other activities, including looking over others'
-    projects.
+    of code or text. There is something for everyone! In this way, we
+    expect that anyone doing a project with us will also contribute to
+    the community and other activities, including looking over others'
+    project code and text.
 -   **Authorship**: We follow the principle of "if you've contributed on
     a fairly regular basis to this community, you deserve authorship on
     any outputs from this project". Authorship is a strange, archaic
@@ -110,4 +111,3 @@ AU/AUH and their ethics consideration:
 
 1.  Review the [Project Description](project-description.qmd) page.
 2.  Do the steps in the [Requesting Access](request-access.qmd) page.
-
