@@ -48,6 +48,20 @@ deliberately very broad, so if you have ideas for your application and
 they fit under the [project description](project-description.qmd), then
 please check out the [Next Steps](#next-steps) below!
 
+::: callout-important
+Some key considerations that are relevant to our registered project with
+AU/AUH and their ethics consideration:
+
+-   While we are open to various types of projects, they **must** fall
+    under our project description in order to be covered by our
+    registration at AU and AUH.
+-   For projects that would like to use images, you will need to submit
+    a very specific and detailed application to the ethics board at
+    AU/AUH since our current registered project with them doesn't not
+    allow broad applications that don't explicitly specify what we aim
+    to do with images.
+:::
+
 ## What do you get when you join?
 
 -   Access to documentation and tools to make it easier for you do to
@@ -96,3 +110,4 @@ please check out the [Next Steps](#next-steps) below!
 
 1.  Review the [Project Description](project-description.qmd) page.
 2.  Do the steps in the [Requesting Access](request-access.qmd) page.
+
