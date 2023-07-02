@@ -43,9 +43,11 @@ step 2. And you need to complete step 3 before moving on the next steps.
     before approving the project.
 
 6.  Once your project has been approved and your project GitHub
-    repository created for you, you can log into the
-    [RAP](https://ukbiobank.dnanexus.com/login) and then follow the
-    instructions on the [Using the RAP](using-rap.qmd) page.
+    repository created for you, follow the instructions in the [Initial
+    setup](initial-setup.qmd) page, as well as the [Using the
+    RAP](using-rap.qmd) page. After that you can log into the
+    [RAP](https://ukbiobank.dnanexus.com/login) and familiarize yourself
+    with the RAP.
 
 ## Project proposal submission form
 
