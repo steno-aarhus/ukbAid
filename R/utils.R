@@ -17,15 +17,18 @@ build_website <- function() {
   if (!requireNamespace("quarto", quietly = TRUE)) {
     rlang::abort("Please install Quarto to use this function.")
   }
+  if (!requireNamespace("pkgdown", quietly = TRUE)) {
+    rlang::abort("Please install pkgdown to use this function.")
+  }
 
   withr::with_dir(
     new = fs::path_package("vignettes", package = "ukbAid"),
     {quarto::quarto_render()}
   )
-  # pkgdown::init_site()
-  # pkgdown::build_home()
-  # pkgdown::build_reference()
-  # pkgdown::build_news()
+  pkgdown::init_site()
+  pkgdown::build_home(preview = FALSE)
+  pkgdown::build_reference(preview = FALSE)
+  pkgdown::build_news(preview = FALSE)
 }
 
 
