@@ -1,8 +1,8 @@
 ---
-title: "governance"
+title: "Governance"
 ---
 
-## Steering committee
+The steering committee is made up of:
 
 -   Christina Dahm
 -   Daniel Ibsen
