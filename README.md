@@ -22,7 +22,7 @@ research practices. More details are on the
 You can install the development version of ukbAid inside RStudio in the
 R Console like so:
 
-```{r}
+``` r
 # Install pak if not installed already.
 # install.packages("pak")
 pak::pak("steno-aarhus/ukbAid")
