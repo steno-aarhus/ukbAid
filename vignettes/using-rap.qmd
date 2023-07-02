@@ -95,9 +95,12 @@ Otherwise all your work on the RAP will be lost next time you login.
 
 -   **Save your changes in the Git history and push to your GitHub
     BEFORE Terminating your UKB-RAP project**: If you terminate before
-    saving and pushing to GitHub, you *will* lose your work!
+    saving and pushing to GitHub, you *will* lose your work! Read the
+    [Important notes on using GitHub](important-notes.qmd) page for more
+    detail.
 
 -   **Remember**, do not save any data in the Git history unless you
     have discussed it with the organizing committee. You can save
     results for tables and figures, as long as they are aggregate or
     statistical results.
+
