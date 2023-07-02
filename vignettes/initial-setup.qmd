@@ -5,40 +5,14 @@ execute:
 ---
 
 In order to access and analyze the UK Biobank data, we need to work on
-the Research Analysis Platform (RAP). The easiest way (that we've found)
+the Research Analysis Platform (RAP). The easiest way that we've found
 is to do your work through Git and GitHub on the [SDCA GitHub
-Organization](https://github.com/steno-aarhus/). This is due to a few
-reasons:
-
-1.  *Every* time you start up and enter into the UKB RAP, the working
-    computer environment is *completely* clean... No personal files, no
-    R packages installed, nothing. So we need some way of saving our
-    work so we can download it again when we work again in the RAP.
-
-2.  Whenever you finish working for the day, you *must* terminate your
-    RStudio session in the RAP, because we pay for the RStudio use every
-    hour. So we can't just leave the session running all the time, we
-    have to turn it off. This forces us into the situation described in
-    the point above.
-
-3.  There are several of us working on this project and we want to be
-    able to easily collaborate and help each other out. We will also
-    have frequent code reviews of analyses. Both the collaboration and
-    reviews are best done through Git and GitHub.
-
-4.  The UKB organizing committee will review all project proposals and
-    do some basic admin tasks, so keeping things organized and
-    centralized on GitHub will help us be effective in our tasks.
-
-5.  Because all code will be stored on the SDCA GitHub, it will be
-    easier to share code and how we do things through it. So you the PhD
-    student, postdoc, or researcher can better make use of all the
-    efforts everyone is doing.
-
-Because of these reasons, we expect everyone working on the Steno UK
-Biobank project to use Git and use Steno's GitHub Organization account
-to store their project. We will set up the project for you on the
-Organization account, so you can start working on your project sooner.
+Organization](https://github.com/steno-aarhus/). We'll explain the
+reasons in the [Working on the RAP](using-rap.qmd) page. We expect
+everyone working on the Steno UK Biobank project to use Git and use
+Steno's GitHub Organization account to store their project. We will set
+up the project for you on the Organization account, so you can start
+working on your project sooner.
 
 ## Steps to take before using the RAP
 
