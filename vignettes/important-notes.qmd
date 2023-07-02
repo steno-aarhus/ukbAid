@@ -1,5 +1,5 @@
 ---
-title: Important notes
+title: Important notes on using GitHub
 ---
 
 ## Caution when using GitHub
