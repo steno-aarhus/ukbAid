@@ -4,8 +4,8 @@ execute:
   eval: false
 ---
 
-When working on the UKB RAP, the easiest way (that we've found) is to do
-your work through Git and GitHub on the [SDCA GitHub
+Because of the unique setup of the UKB RAP, the easiest way to do your
+work is through Git and GitHub on the [SDCA GitHub
 Organization](https://github.com/steno-aarhus/). This is due to a few
 reasons:
 
@@ -36,10 +36,9 @@ reasons:
 
 Because of these reasons, we expect everyone working on the Steno UK
 Biobank project to use Git and use Steno's GitHub Organization account
-to store their project. We will set up the project for you on the
-Organization account, so you can start working on your project sooner.
+to store their project.
 
-## Steps everytime you enter into the UKB RAP
+## Steps *everytime* you enter into the UKB RAP
 
 1.  Whenever you open up the UKB RAP, you won't have your project files
     nor have any packages installed. So you'll need to do a few set up
