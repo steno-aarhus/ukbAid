@@ -34,6 +34,7 @@ Imports:
 Suggests: 
     clipr,
     knitr,
+    pkgdown,
     prereg (>= 0.5.0),
     quarto,
     rmarkdown,

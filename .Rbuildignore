@@ -5,3 +5,6 @@
 ^vignettes$
 ^\.github$
 ^data-raw$
+^_pkgdown\.yml$
+^public/pkg$
+^pkgdown$

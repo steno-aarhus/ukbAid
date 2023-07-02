@@ -1,0 +1,6 @@
+url: https://steno-aarhus.github.io/ukbAid
+template:
+  bootstrap: 5
+  bootswatch: flatly
+destination: public/pkg
+
