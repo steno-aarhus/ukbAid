@@ -5,3 +5,4 @@
 ^vignettes$
 ^\.github$
 ^data-raw$
+^src$
