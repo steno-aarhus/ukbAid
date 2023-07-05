@@ -29,7 +29,6 @@ dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 #' @export
 #'
 #' @examples
-#'
 #' \dontrun{
 #' library(tidyverse)
 #' read_csv("data-raw/rap-variables.csv") %>%
@@ -42,25 +41,29 @@ dare_project_record_id <- "record-GJ3kvBQJbxZX8fxKJ62kgk0V"
 create_csv_from_database <- function(variables_to_extract, project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = get_username()) {
-    stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
+  stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
 
-    field_names <- paste0(glue::glue("-ifield_names='{variables_to_extract}'"), collapse = " ")
-    data_file_name <- glue::glue("data-{username}-{project_id}")
-    table_exporter_command <- glue::glue(
-        paste0(c("dx run app-table-exporter --brief --wait -y",
-          "-idataset_or_cohort_or_dashboard={dataset_record_id}",
-          "{field_names}",
-          "-ioutput={data_file_name}"),
-          collapse = " ")
+  field_names <- paste0(glue::glue("-ifield_names='{variables_to_extract}'"), collapse = " ")
+  data_file_name <- glue::glue("data-{username}-{project_id}")
+  table_exporter_command <- glue::glue(
+    paste0(
+      c(
+        "dx run app-table-exporter --brief --wait -y",
+        "-idataset_or_cohort_or_dashboard={dataset_record_id}",
+        "{field_names}",
+        "-ioutput={data_file_name}"
+      ),
+      collapse = " "
     )
-    cli::cli_alert_info("Started extracting the variables and converting to CSV.")
-    cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
-    table_exporter_results <- system(table_exporter_command, intern = TRUE)
-    system(glue::glue("dx mv {data_file_name}.csv /users/{username}/data-{project_id}.csv"))
-    user_path <- glue::glue("/mnt/project/users/{username}")
-    cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
-    relevant_results <- tail(table_exporter_results, 3)[1:2]
-    return(relevant_results)
+  )
+  cli::cli_alert_info("Started extracting the variables and converting to CSV.")
+  cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
+  table_exporter_results <- system(table_exporter_command, intern = TRUE)
+  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/data-{project_id}.csv"))
+  user_path <- glue::glue("/mnt/project/users/{username}")
+  cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
+  relevant_results <- tail(table_exporter_results, 3)[1:2]
+  return(relevant_results)
 }
 
 #' Get the RAP project ID, will be the project main folder.
@@ -70,9 +73,9 @@ create_csv_from_database <- function(variables_to_extract, project_id = get_rap_
 #' @export
 #'
 get_rap_project_id <- function() {
-    options(usethis.quiet = TRUE)
-    on.exit(options(usethis.quiet = NULL))
-    fs::path_file(usethis::proj_path())
+  options(usethis.quiet = TRUE)
+  on.exit(options(usethis.quiet = NULL))
+  fs::path_file(usethis::proj_path())
 }
 
 #' Get the username of the user's who started the RStudio session.
@@ -81,7 +84,7 @@ get_rap_project_id <- function() {
 #' @export
 #'
 get_username <- function() {
-    system("dx whoami", intern = TRUE)
+  system("dx whoami", intern = TRUE)
 }
 
 #' Downloads your UKB CSV data file to the `data/data.csv` folder.
@@ -97,9 +100,22 @@ get_username <- function() {
 #' @export
 #'
 download_project_data <- function(project_id = get_rap_project_id(), username = get_username()) {
-    download_command <- glue::glue("dx download /users/{username}/data-{project_id}.csv --output data/data.csv")
-    cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
-    system(download_command)
-    cli::cli_alert_success("Downloaded CSV!")
-    return(here::here("data/data.csv"))
+  download_command <- glue::glue("dx download /users/{username}/data-{project_id}.csv --output data/data.csv")
+  cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
+  system(download_command)
+  cli::cli_alert_success("Downloaded CSV!")
+  return(here::here("data/data.csv"))
+}
+
+upload_csv_as_parquet <- function(csv_path, project_id = get_rap_project_id(), username = get_username()) {
+  parquet_path <- parquetize::csv_to_parquet(
+    path_to_file = csv_path,
+    path_to_parquet = fs::path_ext_set(csv_path, ".parquet")
+  )
+
+  upload_command <- glue::glue("dx upload {parquet_path} --destination /users/{username}/data-{project_id}.parquet")
+  cli::cli_alert_info("Uploaded data to {.val }.")
+  system(download_command)
+  cli::cli_alert_success("Downloaded CSV!")
+  return(here::here("data/data.csv"))
 }
