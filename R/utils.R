@@ -4,31 +4,12 @@
 #' @param message Commit message.
 #'
 #' @return Nothing. Adds and commits a file.
+#' @keywords internal
 #' @noRd
 #'
 git_commit_file <- function(file, message) {
     stopifnot(is.character(file), is.character(message))
     gert::git_add(file)
     gert::git_commit(message)
-    return(invisible())
+    return(invisible(NULL))
 }
-
-build_website <- function() {
-  if (!requireNamespace("quarto", quietly = TRUE)) {
-    rlang::abort("Please install Quarto to use this function.")
-  }
-  if (!requireNamespace("pkgdown", quietly = TRUE)) {
-    rlang::abort("Please install pkgdown to use this function.")
-  }
-
-  withr::with_dir(
-    new = fs::path_package("vignettes", package = "ukbAid"),
-    {quarto::quarto_render()}
-  )
-  pkgdown::init_site()
-  pkgdown::build_home(preview = FALSE)
-  pkgdown::build_reference(preview = FALSE)
-  pkgdown::build_news(preview = FALSE)
-}
-
-
