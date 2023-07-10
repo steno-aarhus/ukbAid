@@ -8,3 +8,4 @@
 ^_pkgdown\.yml$
 ^public/pkg$
 ^pkgdown$
+^src$
