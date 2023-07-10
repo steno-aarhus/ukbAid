@@ -3,4 +3,12 @@ template:
   bootstrap: 5
   bootswatch: flatly
 destination: public/pkg
-
+navbar:
+  structure:
+    left: [main-site, reference]
+    right: [search, github]
+  components:
+    main-site:
+      icon: fa-home
+      href: ../index.html
+      aria-label: Home
