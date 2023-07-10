@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: "../public"
+  resources:
+    - "../public/pkg"
 
 website:
   title: "ukbAid"
@@ -11,18 +13,23 @@ website:
       - text: "Getting started"
         menu:
           - request-access.qmd
+          - initial-setup.qmd
           - using-rap.qmd
           - important-notes.qmd
       - text: "Admin"
         menu:
           - admin.qmd
+          - governance.qmd
+      - icon: box-seam
+        href: "/pkg/index.html"
 
 date: last-modified
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     toc: true
+    toc-depth: 2
 
 
 
