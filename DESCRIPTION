@@ -42,7 +42,6 @@ Suggests:
     prereg (>= 0.5.0),
     quarto,
     rmarkdown,
-    ukbAid,
     yesno
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
