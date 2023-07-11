@@ -35,16 +35,15 @@ step 2. And you need to complete step 3 before moving on the next steps.
     Form](https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?usp=sf_link)
     (also provided below). All the details you include in this form
     **will** be uploaded online to the ukbAid repository. When you
-    submit the form, it will automatically create a Project Proposal in
-    the folder
-    [`data-raw/projects/proposal/`](https://github.com/steno-aarhus/ukbAid/tree/main/data-raw/projects/proposal/)
-    in the ukbAid repository as well as creating an Issue that the
-    organizing committee will use to get more information or details
-    before approving the project.
+    submit the form, it will automatically create a Pull Request of your
+    Project Proposal on the ukbAid GitHub repository as well as creating
+    an Issue that the organizing committee will use to get more
+    information or details before approving the project.
 
-6.  Once your project has been approved and your project GitHub
-    repository created for you, follow the instructions in the [Initial
-    setup](initial-setup.qmd) page, as well as the [Using the
+6.  Once your project has been approved, we will create a project
+    repository for you on GitHub that will also contain an Issue with a
+    list of todo items. After that follow the instructions in the
+    [Initial setup](initial-setup.qmd) page, as well as the [Using the
     RAP](using-rap.qmd) page. After that you can log into the
     [RAP](https://ukbiobank.dnanexus.com/login) and familiarize yourself
     with the RAP.
@@ -54,3 +53,4 @@ step 2. And you need to complete step 3 before moving on the next steps.
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?embedded=true" width="640" height="1532" frameborder="0" marginheight="0" marginwidth="0">
 
 </iframe>
+
