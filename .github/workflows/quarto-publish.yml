@@ -29,7 +29,7 @@ jobs:
           tinytex: false
 
       - name: Build pkgdown site
-        run: ukbAid:::build_pkdown_site()
+        run: ukbAid:::build_pkgdown_site()
         shell: Rscript {0}
 
       - name: Publish to GitHub Pages (and render)
