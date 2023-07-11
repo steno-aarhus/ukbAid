@@ -28,38 +28,38 @@ function onFormSubmit(event) {
   var project_abbrev = responses[9].getResponse();
   var project_description = responses[10].getResponse();
 
-  var title = "Proposal: " + project_title;
+  var issue_title = "Proposal: " + project_title;
 
-  var body =
     "- **Submitted By**:" + full_name +
     "\n- **Position**:" + job_position +
     "\n- **Supervisor (if PhD student)**:" + phd_supervisor +
     "\n- **Affiliation**:" + affiliation +
+  var issue_body =
     "\n\n## Project description" +
     "\n\n" + project_title + " (" + project_abbrev + ")" +
     "\n\n" + project_description +
     "\n\n"
 
-  var payload = {
-    "title": title,
-    "body": body,
+  var issue_contents = {
+    "title": issue_title,
+    "body": issue_body,
     "labels": [
       "proposal"
      ]
   };
 
-  var options = {
+  var issue_creation_commands = {
     "method": "POST",
+    // Header is used to send the token as authentication.
     "headers": {
       "authorization": "token " + gh_token,
       "Accept": "application/vnd.github.v3+json",
     },
     "contentType": "application/json",
-    "payload": JSON.stringify(payload)
+    "payload": JSON.stringify(issue_contents)
     };
 
-  Logger.log(payload)
+  Logger.log(issue_contents)
 
-  var response = UrlFetchApp.fetch("https://api.github.com/repos/" + handle + "/" + repo + "/issues", options);
-
+  var response = UrlFetchApp.fetch("https://api.github.com/repos/" + handle + "/" + repo + "/issues", issue_creation_commands);
 }
