@@ -7,6 +7,7 @@ project:
 website:
   title: "ukbAid"
   navbar:
+    pinned: true
     right:
       - index.qmd
       - project-description.qmd
