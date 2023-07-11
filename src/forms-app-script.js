@@ -21,6 +21,7 @@ function onFormSubmit(event) {
 
   var responses = event.response.getItemResponses();
   var full_name = responses[2].getResponse();
+  var github_user = responses[3].getResponse();
   var job_position = responses[5].getResponse();
   var phd_supervisor = responses[6].getResponse();
   var affiliation = responses[7].getResponse();
@@ -30,11 +31,11 @@ function onFormSubmit(event) {
 
   var issue_title = "Proposal: " + project_title;
 
-    "- **Submitted By**:" + full_name +
     "\n- **Position**:" + job_position +
     "\n- **Supervisor (if PhD student)**:" + phd_supervisor +
     "\n- **Affiliation**:" + affiliation +
   var issue_body =
+    "- **Submitted By**: " + full_name + " (@" + github_user + ")" +
     "\n\n## Project description" +
     "\n\n" + project_title + " (" + project_abbrev + ")" +
     "\n\n" + project_description +
