@@ -34,3 +34,15 @@ NULL
 #'   \item{rap_variable_name}{The name of the variable in the RAP database.}
 #' }
 "rap_variables"
+
+#' Textual statements required by UK Biobank.
+#'
+#' A list that contains two items, one to use in protocols and another to use
+#' in a paper.
+#'
+#' @format A list with 2 items:
+#' \describe{
+#'   \item{protocol}{A text statement to include in the protocol.}
+#'   \item{paper}{A text statement to include in the paper.}
+#' }
+"statements"
