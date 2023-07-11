@@ -1,0 +1,1 @@
+Sitemap: https://github.com/steno-aarhus/ukbAid/sitemap.xml

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-05-18">
+<meta name="dcterms.date" content="2023-07-11">
 
 <title>ukbAid - Requesting access to the UK Biobank through SDCA’s project</title>
 <style>
@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -56,7 +55,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -98,12 +98,16 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Requesting access to the UK Biobank through SDCA’s project</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./initial-setup.html" rel="" target="">
+ <span class="dropdown-text">Initial setup after acceptance</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./using-rap.html" rel="" target="">
  <span class="dropdown-text">Working in Research Analysis Platform (RAP)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./important-notes.html" rel="" target="">
- <span class="dropdown-text">Important notes</span></a>
+ <span class="dropdown-text">Important notes on using GitHub</span></a>
   </li>  
     </ul>
   </li>
@@ -116,8 +120,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./admin.html" rel="" target="">
  <span class="dropdown-text">Administration</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./governance.html" rel="" target="">
+ <span class="dropdown-text">Governance</span></a>
+  </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./pkg/index.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools">
 </div>
@@ -130,7 +143,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#project-proposal-submission-form" id="toc-project-proposal-submission-form" class="nav-link active" data-scroll-target="#project-proposal-submission-form">Project proposal submission form</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -148,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 18, 2023</p>
+      <p class="date">July 11, 2023</p>
     </div>
   </div>
   
@@ -168,22 +187,25 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>First and foremost, you must be employed by either Aarhus University or by Region Midt and you’re research topic must fall under our UK Biobank project application.</p>
+<p>First and foremost, you must be employed by either Aarhus University or by Region Midt and your research topic must fall under our UK Biobank project application.</p>
 </div>
 </div>
-<p>For the access to data, follow these easy steps, one by one. Importantly, you have to wait for approval of step 1 before you can continue with step 2. And you need to complete step 3 before moving on the the next steps.</p>
+<p>To access the data, follow these easy steps, one by one. Importantly, you have to wait for approval of step 1 before you can continue with step 2. And you need to complete step 3 before moving on the next steps.</p>
 <ol type="1">
-<li><p>Register yourself at <a href="https://www.ukbiobank.ac.uk/enable-your-research/register">UK Biobank</a>. This may take a few weeks. You <strong>must</strong> register under either Aarhus University Hospital or Aarhus University as the affiliated institution, as we only have project access through those, and NOT SDCA. If you have registered under SDCA, no worries, you can easily change this afterwards.</p></li>
-<li><p>Use the same details to <a href="https://platform.dnanexus.com/register">register</a> for the UKB Research Analysis Platform (UKB RAP), that is hosted by DNAnexus.</p></li>
+<li><p>Register yourself at <a href="https://ams.ukbiobank.ac.uk/ams/">UK Biobank</a>. This may take a few weeks. You <strong>must</strong> register under either Aarhus University Hospital or Aarhus University as the affiliated institution, as we only have project access through those, and NOT SDCA. If you have registered under SDCA, no worries, you can easily change this afterwards.</p></li>
+<li><p>Use the same details as above to <a href="https://platform.dnanexus.com/register">register</a> for the UKB Research Analysis Platform (UKB RAP), which is hosted by DNAnexus.</p></li>
 <li><p>Log in on the UKB RAP and check that your username and email have been registered. You will need these details when you fill in the request form.</p></li>
-<li><p>Fill in this <a href="">Google Form</a>. This form will automatically create a Project Proposal in the ukbAid repository as well as creating an Issue that the organizing committee will ask for more details about before approving the project.</p></li>
+<li><p>Create a <a href="https://github.com/join">GitHub</a> account if you don’t have one already. You will need your user name when filling in the Form below.</p></li>
+<li><p>Fill in a <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?usp=sf_link">Google Form</a> (also provided below). All the details you include in this form <strong>will</strong> be uploaded online to the ukbAid repository. When you submit the form, it will automatically create a Pull Request of your Project Proposal on the ukbAid GitHub repository as well as creating an Issue that the organizing committee will use to get more information or details before approving the project.</p></li>
+<li><p>Once your project has been approved, we will create a project repository for you on GitHub that will also contain an Issue with a list of todo items. After that follow the instructions in the <a href="./initial-setup.html">Initial setup</a> page, as well as the <a href="./using-rap.html">Using the RAP</a> page. After that you can log into the <a href="https://ukbiobank.dnanexus.com/login">RAP</a> and familiarize yourself with the RAP.</p></li>
 </ol>
-<!-- TODO: Add links to where proposals will be. -->
-<ol start="5" type="1">
-<li>Once your project has been approved and your project GitHub repository created for you, you can log into the <a href="https://ukbiobank.dnanexus.com/login">RAP</a> and then follow the instructions on the <a href="./using-rap.html">Using the RAP</a> page.</li>
-</ol>
+<section id="project-proposal-submission-form" class="level2">
+<h2 class="anchored" data-anchor-id="project-proposal-submission-form">Project proposal submission form</h2>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?embedded=true" width="640" height="1532" frameborder="0" marginheight="0" marginwidth="0">
+</iframe>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

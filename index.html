@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-05-18">
+<meta name="dcterms.date" content="2023-07-11">
 
 <title>ukbAid - Welcome!</title>
 <style>
@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -56,7 +55,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -98,12 +98,16 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Requesting access to the UK Biobank through SDCA’s project</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./initial-setup.html" rel="" target="">
+ <span class="dropdown-text">Initial setup after acceptance</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./using-rap.html" rel="" target="">
  <span class="dropdown-text">Working in Research Analysis Platform (RAP)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./important-notes.html" rel="" target="">
- <span class="dropdown-text">Important notes</span></a>
+ <span class="dropdown-text">Important notes on using GitHub</span></a>
   </li>  
     </ul>
   </li>
@@ -116,8 +120,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./admin.html" rel="" target="">
  <span class="dropdown-text">Administration</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./governance.html" rel="" target="">
+ <span class="dropdown-text">Governance</span></a>
+  </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./pkg/index.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools">
 </div>
@@ -133,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#purpose-and-aims" id="toc-purpose-and-aims" class="nav-link active" data-scroll-target="#purpose-and-aims">Purpose and aims</a></li>
   <li><a href="#what-is-the-uk-biobank" id="toc-what-is-the-uk-biobank" class="nav-link" data-scroll-target="#what-is-the-uk-biobank">What is the UK Biobank?</a></li>
   <li><a href="#who-can-join" id="toc-who-can-join" class="nav-link" data-scroll-target="#who-can-join">Who can join?</a></li>
@@ -159,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 18, 2023</p>
+      <p class="date">July 11, 2023</p>
     </div>
   </div>
   
@@ -172,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Welcome to our documentation on working with the UK Biobank in the Research Analysis Platform environment! We hope these documentation, as well as the ukbAid package, can help streamline and automate many of the challenging aspects of working in the RAP server environment, on top of working with such a large dataset like the UK Biobank.</p>
 <section id="purpose-and-aims" class="level2">
 <h2 class="anchored" data-anchor-id="purpose-and-aims">Purpose and aims</h2>
-<p>We started this overall project for two main reason:</p>
+<p>We started this overall project with two aim goals:</p>
 <ol type="1">
 <li>To build up a process and workflow for effective collaboration that follows best practices and principles in openness, reproducibility, and scientific rigor.</li>
 <li>To build a community around a shared project at Steno Aarhus in order to create a better research culture that embraces these principles listed in the first reason above, as well as in sharing and contributing.</li>
@@ -186,6 +199,23 @@ ul.task-list li input[type="checkbox"] {
 <section id="who-can-join" class="level2">
 <h2 class="anchored" data-anchor-id="who-can-join">Who can join?</h2>
 <p>All researchers (including PhD students) at AUH and AU who are interested are welcome to join. The <a href="./project-description.html">project description</a> and application to UK Biobank was deliberately very broad, so if you have ideas for your application and they fit under the <a href="./project-description.html">project description</a>, then please check out the <a href="#next-steps">Next Steps</a> below!</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some key considerations that are relevant to our registered project with AU/AUH and their ethics consideration:</p>
+<ul>
+<li>While we are open to various types of projects, they <strong>must</strong> fall under our project description in order to be covered by our registration at AU and AUH.</li>
+<li>For projects that would like to use images, you will need to submit a very specific and detailed application to the ethics board at AU/AUH since our current registered project with them doesn’t not allow broad applications that don’t explicitly specify what we aim to do with images.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="what-do-you-get-when-you-join" class="level2">
 <h2 class="anchored" data-anchor-id="what-do-you-get-when-you-join">What do you get when you join?</h2>
@@ -193,14 +223,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Access to documentation and tools to make it easier for you do to research using the UK Biobank.</li>
 <li>A community of people, both novice and experienced, who have knowledge and skills in a range of areas and who all have a shared vision for collaborating, sharing, learning, and teaching.</li>
 <li>An educational opportunity to learn better research practices, better coding skills and knowledge, better statistical knowledge, and better teamworking and collaboration skills.</li>
-<li>Frequent code reviews of your analysis, to help you along the way and make sure you’re doing things right/better.</li>
+<li>Frequent code reviews of your analysis, to help you along the way in learning best practices and checking that the code does as you intend it to.</li>
 <li>Shared code from others on the project that you can use in your own project as well as for inspiration and learning.</li>
 </ul>
 </section>
 <section id="expectations" class="level2">
 <h2 class="anchored" data-anchor-id="expectations">Expectations</h2>
 <ul>
-<li><strong>Contributions</strong>: Because of the nature of the project and the range of different tasks involved, there are many things to do related to this project that don’t always directly relate to research. Like adding documentation, contributing to the ukbAid package code, organizing meetings and activities, or doing reviews of code or text, there is something for everyone! In this way, we expect that anyone doing a project with us also contribute to the community and other activities, including looking over others’ projects.</li>
+<li><strong>Contributions</strong>: Because of the nature of the project and the range of different tasks involved, there are many things to do related to this project that don’t always directly relate to research. Like adding documentation, contributing to the ukbAid package code, contributing your own UK Biobank analysis code, organizing meetings and activities, or doing reviews of code or text. There is something for everyone! In this way, we expect that anyone doing a project with us will also contribute to the community and other activities, including looking over others’ project code and text.</li>
 <li><strong>Authorship</strong>: We follow the principle of “if you’ve contributed on a fairly regular basis to this community, you deserve authorship on any outputs from this project”. Authorship is a strange, archaic concept that doesn’t easily fit into the modern research environment. So we instead view it as “contributorship” and leave the decision of being a “formal author” on any output to the contributors. These decisions will happen at the end of a projects lifecycle before uploading to an archive (like a preprint archive).</li>
 <li><strong>Project activities</strong>: Activities like writing the paper, or coding for the analysis, or any thing else related to the project, <em>must</em> be done through Git and GitHub on the our <a href="https://github.com/steno-aarhus"><code>steno-aarhus</code></a> organization. You can have a “fork”/copy of the repository on your personal GitHub, but do your main work through the Steno account. We expect this because, in order to help troubleshoot and deal with any technical issues, it is <em>significantly easier</em> for us if it is on the Steno account.</li>
 </ul>
