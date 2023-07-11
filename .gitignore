@@ -8,3 +8,4 @@ inst/doc
 _site
 public
 public/pkg
+.Renviron
