@@ -31,15 +31,14 @@ function onFormSubmit(event) {
 
   var issue_title = "Proposal: " + project_title;
 
-    "\n- **Position**:" + job_position +
-    "\n- **Supervisor (if PhD student)**:" + phd_supervisor +
-    "\n- **Affiliation**:" + affiliation +
   var issue_body =
     "- **Submitted By**: " + full_name + " (@" + github_user + ")" +
+    "\n- **Position**: " + job_position +
+    "\n- **Supervisor (if PhD student)**: " + phd_supervisor +
+    "\n- **Affiliation**: " + affiliation +
     "\n\n## Project description" +
     "\n\n" + project_title + " (" + project_abbrev + ")" +
-    "\n\n" + project_description +
-    "\n\n"
+    "\n\n" + project_description
 
   var issue_contents = {
     "title": issue_title,
