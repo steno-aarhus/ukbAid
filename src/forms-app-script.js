@@ -1,3 +1,18 @@
+/*
+  This is actually a Google Script, not JavaScript. But RStudio has syntax
+  highlighting for JS, so will keep the extension to be JS for now.
+
+  The code here is only kept to be tracked by Git. It should be copied to
+  the Google Form's/Sheet's App Script Editor in order for it to be connected
+  and used for the specific Sheet.
+
+  You will need to replace the `gh_token` with the actual token that you create
+  on GitHub, preferably using the new token format that has specific permissions.
+
+  This code will create a new Issue in the ukbAid repo whenever a new project
+  proposal is submitted through the Form.
+
+*/
 var gh_token = "YOUR_PERSONAL_ACCESS_TOKEN";
 var handle = "steno-aarhus"
 var repo = "ukbAid"
