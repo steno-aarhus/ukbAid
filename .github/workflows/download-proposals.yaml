@@ -1,0 +1,43 @@
+on: workflow_dispatch
+
+name: Download project proposals
+
+jobs:
+  download-proposals:
+    name: download-proposals
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SURVEY_ID: ${{ secrets.SURVEY_ID }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            local::.
+
+      - name: Download proposal
+        run: ukbAid::admin_download_proposals(most_recent = TRUE)
+        shell: Rscript {0}
+
+      - name: Make a PR of proposal
+        run: |
+          # Get name of new proposal file
+          PROPOSAL=$(git ls-files --others --exclude-standard | \
+            grep "proposals/.*.yaml" | \
+            xargs basename --suffix=.yaml)
+          git checkout -b new-proposal-${PROPOSAL}
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add data-raw/projects/proposals/*
+          git commit -m "Project proposal: ${PROPOSAL}"
+          gh pr create \
+            --head new-proposal-${PROPOSAL} \
+            --label "proposal" \
+            --title "Project proposal: ${PROPOSAL}" \
+            --body "Provide feedback on the proposal here. You can also directly comment on the file itself in the 'Files changed' tab."
