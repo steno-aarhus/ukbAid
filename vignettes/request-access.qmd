@@ -8,9 +8,11 @@ by Region Midt and your research topic must fall under our UK Biobank
 project application.
 :::
 
-To access the data, follow these easy steps, one by one. Importantly,
-you have to wait for approval of step 1 before you can continue with
-step 2. And you need to complete step 3 before moving on the next steps.
+Whether you are wanting to propose a project or want to contribute to an
+existing project, you need to follow these easy steps, one by one.
+Importantly, you have to wait for approval of step 1 before you can
+continue with step 2. And you need to complete step 3 before moving on
+the next steps.
 
 1.  Register yourself at [UK Biobank](https://ams.ukbiobank.ac.uk/ams/).
     This may take a few weeks. You **must** register under either Aarhus
@@ -31,26 +33,41 @@ step 2. And you need to complete step 3 before moving on the next steps.
     one already. You will need your user name when filling in the Form
     below.
 
-5.  Fill in a [Google
-    Form](https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?usp=sf_link)
-    (also provided below). All the details you include in this form
-    **will** be uploaded online to the ukbAid repository. When you
+## Proposing a new project
+
+Now that you've done the steps above, you follow these steps to submit a
+project proposal for working with the UK Biobank. Complete this step if
+you will be the primary lead on the project if there are planned
+contributors.
+
+5.  Fill in the Google Form below. All the details you include in this
+    form **will** be uploaded online to the ukbAid repository. When you
     submit the form, it will automatically create a Pull Request of your
-    Project Proposal on the ukbAid GitHub repository as well as creating
-    an Issue that the organizing committee will use to get more
-    information or details before approving the project.
+    Project Proposal on the [ukbAid
+    GitHub](https://github.com/steno-aarhus/ukbAid/pulls) repository
+    that the organizing committee will use to get more information or
+    details before approving the project.
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">
+
+    </iframe>
 
 6.  Once your project has been approved, we will create a project
     repository for you on GitHub that will also contain an Issue with a
-    list of todo items. After that follow the instructions in the
+    list of todo items. After that, follow the instructions in the
     [Initial setup](initial-setup.qmd) page, as well as the [Using the
-    RAP](using-rap.qmd) page. After that you can log into the
+    RAP](using-rap.qmd) page. You can then log into the
     [RAP](https://ukbiobank.dnanexus.com/login) and familiarize yourself
     with the RAP.
 
-## Project proposal submission form
+## Being a contributor to an existing project
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiY5j0JigvNTp5onPRPwV3paXudxeV00GUHnLTRxii9FWW1Q/viewform?embedded=true" width="640" height="1532" frameborder="0" marginheight="0" marginwidth="0">
+If you want to contribute to one or more existing projects, you will
+need to fill in this registration form. Please fill in the Google Form
+below. We will add you once we've determined if you are able to be added
+as a contributor (for legal and admin purposes that are outside of our
+control).
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexnnpKboJI27Yv51HR_VelrQnkZkdr5qtxF6h-pev3CgdcLw/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">
 
 </iframe>
-
