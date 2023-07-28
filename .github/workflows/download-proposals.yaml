@@ -36,8 +36,9 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add data-raw/projects/proposals/*
           git commit -m "Project proposal: ${PROPOSAL}"
+          git push origin new-proposal-${PROPOSAL}
           gh pr create \
             --head new-proposal-${PROPOSAL} \
             --label "proposal" \
             --title "Project proposal: ${PROPOSAL}" \
-            --body "Provide feedback on the proposal here. You can also directly comment on the file itself in the 'Files changed' tab."
+            --body "Provide feedback on the proposal here as comments below. You can also directly comment on the file itself in the 'Files changed' tab."
