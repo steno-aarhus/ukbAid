@@ -9,3 +9,4 @@
 ^public/pkg$
 ^pkgdown$
 ^src$
+^\.js$
