@@ -14,9 +14,9 @@
 
 */
 var gh_token = "YOUR_PERSONAL_ACCESS_TOKEN";
-var owner = "steno-aarhus"
-var repo = "ukbAid"
-var workflow_file = "download-proposals.yaml"
+var owner = "steno-aarhus";
+var repo = "ukbAid";
+var workflow_file = "download-proposals.yaml";
 
 function onFormSubmit(event) {
   var inputs_for_gh = {
@@ -32,15 +32,15 @@ function onFormSubmit(event) {
       "X-GitHub-Api-Version": "2022-11-28",
     },
     "contentType": "application/json",
-    "payload": JSON.stringify(issue_contents)
+    "payload": JSON.stringify(inputs_for_gh)
     };
 
-  var github_api_url = "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflow_file + "/dispatches"
+  var github_api_url = "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflow_file + "/dispatches";
 
   var response = UrlFetchApp.fetch(
     github_api_url,
     download_proposals_trigger
   );
 
-  console.log(res.getContextText())
+  console.log(response.getContentText());
 }
