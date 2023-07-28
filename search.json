@@ -172,14 +172,21 @@
     "href": "request-access.html",
     "title": "Requesting access to the UK Biobank through SDCA’s project",
     "section": "",
-    "text": "Warning\n\n\n\nFirst and foremost, you must be employed by either Aarhus University or by Region Midt and your research topic must fall under our UK Biobank project application.\nTo access the data, follow these easy steps, one by one. Importantly, you have to wait for approval of step 1 before you can continue with step 2. And you need to complete step 3 before moving on the next steps."
+    "text": "Warning\n\n\n\nFirst and foremost, you must be employed by either Aarhus University or by Region Midt and your research topic must fall under our UK Biobank project application.\nWhether you are wanting to propose a project or want to contribute to an existing project, you need to follow these easy steps, one by one. Importantly, you have to wait for approval of step 1 before you can continue with step 2. And you need to complete step 3 before moving on the next steps."
   },
   {
-    "objectID": "request-access.html#project-proposal-submission-form",
-    "href": "request-access.html#project-proposal-submission-form",
+    "objectID": "request-access.html#proposing-a-new-project",
+    "href": "request-access.html#proposing-a-new-project",
     "title": "Requesting access to the UK Biobank through SDCA’s project",
-    "section": "Project proposal submission form",
-    "text": "Project proposal submission form"
+    "section": "Proposing a new project",
+    "text": "Proposing a new project\nNow that you’ve done the steps above, you follow these steps to submit a project proposal for working with the UK Biobank. Complete this step if you will be the primary lead on the project if there are planned contributors.\n\nFill in the Google Form below. All the details you include in this form will be uploaded online to the ukbAid repository. When you submit the form, it will automatically create a Pull Request of your Project Proposal on the ukbAid GitHub repository that the organizing committee will use to get more information or details before approving the project.\n\n\nOnce your project has been approved, we will create a project repository for you on GitHub that will also contain an Issue with a list of todo items. After that, follow the instructions in the Initial setup page, as well as the Using the RAP page. You can then log into the RAP and familiarize yourself with the RAP."
+  },
+  {
+    "objectID": "request-access.html#being-a-contributor-to-an-existing-project",
+    "href": "request-access.html#being-a-contributor-to-an-existing-project",
+    "title": "Requesting access to the UK Biobank through SDCA’s project",
+    "section": "Being a contributor to an existing project",
+    "text": "Being a contributor to an existing project\nIf you want to contribute to one or more existing projects, you will need to fill in this registration form. Please fill in the Google Form below. We will add you once we’ve determined if you are able to be added as a contributor (for legal and admin purposes that are outside of our control)."
   },
   {
     "objectID": "workflow.html",
