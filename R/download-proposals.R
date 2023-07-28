@@ -41,12 +41,15 @@ admin_download_proposals <- function(most_recent = FALSE) {
                       stringr::str_remove_all("\n"))
     )
 
+  proposal_file <- rprojroot::find_package_root_file("data-raw", "projects", "proposals", paste0(project_abbrev, ".yaml"))
+  fs::file_create(proposal_file)
+
   proposals |>
     tidyr::nest(.by = project_abbrev) |>
     purrr::pwalk(\(project_abbrev, data) {
       readr::write_lines(
         x = yaml::as.yaml(data),
-        file = here::here("data-raw", "projects", "proposals", paste0(project_abbrev, ".yaml"))
+        file = proposal_file
       )
     })
 
