@@ -23,6 +23,8 @@ admin_download_proposals <- function(most_recent = FALSE) {
     agree_to_conditions = "Do you agree to the conditions/expectations listed on the website (https://steno-aarhus.github.io/ukbAid/) for participating in the Steno UKB community?"
   )
 
+  # TODO: Need to find some way to re-authenticate.
+  googlesheets4::gs4_deauth()
   proposals <- googlesheets4::read_sheet(get_survey_id())
 
   if (most_recent) {
