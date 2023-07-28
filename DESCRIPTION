@@ -30,6 +30,7 @@ Imports:
     renv,
     rjson,
     rstudioapi,
+    stringr,
     tibble,
     tidyr,
     usethis,
