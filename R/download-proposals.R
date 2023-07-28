@@ -37,16 +37,20 @@ admin_download_proposals <- function(most_recent = FALSE) {
     dplyr::mutate(
       submitted_on = lubridate::format_ISO8601(submitted_on, precision = "ymd"),
       dplyr::across(tidyselect::where(is.na), ~""),
-      dplyr::across(tidyselect::everything(), ~as.character(.x) |>
-                      stringr::str_remove_all("\n"))
+      dplyr::across(tidyselect::everything(), ~ as.character(.x) |>
+        stringr::str_remove_all("\n"))
     )
-
-  proposal_file <- rprojroot::find_package_root_file("data-raw", "projects", "proposals", paste0(project_abbrev, ".yaml"))
-  fs::file_create(proposal_file)
 
   proposals |>
     tidyr::nest(.by = project_abbrev) |>
     purrr::pwalk(\(project_abbrev, data) {
+      proposal_file <- rprojroot::find_package_root_file(
+        "data-raw",
+        "projects",
+        "proposals",
+        paste0(project_abbrev, ".yaml")
+      )
+      fs::file_create(proposal_file)
       readr::write_lines(
         x = yaml::as.yaml(data),
         file = proposal_file
