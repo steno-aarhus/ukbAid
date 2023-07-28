@@ -50,6 +50,7 @@ admin_download_proposals <- function(most_recent = FALSE) {
         "proposals",
         paste0(project_abbrev, ".yaml")
       )
+      fs::dir_create(fs::path_dir(proposal_file))
       fs::file_create(proposal_file)
       readr::write_lines(
         x = yaml::as.yaml(data),
