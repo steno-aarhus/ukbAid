@@ -44,9 +44,9 @@ admin_download_proposals <- function(most_recent = FALSE) {
   proposals |>
     tidyr::nest(.by = project_abbrev) |>
     purrr::pwalk(\(project_abbrev, data) {
-      writeLines(
-        text = yaml::as.yaml(data),
-        con = here::here("data-raw", "projects", "proposals", paste0(project_abbrev, ".yaml"))
+      readr::write_lines(
+        x = yaml::as.yaml(data),
+        file = here::here("data-raw", "projects", "proposals", paste0(project_abbrev, ".yaml"))
       )
     })
 
