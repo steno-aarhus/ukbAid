@@ -1,10 +1,15 @@
 
-# Tracking issue
-#
-
 # First issue
 # - review proposal and provide feedback
 # - accept proposal
+
+# Project tracking issue
+# - Upload protocol and analysis plan to Zenodo
+# - Conduct code review mid-way
+# - Conduct code review after analysis is complete
+# - Connect GitHub to Zenodo, then create a GitHub release
+# - Reference both protocol and code DOI in paper
+# - Upload paper to preprint archive (e.g. medRxiv)
 
 #' Add the user to the SDCA GitHub Organization UK Biobank team.
 #'
