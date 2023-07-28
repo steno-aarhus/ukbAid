@@ -14,52 +14,33 @@
 
 */
 var gh_token = "YOUR_PERSONAL_ACCESS_TOKEN";
-var handle = "steno-aarhus"
+var owner = "steno-aarhus"
 var repo = "ukbAid"
+var workflow_file = "download-proposals.yaml"
 
 function onFormSubmit(event) {
-
-  var responses = event.response.getItemResponses();
-  var full_name = responses[2].getResponse();
-  var github_user = responses[3].getResponse();
-  var job_position = responses[5].getResponse();
-  var phd_supervisor = responses[6].getResponse();
-  var affiliation = responses[7].getResponse();
-  var project_title = responses[8].getResponse();
-  var project_abbrev = responses[9].getResponse();
-  var project_description = responses[10].getResponse();
-
-  var issue_title = "Proposal: " + project_title;
-
-  var issue_body =
-    "- **Submitted By**: " + full_name + " (@" + github_user + ")" +
-    "\n- **Position**: " + job_position +
-    "\n- **Supervisor (if PhD student)**: " + phd_supervisor +
-    "\n- **Affiliation**: " + affiliation +
-    "\n\n## Project description" +
-    "\n\n" + project_title + " (" + project_abbrev + ")" +
-    "\n\n" + project_description
-
-  var issue_contents = {
-    "title": issue_title,
-    "body": issue_body,
-    "labels": [
-      "proposal"
-     ]
+  var inputs_for_gh = {
+    "ref": "main"
   };
 
-  var issue_creation_commands = {
+  var download_proposals_trigger = {
     "method": "POST",
     // Header is used to send the token as authentication.
     "headers": {
-      "authorization": "token " + gh_token,
-      "Accept": "application/vnd.github.v3+json",
+      "authorization": "Bearer " + gh_token,
+      "accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
     },
     "contentType": "application/json",
     "payload": JSON.stringify(issue_contents)
     };
 
-  Logger.log(issue_contents)
+  var github_api_url = "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflow_file + "/dispatches"
 
-  var response = UrlFetchApp.fetch("https://api.github.com/repos/" + handle + "/" + repo + "/issues", issue_creation_commands);
+  var response = UrlFetchApp.fetch(
+    github_api_url,
+    download_proposals_trigger
+  );
+
+  console.log(res.getContextText())
 }
