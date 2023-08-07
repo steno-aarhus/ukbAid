@@ -2,9 +2,43 @@
 title: "Administration"
 ---
 
+::: callout-warning
+Still in development.
+:::
+
 ## Adding users to projects
 
 1.  In the UKB AMS go to "Edit application", then go to the "Add member"
     form and select the scroll down menu, using either AUH or AU.
-2.  In DNAnexus, go to "Project -\> Share project" (people icon to top
+2.  In DNAnexus, go to `Project -> Share project` (people icon to top
     right, add by username or email address).
+
+## Todo after proposal submission
+
+1.  Review the created Pull Request, provide any feedback or request
+    clarifications if necessary.
+    -   If changes necessary, main applicant should update the file on
+        their own.
+
+## Todo after project acceptance
+
+1.  `admin_gh_add_user_to_team()`: Add applicant to SDCA GitHub and the
+    team.
+2.  Create a GitHub repo for the project with ...
+3.  Add project tracking issue to the repo with ...
+
+## General admin
+
+### On GitHub or own computer
+
+Need to set a `SURVEY_ID` variable for the Google Forms Sheet ID (the
+unique string that comes after the `/spreadsheets/d/` in the URL). This
+needs to be set on GitHub as well as on your own computer if you are
+going to download the survey data.
+
+1.  On GitHub, add a secret in Settings called `SURVEY_ID` with the
+    Google Sheet ID.
+2.  On your computer, you can either add a new variable in the form of
+    `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
+    whenever you run the functions that require the variable (which use
+    the `ukbAid:::get_survey_id()` function).
