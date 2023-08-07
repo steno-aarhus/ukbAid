@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-28">
+<meta name="dcterms.date" content="2023-08-07">
 
 <title>ukbAid - Administration</title>
 <style>
@@ -103,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./using-rap.html" rel="" target="">
- <span class="dropdown-text">Working in Research Analysis Platform (RAP)</span></a>
+ <span class="dropdown-text">Working in the Research Analysis Platform (RAP)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./important-notes.html" rel="" target="">
@@ -148,6 +148,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#adding-users-to-projects" id="toc-adding-users-to-projects" class="nav-link active" data-scroll-target="#adding-users-to-projects">Adding users to projects</a></li>
+  <li><a href="#todo-after-proposal-submission" id="toc-todo-after-proposal-submission" class="nav-link" data-scroll-target="#todo-after-proposal-submission">Todo after proposal submission</a></li>
+  <li><a href="#todo-after-project-acceptance" id="toc-todo-after-project-acceptance" class="nav-link" data-scroll-target="#todo-after-project-acceptance">Todo after project acceptance</a></li>
+  <li><a href="#general-admin" id="toc-general-admin" class="nav-link" data-scroll-target="#general-admin">General admin</a></li>
   </ul>
 </nav>
     </div>
@@ -167,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 28, 2023</p>
+      <p class="date">August 7, 2023</p>
     </div>
   </div>
   
@@ -177,14 +180,55 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Still in development.</p>
+</div>
+</div>
 <section id="adding-users-to-projects" class="level2">
 <h2 class="anchored" data-anchor-id="adding-users-to-projects">Adding users to projects</h2>
 <ol type="1">
 <li>In the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.</li>
-<li>In DNAnexus, go to “Project -&gt; Share project” (people icon to top right, add by username or email address).</li>
+<li>In DNAnexus, go to <code>Project -&gt; Share project</code> (people icon to top right, add by username or email address).</li>
+</ol>
+</section>
+<section id="todo-after-proposal-submission" class="level2">
+<h2 class="anchored" data-anchor-id="todo-after-proposal-submission">Todo after proposal submission</h2>
+<ol type="1">
+<li>Review the created Pull Request, provide any feedback or request clarifications if necessary.
+<ul>
+<li>If changes necessary, main applicant should update the file on their own.</li>
+</ul></li>
+</ol>
+</section>
+<section id="todo-after-project-acceptance" class="level2">
+<h2 class="anchored" data-anchor-id="todo-after-project-acceptance">Todo after project acceptance</h2>
+<ol type="1">
+<li><code>admin_gh_add_user_to_team()</code>: Add applicant to SDCA GitHub and the team.</li>
+<li>Create a GitHub repo for the project with …</li>
+<li>Add project tracking issue to the repo with …</li>
+</ol>
+</section>
+<section id="general-admin" class="level2">
+<h2 class="anchored" data-anchor-id="general-admin">General admin</h2>
+<section id="on-github-or-own-computer" class="level3">
+<h3 class="anchored" data-anchor-id="on-github-or-own-computer">On GitHub or own computer</h3>
+<p>Need to set a <code>SURVEY_ID</code> variable for the Google Forms Sheet ID (the unique string that comes after the <code>/spreadsheets/d/</code> in the URL). This needs to be set on GitHub as well as on your own computer if you are going to download the survey data.</p>
+<ol type="1">
+<li>On GitHub, add a secret in Settings called <code>SURVEY_ID</code> with the Google Sheet ID.</li>
+<li>On your computer, you can either add a new variable in the form of <code>SURVEY_ID=""</code> in a <code>.Renviron</code> file or always get asked for it whenever you run the functions that require the variable (which use the <code>ukbAid:::get_survey_id()</code> function).</li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
