@@ -78,9 +78,14 @@ Paste the token into the prompt in the Console. If it asks to replace an
 existing one, select the "yes" option. Doing this is a bit like using
 the 2FA message with the temporary passcode you get sent whenever you
 have to open your work's email or when you use MitID or NemID (in
-Denmark). Every time you open RStudio (or start your computer), you need
-to run this function and give R the PAT so that it can connect to GitHub
-securely.
+Denmark).
+
+::: callout-note
+The function above is the one you will need to run more than once (aside
+from the `usethis::creat_github_token()` every 90 days). Every time you
+open RStudio (or start your computer), you need to run this function and
+give R the PAT so that it can connect to GitHub securely.
+:::
 
 ::: callout-important
 Why do we need to do this on our computer? Because whenever you connect
