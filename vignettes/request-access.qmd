@@ -52,13 +52,13 @@ contributors.
 
     </iframe>
 
-6.  Once your project has been approved, we will create a project
+2.  Once your project has been approved, we will create a project
     repository for you on GitHub that will also contain an Issue with a
     list of todo items. After that, follow the instructions in the
-    [Initial setup](initial-setup.qmd) page, as well as the [Using the
-    RAP](using-rap.qmd) page. You can then log into the
-    [RAP](https://ukbiobank.dnanexus.com/login) and familiarize yourself
-    with the RAP.
+    [Initial setup](initial-setup.qmd) page, as well as the [Working in
+    the Research Analysis Platform (RAP)](using-rap.qmd) page. You can
+    then log into the [RAP](https://ukbiobank.dnanexus.com/login) and
+    familiarize yourself with the RAP.
 
 ## Being a contributor to an existing project
 

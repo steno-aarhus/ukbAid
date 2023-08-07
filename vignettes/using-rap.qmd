@@ -1,5 +1,5 @@
 ---
-title: "Working in Research Analysis Platform (RAP)"
+title: "Working in the Research Analysis Platform (RAP)"
 execute: 
   eval: false
 ---
@@ -103,4 +103,3 @@ Otherwise all your work on the RAP will be lost next time you login.
     have discussed it with the organizing committee. You can save
     results for tables and figures, as long as they are aggregate or
     statistical results.
-
