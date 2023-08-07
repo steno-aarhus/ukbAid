@@ -64,6 +64,3 @@ get_rstudio_config_as_text <- function() {
         dput() %>%
         utils::capture.output()
 }
-
-
-
