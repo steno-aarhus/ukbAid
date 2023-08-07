@@ -34,10 +34,7 @@ setup_ukb_project <- function(path) {
         git_commit_file("DESCRIPTION", "Add some package dependencies to the project")
 
         # Updates to the gitignore
-        usethis::use_git_ignore("data/data.csv")
-        usethis::use_git_ignore(".Rhistory")
-        usethis::use_git_ignore(".RData")
-        usethis::use_git_ignore(".DS_Store")
+        usethis::use_git_ignore(c("data/data.csv",".Rhistory", ".RData", ".DS_Store"))
         git_commit_file(".gitignore", "Add files that Git should ignore")
 
         # Add processing files to the data-raw folder
@@ -50,8 +47,8 @@ setup_ukb_project <- function(path) {
         git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
         # Add protocol to `doc/` folder
-        rmarkdown::draft(file = "doc/protocol.Rmd", template = "protocol", package = "ukbAid", edit = FALSE)
-        git_commit_file("doc/protocol.Rmd", "Add the template protocol R Markdown document")
+        usethis::use_template("protocol.qmd", "doc/protocol.qmd", package = "ukbAid")
+        git_commit_file("doc/protocol.qmd", "Add the template protocol Quarto document")
 
         # Add other misc items
         usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
