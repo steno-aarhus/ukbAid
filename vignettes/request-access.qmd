@@ -40,7 +40,7 @@ project proposal for working with the UK Biobank. Complete this step if
 you will be the primary lead on the project if there are planned
 contributors.
 
-5.  Fill in the Google Form below. All the details you include in this
+1.  Fill in the Google Form below. All the details you include in this
     form **will** be uploaded online to the ukbAid repository. When you
     submit the form, it will automatically create a Pull Request of your
     Project Proposal on the [ukbAid
