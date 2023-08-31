@@ -1,0 +1,27 @@
+submitted_on: '2023-08-31'
+full_name: Jie Zhang
+github_username: Jie_evezhang
+job_position: Postdoc researcher
+phd_supervisor: ''
+affiliation: Aarhus University
+project_title: Multimorbidity-Disease trajectories, risk factors and the consequence
+project_description: With the growing number of people suffering from diabetes-multimorbidity1,
+  and its heterogeneity in presentation and outcome, there is an urgent need to gain
+  a deeper understanding of the mechanisms that determine different courses of progression
+  towards diabetes-multimorbidity. The overall aim of the project is to describe the
+  disease transition processes that lead to diabetes-multimorbidity and to determine
+  drivers of multimorbidity trajectories. We will apply advanced epidemiological methods
+  to three large populations using a multi-dimensional and multi-stage approach1,2.The
+  specific aims of the project are:1. To map the heterogeneity in trajectories of
+  diabetes-multimorbidity and to identify risk factors contributing to pronounced
+  diabetes-multimorbidity. This will be achieved by using a machine learning approach
+  for risk prediction, which involves combining a genetic algorithm with a random
+  forest classifier to enhance the results;2. To understand mortality risk at different
+  stages of the diabetes-multimorbidity trajectory, by comparing mortality as people
+  transition from a healthy condition to single disease, and diabetes-multimorbidity
+  using multi-state models;3. To develop a web application that helps clinicians visualize
+  the potential impact of an intervention or achieving tighter therapeutic targets
+  on the future risk of all components of diabetes-multimorbidity. This step will
+  be conducted by integrating results from aims 1 and 2 using simulation approaches.Figure
+agree_to_conditions: 'Yes'
+
