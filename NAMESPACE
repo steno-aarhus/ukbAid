@@ -3,6 +3,8 @@
 export("%>%")
 export(admin_download_proposals)
 export(admin_gh_add_user_to_team)
+export(admin_list_approved_projects)
+export(admin_start_approved_project)
 export(create_csv_from_database)
 export(download_project_data)
 export(get_rap_project_id)

@@ -6,6 +6,7 @@
 \usage{
 create_csv_from_database(
   variables_to_extract,
+  output_file_prefix = "data",
   project_id = get_rap_project_id(),
   dataset_record_id = dare_project_record_id,
   username = get_username()
