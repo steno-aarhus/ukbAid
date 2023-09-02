@@ -207,7 +207,7 @@
     "href": "admin.html#todo-after-project-acceptance",
     "title": "Administration",
     "section": "Todo after project acceptance",
-    "text": "Todo after project acceptance\n\nadmin_gh_add_user_to_team(): Add applicant to SDCA GitHub and the team.\nCreate a GitHub repo for the project with …\nAdd project tracking issue to the repo with …"
+    "text": "Todo after project acceptance\n\nSee a list of approved projects with admin_list_approved_projects() and admin_list_gh_repos() for projects on GitHub.\nRun admin_start_approved_project(), using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo.\nAdd project tracking issue to the repo with …"
   },
   {
     "objectID": "admin.html#general-admin",
