@@ -30,21 +30,22 @@ Imports:
     renv,
     rjson,
     rprojroot,
+    rspm,
     rstudioapi,
     stringr,
     tibble,
     tidyr,
     usethis,
     utils,
-    withr
+    withr,
+    yesno
 Suggests: 
     clipr,
     knitr,
     pkgdown,
     prereg (>= 0.5.0),
     quarto,
-    rmarkdown,
-    yesno
+    rmarkdown
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
 Depends: 
