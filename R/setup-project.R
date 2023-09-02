@@ -33,8 +33,11 @@ setup_ukb_project <- function(path) {
         usethis::use_blank_slate("project")
         git_commit_file("DESCRIPTION", "Add some package dependencies to the project")
 
+        desc::desc_set(Title = "UK Biobank Project")
+        git_commit_file("DESCRIPTION", "Add a title to the description file")
+
         # Updates to the gitignore
-        usethis::use_git_ignore(c("data/data.csv",".Rhistory", ".RData", ".DS_Store"))
+        usethis::use_git_ignore(c("data/data.*",".Rhistory", ".RData", ".DS_Store"))
         git_commit_file(".gitignore", "Add files that Git should ignore")
 
         # Add processing files to the data-raw folder
