@@ -22,9 +22,12 @@ Still in development.
 
 ## Todo after project acceptance
 
-1.  `admin_gh_add_user_to_team()`: Add applicant to SDCA GitHub and the
-    team.
-2.  Create a GitHub repo for the project with ...
+1.  See a list of approved projects with
+    `admin_list_approved_projects()` and `admin_list_gh_repos()` for
+    projects on GitHub.
+2.  Run `admin_start_approved_project()`, using the user name and
+    project abbreviation to create the project, add it to the Steno
+    GitHub, set up permissions, and add the user to the repo.
 3.  Add project tracking issue to the repo with ...
 
 ## General admin
@@ -42,3 +45,4 @@ going to download the survey data.
     `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
     whenever you run the functions that require the variable (which use
     the `ukbAid:::get_survey_id()` function).
+
