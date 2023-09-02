@@ -48,19 +48,3 @@ check_if_git_config_already_exists <- function(name, email) {
 
     return(already_exists)
 }
-
-#' Get the local (not in the UKB RAP) RStudio configuration settings as a character vector.
-#'
-#' @return Character string of local config settings.
-#' @noRd
-#'
-#' @examples
-#' get_rstudio_config_as_text() %>%
-#'   clipr::write_clip()
-get_rstudio_config_as_text <- function() {
-    usethis:::rstudio_config_path() %>%
-        fs::dir_ls(regexp = "rstudio-prefs") %>%
-        rjson::fromJSON(file = .) %>%
-        dput() %>%
-        utils::capture.output()
-}
