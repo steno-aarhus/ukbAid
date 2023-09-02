@@ -23,6 +23,9 @@ ukb_variables <-
 # for parallel processing since it can sometimes take a while.
 rap_variables_chunked <- ukb_variables %>%
   select(-num_participants) %>%
+  # TODO: Not sure if array is needed in RAP... Will need to modify this code here.
+  # Set all array's max/min to 0 since we might not need array's, but I'm not sure.
+  mutate(array_max = 0, array_min = 0) %>%
   mutate(
     array_max = case_when(
       str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
