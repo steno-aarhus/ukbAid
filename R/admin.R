@@ -1,4 +1,3 @@
-
 # Create project repo with all permissions --------------------------------
 
 #' Add the user to the SDCA GitHub Organization UK Biobank team.
@@ -70,9 +69,20 @@ admin_list_approved_projects <- function() {
     purrr::map(tibble::as_tibble) %>%
     purrr::list_rbind(names_to = "project_abbrev") %>%
     dplyr::mutate(project_abbrev = fs::path_file(project_abbrev) |>
-                    fs::path_ext_remove())
+      fs::path_ext_remove())
 }
 
+#' List all the repos on GitHub under the SDCA UK Biobank project.
+#'
+#' @return A tibble.
+#' @export
+#'
+admin_gh_list_repos <- function() {
+  ghclass::team_repos(
+    org = "steno-aarhus",
+    team = "ukbiobank-team"
+  )
+}
 
 # Helpers -----------------------------------------------------------------
 
@@ -100,12 +110,6 @@ admin_create_gh_repo <- function(path) {
         organisation = "steno-aarhus",
         private = TRUE
       )
-    })
-}
-
-admin_gh_list_repos <- function() {
-  ghclass::team_repos(
-    org = "steno-aarhus",
-    team = "ukbiobank-team"
+    }
   )
 }
