@@ -1,0 +1,39 @@
+---
+title: "Approved projects"
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(fs)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+project_description_template <- "
+\n
+## {project_abbrev}: {project_title}
+\n
+> **Lead author**: {full_name}, {job_position} at {affiliation}
+\n
+{project_description}
+\n
+GitHub: [github.com/steno-aarhus/{project_abbrev}](https://github.com/steno-aarhus/{project_abbrev})
+"
+
+add_project_abbrev <- function(x, y) {
+  project_abbrev <- fs::path_file(y) %>% 
+    fs::path_ext_remove()
+  x %>% 
+    tibble::as_tibble() %>% 
+    dplyr::mutate(project_abbrev = project_abbrev)
+}
+
+here::here("data-raw/projects/approved") %>% 
+  dir_ls(glob = "*.yaml") %>% 
+  map(yaml::read_yaml) %>% 
+  imap(add_project_abbrev) %>% 
+  map(~glue::glue_data(.x, project_description_template)) %>% 
+  walk(~cat(.x, sep = "\n\n"))
+```
