@@ -121,10 +121,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Welcome!</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./project-description.html" rel="" target="">
- <span class="menu-text">Project description</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="./project-description.html" rel="" target="">
+ <span class="dropdown-text">Project description</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./governance.html" rel="" target="">
+ <span class="dropdown-text">Governance</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-getting-started" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Getting started</span>
@@ -157,19 +168,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./admin.html" rel="" target="">
  <span class="dropdown-text">Administration</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./governance.html" rel="" target="">
- <span class="dropdown-text">Governance</span></a>
-  </li>  
     </ul>
   </li>
-  <li class="nav-item compact">
-    <a class="nav-link" href="./pkg/index.html" rel="" target=""><i class="bi bi-box-seam" role="img">
-</i> 
- <span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./faq.html" rel="" target="">
+ <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools">
+    <a href="./pkg/index.html" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-box-seam"></i></a>
+    <a href="https://github.com/steno-aarhus/ukbAid" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -186,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#steps-to-take-before-using-the-rap" id="toc-steps-to-take-before-using-the-rap" class="nav-link active" data-scroll-target="#steps-to-take-before-using-the-rap">Steps to take before using the RAP</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/steno-aarhus/ukbAid/edit/main/initial-setup.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -595,6 +603,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Licensed under CC-BY 4.0</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
