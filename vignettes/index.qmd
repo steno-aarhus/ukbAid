@@ -110,6 +110,32 @@ AU/AUH and their ethics consideration:
 
 ## Next steps {#next-steps}
 
+```{mermaid}
+%%| echo: false
+flowchart LR
+    subgraph Submission
+        direction TB
+        submit_request>Submit project<br>proposal] --> 
+            pr_created([Proposal created<br>on GitHub]) --> 
+            committee_approved([Reviewed and<br>approved by committee]) -->
+            proj_created([Project created<br>for you])
+    end 
+ 
+    subgraph Protocol
+        direction TB
+        review_variables>Review and select<br> variables you need] -->
+            write_protocol>Write up a<br>draft protocol] -->
+            protocol_reviewed([Protocol reviewed<br>by contributors/committee]) -->
+            upload_protocol>Upload protocol<br>to Zenodo]
+    end
+    
+    subgraph RAP [Working in RAP]
+        direction TB
+        work_on_rap>Conduct analysis]
+    end
+
+    Submission --> Protocol --> RAP
+```
+
 1.  Review the [Project Description](project-description.qmd) page.
 2.  Do the steps in the [Requesting Access](request-access.qmd) page.
-
