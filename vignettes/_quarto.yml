@@ -6,11 +6,16 @@ project:
 
 website:
   title: "ukbAid"
+  repo-url: https://github.com/steno-aarhus/ukbAid
+  repo-actions: [edit, issue]
   navbar:
     pinned: true
     right:
       - index.qmd
-      - project-description.qmd
+      - text: "About"
+        menu:
+          - project-description.qmd
+          - governance.qmd
       - text: "Getting started"
         menu:
           - request-access.qmd
@@ -20,9 +25,15 @@ website:
       - text: "Admin"
         menu:
           - admin.qmd
-          - governance.qmd
+      - text: "FAQ"
+        href: faq.qmd
+    tools:
       - icon: box-seam
         href: "/pkg/index.html"
+      - icon: github
+        href: https://github.com/steno-aarhus/ukbAid
+  page-footer:
+    center: "Licensed under CC-BY 4.0"
 
 date: last-modified
 
