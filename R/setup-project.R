@@ -16,6 +16,7 @@ setup_ukb_project <- function(path) {
     options(usethis.quiet = TRUE)
     # Get them to add git config settings (everytime I think)
     usethis::with_project(path, code = {
+        gert::git_config_global_set("init.defaultbranch", "main")
         gert::git_init()
         gert::git_add(".")
         gert::git_commit("First commit and creation of project")
