@@ -21,11 +21,18 @@
     "text": "Warning\n\n\n\nStill in development."
   },
   {
-    "objectID": "admin.html#adding-users-to-projects",
-    "href": "admin.html#adding-users-to-projects",
+    "objectID": "admin.html#adding-users-to-the-rap-project",
+    "href": "admin.html#adding-users-to-the-rap-project",
     "title": "Administration",
-    "section": "Adding users to projects",
-    "text": "Adding users to projects\n\nIn the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.\nIn DNAnexus, go to Project -&gt; Share project (people icon to top right, add by username or email address)."
+    "section": "Adding users to the RAP project",
+    "text": "Adding users to the RAP project\n\nIn the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.\nIn DNAnexus, go to Project -&gt; Share project (people icon to top right, add by username or email address)."
+  },
+  {
+    "objectID": "admin.html#adding-users-to-the-github-repos",
+    "href": "admin.html#adding-users-to-the-github-repos",
+    "title": "Administration",
+    "section": "Adding users to the GitHub repos",
+    "text": "Adding users to the GitHub repos\n\nTo add someone to the GitHub UKB team, use admin_gh_add_user_to_team().\nTo add a contributor to a project, use the function admin_gh_add_contributor_to_repo()."
   },
   {
     "objectID": "admin.html#todo-after-proposal-submission",
@@ -39,7 +46,7 @@
     "href": "admin.html#todo-after-project-acceptance",
     "title": "Administration",
     "section": "Todo after project acceptance",
-    "text": "Todo after project acceptance\n\nSee a list of approved projects with admin_list_approved_projects() and admin_list_gh_repos() for projects on GitHub.\nRun admin_start_approved_project(), using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo.\nAdd project tracking issue to the repo with …"
+    "text": "Todo after project acceptance\n\nSee a list of approved projects with admin_list_approved_projects() and admin_list_gh_repos() for projects on GitHub.\nRun admin_start_approved_project(), using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo."
   },
   {
     "objectID": "admin.html#general-admin",

@@ -155,7 +155,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#adding-users-to-projects" id="toc-adding-users-to-projects" class="nav-link active" data-scroll-target="#adding-users-to-projects">Adding users to projects</a></li>
+  <li><a href="#adding-users-to-the-rap-project" id="toc-adding-users-to-the-rap-project" class="nav-link active" data-scroll-target="#adding-users-to-the-rap-project">Adding users to the RAP project</a></li>
+  <li><a href="#adding-users-to-the-github-repos" id="toc-adding-users-to-the-github-repos" class="nav-link" data-scroll-target="#adding-users-to-the-github-repos">Adding users to the GitHub repos</a></li>
   <li><a href="#todo-after-proposal-submission" id="toc-todo-after-proposal-submission" class="nav-link" data-scroll-target="#todo-after-proposal-submission">Todo after proposal submission</a></li>
   <li><a href="#todo-after-project-acceptance" id="toc-todo-after-project-acceptance" class="nav-link" data-scroll-target="#todo-after-project-acceptance">Todo after project acceptance</a></li>
   <li><a href="#general-admin" id="toc-general-admin" class="nav-link" data-scroll-target="#general-admin">General admin</a></li>
@@ -201,11 +202,18 @@ Warning
 <p>Still in development.</p>
 </div>
 </div>
-<section id="adding-users-to-projects" class="level2">
-<h2 class="anchored" data-anchor-id="adding-users-to-projects">Adding users to projects</h2>
+<section id="adding-users-to-the-rap-project" class="level2">
+<h2 class="anchored" data-anchor-id="adding-users-to-the-rap-project">Adding users to the RAP project</h2>
 <ol type="1">
 <li>In the UKB AMS go to “Edit application”, then go to the “Add member” form and select the scroll down menu, using either AUH or AU.</li>
 <li>In DNAnexus, go to <code>Project -&gt; Share project</code> (people icon to top right, add by username or email address).</li>
+</ol>
+</section>
+<section id="adding-users-to-the-github-repos" class="level2">
+<h2 class="anchored" data-anchor-id="adding-users-to-the-github-repos">Adding users to the GitHub repos</h2>
+<ol type="1">
+<li>To add someone to the GitHub UKB team, use <code>admin_gh_add_user_to_team()</code>.</li>
+<li>To add a contributor to a project, use the function <code>admin_gh_add_contributor_to_repo()</code>.</li>
 </ol>
 </section>
 <section id="todo-after-proposal-submission" class="level2">
@@ -222,7 +230,6 @@ Warning
 <ol type="1">
 <li>See a list of approved projects with <code>admin_list_approved_projects()</code> and <code>admin_list_gh_repos()</code> for projects on GitHub.</li>
 <li>Run <code>admin_start_approved_project()</code>, using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo.</li>
-<li>Add project tracking issue to the repo with …</li>
 </ol>
 </section>
 <section id="general-admin" class="level2">
