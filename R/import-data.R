@@ -1,25 +1,28 @@
 
-#' Downloads your UKB CSV data file to the `data/data.csv` folder.
+#' Downloads your UKB data file to the `data/data.csv` folder.
 #'
 #' Use this function every time you open a new RStudio Session, aka every time you
 #' use the UKB RAP. We don't want to save the data within the Git repository, so
 #' you'd need to download it every time you go back to analyzing the data.
 #'
-#' @param path The file path to the dataset you want to upload.
+#' @param file_ext The file extension of the dataset. Defaults to "csv", but can also provide "parquet".
 #' @inheritParams create_csv_from_database
 #'
-#' @return Downloads CSV to `data/data.csv`.
+#' @return Downloads the data file to `data/`.
 #' @export
 #'
-download_project_data <- function(path,
-                                  project_id = get_rap_project_id(),
-                                  file_prefix = "data",
-                                  username = get_username()) {
-  download_command <- glue::glue("dx download /users/{username}/{file_prefix}-{project_id}.csv --output data/data.csv")
-  cli::cli_alert_info("Downloading data to {.val data/data.csv}.")
+download_data <- function(project_id = get_rap_project_id(),
+                          file_prefix = "data",
+                          file_ext = c("csv", "parquet"),
+                          username = get_username()) {
+  file_ext <- rlang::arg_match(file_ext)
+  rap_data_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{file_ext}")
+  output_path <- glue::glue("data/data.{file_ext}")
+  download_command <- glue::glue("dx download {rap_data_path} --output {output_path}")
+  cli::cli_alert_info("Downloading data to {.val {output_path}}.")
   system(download_command)
-  cli::cli_alert_success("Downloaded CSV!")
-  return(here::here("data/data.csv"))
+  cli::cli_alert_success("Downloaded the data file!")
+  return(here::here(output_path))
 }
 
 #' Upload a data file to the RAP.
