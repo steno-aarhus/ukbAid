@@ -14,9 +14,11 @@ BugReports: https://github.com/steno-aarhus/ukbAid/issues
 Depends: 
     R (>= 4.0.0)
 Imports: 
+    arrow,
     cli,
     desc,
     dplyr,
+    duckdb,
     fs,
     gert,
     ghclass,
