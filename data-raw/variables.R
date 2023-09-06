@@ -23,16 +23,22 @@ ukb_variables <-
 # for parallel processing since it can sometimes take a while.
 rap_variables_chunked <- ukb_variables %>%
   select(-num_participants) %>%
-  # TODO: Not sure if array is needed in RAP... Will need to modify this code here.
-  # Set all array's max/min to 0 since we might not need array's, but I'm not sure.
-  mutate(array_max = 0, array_min = 0) %>%
+  # mutate(array_max = 0, array_min = 0) %>%
   mutate(
+    instance_max = case_when(
+      field_id %in% c(22040) ~ 0,
+      TRUE ~ instance_max
+    ),
     array_max = case_when(
+      field_id %in% c(41280, 41281, 41257, 41260, 41262, 41263, 41282, 41283) ~ array_max,
       str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
       str_detect(title, "Medication for cholesterol, blood pressure or diabetes") ~ 0,
       str_detect(title, "Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones") ~ 0,
       str_detect(title, "^Qualifications$") ~ 0,
-      TRUE ~ array_max
+      # TODO: Not sure if array is needed in RAP... Will need to modify this code here.
+      # Set all array's max to 0 since we might not need array's, but I'm not sure.
+      # TRUE ~ array_max
+      TRUE ~ 0
     ),
     arrayed = !(array_min == array_max)
   ) %>%
