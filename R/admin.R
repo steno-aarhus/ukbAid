@@ -1,4 +1,6 @@
 
+# Create project repo with all permissions --------------------------------
+
 #' Add the user to the SDCA GitHub Organization UK Biobank team.
 #'
 #' @param user The GitHub username.
@@ -24,40 +26,6 @@ admin_gh_add_user_to_team <- function(user) {
       team_invite_results = team_invite_results
     )
   ))
-}
-
-admin_gh_add_repo_to_team <- function(proj_abbrev) {
-  ghclass::repo_add_team(
-    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
-    team = "ukbiobank-team",
-    permission = "push"
-  )
-}
-
-admin_gh_add_user_to_repo <- function(user, proj_abbrev) {
-  ghclass::repo_add_user(
-    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
-    user = user,
-    permission = "maintain"
-  )
-}
-
-admin_create_gh_repo <- function(path) {
-  usethis::with_project(
-    path = path,
-    {
-      usethis::use_github(
-        organisation = "steno-aarhus",
-        private = TRUE
-      )
-    })
-}
-
-admin_gh_list_repos <- function() {
-  ghclass::team_repos(
-    org = "steno-aarhus",
-    team = "ukbiobank-team"
-  )
 }
 
 #' Start and setup the approved project onto GitHub.
@@ -103,4 +71,41 @@ admin_list_approved_projects <- function() {
     purrr::list_rbind(names_to = "project_abbrev") %>%
     dplyr::mutate(project_abbrev = fs::path_file(project_abbrev) |>
                     fs::path_ext_remove())
+}
+
+
+# Helpers -----------------------------------------------------------------
+
+admin_gh_add_repo_to_team <- function(proj_abbrev) {
+  ghclass::repo_add_team(
+    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
+    team = "ukbiobank-team",
+    permission = "push"
+  )
+}
+
+admin_gh_add_user_to_repo <- function(user, proj_abbrev) {
+  ghclass::repo_add_user(
+    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
+    user = user,
+    permission = "maintain"
+  )
+}
+
+admin_create_gh_repo <- function(path) {
+  usethis::with_project(
+    path = path,
+    {
+      usethis::use_github(
+        organisation = "steno-aarhus",
+        private = TRUE
+      )
+    })
+}
+
+admin_gh_list_repos <- function() {
+  ghclass::team_repos(
+    org = "steno-aarhus",
+    team = "ukbiobank-team"
+  )
 }
