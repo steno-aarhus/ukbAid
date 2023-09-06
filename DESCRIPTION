@@ -42,6 +42,7 @@ Imports:
     usethis,
     utils,
     withr,
+    yaml,
     yesno
 Suggests: 
     clipr,
