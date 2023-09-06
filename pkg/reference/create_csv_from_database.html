@@ -20,7 +20,7 @@ probably only once at the start of your project. NOTE: This function takes
     
     <a class="navbar-brand me-2" href="../index.html">ukbAid</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.12</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.14</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@ probably only once at the start of your project. NOTE: This function takes
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Extract variables you want from the UKB database and create a CSV file to later upload to your own project.</h1>
-      <small class="dont-index">Source: <a href="https://github.com/steno-aarhus/ukbAid/blob/HEAD/R/import-data.R" class="external-link"><code>R/import-data.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/steno-aarhus/ukbAid/blob/HEAD/R/create-data.R" class="external-link"><code>R/create-data.R</code></a></small>
       <div class="d-none name"><code>create_csv_from_database.Rd</code></div>
     </div>
 
@@ -62,7 +62,7 @@ probably only once at the start of your project. NOTE: This function takes
     <p>This function tells RAP to extract the variables you want from the <code>.dataset</code>
 database file and to create a CSV file within the main RAP project folder.
 When you want to use the CSV file in your own data analysis project, use
-<code><a href="download_project_data.html">download_project_data()</a></code>. You probably don't need to run this function often,
+<code>download_project_data()</code>. You probably don't need to run this function often,
 probably only once at the start of your project. NOTE: This function takes
 5 minutes to run on the UKB RAP, so be careful with just randomly running it.</p>
     </div>
@@ -71,7 +71,7 @@ probably only once at the start of your project. NOTE: This function takes
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_csv_from_database</span><span class="op">(</span></span>
 <span>  <span class="va">variables_to_extract</span>,</span>
-<span>  output_file_prefix <span class="op">=</span> <span class="st">"data"</span>,</span>
+<span>  file_prefix <span class="op">=</span> <span class="st">"data"</span>,</span>
 <span>  project_id <span class="op">=</span> <span class="fu"><a href="get_rap_project_id.html">get_rap_project_id</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  dataset_record_id <span class="op">=</span> <span class="va">dare_project_record_id</span>,</span>
 <span>  username <span class="op">=</span> <span class="fu"><a href="get_username.html">get_username</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -87,6 +87,10 @@ extract from the UKB database (from the <code>.dataset</code> file). Use
 <code>data-raw/rap-variables.csv</code> file, open that file, and delete all variables you
 don't want to keep. This is the file that contains the <code>variable_name</code> column
 you would use for this argument.</p></dd>
+
+
+<dt>file_prefix</dt>
+<dd><p>The prefix to add to the start of the file name. Defaults to "data".</p></dd>
 
 
 <dt>project_id</dt>
