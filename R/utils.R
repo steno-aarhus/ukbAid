@@ -13,3 +13,13 @@ git_commit_file <- function(file, message) {
     gert::git_commit(message)
     return(invisible(NULL))
 }
+
+#' Get package dependencies from the DESCRIPTION file.
+#'
+#' @return A character vector of package names.
+#' @export
+#'
+get_proj_dependencies <- function() {
+  desc::desc_get_deps()$package |>
+    stringr::str_subset("^R$", negate = TRUE)
+}
