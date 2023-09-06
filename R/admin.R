@@ -27,6 +27,19 @@ admin_gh_add_user_to_team <- function(user) {
   ))
 }
 
+#' Add a contributor to a repo.
+#'
+#' @inheritParams admin_start_approved_project
+#'
+#' @return Invisibly return results from GitHub API call as a list.
+#' @export
+#'
+admin_gh_add_contributor_to_repo <- function(user, proj_abbrev) {
+  add_to_team <- admin_gh_add_user_to_team(user = user)
+  add_to_repo <- admin_gh_add_user_to_repo(user = user, proj_abbrev = project_abbrev)
+  return(list(add_to_team, add_to_repo))
+}
+
 #' Start and setup the approved project onto GitHub.
 #'
 #' @param user The GitHub username.

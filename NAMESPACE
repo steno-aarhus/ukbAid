@@ -2,6 +2,7 @@
 
 export("%>%")
 export(admin_download_proposals)
+export(admin_gh_add_contributor_to_repo)
 export(admin_gh_add_user_to_team)
 export(admin_gh_list_repos)
 export(admin_list_approved_projects)
