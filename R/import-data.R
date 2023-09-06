@@ -40,7 +40,7 @@ upload_data <- function(path,
   rap_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{fs::path_ext(path)}")
   upload_command <- glue::glue("dx upload {path} --destination {rap_path}")
   cli::cli_alert_info("Uploading data to {.val {rap_path}}.")
-  system(download_command)
+  system(upload_command)
   cli::cli_alert_success("Uploaded the file to the RAP!")
   return(rap_path)
 }
