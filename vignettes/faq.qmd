@@ -1,0 +1,7 @@
+---
+title: "Frequently asked questions"
+---
+
+| Question or Issue                                   | Answer / response                                                                                               |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Warning about "cli out of date, is already loaded"? | So far, the best option is to terminate the RStudio session and re-open a new one and start from scratch again. |
