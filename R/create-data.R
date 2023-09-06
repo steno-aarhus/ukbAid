@@ -22,6 +22,7 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 #'   `get_rap_project_id()`, which is the name of the project folder.
 #' @param username The username to set where the dataset is saved to. Defaults to using
 #'   `get_username()`, which is the name of the current user of the session.
+#' @param file_prefix The prefix to add to the start of the file name. Defaults to "data".
 #'
 #' @return Outputs whether the extraction and creation of the data was
 #'   successful or not. Used for the side effect of creating the CSV on the RAP
@@ -38,7 +39,7 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 #' #   pull(field_id) %>%
 #' #   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
 #' }
-create_csv_from_database <- function(variables_to_extract, output_file_prefix = "data",
+create_csv_from_database <- function(variables_to_extract, file_prefix = "data",
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = get_username()) {
@@ -60,7 +61,7 @@ create_csv_from_database <- function(variables_to_extract, output_file_prefix = 
   cli::cli_alert_info("Started extracting the variables and converting to CSV.")
   cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
   table_exporter_results <- system(table_exporter_command, intern = TRUE)
-  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{output_file_prefix}-{project_id}.csv"))
+  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}.csv"))
   user_path <- glue::glue("/mnt/project/users/{username}")
   cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
   relevant_results <- tail(table_exporter_results, 3)[1:2]
