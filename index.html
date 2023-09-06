@@ -59,6 +59,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -92,6 +95,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./project-description.html" rel="" target="">
  <span class="dropdown-text">Project description</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projects.html" rel="" target="">
+ <span class="dropdown-text">Approved projects</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./governance.html" rel="" target="">
@@ -245,6 +252,38 @@ Important
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph Submission
+        direction TB
+        submit_request&gt;Submit project&lt;br&gt;proposal] --&gt; 
+            pr_created([Proposal created&lt;br&gt;on GitHub]) --&gt; 
+            committee_approved([Reviewed and&lt;br&gt;approved by committee]) --&gt;
+            proj_created([Project created&lt;br&gt;for you])
+    end 
+ 
+    subgraph Protocol
+        direction TB
+        review_variables&gt;Review and select&lt;br&gt; variables you need] --&gt;
+            write_protocol&gt;Write up a&lt;br&gt;draft protocol] --&gt;
+            protocol_reviewed([Protocol reviewed&lt;br&gt;by contributors/committee]) --&gt;
+            upload_protocol&gt;Upload protocol&lt;br&gt;to Zenodo]
+    end
+    
+    subgraph RAP [Working in RAP]
+        direction TB
+        work_on_rap&gt;Conduct analysis]
+    end
+
+    Submission --&gt; Protocol --&gt; RAP
+</pre>
+</div>
+</div>
+</div>
+</div>
 <ol type="1">
 <li>Review the <a href="./project-description.html">Project Description</a> page.</li>
 <li>Do the steps in the <a href="./request-access.html">Requesting Access</a> page.</li>
