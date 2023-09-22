@@ -102,7 +102,7 @@
     "href": "admin.html#todo-after-project-acceptance",
     "title": "Administration",
     "section": "Todo after project acceptance",
-    "text": "Todo after project acceptance\n\nSee a list of approved projects with admin_list_approved_projects() and admin_list_gh_repos() for projects on GitHub.\nRun admin_start_approved_project(), using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo."
+    "text": "Todo after project acceptance\n\nSee a list of approved projects with admin_list_approved_projects() and admin_gh_list_repos() for projects on GitHub.\nRun admin_start_approved_project(), using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo."
   },
   {
     "objectID": "admin.html#general-admin",
@@ -221,14 +221,28 @@
     "href": "projects.html",
     "title": "Approved projects",
     "section": "",
-    "text": "Lead author: Andreas Bugge Tinggaard, PhD student at Aarhus University\n\nThe aim of the project is to investigate the associations between the following domains and the incidence of heart failure. 1) Body composition based on DXA-derived measurements. 2) Daily physical activity based on accelerometry metrics. 3) Physical capacity based on DXA data, handgrip and gait speed. 4) Malnutrition based on weight loss, DXA data and CRP. Furthermore, the project aims at investigating the impact of the four domains on survival in heart failure patients.\nGitHub: github.com/steno-aarhus/bopa-hf"
+    "text": "Lead author: Nuno Nogueira, Postdoc researcher at Aarhus University\n\nThe aim of this project aims to link deviations from homeostatic BMI with fat mass, lean mass, and mortality risk. Further, it intends to examine the connection between genetically predicted BMI and observed BMI and how it relates to mortality risk. We will assess deviations from homeostatic BMI using a combination of phenotypic and genetic data to explore their potential impact on health indicators. Genetic risk scores for adult and childhood BMI will help us understand the implications of genetically predicted BMI versus observed BMI on mortality risk.\nGitHub: github.com/steno-aarhus/bmihom"
+  },
+  {
+    "objectID": "projects.html#bmihom-bmihom-calculating-homeostatic-bmi-index",
+    "href": "projects.html#bmihom-bmihom-calculating-homeostatic-bmi-index",
+    "title": "Approved projects",
+    "section": "",
+    "text": "Lead author: Nuno Nogueira, Postdoc researcher at Aarhus University\n\nThe aim of this project aims to link deviations from homeostatic BMI with fat mass, lean mass, and mortality risk. Further, it intends to examine the connection between genetically predicted BMI and observed BMI and how it relates to mortality risk. We will assess deviations from homeostatic BMI using a combination of phenotypic and genetic data to explore their potential impact on health indicators. Genetic risk scores for adult and childhood BMI will help us understand the implications of genetically predicted BMI versus observed BMI on mortality risk.\nGitHub: github.com/steno-aarhus/bmihom"
   },
   {
     "objectID": "projects.html#bopa-hf-body-composition-sarcopenia-physical-activity-malnutrition-and-risk-of-heart-failure",
     "href": "projects.html#bopa-hf-body-composition-sarcopenia-physical-activity-malnutrition-and-risk-of-heart-failure",
     "title": "Approved projects",
-    "section": "",
-    "text": "Lead author: Andreas Bugge Tinggaard, PhD student at Aarhus University\n\nThe aim of the project is to investigate the associations between the following domains and the incidence of heart failure. 1) Body composition based on DXA-derived measurements. 2) Daily physical activity based on accelerometry metrics. 3) Physical capacity based on DXA data, handgrip and gait speed. 4) Malnutrition based on weight loss, DXA data and CRP. Furthermore, the project aims at investigating the impact of the four domains on survival in heart failure patients.\nGitHub: github.com/steno-aarhus/bopa-hf"
+    "section": "bopa-hf: Body composition, sarcopenia, physical activity, malnutrition and risk of heart failure",
+    "text": "bopa-hf: Body composition, sarcopenia, physical activity, malnutrition and risk of heart failure\n\nLead author: Andreas Bugge Tinggaard, PhD student at Aarhus University\n\nThe aim of the project is to investigate the associations between the following domains and the incidence of heart failure. 1) Body composition based on DXA-derived measurements. 2) Daily physical activity based on accelerometry metrics. 3) Physical capacity based on DXA data, handgrip and gait speed. 4) Malnutrition based on weight loss, DXA data and CRP. Furthermore, the project aims at investigating the impact of the four domains on survival in heart failure patients.\nGitHub: github.com/steno-aarhus/bopa-hf"
+  },
+  {
+    "objectID": "projects.html#dmm-multimorbidity-disease-trajectories-risk-factors-and-the-consequence",
+    "href": "projects.html#dmm-multimorbidity-disease-trajectories-risk-factors-and-the-consequence",
+    "title": "Approved projects",
+    "section": "dmm: Multimorbidity-Disease trajectories, risk factors and the consequence",
+    "text": "dmm: Multimorbidity-Disease trajectories, risk factors and the consequence\n\nLead author: Jie Zhang, Postdoc researcher at Aarhus University\n\nWith the growing number of people suffering from diabetes-multimorbidity, and its heterogeneity in presentation and outcome, there is an urgent need to gain a deeper understanding of the mechanisms that determine different courses of progression towards diabetes-multimorbidity. The overall aim of the project is to describe the disease transition processes that lead to diabetes-multimorbidity and to determine drivers of multimorbidity trajectories. We will apply advanced epidemiological methods to three large populations using a multi-dimensional and multi-stage approach. There are two specific aims for the project. 1) To map the heterogeneity in trajectories of diabetes-multimorbidity and to identify risk factors contributing to pronounced diabetes-multimorbidity. This will be achieved by using a machine learning approach for risk prediction, which involves combining a genetic algorithm with a random forest classifier to enhance the results. 2) To understand mortality risk at different stages of the diabetes-multimorbidity trajectory, by comparing mortality as people transition from a healthy condition to single disease, and diabetes-multimorbidity using multi-state models. To develop a web application that helps clinicians visualize the potential impact of an intervention or achieving tighter therapeutic targets on the future risk of all components of diabetes-multimorbidity. This step will be conducted by integrating results from aims 1 and 2 using simulation approaches.\nGitHub: github.com/steno-aarhus/dmm"
   },
   {
     "objectID": "projects.html#kimo-unraveling-the-relationship-between-kidney-function-and-cardiovascular-risk",
@@ -236,6 +250,13 @@
     "title": "Approved projects",
     "section": "kimo: Unraveling the Relationship Between Kidney Function and Cardiovascular Risk",
     "text": "kimo: Unraveling the Relationship Between Kidney Function and Cardiovascular Risk\n\nLead author: Jie Zhang, Postdoc researcher at Aarhus University\n\nThe study aims to examine the association between kidney function and cardiovascular diseases (CVD) and mortality in the general population, and examine whether this potential association is causal by employing the Mendelian Randomization (MR) approach. Firstly, we will investigate the association between kidney function (eGFR-based on plasma creatinine CKD-EPI, and possibly also cystatin C) and risk of MI, heart failure, stroke and all-cause mortality in 500,000 individuals from the UK Biobank. Then we will assess the causal direction between kidney function and CVD risk using a bidirectional MR analysis.\nGitHub: github.com/steno-aarhus/kimo"
+  },
+  {
+    "objectID": "projects.html#legliv-legume-consumption-and-risk-of-primary-liver-cancer",
+    "href": "projects.html#legliv-legume-consumption-and-risk-of-primary-liver-cancer",
+    "title": "Approved projects",
+    "section": "legliv: Legume consumption and risk of primary liver cancer",
+    "text": "legliv: Legume consumption and risk of primary liver cancer\n\nLead author: Niels Bock, Research year student at Aarhus University\n\nNon-alcoholic fatty liver disease (NAFLD) may be considered the hepatic manifestation of metabolic syndrome. NAFLD-related primary liver cancer is a growing concern, and preventive interventions are critical. We will statistically model replacement of red meat consumption with legumes in relation to incident primary liver cancer and assess whether the association is mediated through NAFLD.\nGitHub: github.com/steno-aarhus/legliv"
   },
   {
     "objectID": "projects.html#leha-prospective-study-on-association-between-legume-consumption-and-risk-of-hepatic-and-biliary-disease-in-ukb",
