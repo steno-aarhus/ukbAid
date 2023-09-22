@@ -40,6 +40,12 @@ date: last-modified
 
 format:
   html:
-    theme: flatly
+    theme:
+      - flatly
+      - theme.scss
     toc: true
     toc-depth: 2
+    mermaid:
+      theme: neutral
+
+
