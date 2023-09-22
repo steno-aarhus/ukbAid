@@ -12,7 +12,8 @@ License: MIT + file LICENSE
 URL: https://github.com/steno-aarhus/ukbAid
 BugReports: https://github.com/steno-aarhus/ukbAid/issues
 Depends: 
-    R (>= 4.0.0)
+    R (>= 4.0.0),
+    tidyverse
 Imports: 
     arrow,
     cli,
