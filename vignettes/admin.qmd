@@ -12,6 +12,8 @@ Still in development.
     form and select the scroll down menu, using either AUH or AU.
 2.  In DNAnexus, go to `Project -> Share project` (people icon to top
     right, add by username or email address).
+3.  After adding the users, delete their email from the survey sheet,
+    since we don't need it.
 
 ## Adding users to the GitHub repos
 
@@ -51,3 +53,4 @@ going to download the survey data.
     `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
     whenever you run the functions that require the variable (which use
     the `ukbAid:::get_survey_id()` function).
+
