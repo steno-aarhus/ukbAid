@@ -32,7 +32,7 @@ Still in development.
 ## Todo after project acceptance
 
 1.  See a list of approved projects with
-    `admin_list_approved_projects()` and `admin_list_gh_repos()` for
+    `admin_list_approved_projects()` and `admin_gh_list_repos()` for
     projects on GitHub.
 2.  Run `admin_start_approved_project()`, using the user name and
     project abbreviation to create the project, add it to the Steno
@@ -53,4 +53,3 @@ going to download the survey data.
     `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
     whenever you run the functions that require the variable (which use
     the `ukbAid:::get_survey_id()` function).
-
