@@ -112,30 +112,51 @@ AU/AUH and their ethics consideration:
 
 ```{mermaid}
 %%| echo: false
+%%| column: body-outset
+%%| fig-cap: The boxes that are in bold are things you are responsible for doing. The circular ones are others, like the committe members. 
 flowchart LR
     subgraph Submission
         direction TB
-        submit_request>Submit project<br>proposal] --> 
+        submit_request>Submit project<br>proposal]:::yours --> 
             pr_created([Proposal created<br>on GitHub]) --> 
-            committee_approved([Reviewed and<br>approved by committee]) -->
+            committee_approved([Reviewed and approved<br>by committee]) -->
             proj_created([Project created<br>for you])
     end 
  
     subgraph Protocol
         direction TB
-        review_variables>Review and select<br> variables you need] -->
-            write_protocol>Write up a<br>draft protocol] -->
-            protocol_reviewed([Protocol reviewed<br>by contributors/committee]) -->
-            upload_protocol>Upload protocol<br>to Zenodo]
+        review_variables>Review and select<br>variables you need]:::yours -->
+            write_protocol>Write up a<br>draft protocol]:::yours -->
+            protocol_reviewed([Protocol reviewed by<br>contributors/committee]) -->
+            upload_protocol>Upload protocol<br>to Zenodo]:::yours
     end
     
     subgraph RAP [Working in RAP]
         direction TB
-        work_on_rap>Conduct analysis]
+        work_on_rap>Conduct analysis]:::yours -->
+          create_output>Create output results<br>like tables, figures,<br>and other values]:::yours -->
+          code_review([Code reviewed<br>])
+    end
+    
+    subgraph Local [Working outside of RAP]
+        direction TB
+        write_paper>Write up the<br>paper using the<br>results]:::yours -->
+          paper_review([Paper reviewed]) -->
+          authorship([Discussion on authorship<br>based on contributorship]) -->
+          upload_archive>Upload paper to<br> Zenodo archive]:::yours -->
+          submit_journal>Submit to journal]:::yours
     end
 
-    Submission --> Protocol --> RAP
+    Submission --> Protocol --> RAP --> Local
+    
+    classDef yours stroke:#000000,stroke-width:0.75px
 ```
 
-1.  Review the [Project Description](project-description.qmd) page.
-2.  Do the steps in the [Requesting Access](request-access.qmd) page.
+1.  Review the [project description](project-description.qmd) page.
+2.  Do the steps in the [requesting access](request-access.qmd) page.
+3.  Wait for project approval.
+4.  If given approval, do the steps in the [initial
+    setup](initial-setup.qmd) page.
+5.  Then use the [working in the RAP](using-rap.qmd) page to help you do
+    your analysis and work with the data.
+    -   Review the [important notes](important-notes.qmd) page!
