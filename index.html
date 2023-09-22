@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -172,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/steno-aarhus/ukbAid/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -250,43 +251,64 @@ Important
 <li><strong>Project activities</strong>: Activities like writing the paper, or coding for the analysis, or any thing else related to the project, <em>must</em> be done through Git and GitHub on the our <a href="https://github.com/steno-aarhus"><code>steno-aarhus</code></a> organization. You can have a “fork”/copy of the repository on your personal GitHub, but do your main work through the Steno account. We expect this because, in order to help troubleshoot and deal with any technical issues, it is <em>significantly easier</em> for us if it is on the Steno account.</li>
 </ul>
 </section>
-<section id="next-steps" class="level2">
+<section id="next-steps" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<div class="cell">
-<div class="cell-output-display">
+<div class="cell page-columns page-full">
+<div class="cell-output-display column-body-outset">
 <div>
 <div>
+
 <pre class="mermaid mermaid-js">flowchart LR
     subgraph Submission
         direction TB
-        submit_request&gt;Submit project&lt;br&gt;proposal] --&gt; 
+        submit_request&gt;Submit project&lt;br&gt;proposal]:::yours --&gt; 
             pr_created([Proposal created&lt;br&gt;on GitHub]) --&gt; 
-            committee_approved([Reviewed and&lt;br&gt;approved by committee]) --&gt;
+            committee_approved([Reviewed and approved&lt;br&gt;by committee]) --&gt;
             proj_created([Project created&lt;br&gt;for you])
     end 
  
     subgraph Protocol
         direction TB
-        review_variables&gt;Review and select&lt;br&gt; variables you need] --&gt;
-            write_protocol&gt;Write up a&lt;br&gt;draft protocol] --&gt;
-            protocol_reviewed([Protocol reviewed&lt;br&gt;by contributors/committee]) --&gt;
-            upload_protocol&gt;Upload protocol&lt;br&gt;to Zenodo]
+        review_variables&gt;Review and select&lt;br&gt;variables you need]:::yours --&gt;
+            write_protocol&gt;Write up a&lt;br&gt;draft protocol]:::yours --&gt;
+            protocol_reviewed([Protocol reviewed by&lt;br&gt;contributors/committee]) --&gt;
+            upload_protocol&gt;Upload protocol&lt;br&gt;to Zenodo]:::yours
     end
     
     subgraph RAP [Working in RAP]
         direction TB
-        work_on_rap&gt;Conduct analysis]
+        work_on_rap&gt;Conduct analysis]:::yours --&gt;
+          create_output&gt;Create output results&lt;br&gt;like tables, figures,&lt;br&gt;and other values]:::yours --&gt;
+          code_review([Code reviewed&lt;br&gt;])
+    end
+    
+    subgraph Local [Working outside of RAP]
+        direction TB
+        write_paper&gt;Write up the&lt;br&gt;paper using the&lt;br&gt;results]:::yours --&gt;
+          paper_review([Paper reviewed]) --&gt;
+          authorship([Discussion on authorship&lt;br&gt;based on contributorship]) --&gt;
+          upload_archive&gt;Upload paper to&lt;br&gt; Zenodo archive]:::yours --&gt;
+          submit_journal&gt;Submit to journal]:::yours
     end
 
-    Submission --&gt; Protocol --&gt; RAP
+    Submission --&gt; Protocol --&gt; RAP --&gt; Local
+    
+    classDef yours stroke:#000000,stroke-width:0.75px
 </pre>
 </div>
+<p>The boxes that are in bold are things you are responsible for doing. The circular ones are others, like the committe members.</p>
 </div>
 </div>
 </div>
 <ol type="1">
-<li>Review the <a href="./project-description.html">Project Description</a> page.</li>
-<li>Do the steps in the <a href="./request-access.html">Requesting Access</a> page.</li>
+<li>Review the <a href="./project-description.html">project description</a> page.</li>
+<li>Do the steps in the <a href="./request-access.html">requesting access</a> page.</li>
+<li>Wait for project approval.</li>
+<li>If given approval, do the steps in the <a href="./initial-setup.html">initial setup</a> page.</li>
+<li>Then use the <a href="./using-rap.html">working in the RAP</a> page to help you do your analysis and work with the data.
+<ul>
+<li>Review the <a href="./important-notes.html">important notes</a> page!</li>
+</ul></li>
 </ol>
 
 
