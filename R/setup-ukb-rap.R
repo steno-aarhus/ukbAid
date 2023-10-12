@@ -9,9 +9,7 @@ setup_ukb_rap <- function() {
         return(invisible(NULL))
     }
 
-    install.packages(c("yesno", "cli", "rspm"), quiet = TRUE)
-    options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
-    try(rspm::enable(), silent = TRUE)
+    install.packages(c("yesno", "cli"), quiet = TRUE)
     cli::cli_h1("Installing packages")
     if (yesno::yesno2("Install the ukbAid package, along with the pak package?")) {
         install.packages("pak", quiet = TRUE)

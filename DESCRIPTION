@@ -35,7 +35,6 @@ Imports:
     renv,
     rjson,
     rprojroot,
-    rspm,
     rstudioapi,
     stringr,
     tibble,
