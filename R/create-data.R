@@ -39,20 +39,27 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 #' #   pull(field_id) %>%
 #' #   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
 #' }
-create_csv_from_database <- function(variables_to_extract, file_prefix = "data",
+create_csv_from_database <- function(variables_to_extract, field = c("name", "title"),
+                                     file_prefix = "data",
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = get_username()) {
   stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
+  field <- rlang::arg_match(field)
+  field <- switch(
+    field,
+    title = "ifield_titles",
+    name = "ifield_names"
+  )
 
-  field_names <- paste0(glue::glue("-ifield_names='{variables_to_extract}'"), collapse = " ")
+  fields_to_get <- paste0(glue::glue("-{field}='{variables_to_extract}'"), collapse = " ")
   data_file_name <- glue::glue("data-{username}-{project_id}")
   table_exporter_command <- glue::glue(
     paste0(
       c(
         "dx run app-table-exporter --brief --wait -y",
         "-idataset_or_cohort_or_dashboard={dataset_record_id}",
-        "{field_names}",
+        "{fields_to_get}",
         "-ioutput={data_file_name}"
       ),
       collapse = " "
