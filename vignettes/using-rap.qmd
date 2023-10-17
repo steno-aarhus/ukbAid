@@ -51,6 +51,13 @@ to store their project.
     #| eval: false
     install.packages("pak")
     pak::pak("steno-aarhus/ukbAid")
+    ```
+
+    Once this finishes, restart the session before running the next
+    line:
+
+    ```{r}
+    #| eval: false
     ukbAid::setup_ukb_rap()
     ```
 
