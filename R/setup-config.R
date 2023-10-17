@@ -10,8 +10,13 @@
 #'
 setup_git_config <- function(name, email) {
     if (check_if_git_config_already_exists(name = name, email = email)) {
-        cli::cli_alert_info("Git config has already been set correctly, see output below.")
-        return(list_git_config_user_and_email())
+        git_config <- list_git_config_user_and_email()
+        cli::cli_alert_info(c(
+          "Git config has already been set correctly: ",
+          "{.val {git_config$name[2]}} = {.val {git_config$value[2]}}; ",
+          "{.val {git_config$name[1]}} = {.val {git_config$value[1]}}"
+        ))
+        return(invisible(git_config))
     }
     gert::git_config_global_set("user.name", name)
     gert::git_config_global_set("user.email", email)
