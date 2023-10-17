@@ -48,8 +48,10 @@ to store their project.
     Console, and afterwards follow the instructions on the Console.
 
     ```{r}
-    source("https://raw.githubusercontent.com/steno-aarhus/ukbAid/main/R/setup-ukb-rap.R")
-    setup_ukb_rap()
+    #| eval: false
+    install.packages("pak")
+    pak::pak("steno-aarhus/ukbAid")
+    ukbAid::setup_ukb_rap()
     ```
 
     ::: callout-note

@@ -9,15 +9,6 @@ setup_ukb_rap <- function() {
         return(invisible(NULL))
     }
 
-    install.packages(c("yesno", "cli"), quiet = TRUE)
-    cli::cli_h1("Installing packages")
-    if (yesno::yesno2("Install the ukbAid package, along with the pak package?")) {
-        install.packages("pak", quiet = TRUE)
-        pak::pak("steno-aarhus/ukbAid", ask = FALSE)
-    } else {
-        stop("You need to install the necessary packages to continue with the setup. Please re-run the function.")
-    }
-
     # Add some wait time so it isn't popping up so fast.
     Sys.sleep(1.5)
     cli::cli_h1("Setting up your Git")
