@@ -2,6 +2,7 @@
 #' Run standard setup tasks in the UKB RAP after opening it up.
 #'
 #' @return Nothing. Used for it's side effects.
+#' @export
 #'
 setup_ukb_rap <- function() {
     if (!interactive()) {
