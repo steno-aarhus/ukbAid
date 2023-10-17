@@ -2,6 +2,7 @@
 title: "Frequently asked questions"
 ---
 
-| Question or Issue                                   | Answer / response                                                                                               |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Warning about "cli out of date, is already loaded"? | So far, the best option is to terminate the RStudio session and re-open a new one and start from scratch again. |
+| Question or Issue                                           | Answer / response                                                                                                                                             |
+|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Warning about "cli out of date, is already loaded"?         | So far, the best option is to terminate the RStudio session and re-open a new one and start from scratch again.                                               |
+| How do I see how others are coding in R for their projects? | Go to the [`ukbiobank-team` repository list](https://github.com/orgs/steno-aarhus/teams/ukbiobank-team/repositories) on the Steno Aarhus GitHub organization. |
