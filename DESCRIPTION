@@ -16,7 +16,7 @@ Depends:
     tidyverse
 Imports: 
     arrow,
-    cli,
+    cli (>= 3.6.0),
     desc,
     dplyr,
     duckdb,
