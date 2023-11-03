@@ -44,6 +44,49 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = get_username()) {
+  table_exporter_command <- builder_table_exporter(
+    variables_to_extract = variables_to_extract,
+    field = field,
+    file_prefix = file_prefix,
+    project_id = project_id,
+    dataset_record_id = dare_project_record_id,
+    username = username
+  )
+
+  cli::cli_alert_info("Started extracting the variables and converting to CSV.")
+  cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
+  table_exporter_results <- system(table_exporter_command, intern = TRUE)
+  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}.csv"))
+  user_path <- glue::glue("/mnt/project/users/{username}")
+  cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
+  relevant_results <- tail(table_exporter_results, 3)[1:2]
+  return(relevant_results)
+}
+
+#' Build, but not run, the dx table exporter command.
+#'
+#' This is mostly for testing purposes.
+#'
+#' @inheritParams create_csv_from_database
+#'
+#' @return Outputs character string of command sent to `dx`.
+#'
+#' @examples
+#' library(tibble)
+#' library(dplyr)
+#' library(stringr)
+#' library(magrittr)
+#' rap_variables %>%
+#'   filter(str_detect(rap_variable_name, "\'")) %>%
+#'   sample_n(10) %>%
+#'   pull(rap_variable_name) %>%
+#'   builder_table_exporter(project_id = "test", username = "lwj") %>%
+#'   cat()
+builder_table_exporter <- function(variables_to_extract, field = c("name", "title"),
+                                   file_prefix = "data",
+                                   project_id = get_rap_project_id(),
+                                   dataset_record_id = dare_project_record_id,
+                                   username = get_username()) {
   stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
   field <- rlang::arg_match(field)
   field <- switch(
@@ -52,9 +95,16 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
     name = "ifield_names"
   )
 
+  # Need to escape the ' because of issue with dx
+  variables_to_extract <- stringr::str_replace_all(
+    variables_to_extract,
+    "'",
+    "\\\\'"
+  )
+
   fields_to_get <- paste0(glue::glue("-{field}='{variables_to_extract}'"), collapse = " ")
   data_file_name <- glue::glue("data-{username}-{project_id}")
-  table_exporter_command <- glue::glue(
+  glue::glue(
     paste0(
       c(
         "dx run app-table-exporter --brief --wait -y",
@@ -65,14 +115,6 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
       collapse = " "
     )
   )
-  cli::cli_alert_info("Started extracting the variables and converting to CSV.")
-  cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
-  table_exporter_results <- system(table_exporter_command, intern = TRUE)
-  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}.csv"))
-  user_path <- glue::glue("/mnt/project/users/{username}")
-  cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
-  relevant_results <- tail(table_exporter_results, 3)[1:2]
-  return(relevant_results)
 }
 
 #' Get the RAP project ID, will be the project main folder.
