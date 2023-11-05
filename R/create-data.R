@@ -99,8 +99,8 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
   # Need to escape the ' because of issue with dx
   variables_to_extract <- stringr::str_replace_all(
     variables_to_extract,
-    "'",
-    "\\\\'"
+    "('|\\(|\\))",
+    "\\\\\\1"
   )
 
   fields_to_get <- paste0(glue::glue("-{field}='{variables_to_extract}'"), collapse = " ")
