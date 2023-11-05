@@ -78,7 +78,7 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
 #' library(stringr)
 #' library(magrittr)
 #' rap_variables %>%
-#'   filter(str_detect(rap_variable_name, "\'")) %>%
+#'   filter(str_detect(rap_variable_name, "\"")) %>%
 #'   sample_n(10) %>%
 #'   pull(rap_variable_name) %>%
 #'   builder_table_exporter(project_id = "test", username = "lwj") %>%
@@ -99,7 +99,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
   # Need to escape the ' because of issue with dx
   variables_to_extract <- stringr::str_replace_all(
     variables_to_extract,
-    "('|\\(|\\))",
+    "('|\\(|\\)|\")",
     "\\\\\\1"
   )
 
