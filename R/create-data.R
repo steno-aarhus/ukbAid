@@ -103,7 +103,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
     "\\\\\\1"
   )
 
-  fields_to_get <- paste0(glue::glue("-{field}='{variables_to_extract}'"), collapse = " ")
+  fields_to_get <- paste0(glue::glue('-{field}="{variables_to_extract}"'), collapse = " ")
   data_file_name <- glue::glue("data-{username}-{project_id}")
   glue::glue(
     paste0(
