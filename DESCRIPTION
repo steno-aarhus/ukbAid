@@ -19,7 +19,6 @@ Imports:
     cli (>= 3.6.0),
     desc,
     dplyr,
-    duckdb,
     fs,
     gert,
     ghclass,
@@ -46,6 +45,7 @@ Imports:
     yesno
 Suggests: 
     clipr,
+    duckdb,
     knitr,
     pkgdown,
     prereg (>= 0.5.0),
@@ -59,3 +59,14 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Config/Needs/proposals:
+    tidyverse
+    fs
+    here
+    googlesheets4
+    lubridate
+    rprojroot
+    yaml
+    rstudioapi
+    cli
+    clipr

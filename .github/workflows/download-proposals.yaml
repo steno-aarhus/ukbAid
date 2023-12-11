@@ -18,11 +18,12 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: |
-            local::.
+          needs: proposals
 
       - name: Download proposal
-        run: ukbAid::admin_download_proposals(most_recent = TRUE)
+        run: |
+          source(here::here("R/download-proposals.R"))
+          admin_download_proposals(most_recent = TRUE)
         shell: Rscript {0}
 
       - name: Make a PR of proposal
