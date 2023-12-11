@@ -18,12 +18,12 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          needs: proposals
+          extra-packages: |
+            duckdb=?ignore
+            local::.
 
       - name: Download proposal
-        run: |
-          source(here::here("R/download-proposals.R"))
-          admin_download_proposals(most_recent = TRUE)
+        run: ukbAid::admin_download_proposals(most_recent = TRUE)
         shell: Rscript {0}
 
       - name: Make a PR of proposal
