@@ -63,6 +63,13 @@
     "text": "bopa-hf: Body composition, sarcopenia, physical activity, malnutrition and risk of heart failure\n\nLead author: Andreas Bugge Tinggaard, PhD student at Aarhus University\n\nThe aim of the project is to investigate the associations between the following domains and the incidence of heart failure. 1) Body composition based on DXA-derived measurements. 2) Daily physical activity based on accelerometry metrics. 3) Physical capacity based on DXA data, handgrip and gait speed. 4) Malnutrition based on weight loss, DXA data and CRP. Furthermore, the project aims at investigating the impact of the four domains on survival in heart failure patients.\nGitHub: github.com/steno-aarhus/bopa-hf"
   },
   {
+    "objectID": "projects.html#dash-hf-dash-diet-and-heart-failure",
+    "href": "projects.html#dash-hf-dash-diet-and-heart-failure",
+    "title": "Approved projects",
+    "section": "dash-hf: DASH diet and heart failure",
+    "text": "dash-hf: DASH diet and heart failure\n\nLead author: Daniel Ibsen, Postdoc researcher at Aarhus University\n\nThe aim is to investigate the association between adherence to the DASH diet and risk of heart failure and subtypes of heart failure. We will use multi-state models to investigate transitions of cardiovascular diseases.\nGitHub: github.com/steno-aarhus/dash-hf"
+  },
+  {
     "objectID": "projects.html#dmm-multimorbidity-disease-trajectories-risk-factors-and-the-consequence",
     "href": "projects.html#dmm-multimorbidity-disease-trajectories-risk-factors-and-the-consequence",
     "title": "Approved projects",
