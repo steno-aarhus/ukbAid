@@ -1,0 +1,405 @@
+---
+title: "Protocol: Legume consumption and risk of metabolic dysfunction-associated steatotic liver disease in the UK Biobank Study: a prospective follow-up" 
+author: 
+  - name: Fie Langmann
+    roles:
+      - "writing – original draft"
+      - "formal analysis"
+      - "investigation"
+    affiliations: 
+      - name: Aarhus University
+  - name: Daniel Borch Ibsen
+    roles:
+      - "supervision"
+      - "project administration"
+      - "writing – review & editing"
+      - "conceptualization"
+    affiliations: 
+      - name: Aarhus University
+      - name: Steno Diabetes Center Aarhus
+  - name: Luke W. Johnston
+    orcid: "0000-0003-4169-2616"
+    roles:
+      - "software"
+      - "project administration"
+      - "writing – review & editing"
+      - "data curation"
+      - "resources"
+    affiliations:
+      - name: Aarhus University
+      - name: Steno Diabetes Center Aarhus
+  - name: Christina Catherine Dahm
+    roles:
+      - "supervision"
+      - "project administration"
+      - "writing – review & editing"
+      - "conceptualization"
+    affiliations: 
+      - name: Aarhus University
+date: January 24, 2024
+format:
+  html:
+    embed-resources: true
+bibliography: masld.bib
+# You can browse all the Citation Styles here: https://github.com/citation-style-language/styles
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/vancouver.csl
+execute: 
+  echo: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup}
+#| include: false
+# Include packages here if needed.
+
+library(ukbAid)
+```
+
+# Study information
+
+## Legume consumption and risk of metabolic dysfunction-associated steatotic liver disease in the UK Biobank Study: a prospective follow-up
+
+## Description
+
+Western diets has been shown to cause a multitude of non-communicable
+diseases. Metabolic dysfunction-associated steatotic liver disease
+(MASLD) is the leading chronic disease globally and strongly associated
+with Western dietary patterns. Based on a combined environmental and
+health related focus, legumes are increasingly being recommended as a
+meat substitute, and this study therefore investigates the association
+between substituting legumes for meats, poultry, and fish and the risk
+of developing MASLD.
+
+`r ukbAid::statements$protocol`
+
+## Objectives and hypotheses
+
+### Background
+
+The EAT-Lancet reference diet was introduced in 2019 as a globally
+sustainable and healthy diet emphasizing plant-based proteins instead of
+animal-based proteins, e.g., with a recommendation of 100 g legumes
+daily (1-3). Legume consumption minimizes the risk of metabolic
+dysfunction-associated steatotic liver disease (MASLD) in animals, by
+reducing build-up of fats in the liver (10-14). MASLD is the most
+prevalent chronic liver disease in the Western countries with a
+prevalence of 15-45% (15, 16). The disease is caused by Western diets
+high in red meat, fats, and sugars, obesity, physical inactivity, and
+smoking (15-18). As legumes are a source of both carbohydrates and
+proteins, research frequently compare legumes with other carbohydrate
+sources (9, 34-37). Observed associations for foods may be due the
+specific foods itself. However, the associations could also represent
+the effect of the dietary pattern in which the specific food is
+consumed. When individuals limit intake of certain food groups, they
+will most often increase the intake of certain other food groups, in an
+otherwise stable diet (38, 39). The association of such food intake will
+not only be caused by the increased consumption of one food, but rather
+the substitution effect including various foods. Replacing protein from
+animal sources with protein from plant sources has previously been
+associated with a substantially lower mortality rate and lower risk of
+MASLD (40, 11). Consumption of legumes in the Western countries has been
+negligible to date and the impact of markedly increasing intakes of
+legumes on hepatobiliary and other diseases is understudied. Therefore,
+this study aims to investigate the effect of replacing meats, poultry,
+or fish with legumes and the risk of metabolic dysfunction-associated
+steatohepatitis (MASH) or MASLD contingent on potential confounding
+factors. As it might be more feasible for Western populations to include
+legumes and substituting dietary components that are not meats, this
+study will also aim to investigate the effect of a non-specific
+substitution of dietary non-meat components for legumes on the risk of
+MASLD and MASH.
+
+**Hypothesis**
+
+-   Replacing meats and poultry intakes with legumes is associated with
+    a lower risk of MASLD and MASH.
+
+-   Replacing fish intake with legumes is not associated with a lower
+    risk of MASLD and MASH.
+
+-   Replacing non-specific foods with legumes is not associated with a
+    lower risk of MASLD and MASH.
+
+# Design plan
+
+## Study type
+
+**Observational Study**. Data is collected from study subjects that are
+not randomly assigned to a treatment. This includes surveys, natural
+experiments, and regression discontinuity designs.
+
+## Blinding
+
+No blinding is involved in this study.
+
+## Study design
+
+**Study population and setting**
+
+The initial recruitment of participants for the UK Biobank started in
+2006 and ran until June 2010. Of 9.2 million people identified from the
+National Health Service registers and invited to participate in the
+study, 5.5% participated, approximately 500,000 participants, aged 37-73
+years at baseline. The study protocol and more information are available
+elsewhere (41, 42). All participants gave written, informed consent
+prior to baseline, and the study was approved by the National
+Information Governance Board for Health and Social Care and the National
+Health Service North West Multicentre Research Ethics Committee
+(reference number 06/MRE08/65).
+
+# Sampling plan
+
+## Existing data
+
+**Registration prior to analysis of the data**
+
+As of the date of submission, the data exist and you have accessed it,
+though no analysis has been conducted related to the research plan
+(including calculation of summary statistics). A common situation for
+this scenario when a large dataset exists that is used for many
+different studies over time, or when a data set is randomly split into a
+sample for exploratory analyses, and the other section of data is
+reserved for later confirmatory data analysis.
+
+## Explanation of existing data
+
+The UK Biobank is a large national cohort of participants in the UK,
+with data collected in a standardized format the the sole purpose of
+providing a data resource for researchers to use for health research.
+All information about collection procedures, limitations, and sources of
+bias are well established and described by the UK Biobank resource.
+
+Because of its size of data collected, it is near impossible to a priori
+see patterns in the data that might influence how the analysis will be
+conducted, unless specifically looked for or previously published on. In
+this way, we feel pre-analysis bias is minimal.
+
+## Data collection procedures
+
+**Study population and setting**
+
+At baseline, participants provided detailed information on several
+sociodemographic, physical, lifestyle, and health-related
+characteristics via self-completed touch-screen questionnaires and a
+computer assisted personal interview (43). Professionally trained staff
+did physical, anthropometric, and biomedical measures following
+standardized procedures (41). Diet was assessed through a touchscreen
+questionnaire at baseline and a 24-hour dietary assessment tool designed
+for the UK Biobank study. The 24-hour dietary assessment tool was
+completed by participants up to five times and 210,965 individuals
+completed one or more 24-hour dietary assessments (44).
+
+**Assessment of diet**
+
+The Oxford WebQ was designed as an internet based 24-hour dietary
+assessment tool for measuring diet on repeated occasions. The
+questionnaire is a short set of food frequency questions on commonly
+eaten food groups in the British population on the day before. The
+questionnaire aims to measure the type and quantity of food and
+beverages consumed in the last 24 hours and estimate nutrients from the
+entered information through the UK Nutrient Databank Food Composition
+Tables (45, 46). The Oxford WebQ was compared with interviewer
+administered 24-hour dietary recalls and validated for macronutrients
+and total energy intake using recovery biomarkers and comparing with a
+single food frequency questionnaire (45, 47, 48). Recently, the Oxford
+WebQ nutrient calculation was updated to provide more detailed
+information on nutrient intakes and to incorporate new dietary variables
+(46). Participants recruited between April 2009 and September 2010
+completed the Oxford WebQ at baseline (n=70,747). The Oxford WebQ was
+not available until April 2009 and participants recruited before that
+date who provided a valid email address were invited to complete the
+four subsequent 24-hour dietary assessments online (49).
+
+**Legumes**
+
+Legume consumption will be estimated based on participants reported
+diets from the self-administered online 24-hour dietary assessments, the
+Oxford WebQ. Consumption of legumes and pulses will be based on total
+weight by food group intakes estimated from participants' responses in
+the Oxford WebQ. Despite the high detail level of the Oxford WebQ, a
+single 24-hour dietary assessment cannot capture habitual intake of
+legumes in a UK-setting (50). Therefore, this study will include varying
+numbers of 24-hour dietary assessments to ensure that we capture usual
+intake of legumes. Usual intake will be estimated as a daily average
+across available 24-hour dietary assessments.
+
+**Meat, poultry, and fish**
+
+Consumption of red and processed meats, poultry, and fish will be based
+on total weight by food group intakes estimated from participants'
+responses to the Oxford WebQs. Red and processed meat will be defined as
+beef, pork, lamb, and other meats including offal, and processed meat
+including sausages, bacon, ham, and liver paté. Poultry will be defined
+as poultry with or without skin, and fried poultry with batter or
+breadcrumbs. Fish will be defined as oily fish, white fish and tinned
+tuna, fried fish with batter or breadcrumbs, and shellfish.
+
+**Metabolic dysfunction-associated steatotic liver disease**
+
+Incident cases of MASH and MAFLD will be assessed through linkage to the
+National Health Service registers where diagnosis after hospital
+admission or primary care visits are coded according to the
+International Classification of Diseases and Related Health Problems
+(ICD-10) (51). MASLD was previously known as non-alcoholic fatty liver
+disease (NAFLD), but the nomenclature was changed in 2023 to shift focus
+towards the metabolic factors underlying the disease and not merely the
+lack of alcohol consumption and to aid the prevention and early
+diagnoses of MASLD (22). Due to this change in nomenclature, incident
+cases of MASLD are diagnosed based on ICD-10-code for NAFLD, K76.0, at
+first admission to hospital, while incident cases of MASH are diagnosed
+based on ICD-10-code for NASH, K75.8 (52).
+
+**Covariates**
+
+Directed acyclic graphs were used to illustrate the potential and known
+association between covariates of the association between substituting
+meat, poultry or fish for legumes and development of MAFLD and MASH.
+Information on covariates will include information on all other dietary
+components based on total weight by food group intakes as g/day and
+kcal/day retrieved from the Oxford WebQ (fruits, vegetables, cereal
+products, dairy products, egg products, nuts, mixed dishes, condiments,
+added sugar and sweets, non-alcoholic beverages, and alcoholic
+beverages), sex (male, female), age (years), alcohol consumption (g
+ethanol/day as restricted cubic splines), ethnic group (white, mixed
+background, Asian, black, other, and unknown), socioeconomic status
+(Townsend deprivation score \[quintiles\], educational level),
+geographical region of recruitment (ten UK regions), lives with a wife
+or partner (yes, no), anthropometry (BMI \[kg/m2\]), physical activity
+(low \[0-9.9 METs/week\], moderate \[10-49.9 METs/week\], and high \[≥50
+METs/week\], unknown), smoking status (never, former, current 1-15
+cigarettes per day, current ≥15 cigarettes per day, current but number
+of cigarettes per day unknown, and smoking status unknown); metabolic
+risk factors (and self-reported \[yes, no, unknown\] diagnoses of
+diabetes, hypertension, and high cholesterol).
+
+## Sample size
+
+For this cohort study, only participants with two or more 24 h dietary
+assessments will be included in the analyses, while missing information
+on covariates will be filled in by statistical imputations where
+applicable. Individuals with alcohol intakes exceeding the 90th
+percentile will be excluded from the study to mitigate the risk of
+misclassifying the outcome by eliminating those with alcoholic fatty
+liver disease.
+
+## Sample size rationale
+
+# Variables
+
+## Measured variables
+
+**Exposures:** g/day and kcal/day consumption of legumes, meats,
+poultry, and fish
+
+**Outcomes:** metabolic dysfunction-associated fatty liver disease
+(MAFLD) and metabolic dysfunction-associated steatohepatitis (MASH)
+
+**Covariates:** g/day and kcal/day consumption of fruits, vegetables,
+cereal products, dairy products, egg products, nuts, mixed dishes,
+condiments, added sugar and sweets, non-alcoholic beverages, and
+alcoholic beverages. Sex, age, ethnic group, Townsend deprivation score,
+educational level, geographical region of recruitment (ten UK regions),
+lives with a wife or partner, BMI, physical activity, smoking status,
+and self-reported diabetes, hypertension, and high cholesterol.
+
+# Analysis plan
+
+## Statistical models
+
+### Main analyses
+
+Standard summary statistics will be performed to describe the
+distribution of total legume consumption as an average g/day based on
+participants' 24-h WebQ responses and across baseline characteristics of
+participants in the study. Multi-variable adjusted Cox Proportional
+Hazards regression models will be used to estimate the hazard ratios for
+each of the outcomes based on replacing meats, poultry, or fish with
+legumes.
+
+-   Replacing red and processed meats, poultry, or fish with legumes
+    (e.g., per 30 g/day)
+
+-   Replacing red and processed meats, poultry, or fish with legumes
+    (e.g., per 40 kcal/day)
+
+Age will be used as the underlying time scale in the analyses. Follow-up
+time will begin with participants' last completed Oxford WebQ. As
+participants in UKB are still followed-up today, participants will be
+right censored at the date of the most recent registry update of full
+follow-up for the outcomes. Otherwise, censoring will occur at the event
+of death, loss to follow-up from the study, or date of diagnosis of
+MASLD or MASH, whichever comes first. The substitution analyses will be
+conducted with different adjustment levels.
+
+**Model 1** will be minimally adjusted for strata of age at recruitment
+(\<45, 45-49, 50-54, 55-59, 60-64, ≤65 years) and geographical region of
+recruitment (ten UK regions), sex, and intake of all other dietary
+components apart from the substitute components (red and processed
+meats; poultry; fish). When substituting g legumes/day, the unit for all
+dietary components will be g/day and the analyses will be adjusted for
+total amount of consumed foods in g/day. When substituting calories of
+legumes, the unit for all dietary components will be calories/day and
+the analyses will be adjusted for total amount of consumed calories/day.
+
+**Model 2** will be further adjusted for alcohol consumption, ethnic
+group (white, mixed, Asian, black, other, unknown), socioeconomic status
+(Townsend deprivation score, educational level), living with a wife or
+partner (yes, no), physical activity (low \[0-9.9 METs/week\], moderate
+\[10-49.9 METs/week\], and high \[≥50 METs/week\], unknown), smoking
+status (never, former, current 1-15 cigarettes per day, current ≥15
+cigarettes per day, current but number of cigarettes per day unknown,
+and smoking status unknown), and self-reported diagnosis of diabetes,
+hypertension, or high cholesterol (yes, no, unknown).
+
+**Model 3** will further adjust for anthropometry (BMI ≥ 30 kg/m2), as
+obesity may either confound or mediate the association between replacing
+red and processed meats, poultry, or fish with legumes and risk of MASLD
+
+### Secondary and sensitivity analyses
+
+To evaluate the association between overall legume intake and
+hepatobiliary disease risk, quintiles of legume intake (g/day) will be
+evaluated with adjustment levels similar to the substitution models.
+
+Peas are increasingly used as a plant-based meat alternative in the food
+industry (53). Despite this, peas are also included in the NHS 5 A Day
+recommendations for fruits and vegetables consumption in the UK (54).
+Therefore, in secondary analyses consumption of legumes will include
+participants self-reported intake of legumes and pulses together with
+consumed peas. The amount of peas consumed will be estimated based on
+participants' reported daily portions consumed with a portion size of
+peas weighing 80 g (55).
+
+To evaluate the robustness of the main analyses, sensitivity analyses
+will include varying numbers of Oxford WebQ returns, and removal of
+participants with increased serum levels of alanine-aminotransferase
+(\>45 U/L for women and \>70 U/L for men) and aspartate-aminotransferase
+(\>35 U/L for women and \>45 U/L for men). Sensitivity analyses will
+further include removal of participants in the highest 10% percentile of
+alcohol intake and removal of those with previous diseases of the liver,
+although not necessarily MAFLD, as they may be predisposed for
+developing further liver diseases.
+
+All analyses will be conducted in R with a significance level of 5%.
+
+## Transformations
+
+## Inference criteria
+
+All analyses will be evaluated based on two-sided p-values. Values below
+5% are classified as statistically significant. Inference on relevance
+and significance and the evaluation of, whether a result is meaningful
+will be based on the size of the estimate, confidence intervals
+containing 1 or 0, for ratios or absolute measures respectively.
+
+## Data exclusion
+
+## Missing data
+
+## Exploratory analyses (optional)
+
+# Other
+
+# References
