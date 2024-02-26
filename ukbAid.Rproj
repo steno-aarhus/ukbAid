@@ -21,6 +21,8 @@ PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
 PackageRoxygenize: rd,collate,namespace
 
+UseNativePipeOperator: Yes
+
 MarkdownWrap: Column
 MarkdownWrapAtColumn: 72
 MarkdownCanonical: Yes
