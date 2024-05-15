@@ -26,11 +26,11 @@ rap_variables_chunked <- ukb_variables %>%
   # mutate(array_max = 0, array_min = 0) %>%
   mutate(
     instance_max = case_when(
-      field_id %in% c(22040) ~ 0,
+      field_id %in% c(22032, 22033, 22034, 22035, 22036, 22037, 22038, 22039, 22040) ~ 0, # I think this issue encompasses all MET scores in category-id 54, at least p22035 and p22036 which cause errors for me. I have to remove all follow-up instances.
       TRUE ~ instance_max
     ),
     array_max = case_when(
-      field_id %in% c(41280, 41281, 41257, 41260, 41262, 41263, 41282, 41283) ~ array_max,
+      field_id %in% c(41280, 41281, 41257, 41260, 41262, 41263, 41282, 41283, 41202, 41204) ~ array_max, # added some variables that are arrayed.
       str_detect(title, "Non-cancer illness code, self-reported") ~ 0,
       str_detect(title, "Medication for cholesterol, blood pressure or diabetes") ~ 0,
       str_detect(title, "Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones") ~ 0,
@@ -38,7 +38,7 @@ rap_variables_chunked <- ukb_variables %>%
       # TODO: Not sure if array is needed in RAP... Will need to modify this code here.
       # Set all array's max to 0 since we might not need array's, but I'm not sure.
       # TRUE ~ array_max
-      TRUE ~ 0
+      TRUE ~ 0 # This causes issues for variables with multiple instances AND arrays, at least p93, p94, p4079, p4079 (blood pressure variables with 2 arrays for each instance), and p40002 (two instances and 15 arrays). I think Jie had issues with other variables as well.
     ),
     arrayed = !(array_min == array_max)
   ) %>%
@@ -60,7 +60,7 @@ create_rap_specific_variables_and_ids <- function(data) {
     dplyr::mutate(
       field_id = dplyr::case_when(
         instanced &
-          arrayed ~ glue::glue("p{field_id}_i{instance}_a{array}"),
+          arrayed ~ glue::glue("p{field_id}_i{instance}_a{array}"), # If arrays aren't removed above, variables with multiple instances and arrays wouldn't cause errors. On the other side, if the code is changed and arrays aren't removed, at lot of people's code may not work when variables change names...
         instanced &
           !arrayed ~ glue::glue("p{field_id}_i{instance}"),
         !instanced &
@@ -70,7 +70,7 @@ create_rap_specific_variables_and_ids <- function(data) {
       ),
       title = dplyr::case_when(
         instanced &
-          arrayed ~ glue::glue("{title} | Instance {instance} | Array {array}"),
+          arrayed ~ glue::glue("{title} | Instance {instance} | Array {array}"), # This is what I need to do manually right now :D 
         instanced &
           !arrayed ~ glue::glue("{title} | Instance {instance}"),
         !instanced &
