@@ -1,0 +1,136 @@
+---
+title: "Design"
+---
+
+# Naming scheme
+
+Objects and their subobjects
+
+Principles are:
+
+-   Use snake case
+-   Use verbs for actions
+-   Use nouns for objects
+-   Shorter over longer
+
+### RAP overall project (`rap`)
+
+-   Objects: database, file, path, user, schema
+-   Actions: get, delete, copy, create
+
+``` r
+rap_get_user()
+
+rap_delete_file(path)
+
+rap_get_path_users()
+rap_get_path_dirs(path)
+rap_get_path_files(path)
+rap_get_path_schema()
+rap_get_path_database()
+
+rap_copy_from(rap_path, local_path)
+rap_copy_to(local_path, rap_path)
+```
+
+### Researchers' project while in RAP (`proj`)
+
+-   Objects: RStudio config, Git config, database, name (of project
+    folder), dependencies
+-   Actions: get, setup, create
+
+``` r
+proj_get_name()
+proj_get_dependencies()
+proj_get_git_config()
+proj_get_rstudio_config()
+proj_setup_git_config()
+proj_setup_rstudio_config()
+proj_create_database(fields)
+proj_create_path_database()
+```
+
+### Data
+
+-   Objects: rows, columns, column names, or row group name, parquet?
+-   On data: drop, keep (rows), remove, add (columns), create
+
+``` r
+drop_rows_*(data)
+keep_rows_*(data)
+remove_column_*(data)
+add_column_*(data)
+create_data_*(data)
+
+write_parquet(data, output_path)
+```
+
+### Admin (`admin`)
+
+-   Objects: proposals, projects and their IDs (abbreviations), paths,
+    Google Sheets ID
+-   Actions: get, create, read
+
+``` r
+admin_read_proposals()
+admin_get_path_proposals()
+
+admin_get_sheets_id()
+
+admin_read_project(path)
+admin_read_projects()
+admin_get_project_ids()
+admin_get_path_projects()
+admin_create_projects()
+```
+
+### GitHub (`gh`)
+
+-   Objects: users, team, repos, org
+-   Actions: get, create, add, remove, download
+
+```         
+gh_get_users()
+gh_get_repos()
+
+gh_get_team()
+gh_get_org()
+
+gh_download_repo(repo)
+gh_create_repo(repo)
+
+gh_add_repo_to_team(repo)
+gh_remove_repo_from_team(repo)
+
+gh_add_user_to_team(user)
+gh_add_user_to_repo(user)
+gh_remove_user_from_team(user)
+gh_remove_user_from_repo(user)
+```
+
+### Zenodo (`zen`)
+
+-   Objects: protocols, papers, repos
+-   Actions: upload?
+
+### General or internal
+
+-   Objects: gh, dx, cli, ukbaid
+-   Actions: verify, run
+
+```         
+run_dx(command)
+run_gh(command)
+run_cli(command)
+
+verify_dx()
+verify_gh()
+verify_cli()
+verify_ukbaid()
+```
+
+```{mermaid}
+flowchart LR
+    path_rap_users() --> path_rap_file --> get_rap_file
+    get_rap_user
+```
