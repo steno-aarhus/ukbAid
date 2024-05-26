@@ -42,3 +42,6 @@ client <- depositsClient$new(
 filename <- tempfile(fileext = ".json")
 deposits_metadata_template("test.json")
 # then edit that file to complete metadata
+
+files <- jsonlite::fromJSON(system("dx find data --class file --path users/ --json", intern = TRUE), flatten = TRUE)
+lubridate::as_datetime(files$describe.modified)
