@@ -14,12 +14,15 @@ git_commit_file <- function(file, message) {
     return(invisible(NULL))
 }
 
-#' Get package dependencies from the DESCRIPTION file.
-#'
-#' @return A character vector of package names.
-#' @export
-#'
-get_proj_dependencies <- function() {
-  desc::desc_get_deps()$package |>
-    stringr::str_subset("^R$", negate = TRUE)
+run_cli <- function(command) {
+  processx::run(command)
+}
+
+verify_cli <- function(program, error, call = rlang::caller_env()) {
+  command <- glue::glue("which {program}")
+  output <- suppressWarnings(run_cli(command))
+  if (!length(output)) {
+    cli::cli_abort(error, call = call)
+  }
+  return(invisible())
 }
