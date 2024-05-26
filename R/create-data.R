@@ -21,7 +21,7 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 #' @param project_id The project's abbreviation. Defaults to using
 #'   `get_rap_project_id()`, which is the name of the project folder.
 #' @param username The username to set where the dataset is saved to. Defaults to using
-#'   `get_username()`, which is the name of the current user of the session.
+#'   `rap_get_user()`, which is the name of the current user of the session.
 #' @param file_prefix The prefix to add to the start of the file name. Defaults to "data".
 #'
 #' @return Outputs whether the extraction and creation of the data was
@@ -43,7 +43,7 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
                                      file_prefix = "data",
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
-                                     username = get_username()) {
+                                     username = rap_get_user()) {
   table_exporter_command <- builder_table_exporter(
     variables_to_extract = variables_to_extract,
     field = field,
@@ -87,7 +87,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
                                    file_prefix = "data",
                                    project_id = get_rap_project_id(),
                                    dataset_record_id = dare_project_record_id,
-                                   username = get_username()) {
+                                   username = rap_get_user()) {
   stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
   field <- rlang::arg_match(field)
   field <- switch(
@@ -118,23 +118,3 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
   )
 }
 
-#' Get the RAP project ID, will be the project main folder.
-#'
-#' @return The project abbreviation/id, which is the name of the project folder
-#'   (and the same as the name of the `.Rproj` folder).
-#' @export
-#'
-get_rap_project_id <- function() {
-  options(usethis.quiet = TRUE)
-  on.exit(options(usethis.quiet = NULL))
-  fs::path_file(usethis::proj_path())
-}
-
-#' Get the username of the user's who started the RStudio session.
-#'
-#' @return Character vector with users username within the RAP session.
-#' @export
-#'
-get_username <- function() {
-  system("dx whoami", intern = TRUE)
-}
