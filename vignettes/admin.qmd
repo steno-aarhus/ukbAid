@@ -17,10 +17,9 @@ Still in development.
 
 ## Adding users to the GitHub repos
 
-1.  To add someone to the GitHub UKB team, use
-    `admin_gh_add_user_to_team()`.
+1.  To add someone to the GitHub UKB team, use `gh_add_user_to_team()`.
 2.  To add a contributor to a project, use the function
-    `admin_gh_add_contributor_to_repo()`.
+    `gh_add_user_to_repo()`.
 
 ## Todo after proposal submission
 
@@ -31,9 +30,8 @@ Still in development.
 
 ## Todo after project acceptance
 
-1.  See a list of approved projects with
-    `admin_list_approved_projects()` and `admin_gh_list_repos()` for
-    projects on GitHub.
+1.  See a list of approved projects with `admin_get_projects()` and
+    `gh_get_repos()` for projects on GitHub.
 2.  Run `admin_start_approved_project()`, using the user name and
     project abbreviation to create the project, add it to the Steno
     GitHub, set up permissions, and add the user to the repo.
