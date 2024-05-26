@@ -56,8 +56,9 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
   cli::cli_alert_info("Started extracting the variables and converting to CSV.")
   cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
   table_exporter_results <- system(table_exporter_command, intern = TRUE)
-  data_file_name <- glue::glue("data-{username}-{project_id}")
-  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}.csv"))
+  today <- lubridate::today()
+  data_file_name <- glue::glue("data-{username}-{project_id}-{today}")
+  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}-{today}.csv"))
   user_path <- glue::glue("/mnt/project/users/{username}")
   cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
   relevant_results <- tail(table_exporter_results, 3)[1:2]
