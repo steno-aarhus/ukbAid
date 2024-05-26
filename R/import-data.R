@@ -14,11 +14,11 @@
 download_data <- function(project_id = get_rap_project_id(),
                           file_prefix = "data",
                           file_ext = c("csv", "parquet"),
-                          username = get_username()) {
+                          username = rap_get_user()) {
   file_ext <- rlang::arg_match(file_ext)
   rap_data_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{file_ext}")
   output_path <- glue::glue("data/data.{file_ext}")
-  download_command <- glue::glue("dx download {rap_data_path} --output {output_path}")
+  download_command <- glue::glue("dx download {rap_data_path} --output {output_path} --overwrite")
   cli::cli_alert_info("Downloading data to {.val {output_path}}.")
   system(download_command)
   cli::cli_alert_success("Downloaded the data file!")
@@ -36,7 +36,7 @@ download_data <- function(project_id = get_rap_project_id(),
 upload_data <- function(path,
                         project_id = get_rap_project_id(),
                         file_prefix = "data",
-                        username = get_username()) {
+                        username = rap_get_user()) {
   rap_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{fs::path_ext(path)}")
   upload_command <- glue::glue("dx upload {path} --destination {rap_path}")
   cli::cli_alert_info("Uploading data to {.val {rap_path}}.")
@@ -50,10 +50,12 @@ upload_data <- function(path,
 #' @param path Path to the Parquet file.
 #'
 #' @return A SQL database object.
-#' @export
-#'
-read_parquet <- function(path) {
-  path %>%
-    arrow::open_dataset() %>%
-    arrow::to_duckdb()
-}
+# read_parquet <- function(path) {
+#
+#   data <- path %>%
+#     arrow::open_dataset()
+#
+#
+#   %>%
+#     arrow::to_duckdb()
+# }
