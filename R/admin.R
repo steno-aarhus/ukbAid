@@ -1,43 +1,46 @@
 # Create project repo with all permissions --------------------------------
 
-#' Add the user to the SDCA GitHub Organization UK Biobank team.
+
+
+# Projects ----------------------------------------------------------------
+
+#' Read all approved projects.
 #'
-#' @param user The GitHub username.
+#' Show all approved projects, which are stored in YAML files, using the UK
+#' Biobank at SDCA. Display this information as a [tibble::tibble()].
 #'
-#' @return Invisibly returns list of results of GitHub API calls. Used for the
-#'   side effect of adding user to GitHub.
+#' @return A tibble of project details.
 #' @export
 #'
-admin_gh_add_user_to_team <- function(user) {
-  stopifnot(is.character(user))
-  org_invite_results <- ghclass::org_invite(
-    org = "steno-aarhus",
-    user = user
-  )
-  team_invite_results <- ghclass::team_invite(
-    org = "steno-aarhus",
-    team = "ukbiobank-team",
-    user = user
-  )
-  return(invisible(
-    list(
-      org_invite_results = org_invite_results,
-      team_invite_results = team_invite_results
-    )
-  ))
+admin_read_projects <- function() {
+  verify_ukbaid()
+  admin_get_project_ids() |>
+    purrr::map(admin_read_project)
 }
 
-#' Add a contributor to a repo.
-#'
-#' @inheritParams admin_start_approved_project
-#'
-#' @return Invisibly return results from GitHub API call as a list.
-#' @export
-#'
-admin_gh_add_contributor_to_repo <- function(user, proj_abbrev) {
-  add_to_team <- admin_gh_add_user_to_team(user = user)
-  add_to_repo <- admin_gh_add_user_to_repo(user = user, proj_abbrev = proj_abbrev)
-  return(invisible(list(add_to_team, add_to_repo)))
+admin_read_project <- function(id) {
+  verify_ukbaid()
+  id <- rlang::arg_match(id, admin_get_project_ids())
+
+  admin_get_path_projects() |>
+    stringr::str_subset(id) |>
+    yaml::read_yaml() |>
+    tibble::as_tibble() |>
+    dplyr::mutate(id = id)
+}
+
+admin_get_path_projects <- function() {
+  verify_ukbaid()
+  rprojroot::find_package_root_file() |>
+    fs::path("data-raw", "projects", "approved") |>
+    fs::dir_ls()
+}
+
+admin_get_project_ids <- function() {
+  verify_ukbaid()
+  admin_get_path_projects() |>
+    fs::path_file() |>
+    fs::path_ext_remove()
 }
 
 #' Start and setup the approved project onto GitHub.
@@ -50,7 +53,7 @@ admin_gh_add_contributor_to_repo <- function(user, proj_abbrev) {
 #' @export
 #'
 admin_start_approved_project <- function(user, proj_abbrev) {
-  if (any(stringr::str_detect(admin_gh_list_repos()$repo, proj_abbrev))) {
+  if (any(stringr::str_detect(gh_get_repos(), proj_abbrev))) {
     cli::cli_abort("This project is already on GitHub.")
   }
 
@@ -61,68 +64,20 @@ admin_start_approved_project <- function(user, proj_abbrev) {
   admin_create_gh_repo(path = temp_proj_path)
   cli::cli_alert_info("Pushed the repo to GitHub.")
 
-  admin_gh_add_user_to_team(user = user)
-  admin_gh_add_repo_to_team(proj_abbrev = proj_abbrev)
-  admin_gh_add_user_to_repo(user = user, proj_abbrev = proj_abbrev)
+  gh_add_user_to_team(user = user)
+  gh_add_repo_to_team(proj_abbrev = proj_abbrev)
+  gh_add_user_to_repo(user = user, proj_abbrev = proj_abbrev)
   cli::cli_alert_info("Connected the user and team to the repo, with the right permissions.")
   return(invisible())
 }
 
-#' List the approved projects connected to the UK Biobank at SDCA.
-#'
-#' @return A tibble of project details.
-#' @export
-#'
-admin_list_approved_projects <- function() {
-  if (basename(usethis::proj_get()) != "ukbAid") {
-    cli::cli_abort("You're running this function outside of the {.val 'ukbAid'} project. You need to be inside it to run this function.")
-  }
-  fs::dir_ls(fs::path("data-raw", "projects", "approved")) |>
-    purrr::map(yaml::read_yaml) %>%
-    purrr::map(tibble::as_tibble) %>%
-    purrr::list_rbind(names_to = "project_abbrev") %>%
-    dplyr::mutate(project_abbrev = fs::path_file(project_abbrev) |>
-      fs::path_ext_remove())
-}
-
-#' List all the repos on GitHub under the SDCA UK Biobank project.
-#'
-#' @return A tibble.
-#' @export
-#'
-admin_gh_list_repos <- function() {
-  ghclass::team_repos(
-    org = "steno-aarhus",
-    team = "ukbiobank-team"
-  )
-}
-
 # Helpers -----------------------------------------------------------------
 
-admin_gh_add_repo_to_team <- function(proj_abbrev) {
-  ghclass::repo_add_team(
-    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
-    team = "ukbiobank-team",
-    permission = "push"
-  )
-}
-
-admin_gh_add_user_to_repo <- function(user, proj_abbrev) {
-  ghclass::repo_add_user(
-    repo = glue::glue("steno-aarhus/{proj_abbrev}"),
-    user = user,
-    permission = "maintain"
-  )
-}
-
-admin_create_gh_repo <- function(path) {
-  usethis::with_project(
-    path = path,
-    {
-      usethis::use_github(
-        organisation = "steno-aarhus",
-        private = TRUE
-      )
-    }
-  )
+verify_ukbaid <- function(call = rlang::caller_env()) {
+  if (basename(rprojroot::find_package_root_file()) != "ukbAid") {
+    cli::cli_abort(
+      "You can only run this function while inside the {.val 'ukbAid'} project.",
+      call = call)
+  }
+  return(invisible())
 }
