@@ -70,7 +70,7 @@ create_rap_specific_variables_and_ids <- function(data) {
       ),
       title = dplyr::case_when(
         instanced &
-          arrayed ~ glue::glue("{title} | Instance {instance} | Array {array}"), # This is what I need to do manually right now :D 
+          arrayed ~ glue::glue("{title} | Instance {instance} | Array {array}"), # This is what I need to do manually right now :D
         instanced &
           !arrayed ~ glue::glue("{title} | Instance {instance}"),
         !instanced &
@@ -107,3 +107,13 @@ project_variables <- ukb_variables %>%
 
 usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3, internal = TRUE)
 usethis::use_data(rap_variables, project_variables, overwrite = TRUE, version = 3)
+
+path_database_schema() |>
+  dx_get("data-raw/schema.json.gz")
+
+fs::path("data-raw", "schema.json.gz") |>
+  R.utils::gunzip()
+
+fields <- jsonlite::read_json("data-raw/schema.json")
+
+names(fields$model$entities$participant$fields)
