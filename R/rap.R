@@ -48,11 +48,13 @@ rap_get_path_schema <- function() {
 
 rap_copy_to <- function(local_path, rap_path) {
   run_dx(c("upload", local_path, "--destination", rap_path))
+  rap_path
 }
 
 rap_copy_from <- function(rap_path, local_path) {
   run_dx(c("download", rap_path, "--output", local_path,
            "--overwrite", "--no-progress", "--lightweight"))
+  local_path
 }
 
 # Deleting ----------------------------------------------------------------
