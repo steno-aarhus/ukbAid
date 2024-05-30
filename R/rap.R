@@ -35,7 +35,8 @@ rap_get_path_files <- function(path) {
 }
 
 rap_get_path_database <- function() {
-  rlang::abort("Not implemented yet.")
+  rap_get_path_files(".") |>
+    stringr::str_subset("\\.dataset$")
 }
 
 rap_get_path_schema <- function() {
