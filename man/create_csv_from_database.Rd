@@ -10,7 +10,7 @@ create_csv_from_database(
   file_prefix = "data",
   project_id = get_rap_project_id(),
   dataset_record_id = dare_project_record_id,
-  username = get_username()
+  username = rap_get_user()
 )
 }
 \arguments{
@@ -31,7 +31,7 @@ the \code{.dataset} file in the RAP project folder. Defaults to the ID for the
 Steno project \code{dare_project_record_id}.}
 
 \item{username}{The username to set where the dataset is saved to. Defaults to using
-\code{get_username()}, which is the name of the current user of the session.}
+\code{rap_get_user()}, which is the name of the current user of the session.}
 }
 \value{
 Outputs whether the extraction and creation of the data was

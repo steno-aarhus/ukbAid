@@ -5,20 +5,20 @@
 \alias{rap_variables}
 \title{Variable names that are specific to the RAP}
 \format{
-A data frame with 22,355 rows and 3 variables:
+A data frame with 27,929 rows and 2 variables:
 \describe{
-\item{id}{The ID for the "field" (or variable). Used when connecting with the \code{project_variables.csv} file.}
-\item{field_id}{The RAP ID for the "field" (or variable). "Instance" is the
+\item{id}{The ID for the "field" (or variable) within the RAP UK Biobank dataset,
+which represents the column in the dataset.}
+\item{title}{The RAP variable title for the "field" (or variable). "Instance" is the
 time point and "Array" is how the variable was split up with e.g. some
-questionnaire variables.}
-\item{rap_variable_name}{The name of the variable in the RAP database.}
+questionnaire variables. This is the human readable format.}
 }
 }
 \usage{
 rap_variables
 }
 \description{
-A dataframe that contains the field IDs and variable names that are specific
+A \code{\link[tibble:tibble]{tibble::tibble()}} that contains the field (variable) IDs and titles that are specific
 to the RAP database and used to select from it.
 }
 \keyword{datasets}

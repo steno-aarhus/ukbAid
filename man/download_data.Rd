@@ -8,7 +8,7 @@ download_data(
   project_id = get_rap_project_id(),
   file_prefix = "data",
   file_ext = c("csv", "parquet"),
-  username = get_username()
+  username = rap_get_user()
 )
 }
 \arguments{
@@ -20,7 +20,7 @@ download_data(
 \item{file_ext}{The file extension of the dataset. Defaults to "csv", but can also provide "parquet".}
 
 \item{username}{The username to set where the dataset is saved to. Defaults to using
-\code{get_username()}, which is the name of the current user of the session.}
+\code{rap_get_user()}, which is the name of the current user of the session.}
 }
 \value{
 Downloads the data file to \verb{data/}.

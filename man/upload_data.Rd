@@ -8,7 +8,7 @@ upload_data(
   path,
   project_id = get_rap_project_id(),
   file_prefix = "data",
-  username = get_username()
+  username = rap_get_user()
 )
 }
 \arguments{
@@ -20,7 +20,7 @@ upload_data(
 \item{file_prefix}{The prefix to add to the start of the file name. Defaults to "data".}
 
 \item{username}{The username to set where the dataset is saved to. Defaults to using
-\code{get_username()}, which is the name of the current user of the session.}
+\code{rap_get_user()}, which is the name of the current user of the session.}
 }
 \value{
 A path to the uploaded data file.

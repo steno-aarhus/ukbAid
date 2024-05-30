@@ -10,7 +10,7 @@ builder_table_exporter(
   file_prefix = "data",
   project_id = get_rap_project_id(),
   dataset_record_id = dare_project_record_id,
-  username = get_username()
+  username = rap_get_user()
 )
 }
 \arguments{
@@ -31,7 +31,7 @@ the \code{.dataset} file in the RAP project folder. Defaults to the ID for the
 Steno project \code{dare_project_record_id}.}
 
 \item{username}{The username to set where the dataset is saved to. Defaults to using
-\code{get_username()}, which is the name of the current user of the session.}
+\code{rap_get_user()}, which is the name of the current user of the session.}
 }
 \value{
 Outputs character string of command sent to \code{dx}.
@@ -45,7 +45,7 @@ library(dplyr)
 library(stringr)
 library(magrittr)
 rap_variables \%>\%
-  filter(str_detect(rap_variable_name, "\'")) \%>\%
+  filter(str_detect(rap_variable_name, "\"")) \%>\%
   sample_n(10) \%>\%
   pull(rap_variable_name) \%>\%
   builder_table_exporter(project_id = "test", username = "lwj") \%>\%
