@@ -8,20 +8,18 @@
 #' @noRd
 #'
 git_commit_file <- function(file, message) {
-    stopifnot(is.character(file), is.character(message))
-    gert::git_add(file)
-    gert::git_commit(message)
-    return(invisible(NULL))
-}
-
-run_cli <- function(command) {
-  processx::run(command)
+  stopifnot(is.character(file), is.character(message))
+  gert::git_add(file)
+  gert::git_commit(message)
+  return(invisible(NULL))
 }
 
 verify_cli <- function(program, error, call = rlang::caller_env()) {
-  command <- glue::glue("which {program}")
-  output <- suppressWarnings(run_cli(command))
-  if (!length(output)) {
+  output <- processx::run(
+    "which",
+    program
+  )
+  if (output$status) {
     cli::cli_abort(error, call = call)
   }
   return(invisible())
