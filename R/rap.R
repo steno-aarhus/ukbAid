@@ -21,7 +21,7 @@ get_username <- function() {
 }
 
 rap_get_path_users <- function() {
-  run_dx(c("ls", "--all", "users/"))
+  rap_get_path_files("users/")
 }
 
 rap_get_path_user <- function(user) {
