@@ -65,8 +65,8 @@ admin_start_approved_project <- function(user, proj_abbrev) {
   cli::cli_alert_info("Pushed the repo to GitHub.")
 
   gh_add_user_to_team(user = user)
-  gh_add_repo_to_team(proj_abbrev = proj_abbrev)
-  gh_add_user_to_repo(user = user, proj_abbrev = proj_abbrev)
+  gh_add_repo_to_team(repo = proj_abbrev)
+  gh_add_user_to_repo(user = user, repo = proj_abbrev)
   cli::cli_alert_info("Connected the user and team to the repo, with the right permissions.")
   return(invisible())
 }
