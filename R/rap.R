@@ -1,13 +1,12 @@
 # Get ---------------------------------------------------------------------
 
-
 #' Get the username of the user who is working within the RAP RStudio session.
 #'
 #' @return Character vector with users username within the RAP session.
 #' @export
 #'
 rap_get_user <- function() {
-  run_dx("dx whoami")
+  run_dx("whoami")
 }
 
 #' @describeIn rap_get_user Deprecated function. Use `rap_get_user()` instead.
@@ -22,7 +21,7 @@ get_username <- function() {
 }
 
 rap_get_path_users <- function() {
-  run_dx("dx ls --all users/")
+  run_dx(c("ls", "--all", "users/"))
 }
 
 rap_get_path_user <- function(user) {
@@ -31,34 +30,43 @@ rap_get_path_user <- function(user) {
 }
 
 rap_get_path_files <- function(path) {
-  glue::glue("dx ls --all {path}") |>
-    run_dx()
+  run_dx(c("ls", "--all", path))
 }
 
-rap_get_path_database()
+rap_get_path_database <- function() {
+  rlang::abort("Not implemented yet.")
+}
 
 rap_get_path_schema <- function() {
   rap_get_path_files(".") |>
     stringr::str_subset("\\.json\\.gz")
 }
 
+# Copying -----------------------------------------------------------------
+
 rap_copy_to <- function(local_path, rap_path) {
-  glue::glue("dx upload {local_path} --destination {rap_path}") |>
-    run_dx()
+  run_dx(c("upload", local_path, "--destination", rap_path))
 }
 
 
 rap_copy_from <- function(rap_path, local_path) {
-  glue::glue("dx get {rap_path} --output {local_path} --overwrite") |>
-    run_dx()
+  run_dx(c("get", rap_path, "--output", local_path, "--overwrite"))
 }
-rap_delete_file(path)
+
+# Deleting ----------------------------------------------------------------
+
+rap_delete_file <- function(path) {
+  rlang::abort("Not implemented yet.")
+}
 
 # Helpers -----------------------------------------------------------------
 
-run_dx <- function(command, call = rlang::caller_env()) {
+run_dx <- function(arguments, call = rlang::caller_env()) {
   verify_dx(call = call)
-  run_cli(command)
+  processx::run(
+    "dx",
+    arguments
+  )
 }
 
 verify_dx <- function(call = rlang::caller_env()) {

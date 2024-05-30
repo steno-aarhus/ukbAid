@@ -121,7 +121,6 @@ gh_remove_user_from_repo(user)
 ```         
 run_dx(command)
 run_gh(command)
-run_cli(command)
 
 verify_dx()
 verify_gh()

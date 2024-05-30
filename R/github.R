@@ -1,4 +1,3 @@
-
 # Get ---------------------------------------------------------------------
 
 gh_get_org <- function() {
@@ -90,7 +89,10 @@ gh_create_repo <- function(path) {
 
 run_gh <- function(command, call = rlang::caller_env()) {
   verify_gh(call = call)
-  run_cli(command)
+  processx::run(
+    "gh",
+    command
+  )
 }
 
 verify_gh <- function(call = rlang::caller_env()) {
