@@ -12,9 +12,9 @@ NULL
 #'
 #' @format A data frame with 27,929 rows and 2 variables:
 #' \describe{
-#'   \item{field_id}{The ID for the "field" (or variable) within the RAP UK Biobank dataset,
+#'   \item{id}{The ID for the "field" (or variable) within the RAP UK Biobank dataset,
 #'   which represents the column in the dataset.}
-#'   \item{field_title}{The RAP variable title for the "field" (or variable). "Instance" is the
+#'   \item{title}{The RAP variable title for the "field" (or variable). "Instance" is the
 #'   time point and "Array" is how the variable was split up with e.g. some
 #'   questionnaire variables. This is the human readable format.}
 #' }
