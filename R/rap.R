@@ -63,10 +63,19 @@ rap_delete_file <- function(path) {
 
 run_dx <- function(arguments, call = rlang::caller_env()) {
   verify_dx(call = call)
-  processx::run(
+  output <- processx::run(
     "dx",
     arguments
   )
+
+  if (output$status) {
+    rlang::abort(c("Error running dx command.", "i" = output$stderr))
+  }
+
+  output$stdout |>
+    stringr::str_remove("\n$") |>
+    stringr::str_split("\n") |>
+    unlist()
 }
 
 verify_dx <- function(call = rlang::caller_env()) {
