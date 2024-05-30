@@ -30,7 +30,8 @@ rap_get_path_user <- function(user) {
 }
 
 rap_get_path_files <- function(path) {
-  run_dx(c("ls", "--all", path))
+  run_dx(c("ls", "--all", path)) |>
+    stringr::str_remove("^\\.\\.?/$")
 }
 
 rap_get_path_database <- function() {
