@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-15">
+<meta name="dcterms.date" content="2024-05-30">
 
 <title>ukbAid - Administration</title>
 <style>
@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 15, 2024</p>
+      <p class="date">May 30, 2024</p>
     </div>
   </div>
   
@@ -226,8 +226,8 @@ Warning
 <section id="adding-users-to-the-github-repos" class="level2">
 <h2 class="anchored" data-anchor-id="adding-users-to-the-github-repos">Adding users to the GitHub repos</h2>
 <ol type="1">
-<li>To add someone to the GitHub UKB team, use <code>admin_gh_add_user_to_team()</code>.</li>
-<li>To add a contributor to a project, use the function <code>admin_gh_add_contributor_to_repo()</code>.</li>
+<li>To add someone to the GitHub UKB team, use <code>gh_add_user_to_team()</code>.</li>
+<li>To add a contributor to a project, use the function <code>gh_add_user_to_repo()</code>.</li>
 </ol>
 </section>
 <section id="todo-after-proposal-submission" class="level2">
@@ -242,7 +242,7 @@ Warning
 <section id="todo-after-project-acceptance" class="level2">
 <h2 class="anchored" data-anchor-id="todo-after-project-acceptance">Todo after project acceptance</h2>
 <ol type="1">
-<li>See a list of approved projects with <code>admin_list_approved_projects()</code> and <code>admin_gh_list_repos()</code> for projects on GitHub.</li>
+<li>See a list of approved projects with <code>admin_get_projects()</code> and <code>gh_get_repos()</code> for projects on GitHub.</li>
 <li>Run <code>admin_start_approved_project()</code>, using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo.</li>
 </ol>
 </section>

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-05-30">
 
-<title>ukbAid - Important notes on using GitHub</title>
+<title>ukbAid - Design</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,6 +100,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -166,16 +204,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#caution-when-using-github" id="toc-caution-when-using-github" class="nav-link active" data-scroll-target="#caution-when-using-github">Caution when using GitHub</a></li>
+  <li><a href="#naming-scheme" id="toc-naming-scheme" class="nav-link active" data-scroll-target="#naming-scheme">Naming scheme</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/important-notes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Important notes on using GitHub</h1>
+<h1 class="title">Design</h1>
 </div>
 
 
@@ -198,35 +236,142 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="caution-when-using-github" class="level2">
-<h2 class="anchored" data-anchor-id="caution-when-using-github">Caution when using GitHub</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This notice was emailed to us from UK Biobank.</p>
-</div>
-</div>
-<p>Use of 3rd party code-sharing repositories (e.g.&nbsp;GitHub)</p>
-<p>It has come to our attention that researchers are increasingly uploading software tools and analysis scripts - which is an acceptable practice and required by some journals - to web-based repositories (such as GitHub). Given that such scripts may have been run on underlying UK Biobank data, please ensure that <strong>no UK Biobank data are uploaded</strong> to these repositories (either as a result of being incorporated within the analysis code, or otherwise being referenced in a manner that leads to its inclusion).</p>
-<p>Making any participant-level UK Biobank data available on a web-based repository is not acceptable. As such, UK Biobank would re-iterate that all researchers exercise appropriate oversight, care and control to ensure that such uploads of data do not occur.</p>
-<p>UK Biobank considers that the great majority of researchers are aware of UK Biobank’s requirements with regard to processing and storing of its data, and reminds all researchers that UK Biobank participant data must always be treated in a manner consistent with the provisions of the Access Procedures and the MTA (and the data security provisions of the MTA) and specifically:</p>
+<section id="naming-scheme" class="level1">
+<h1>Naming scheme</h1>
+<p>Principles are:</p>
 <ul>
-<li>may not be shared (directly or indirectly) with other third parties (outside of an approved application).</li>
-<li>may not be uploaded (directly or indirectly) to web-based or other repositories accessible by third parties.</li>
+<li>Use snake case</li>
+<li>Use verbs for actions</li>
+<li>Use nouns for objects</li>
+<li>Shorter over longer</li>
 </ul>
-<p>Aside from any legal consequences, any default in complying with these obligations may lead to applications and registrations being terminated.</p>
-<p>A guide to researcher best practice for use of 3rd party code sharing repositories is available on the UK Biobank website here: https://www.ukbiobank.ac.uk/media/1vhh2vip/github-3rd-party-sharing.pdf</p>
-<p>Best wishes,</p>
-<p>UK Biobank</p>
+<p>Headers and their objects are named with the following scheme:</p>
+<pre><code>header_action_object()</code></pre>
+<section id="rap-overall-project-rap" class="level3">
+<h3 class="anchored" data-anchor-id="rap-overall-project-rap">RAP overall project (<code>rap</code>)</h3>
+<ul>
+<li>Objects: database, file, path, user, schema</li>
+<li>Actions: get, delete, copy, create</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_user</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_delete_file</span>(path)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_users</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_dirs</span>(path)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_files</span>(path)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_schema</span>()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_database</span>()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_from</span>(rap_path, local_path)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_to</span>(local_path, rap_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="researchers-project-while-in-rap-proj" class="level3">
+<h3 class="anchored" data-anchor-id="researchers-project-while-in-rap-proj">Researchers’ project while in RAP (<code>proj</code>)</h3>
+<ul>
+<li>Objects: RStudio config, Git config, database, name (of project folder), dependencies</li>
+<li>Actions: get, setup, create</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_name</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_dependencies</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_git_config</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_rstudio_config</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_setup_git_config</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_setup_rstudio_config</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_database</span>(fields)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_path_database</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<ul>
+<li>Objects: rows, columns, column names, or row group name, parquet?</li>
+<li>On data: drop, keep (rows), remove, add (columns), create</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>drop_rows_<span class="sc">*</span>(data)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>keep_rows_<span class="sc">*</span>(data)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>remove_column_<span class="sc">*</span>(data)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>add_column_<span class="sc">*</span>(data)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>create_data_<span class="sc">*</span>(data)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data, output_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="admin-admin" class="level3">
+<h3 class="anchored" data-anchor-id="admin-admin">Admin (<code>admin</code>)</h3>
+<ul>
+<li>Objects: proposals, projects and their IDs (abbreviations), paths, Google Sheets ID</li>
+<li>Actions: get, create, read</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_read_proposals</span>()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_get_path_proposals</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_get_sheets_id</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_read_project</span>(path)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_read_projects</span>()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_get_project_ids</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_get_path_projects</span>()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_create_projects</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="github-gh" class="level3">
+<h3 class="anchored" data-anchor-id="github-gh">GitHub (<code>gh</code>)</h3>
+<ul>
+<li>Objects: users, team, repos, org</li>
+<li>Actions: get, create, add, remove, download</li>
+</ul>
+<pre><code>gh_get_users()
+gh_get_repos()
+
+gh_get_team()
+gh_get_org()
+
+gh_download_repo(repo)
+gh_create_repo(repo)
+
+gh_add_repo_to_team(repo)
+gh_remove_repo_from_team(repo)
+
+gh_add_user_to_team(user)
+gh_add_user_to_repo(user)
+gh_remove_user_from_team(user)
+gh_remove_user_from_repo(user)</code></pre>
+</section>
+<section id="zenodo-zen" class="level3">
+<h3 class="anchored" data-anchor-id="zenodo-zen">Zenodo (<code>zen</code>)</h3>
+<ul>
+<li>Objects: protocols, papers, repos</li>
+<li>Actions: upload?</li>
+</ul>
+</section>
+<section id="general-or-internal" class="level3">
+<h3 class="anchored" data-anchor-id="general-or-internal">General or internal</h3>
+<ul>
+<li>Objects: gh, dx, cli, ukbaid</li>
+<li>Actions: verify, run</li>
+</ul>
+<pre><code>run_dx(command)
+run_gh(command)
+
+verify_dx()
+verify_gh()
+verify_cli()
+verify_ukbaid()</code></pre>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    path_rap_users() --&gt; path_rap_file --&gt; get_rap_file
+    get_rap_user
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -647,7 +792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Licensed under CC-BY 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/important-notes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

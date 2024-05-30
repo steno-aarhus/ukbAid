@@ -3,6 +3,7 @@ pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   admin: admin.html
+  design: design.html
   faq: faq.html
   governance: governance.html
   important-notes: important-notes.html
@@ -13,7 +14,7 @@ articles:
   request-access: request-access.html
   using-rap: using-rap.html
   workflow: workflow.html
-last_built: 2024-05-15T17:18Z
+last_built: 2024-05-30T21:27Z
 urls:
   reference: https://steno-aarhus.github.io/ukbAid/reference
   article: https://steno-aarhus.github.io/ukbAid/articles
