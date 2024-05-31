@@ -41,7 +41,6 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = rap_get_user()) {
-  browser()
   table_exporter_command <- builder_table_exporter(
     variables_to_extract = variables_to_extract,
     field = field,
@@ -54,10 +53,17 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
   cli::cli_alert_info("Started extracting the variables and converting to CSV.")
   cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
   table_exporter_results <- system(table_exporter_command, intern = TRUE)
-  data_file_name <- glue::glue("data-{username}-{project_id}-{timestamp_now()}")
-  system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}-{today}.csv"))
-  user_path <- glue::glue("/mnt/project/users/{username}")
-  cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
+  data_path <- rap_get_path_files(".") |>
+    stringr::str_subset("\\.csv$") |>
+    stringr::str_subset(username) |>
+    stringr::str_subset(project_id) |>
+    stringr::str_sort(decreasing = TRUE) |>
+    head(1)
+
+  new_path <- data_path |>
+    stringr::str_remove(username)
+  system(glue::glue("dx mv {data_path} /users/{username}/{new_path}"))
+  cli::cli_alert_success("Finished saving to CSV.")
   relevant_results <- tail(table_exporter_results, 3)[1:2]
   return(relevant_results)
 }
@@ -106,7 +112,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
   )
 
   fields_to_get <- paste0(glue::glue('-{field}="{variables_to_extract}"'), collapse = " ")
-  data_file_name <- glue::glue("data-{username}-{project_id}-{timestamp_now()}")
+  data_file_name <- glue::glue("{username}-data-{project_id}-{timestamp_now()}")
   glue::glue(
     paste0(
       c(
