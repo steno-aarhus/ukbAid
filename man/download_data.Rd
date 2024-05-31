@@ -26,6 +26,8 @@ download_data(
 Downloads the data file to \verb{data/}.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 Use this function every time you open a new RStudio Session, aka every time you
 use the UKB RAP. We don't want to save the data within the Git repository, so
 you'd need to download it every time you go back to analyzing the data.

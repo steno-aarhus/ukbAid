@@ -26,5 +26,5 @@ upload_data(
 A path to the uploaded data file.
 }
 \description{
-Upload a data file to the RAP.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 }

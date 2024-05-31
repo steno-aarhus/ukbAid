@@ -49,11 +49,8 @@ probably only once at the start of your project. NOTE: This function takes
 \examples{
 \dontrun{
 library(tidyverse)
-read_csv("data-raw/rap-variables.csv") \%>\%
-  pull(variable_name) \%>\%
-  create_csv_from_database()
-# rap_variables \%>\%
-#   pull(field_id) \%>\%
-#   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
+rap_variables \%>\%
+  pull(id) \%>\%
+  create_csv_from_database(project_id = "mesh", username = "lwjohnst")
 }
 }

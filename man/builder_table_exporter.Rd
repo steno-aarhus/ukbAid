@@ -45,9 +45,8 @@ library(dplyr)
 library(stringr)
 library(magrittr)
 rap_variables \%>\%
-  filter(str_detect(rap_variable_name, "\"")) \%>\%
   sample_n(10) \%>\%
-  pull(rap_variable_name) \%>\%
+  pull(id) \%>\%
   builder_table_exporter(project_id = "test", username = "lwj") \%>\%
   cat()
 }

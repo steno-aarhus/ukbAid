@@ -2,13 +2,16 @@
 % Please edit documentation in R/rap.R
 \name{rap_get_path_files}
 \alias{rap_get_path_files}
-\title{Title}
+\title{Get paths of files and folders based on a given path in the RAP project server.}
 \usage{
 rap_get_path_files(path)
 }
 \arguments{
-\item{path}{}
+\item{path}{The path to search for files and folders.}
+}
+\value{
+A character vector of files and folders.
 }
 \description{
-Title
+Get paths of files and folders based on a given path in the RAP project server.
 }
