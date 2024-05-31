@@ -1,6 +1,10 @@
 
 #' Downloads your UKB data file to the `data/data.csv` folder.
 #'
+#' @description
+#'
+#' `r lifecycle::badge("deprecated")`
+#'
 #' Use this function every time you open a new RStudio Session, aka every time you
 #' use the UKB RAP. We don't want to save the data within the Git repository, so
 #' you'd need to download it every time you go back to analyzing the data.
@@ -15,17 +19,28 @@ download_data <- function(project_id = get_rap_project_id(),
                           file_prefix = "data",
                           file_ext = c("csv", "parquet"),
                           username = rap_get_user()) {
+  lifecycle::deprecate_soft(
+    when = "0.1.0",
+    what = "download_data()",
+    with = "rap_copy_from()"
+  )
   file_ext <- rlang::arg_match(file_ext)
-  rap_data_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{file_ext}")
+  rap_path <- rap_get_path_user_files(rap_get_user()) |>
+    stringr::str_subset(file_ext) |>
+    stringr::str_sort(decreasing = TRUE) |>
+    head(1)
+
+  cli::cli_alert_info("Downloading from RAP: {.val {rap_path}}.")
   output_path <- glue::glue("data/data.{file_ext}")
-  download_command <- glue::glue("dx download {rap_data_path} --output {output_path} --overwrite")
   cli::cli_alert_info("Downloading data to {.val {output_path}}.")
-  system(download_command)
+  rap_copy_from(rap_path, output_path)
   cli::cli_alert_success("Downloaded the data file!")
-  return(here::here(output_path))
+  return(output_path)
 }
 
 #' Upload a data file to the RAP.
+#'
+#' `r lifecycle::badge("deprecated")`
 #'
 #' @param path Path to the dataset you want to upload.
 #' @inheritParams create_csv_from_database
@@ -37,12 +52,11 @@ upload_data <- function(path,
                         project_id = get_rap_project_id(),
                         file_prefix = "data",
                         username = rap_get_user()) {
-  rap_path <- glue::glue("/users/{username}/{file_prefix}-{project_id}.{fs::path_ext(path)}")
-  upload_command <- glue::glue("dx upload {path} --destination {rap_path}")
-  cli::cli_alert_info("Uploading data to {.val {rap_path}}.")
-  system(upload_command)
-  cli::cli_alert_success("Uploaded the file to the RAP!")
-  return(rap_path)
+  lifecycle::deprecate_stop(
+    when = "0.1.0",
+    what = "upload_data()",
+    with = "rap_copy_to()"
+  )
 }
 
 #' Read a Parquet file and convert to DuckDB format.
