@@ -20,7 +20,7 @@ header_action_object()
 ### RAP overall project (`rap`)
 
 -   Objects: database, file, path, user, schema
--   Actions: get, delete, copy, create
+-   Actions: get, delete, copy, create, move
 
 ``` r
 rap_get_user()
@@ -35,6 +35,8 @@ rap_get_path_database()
 
 rap_copy_from(rap_path, local_path)
 rap_copy_to(local_path, rap_path)
+
+rap_move_file(from, to)
 ```
 
 ### Researchers' project while in RAP (`proj`)
