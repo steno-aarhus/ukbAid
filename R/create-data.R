@@ -32,18 +32,16 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 #' @examples
 #' \dontrun{
 #' library(tidyverse)
-#' read_csv("data-raw/rap-variables.csv") %>%
-#'   pull(variable_name) %>%
-#'   create_csv_from_database()
-#' # rap_variables %>%
-#' #   pull(field_id) %>%
-#' #   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
+#' rap_variables %>%
+#'   pull(id) %>%
+#'   create_csv_from_database(project_id = "mesh", username = "lwjohnst")
 #' }
 create_csv_from_database <- function(variables_to_extract, field = c("name", "title"),
                                      file_prefix = "data",
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = rap_get_user()) {
+  browser()
   table_exporter_command <- builder_table_exporter(
     variables_to_extract = variables_to_extract,
     field = field,
@@ -56,13 +54,18 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
   cli::cli_alert_info("Started extracting the variables and converting to CSV.")
   cli::cli_alert_warning("This function runs for quite a while, at least 5 minutes or more. Please be patient to let it finish.")
   table_exporter_results <- system(table_exporter_command, intern = TRUE)
-  today <- lubridate::today()
-  data_file_name <- glue::glue("data-{username}-{project_id}-{today}")
+  data_file_name <- glue::glue("data-{username}-{project_id}-{timestamp_now()}")
   system(glue::glue("dx mv {data_file_name}.csv /users/{username}/{file_prefix}-{project_id}-{today}.csv"))
   user_path <- glue::glue("/mnt/project/users/{username}")
   cli::cli_alert_success("Finished saving to CSV. Check {.val {user_path}} or the project folder on the RAP to see that it was created.")
   relevant_results <- tail(table_exporter_results, 3)[1:2]
   return(relevant_results)
+}
+
+timestamp_now <- function() {
+  lubridate::now() |>
+    lubridate::format_ISO8601() |>
+    stringr::str_replace_all("[:]", "-")
 }
 
 #' Build, but not run, the dx table exporter command.
@@ -79,9 +82,8 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
 #' library(stringr)
 #' library(magrittr)
 #' rap_variables %>%
-#'   filter(str_detect(rap_variable_name, "\"")) %>%
 #'   sample_n(10) %>%
-#'   pull(rap_variable_name) %>%
+#'   pull(id) %>%
 #'   builder_table_exporter(project_id = "test", username = "lwj") %>%
 #'   cat()
 builder_table_exporter <- function(variables_to_extract, field = c("name", "title"),
@@ -91,8 +93,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
                                    username = rap_get_user()) {
   stopifnot(is.character(dataset_record_id), is.character(variables_to_extract))
   field <- rlang::arg_match(field)
-  field <- switch(
-    field,
+  field <- switch(field,
     title = "ifield_titles",
     name = "ifield_names"
   )
@@ -105,7 +106,7 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
   )
 
   fields_to_get <- paste0(glue::glue('-{field}="{variables_to_extract}"'), collapse = " ")
-  data_file_name <- glue::glue("data-{username}-{project_id}")
+  data_file_name <- glue::glue("data-{username}-{project_id}-{timestamp_now()}")
   glue::glue(
     paste0(
       c(
@@ -118,4 +119,3 @@ builder_table_exporter <- function(variables_to_extract, field = c("name", "titl
     )
   )
 }
-
