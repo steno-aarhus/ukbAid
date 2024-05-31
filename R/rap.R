@@ -29,32 +29,30 @@ rap_get_path_users <- function() {
   rap_get_path_files("users/")
 }
 
-#' Get the path of a single user within the RAP project server.
+#' Get the paths of files in a single users folder within the RAP project server.
 #'
 #' @param user A user's username.
 #'
-#' @return A character scalar of one users path.
+#' @return A character vector of files in a user's folder.
 #' @export
 #'
-rap_get_path_user <- function(user) {
+rap_get_path_user_files <- function(user) {
   users <- rap_get_path_users()
   user <- rlang::arg_match(
     user,
     stringr::str_remove(users, "/$")
   )
 
-  users |>
-    stringr::str_subset(user)
+  rap_get_path_files(glue::glue("users/{user}"))
 }
 
-#' Title
+#' Get paths of files and folders based on a given path in the RAP project server.
 #'
-#' @param path
+#' @param path The path to search for files and folders.
 #'
-#' @return
+#' @return A character vector of files and folders.
 #' @export
 #'
-#' @examples
 rap_get_path_files <- function(path) {
   run_dx(c("ls", "--all", path)) |>
     stringr::str_subset("^\\.\\.?/$", negate = TRUE)
