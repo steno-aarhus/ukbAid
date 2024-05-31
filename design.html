@@ -180,6 +180,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./admin.html">
  <span class="dropdown-text">Administration</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./design.html">
+ <span class="dropdown-text">Design</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -251,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="rap-overall-project-rap">RAP overall project (<code>rap</code>)</h3>
 <ul>
 <li>Objects: database, file, path, user, schema</li>
-<li>Actions: get, delete, copy, create</li>
+<li>Actions: get, delete, copy, create, move</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_user</span>()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -264,7 +268,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_get_path_database</span>()</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_from</span>(rap_path, local_path)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_to</span>(local_path, rap_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_to</span>(local_path, rap_path)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_move_file</span>(from, to)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="researchers-project-while-in-rap-proj" class="level3">
 <h3 class="anchored" data-anchor-id="researchers-project-while-in-rap-proj">Researchers’ project while in RAP (<code>proj</code>)</h3>
