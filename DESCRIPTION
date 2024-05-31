@@ -26,6 +26,7 @@ Imports:
     glue,
     googlesheets4,
     here,
+    lifecycle,
     magrittr,
     parquetize,
     prodigenr,
