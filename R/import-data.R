@@ -25,10 +25,11 @@ download_data <- function(project_id = get_rap_project_id(),
     with = "rap_copy_from()"
   )
   file_ext <- rlang::arg_match(file_ext)
-  rap_path <- rap_get_path_user_files(rap_get_user()) |>
+  rap_file <- rap_get_path_user_files(rap_get_user()) |>
     stringr::str_subset(file_ext) |>
     stringr::str_sort(decreasing = TRUE) |>
     head(1)
+  rap_path <- glue::glue("/users/{username}/{rap_file}")
 
   cli::cli_alert_info("Downloading from RAP: {.val {rap_path}}.")
   output_path <- glue::glue("data/data.{file_ext}")
