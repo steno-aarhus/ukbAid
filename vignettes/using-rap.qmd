@@ -51,10 +51,10 @@ to store their project.
     #| eval: false
     install.packages("pak")
     pak::pak("steno-aarhus/ukbAid", ask = FALSE)
+    rstudioapi::restartSession()
     ```
 
-    Once this finishes, restart the session before running the next
-    line:
+    Once this finishes restarting the session, run the next line:
 
     ```{r}
     #| eval: false
