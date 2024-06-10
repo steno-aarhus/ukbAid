@@ -50,7 +50,7 @@ to store their project.
     ```{r}
     #| eval: false
     install.packages("pak")
-    pak::pak("steno-aarhus/ukbAid")
+    pak::pak("steno-aarhus/ukbAid", ask = FALSE)
     ```
 
     Once this finishes, restart the session before running the next
@@ -85,7 +85,7 @@ to store their project.
     RStudio Project:
 
     ```{r}
-    pak::pak()
+    pak::pak(ask = FALSE)
     targets::tar_make()
     ```
 
