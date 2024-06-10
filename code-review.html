@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-06-10">
 
-<title>ukbAid - Working in the Research Analysis Platform (RAP)</title>
+<title>ukbAid - Code review</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -204,21 +170,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#steps-everytime-you-enter-into-the-ukb-rap" id="toc-steps-everytime-you-enter-into-the-ukb-rap" class="nav-link active" data-scroll-target="#steps-everytime-you-enter-into-the-ukb-rap">Steps <em>everytime</em> you enter into the UKB RAP</a></li>
-  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes">Other notes</a></li>
-  </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/using-rap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Working in the Research Analysis Platform (RAP)</h1>
+<h1 class="title">Code review</h1>
 </div>
 
 
@@ -241,65 +200,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Because of the unique setup of the UKB RAP, the easiest way to do your work is through Git and GitHub on the <a href="https://github.com/steno-aarhus/">SDCA GitHub Organization</a>. This is due to a few reasons:</p>
+<p>This document describes how we do code reviewing as well as things we’ve learned over time. We aim to have formal and virtual code review sessions once a month (done on Discord), with some code review done before the session so that there is something to describe during the session, in addition to live code reviewing. It’s split into two parts and two sub-parts:</p>
 <ol type="1">
-<li><p><em>Every</em> time you start up and enter into the UKB RAP, the working computer environment is <em>completely</em> clean… No personal files, no R packages installed, nothing. So we need some way of saving our work so we can download it again when we work again in the RAP.</p></li>
-<li><p>Whenever you finish working for the day, you <em>must</em> terminate your RStudio session in the RAP, because we pay for the RStudio use every hour. So we can’t just leave the session running all the time, we have to turn it off. This forces us into the situation described in the point above.</p></li>
-<li><p>There are several of us working on this project and we want to be able to easily collaborate and help each other out. We will also have frequent code reviews of analyses. Both the collaboration and reviews are best done through Git and GitHub.</p></li>
-<li><p>The UKB organizing committee will review all project proposals and do some basic admin tasks, so keeping things organized and centralized on GitHub will help us be effective in our tasks.</p></li>
-<li><p>Because all code will be stored on the SDCA GitHub, it will be easier to share code and how we do things through it. So you the PhD student, postdoc, or researcher can better make use of all the efforts everyone is doing.</p></li>
+<li>Before the code review session and during the virtual code review session.</li>
+<li>And a reviewer and reviewee sub-parts of each above.</li>
 </ol>
-<p>Because of these reasons, we expect everyone working on the Steno UK Biobank project to use Git and use Steno’s GitHub Organization account to store their project.</p>
-<section id="steps-everytime-you-enter-into-the-ukb-rap" class="level2">
-<h2 class="anchored" data-anchor-id="steps-everytime-you-enter-into-the-ukb-rap">Steps <em>everytime</em> you enter into the UKB RAP</h2>
+<p>Those projects that get reviewed first go with the priority of:</p>
 <ol type="1">
-<li><p>Whenever you open up the UKB RAP, you won’t have your project files nor have any packages installed. So you’ll need to do a few set up tasks <em>each time</em> you work in the RAP. I’ve written a function that you can source directly that will take you through the steps needed to have everything set up. Run these two lines of code in the R Console, and afterwards follow the instructions on the Console.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"steno-aarhus/ukbAid"</span>, <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rstudioapi<span class="sc">::</span><span class="fu">restartSession</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once this finishes restarting the session, run the next line:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">::</span><span class="fu">setup_ukb_rap</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Since UKB RAP deletes everything when you Terminate the session, you’ll be backing up your project on GitHub. What this function above does is install the necessary packages, installs the ukbAid package, sets up your Git config, sets up your authentication (credentials) to connect to GitHub, and finally downloads your GitHub repository into the RAP environment.</p>
-</div>
-</div></li>
-<li><p>Once the project is downloaded from GitHub and created the project in the RAP, you can open it by clicking the <code>.Rproj</code> file inside the project folder.</p></li>
-<li><p>You <em>may</em> have to update your credentials after opening up your project, so run this code to paste in your GitHub PAT token.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-<li><p>Then, run these two lines of code in the Console while inside your RStudio Project:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>More details about this step is also found in your own project’s main <code>README.md</code> file.</p></li>
-<li><p>When you’ve finished selecting the variables you want in the <code>data-raw/project-variables.csv</code>, you will need to open up the <code>data-raw/create-data.R</code> script and follow the instructions there to create your dataset.</p></li>
+<li>Those projects closest to having draft done, to ensure they are reproducible.</li>
+<li>Those projects most recently started, to make sure they follow the standard structure for the project and code.</li>
+<li>All others.</li>
 </ol>
-<p>Remember to frequently commit and push your file changes to your GitHub. Otherwise all your work on the RAP will be lost next time you login.</p>
-</section>
-<section id="other-notes" class="level2">
-<h2 class="anchored" data-anchor-id="other-notes">Other notes</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Before the session</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">During the session</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="reviewer" class="level3">
+<h3 class="anchored" data-anchor-id="reviewer">Reviewer</h3>
 <ul>
-<li><p><strong>Save your changes in the Git history and push to your GitHub BEFORE Terminating your UKB-RAP project</strong>: If you terminate before saving and pushing to GitHub, you <em>will</em> lose your work! Read the <a href="./important-notes.html">Important notes on using GitHub</a> page for more detail.</p></li>
-<li><p><strong>Remember</strong>, do not save any data in the Git history unless you have discussed it with the organizing committee. You can save results for tables and figures, as long as they are aggregate or statistical results.</p></li>
+<li><em>Always</em> create a branch that will contain the changes and suggestions, and submit those changes as a pull request.</li>
+<li>Use the code review as a form of teaching. So try to explain <em>why</em> changes are being made. Try to split changes into <em>factual</em> and <em>aesthetic/robust</em> changes. For instance, if some code does not do the action the coder expects, that is a factual change (a.k.a. a bug) and needs to be fixed immediately. Changes can also be a refactor that makes the code more robust, but doesn’t change the expected informational output (but might change the object type of the output, for instance from list to data frame).</li>
+<li>Keep pull requests very small and focused, so that the reviewee (and others) can understand and learn from what is being done. It also has the advantage that the PR can be referenced in other contexts to highlight issues that are recurring.</li>
+<li>Always, <em>be kind</em>. Write commit messages and pull requests in a “teaching” form, with the emphasis on gentle learning.</li>
 </ul>
-
-
 </section>
+<section id="reviewee" class="level3">
+<h3 class="anchored" data-anchor-id="reviewee">Reviewee</h3>
+<ul>
+<li>Try as much as possible to write code <em>assuming</em> someone else will read it. So write it in a way that makes it easier for someone to understand the flow and where things start and go next.
+<ul>
+<li>For instance, try to write code using <code>{targets}</code> package to write a pipeline to make it easy for a reviewer to follow along the logical and sequence of code.</li>
+</ul></li>
+</ul>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="reviewer-1" class="level3">
+<h3 class="anchored" data-anchor-id="reviewer-1">Reviewer</h3>
+<ul>
+<li>Learning happens from being in a space that feels safe and feels supportive. So during the code review session, make sure to reinforce this concept. Be aware of the language you use when explaining things. It isn’t about putting people down, but bringing them up and empowering them with knowledge and learning.</li>
+<li>Select some key PRs that were done before the session and walk through it, while explaining the rationale for the change.</li>
+<li>After going through the PR, select a project to review and do a “live code review” of sections of it. While going through it, verbally explain the thought process for what the reviewer is looking for, where they start, etc.</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -719,7 +667,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Licensed under CC-BY 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/using-rap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/code-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
