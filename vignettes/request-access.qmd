@@ -33,6 +33,12 @@ the next steps.
     one already. You will need your user name when filling in the Form
     below.
 
+::: callout-important
+A project in this sense would be considered a Git repository (hosted on
+GitHub). And one project should link to *only one* paper. So 1 project =
+1 Git repository = 1 published paper.
+:::
+
 ## Proposing a new project
 
 Now that you've done the steps above, you follow these steps to submit a
@@ -71,3 +77,4 @@ control).
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexnnpKboJI27Yv51HR_VelrQnkZkdr5qtxF6h-pev3CgdcLw/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">
 
 </iframe>
+
