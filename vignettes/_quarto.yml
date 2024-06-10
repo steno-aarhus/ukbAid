@@ -27,6 +27,7 @@ website:
         menu:
           - admin.qmd
           - design.qmd
+          - code-review.qmd
       - text: "FAQ"
         href: faq.qmd
     tools:

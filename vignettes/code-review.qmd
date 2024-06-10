@@ -1,0 +1,71 @@
+---
+title: "Code review"
+---
+
+This document describes how we do code reviewing as well as things we've
+learned over time. We aim to have formal and virtual code review
+sessions once a month (done on Discord), with some code review done
+before the session so that there is something to describe during the
+session, in addition to live code reviewing. It's split into two parts
+and two sub-parts:
+
+1.  Before the code review session and during the virtual code review
+    session.
+2.  And a reviewer and reviewee sub-parts of each above.
+
+Those projects that get reviewed first go with the priority of:
+
+1.  Those projects closest to having draft done, to ensure they are
+    reproducible.
+2.  Those projects most recently started, to make sure they follow the
+    standard structure for the project and code.
+3.  All others.
+
+::: panel-tabset
+## Before the session
+
+### Reviewer
+
+-   *Always* create a branch that will contain the changes and
+    suggestions, and submit those changes as a pull request.
+-   Use the code review as a form of teaching. So try to explain *why*
+    changes are being made. Try to split changes into *factual* and
+    *aesthetic/robust* changes. For instance, if some code does not do
+    the action the coder expects, that is a factual change (a.k.a. a
+    bug) and needs to be fixed immediately. Changes can also be a
+    refactor that makes the code more robust, but doesn't change the
+    expected informational output (but might change the object type of
+    the output, for instance from list to data frame).
+-   Keep pull requests very small and focused, so that the reviewee (and
+    others) can understand and learn from what is being done. It also
+    has the advantage that the PR can be referenced in other contexts to
+    highlight issues that are recurring.
+-   Always, *be kind*. Write commit messages and pull requests in a
+    "teaching" form, with the emphasis on gentle learning.
+
+### Reviewee
+
+-   Try as much as possible to write code *assuming* someone else will
+    read it. So write it in a way that makes it easier for someone to
+    understand the flow and where things start and go next.
+    -   For instance, try to write code using `{targets}` package to
+        write a pipeline to make it easy for a reviewer to follow along
+        the logical and sequence of code.
+
+## During the session
+
+### Reviewer
+
+-   Learning happens from being in a space that feels safe and feels
+    supportive. So during the code review session, make sure to
+    reinforce this concept. Be aware of the language you use when
+    explaining things. It isn't about putting people down, but bringing
+    them up and empowering them with knowledge and learning.
+-   Select some key PRs that were done before the session and walk
+    through it, while explaining the rationale for the change.
+-   After going through the PR, select a project to review and do a
+    "live code review" of sections of it. While going through it,
+    verbally explain the thought process for what the reviewer is
+    looking for, where they start, etc.
+:::
+
