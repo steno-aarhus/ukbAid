@@ -40,7 +40,6 @@ date: January 24, 2024
 format:
   html:
     embed-resources: true
-bibliography: masld.bib
 # You can browse all the Citation Styles here: https://github.com/citation-style-language/styles
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/vancouver.csl
 execute: 
