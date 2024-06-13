@@ -119,7 +119,7 @@ proj_create_dataset <- function(fields,
     "--priority", "high",
     "-y",
     # raw to reduce runtime
-    "-icoding_option=raw",
+    "-icoding_option=RAW",
     fields,
     glue::glue("-idataset_or_cohort_or_dashboard={database_id}"),
     glue::glue("-ioutput={fs::path_ext_remove(output_path)}")
