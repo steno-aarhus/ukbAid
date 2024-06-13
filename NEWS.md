@@ -1,5 +1,8 @@
 # ukbAid 0.1.0
 
+-   Many new functions added, plus new redesign of the naming scheme,
+    see the design page on the website.
+
 # ukbAid 0.0.16
 
 -   Make use of either names or titles for the
@@ -12,3 +15,4 @@
 # ukbAid 0.0.15
 
 -   Starting to use NEWS.
+
