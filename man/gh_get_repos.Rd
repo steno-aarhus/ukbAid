@@ -12,3 +12,9 @@ A character vector.
 \description{
 Get all repo names in the UK Biobank GitHub team.
 }
+\examples{
+\dontrun{
+# Need to have a GitHub token set up.
+gh_get_repos()
+}
+}
