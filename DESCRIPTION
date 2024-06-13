@@ -16,6 +16,7 @@ Depends:
     tidyverse
 Imports: 
     arrow,
+    checkmate,
     cli (>= 3.6.0),
     deposits (>= 0.2.1.57),
     desc,
