@@ -1,13 +1,37 @@
 # Get ---------------------------------------------------------------------
 
+#' Get the Steno GitHub organization.
+#'
+#' @return A character scalar.
+#' @export
+#'
+#' @examples
+#' gh_get_org()
 gh_get_org <- function() {
   "steno-aarhus"
 }
 
+#' Get the name of the Steno GitHub team for the UK Biobank project.
+#'
+#' @return A character scalar.
+#' @export
+#'
+#' @examples
+#' gh_get_team()
 gh_get_team <- function() {
   "ukbiobank-team"
 }
 
+#' Get all users who are part of the UK Biobank Steno team on GitHub.
+#'
+#' @return A character vector of usernames.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Need to have a GitHub token set up.
+#' gh_get_users()
+#' }
 gh_get_users <- function() {
   ghclass::team_members(gh_get_org(), gh_get_team())$user
 }
@@ -17,6 +41,11 @@ gh_get_users <- function() {
 #' @return A character vector.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' # Need to have a GitHub token set up.
+#' gh_get_repos()
+#' }
 gh_get_repos <- function() {
   ghclass::team_repos(gh_get_org(), gh_get_team())$repo |>
     stringr::str_remove("^.*/")
@@ -57,6 +86,14 @@ gh_add_user_to_repo <- function(user, repo) {
   )
 }
 
+#' Add a GitHub repo to the UK Biobank Steno team.
+#'
+#' @param repo The name of the repository.
+#'
+#' @return Invisibly returns GitHub API response, used for side effect of
+#'   sending request to GitHub API.
+#' @export
+#'
 gh_add_repo_to_team <- function(repo) {
   repo <- rlang::arg_match(repo, gh_get_repos())
 
@@ -69,7 +106,16 @@ gh_add_repo_to_team <- function(repo) {
 
 # Create ------------------------------------------------------------------
 
-gh_create_repo <- function(path) {
+#' Create a GitHub repository based on the existing local project.
+#'
+#' @param path Path to the local RStudio project. Defaults to current working
+#'   directory.
+#'
+#' @return The GitHub API response, used for the side effect of creating a
+#'   GitHub repository.
+#' @export
+#'
+gh_create_repo <- function(path = ".") {
   usethis::with_project(
     path = path,
     {
