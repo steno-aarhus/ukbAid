@@ -2,7 +2,22 @@
 title: "Design"
 ---
 
-# Naming scheme
+```{r}
+#| include: false
+devtools::load_all()
+```
+
+This document is mainly to help with developing the package, so would be
+of more interest to admin, contributors, or other package developers.
+
+## Input and output
+
+As much as possible, functions:
+
+-   require zero to two arguements
+-   output a vector or data frame
+
+## Naming scheme
 
 Principles are:
 
