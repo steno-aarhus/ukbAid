@@ -52,8 +52,8 @@ proj_get_git_config()
 proj_get_rstudio_config()
 proj_setup_git_config()
 proj_setup_rstudio_config()
-proj_create_database(fields)
-proj_create_path_database()
+proj_create_database(fields, output_path)
+proj_create_path_database(user)
 ```
 
 ### Data
