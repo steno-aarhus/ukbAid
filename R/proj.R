@@ -47,7 +47,21 @@ get_proj_dependencies <- function() {
 # proj_setup_git_config()
 # proj_setup_rstudio_config()
 
-proj_create_path_database <- function(user) {
+#' Create a file name unique for a project and user, along with timestamp.
+#'
+#' You use this when you want to create a dataset when using [proj_create_database()].
+#'
+#' @param user The name of the user you are creating this dataset for.
+#'
+#' @return A character scalar.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' proj_create_path_dataset("lwjohnst")
+#' }
+proj_create_path_dataset <- function(user) {
+  verify_dx()
   user <- rlang::arg_match(
     user,
     rap_get_path_users() |>
