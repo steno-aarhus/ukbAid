@@ -41,6 +41,11 @@ create_csv_from_database <- function(variables_to_extract, field = c("name", "ti
                                      project_id = get_rap_project_id(),
                                      dataset_record_id = dare_project_record_id,
                                      username = rap_get_user()) {
+  lifecycle::deprecate_soft(
+    when = "0.1.0",
+    what = "create_csv_from_database()",
+    with = "proj_create_dataset()"
+  )
   table_exporter_command <- builder_table_exporter(
     variables_to_extract = variables_to_extract,
     field = field,
