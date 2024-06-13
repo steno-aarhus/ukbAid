@@ -12,3 +12,8 @@ Character vector of folder paths.
 \description{
 Get the paths of all the users within the RAP project server.
 }
+\examples{
+\dontrun{
+rap_get_path_users()
+}
+}

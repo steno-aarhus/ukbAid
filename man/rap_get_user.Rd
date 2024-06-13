@@ -20,3 +20,8 @@ Get the username of the user who is working within the RAP RStudio session.
 \item \code{get_username()}: Deprecated function. Use \code{rap_get_user()} instead.
 
 }}
+\examples{
+\dontrun{
+rap_get_user()
+}
+}
