@@ -51,3 +51,23 @@ going to download the survey data.
     `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
     whenever you run the functions that require the variable (which use
     the `ukbAid:::get_survey_id()` function).
+
+### Uploading to Zenodo
+
+For protocols, the code to use would be:
+
+```{r}
+#| eval: false
+path <- here::here("path/to/protocol.qmd")
+pdf_path <- zen_create_protocol_pdf(path)
+client <- zen_create_file_record(
+  path = pdf_path,
+  metadata = zen_create_protocol_metadata(path),
+  token = zen_get_token(),
+  # Test it in the sandbox first
+  sandbox = TRUE
+)
+```
+
+Always test it in the sandbox first, which you can check that it uploads
+by going to the [Zenodo sandbox](https://sandbox.zenodo.org/me/uploads).
