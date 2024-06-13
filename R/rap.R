@@ -54,7 +54,7 @@ rap_get_path_user_files <- function(user) {
 #' @export
 #'
 rap_get_path_files <- function(path) {
-  run_dx(c("ls", "--all", path)) |>
+  run_dx(c("ls", "--all", "--full", path)) |>
     stringr::str_subset("^\\.\\.?/$", negate = TRUE)
 }
 
