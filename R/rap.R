@@ -40,10 +40,12 @@ rap_get_path_user_files <- function(user) {
   users <- rap_get_path_users()
   user <- rlang::arg_match(
     user,
-    stringr::str_remove(users, "/$")
+    users |>
+      stringr::str_remove("/$") |>
+      stringr::str_remove("^/users/")
   )
 
-  rap_get_path_files(glue::glue("users/{user}"))
+  rap_get_path_files(glue::glue("{users}/{user}"))
 }
 
 #' Get paths of files and folders based on a given path in the RAP project server.
@@ -55,7 +57,7 @@ rap_get_path_user_files <- function(user) {
 #'
 rap_get_path_files <- function(path) {
   run_dx(c("ls", "--all", "--full", path)) |>
-    stringr::str_subset("^\\.\\.?/$", negate = TRUE)
+    stringr::str_subset("^/\\/\\.\\.?/$", negate = TRUE)
 }
 
 #' Get the path to the RAP UK Biobank dataset.
@@ -102,8 +104,10 @@ rap_copy_to <- function(local_path, rap_path) {
 #'   RStudio environment on the RAP.
 #' @export
 rap_copy_from <- function(rap_path, local_path) {
-  run_dx(c("download", rap_path, "--output", local_path,
-           "--overwrite", "--no-progress", "--lightweight"))
+  run_dx(c(
+    "download", rap_path, "--output", local_path,
+    "--overwrite", "--no-progress", "--lightweight"
+  ))
   local_path
 }
 
