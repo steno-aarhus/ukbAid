@@ -17,6 +17,7 @@ Depends:
 Imports: 
     arrow,
     cli (>= 3.6.0),
+    deposits (>= 0.2.1.57),
     desc,
     dplyr,
     fs,
@@ -31,6 +32,7 @@ Imports:
     parquetize,
     prodigenr,
     purrr,
+    quarto,
     readr,
     renv,
     rjson,
@@ -50,12 +52,12 @@ Suggests:
     knitr,
     pkgdown,
     prereg (>= 0.5.0),
-    quarto,
     rmarkdown
 VignetteBuilder: 
     knitr
 Remotes: 
-    crsh/prereg
+    crsh/prereg,
+    ropenscilabs/deposits
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
