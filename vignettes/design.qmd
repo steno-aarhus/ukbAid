@@ -2,11 +2,6 @@
 title: "Design"
 ---
 
-```{r}
-#| include: false
-devtools::load_all()
-```
-
 This document is mainly to help with developing the package, so would be
 of more interest to admin, contributors, or other package developers.
 
