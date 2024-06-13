@@ -5,6 +5,10 @@
 #' @return Character vector with users username within the RAP session.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' rap_get_user()
+#' }
 rap_get_user <- function() {
   run_dx("whoami")
 }
@@ -25,18 +29,26 @@ get_username <- function() {
 #' @return Character vector of folder paths.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' rap_get_path_users()
+#' }
 rap_get_path_users <- function() {
-  rap_get_path_files("users/")
+  rap_get_path_dirs("users/")
 }
 
 #' Get the paths of files in a single users folder within the RAP project server.
 #'
-#' @param user A user's username.
+#' @param user A user's username. Default is currently logged in user.
 #'
 #' @return A character vector of files in a user's folder.
 #' @export
 #'
-rap_get_path_user_files <- function(user) {
+#' @examples
+#' \dontrun{
+#' rap_get_path_user_files("danibs")
+#' }
+rap_get_path_user_files <- function(user = rap_get_user()) {
   users <- rap_get_path_users()
   user <- rlang::arg_match(
     user,
@@ -44,20 +56,41 @@ rap_get_path_user_files <- function(user) {
       stringr::str_remove("/$") |>
       stringr::str_remove("^/users/")
   )
+  user <- users |>
+    stringr::str_subset(user)
 
-  rap_get_path_files(glue::glue("{users}/{user}"))
+  rap_get_path_files(user)
 }
 
-#' Get paths of files and folders based on a given path in the RAP project server.
+#' Get paths of files within a folder based on a given path in the RAP project server.
 #'
-#' @param path The path to search for files and folders.
+#' @param path The path to search for files.
 #'
-#' @return A character vector of files and folders.
+#' @return A character vector.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' rap_get_path_files(".")
+#' }
 rap_get_path_files <- function(path) {
-  run_dx(c("ls", "--all", "--full", path)) |>
+  run_dx(c("ls", "--all", "--obj", path)) |>
     stringr::str_subset("^/\\/\\.\\.?/$", negate = TRUE)
+}
+
+#' Get full paths of folders within the RAP project server.
+#'
+#' @param path The path that you want to see the folders within.
+#'
+#' @return A character vector.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rap_get_path_dirs("users/")
+#' }
+rap_get_path_dirs <- function(path) {
+  run_dx(c("ls", "--all", "--full", "--folders", path))
 }
 
 #' Get the path to the RAP UK Biobank dataset.
