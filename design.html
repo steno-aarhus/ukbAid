@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-10">
+<meta name="dcterms.date" content="2024-06-13">
 
 <title>ukbAid - Design</title>
 <style>
@@ -212,7 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#naming-scheme" id="toc-naming-scheme" class="nav-link active" data-scroll-target="#naming-scheme">Naming scheme</a></li>
+  <li><a href="#input-and-output" id="toc-input-and-output" class="nav-link active" data-scroll-target="#input-and-output">Input and output</a></li>
+  <li><a href="#naming-scheme" id="toc-naming-scheme" class="nav-link" data-scroll-target="#naming-scheme">Naming scheme</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -232,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 10, 2024</p>
+      <p class="date">June 13, 2024</p>
     </div>
   </div>
   
@@ -244,8 +245,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="naming-scheme" class="level1">
-<h1>Naming scheme</h1>
+<p>This document is mainly to help with developing the package, so would be of more interest to admin, contributors, or other package developers.</p>
+<section id="input-and-output" class="level2">
+<h2 class="anchored" data-anchor-id="input-and-output">Input and output</h2>
+<p>As much as possible, functions:</p>
+<ul>
+<li>require zero to two arguements</li>
+<li>output a vector or data frame</li>
+</ul>
+</section>
+<section id="naming-scheme" class="level2">
+<h2 class="anchored" data-anchor-id="naming-scheme">Naming scheme</h2>
 <p>Principles are:</p>
 <ul>
 <li>Use snake case</li>
@@ -274,12 +284,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_from</span>(rap_path, local_path)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_copy_to</span>(local_path, rap_path)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_move_file</span>(from, to)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">rap_move_file</span>(path, output_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="researchers-project-while-in-rap-proj" class="level3">
 <h3 class="anchored" data-anchor-id="researchers-project-while-in-rap-proj">Researchers’ project while in RAP (<code>proj</code>)</h3>
 <ul>
-<li>Objects: RStudio config, Git config, database, name (of project folder), dependencies</li>
+<li>Objects: RStudio config, Git config, dataset, name (of project folder), dependencies</li>
 <li>Actions: get, setup, create</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_name</span>()</span>
@@ -288,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_get_rstudio_config</span>()</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_setup_git_config</span>()</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_setup_rstudio_config</span>()</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_database</span>(fields)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_path_database</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_dataset</span>(fields, output_path)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">proj_create_path_dataset</span>(user)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
@@ -303,7 +313,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>add_column_<span class="sc">*</span>(data)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>create_data_<span class="sc">*</span>(data)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data, output_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rename_columns_to_title</span>(data)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data, output_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="admin-admin" class="level3">
 <h3 class="anchored" data-anchor-id="admin-admin">Admin (<code>admin</code>)</h3>
@@ -348,9 +360,14 @@ gh_remove_user_from_repo(user)</code></pre>
 <section id="zenodo-zen" class="level3">
 <h3 class="anchored" data-anchor-id="zenodo-zen">Zenodo (<code>zen</code>)</h3>
 <ul>
-<li>Objects: protocols, papers, repos</li>
-<li>Actions: upload?</li>
+<li>Objects: file, repo, metadata, record, token</li>
+<li>Actions: create, get,</li>
 </ul>
+<pre><code>zen_get_token()
+zen_create_file_metadata(path)
+zen_create_repo_metadata(path)
+zen_create_record(path, metadata)
+zen_get_record(id, token)</code></pre>
 </section>
 <section id="general-or-internal" class="level3">
 <h3 class="anchored" data-anchor-id="general-or-internal">General or internal</h3>

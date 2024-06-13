@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ukbAid</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.16</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,14 +89,9 @@
         <dd>Downloads your UKB data file to the <code>data/data.csv</code> folder.</dd>
       </dl><dl><dt>
           
-          <code><a href="get_proj_dependencies.html">get_proj_dependencies()</a></code> 
+          <code><a href="gh_add_repo_to_team.html">gh_add_repo_to_team()</a></code> 
         </dt>
-        <dd>Get package dependencies from the DESCRIPTION file.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="get_rap_project_id.html">get_rap_project_id()</a></code> 
-        </dt>
-        <dd>Get the RAP project ID, will be the project main folder.</dd>
+        <dd>Add a GitHub repo to the UK Biobank Steno team.</dd>
       </dl><dl><dt>
           
           <code><a href="gh_add_user_to_repo.html">gh_add_user_to_repo()</a></code> 
@@ -109,9 +104,49 @@
         <dd>Add the user to the UK Biobank GitHub team.</dd>
       </dl><dl><dt>
           
+          <code><a href="gh_create_repo.html">gh_create_repo()</a></code> 
+        </dt>
+        <dd>Create a GitHub repository based on the existing local project.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="gh_get_org.html">gh_get_org()</a></code> 
+        </dt>
+        <dd>Get the Steno GitHub organization.</dd>
+      </dl><dl><dt>
+          
           <code><a href="gh_get_repos.html">gh_get_repos()</a></code> 
         </dt>
         <dd>Get all repo names in the UK Biobank GitHub team.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="gh_get_team.html">gh_get_team()</a></code> 
+        </dt>
+        <dd>Get the name of the Steno GitHub team for the UK Biobank project.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="gh_get_users.html">gh_get_users()</a></code> 
+        </dt>
+        <dd>Get all users who are part of the UK Biobank Steno team on GitHub.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="proj_create_dataset.html">proj_create_dataset()</a></code> 
+        </dt>
+        <dd>Extract the variables you want from the UKB database and create a CSV dataset.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="proj_create_path_dataset.html">proj_create_path_dataset()</a></code> 
+        </dt>
+        <dd>Create a file name unique for a project and user, along with timestamp.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="proj_get_dependencies.html">proj_get_dependencies()</a></code> <code><a href="proj_get_dependencies.html">get_proj_dependencies()</a></code> 
+        </dt>
+        <dd>Get package dependencies from the DESCRIPTION file.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="proj_get_name.html">proj_get_name()</a></code> <code><a href="proj_get_name.html">get_rap_project_id()</a></code> 
+        </dt>
+        <dd>Get the RAP project ID, will be the project main folder.</dd>
       </dl><dl><dt>
           
           <code><a href="rap_copy.html">rap_copy_to()</a></code> <code><a href="rap_copy.html">rap_copy_from()</a></code> 
@@ -124,9 +159,14 @@
         <dd>Get the path to the RAP UK Biobank dataset.</dd>
       </dl><dl><dt>
           
+          <code><a href="rap_get_path_dirs.html">rap_get_path_dirs()</a></code> 
+        </dt>
+        <dd>Get full paths of folders within the RAP project server.</dd>
+      </dl><dl><dt>
+          
           <code><a href="rap_get_path_files.html">rap_get_path_files()</a></code> 
         </dt>
-        <dd>Get paths of files and folders based on a given path in the RAP project server.</dd>
+        <dd>Get paths of files within a folder based on a given path in the RAP project server.</dd>
       </dl><dl><dt>
           
           <code><a href="rap_get_path_schema.html">rap_get_path_schema()</a></code> 
@@ -147,6 +187,11 @@
           <code><a href="rap_get_user.html">rap_get_user()</a></code> <code><a href="rap_get_user.html">get_username()</a></code> 
         </dt>
         <dd>Get the username of the user who is working within the RAP RStudio session.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="rap_move_file.html">rap_move_file()</a></code> 
+        </dt>
+        <dd>Move a file from one location to another within the RAP project server.</dd>
       </dl><dl><dt>
           
           <code><a href="rap_variables.html">rap_variables</a></code> 
@@ -182,6 +227,26 @@
           <code><a href="upload_data.html">upload_data()</a></code> 
         </dt>
         <dd>Upload a data file to the RAP.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="zen_create_file_record.html">zen_create_file_record()</a></code> 
+        </dt>
+        <dd>Create a record for a file on Zenodo.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="zen_create_protocol_metadata.html">zen_create_protocol_metadata()</a></code> 
+        </dt>
+        <dd>Create the metadata for Zenodo based on the Rmd or qmd protocol file.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="zen_create_protocol_pdf.html">zen_create_protocol_pdf()</a></code> 
+        </dt>
+        <dd>Create a PDF of the protocol Rmd or qmd file.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="zen_get_token.html">zen_get_token()</a></code> 
+        </dt>
+        <dd>Store the token for Zenodo.</dd>
       </dl></div>
   </main></div>
 
