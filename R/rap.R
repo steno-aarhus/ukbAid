@@ -113,7 +113,7 @@ rap_get_path_schema <- function() {
     stringr::str_subset("\\.json\\.gz")
 }
 
-# Copying -----------------------------------------------------------------
+# Copying/moving -----------------------------------------------------------------
 
 #' Copying files between the RAP server and the RStudio RAP environment.
 #'
@@ -142,6 +142,36 @@ rap_copy_from <- function(rap_path, local_path) {
     "--overwrite", "--no-progress", "--lightweight"
   ))
   local_path
+}
+
+#' Move a file from one location to another within the RAP project server.
+#'
+#' @param path The file path you want to move.
+#' @param output_dir The folder (directory) you want to move the file to.
+#'
+#' @return The status results of the move command.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rap_get_path_files(".") |>
+#'   stringr::str_subset("lwjohnst-.*\\.csv$") |>
+#'   rap_move_file(
+#'     rap_get_path_users() |>
+#'       stringr::str_subset("lwjohnst")
+#'   )
+#' }
+rap_move_file <- function(path, output_dir) {
+  checkmate::assert_character(path)
+  checkmate::assert_character(output_dir)
+  checkmate::assert_scalar(path)
+  checkmate::assert_scalar(output_dir)
+
+  run_dx(c(
+    "mv",
+    path,
+    output_dir
+  ))
 }
 
 # Deleting ----------------------------------------------------------------
