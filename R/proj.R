@@ -100,15 +100,15 @@ proj_create_path_dataset <- function(user) {
 #' )
 #' }
 proj_create_dataset <- function(fields,
-                                 output_path,
-                                 database_id = dare_project_record_id) {
+                                output_path,
+                                database_id = dare_project_record_id) {
   checkmate::assert_character(fields)
   checkmate::assert_character(database_id)
   checkmate::assert_scalar(database_id)
   checkmate::assert_character(output_path)
   checkmate::assert_scalar(output_path)
 
-  fields <- paste0(glue::glue("-ifield_names={fields}"), collapse = " ")
+  fields <- glue::glue("-ifield_names={fields}")
 
   cli::cli_alert_info("Sent request to RAP to create a subset of the database into the {.val {output_path}} file.")
   cli::cli_alert_warning("This function can take a while. You can watch it in RAP Monitor.")
