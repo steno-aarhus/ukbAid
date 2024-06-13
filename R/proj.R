@@ -94,9 +94,12 @@ proj_create_path_dataset <- function(user) {
 #'
 #' @examples
 #' \dontrun{
-#' proj_create_database(c("eid", "p31", "p34"), "test-data.csv")
+#' proj_create_dataset(
+#'   c("eid", "p31", "p34"),
+#'   proj_create_path_dataset(rap_get_user())
+#' )
 #' }
-proj_create_database <- function(fields,
+proj_create_dataset <- function(fields,
                                  output_path,
                                  database_id = dare_project_record_id) {
   checkmate::assert_character(fields)
