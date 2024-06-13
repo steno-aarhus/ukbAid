@@ -51,12 +51,12 @@ rap_get_path_database()
 rap_copy_from(rap_path, local_path)
 rap_copy_to(local_path, rap_path)
 
-rap_move_file(from, to)
+rap_move_file(path, output_dir)
 ```
 
 ### Researchers' project while in RAP (`proj`)
 
--   Objects: RStudio config, Git config, database, name (of project
+-   Objects: RStudio config, Git config, dataset, name (of project
     folder), dependencies
 -   Actions: get, setup, create
 
@@ -67,8 +67,8 @@ proj_get_git_config()
 proj_get_rstudio_config()
 proj_setup_git_config()
 proj_setup_rstudio_config()
-proj_create_database(fields, output_path)
-proj_create_path_database(user)
+proj_create_dataset(fields, output_path)
+proj_create_path_dataset(user)
 ```
 
 ### Data
@@ -82,6 +82,8 @@ keep_rows_*(data)
 remove_column_*(data)
 add_column_*(data)
 create_data_*(data)
+
+rename_columns_to_title(data)
 
 write_parquet(data, output_path)
 ```
