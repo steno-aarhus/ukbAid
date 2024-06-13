@@ -107,7 +107,7 @@ admin_create_projects()
 -   Objects: users, team, repos, org
 -   Actions: get, create, add, remove, download
 
-```         
+``` r        
 gh_get_users()
 gh_get_repos()
 
@@ -131,7 +131,7 @@ gh_remove_user_from_repo(user)
 -   Objects: file, repo, metadata, record, token
 -   Actions: create, get,
 
-```         
+``` r        
 zen_get_token()
 zen_create_file_metadata(path)
 zen_create_repo_metadata(path)
@@ -144,7 +144,7 @@ zen_get_record(id, token)
 -   Objects: gh, dx, cli, ukbaid
 -   Actions: verify, run
 
-```         
+``` r        
 run_dx(command)
 run_gh(command)
 
@@ -152,10 +152,4 @@ verify_dx()
 verify_gh()
 verify_cli()
 verify_ukbaid()
-```
-
-```{mermaid}
-flowchart LR
-    path_rap_users() --> path_rap_file --> get_rap_file
-    get_rap_user
 ```
