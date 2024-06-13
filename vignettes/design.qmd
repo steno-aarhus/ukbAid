@@ -116,8 +116,16 @@ gh_remove_user_from_repo(user)
 
 ### Zenodo (`zen`)
 
--   Objects: protocols, papers, repos
--   Actions: upload?
+-   Objects: file, repo, metadata, record, token
+-   Actions: create, get,
+
+```         
+zen_get_token()
+zen_create_file_metadata(path)
+zen_create_repo_metadata(path)
+zen_create_record(path, metadata)
+zen_get_record(id, token)
+```
 
 ### General or internal
 
