@@ -100,10 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta name="mermaid-theme" content="neutral">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -340,22 +336,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Objects: users, team, repos, org</li>
 <li>Actions: get, create, add, remove, download</li>
 </ul>
-<pre><code>gh_get_users()
-gh_get_repos()
-
-gh_get_team()
-gh_get_org()
-
-gh_download_repo(repo)
-gh_create_repo(repo)
-
-gh_add_repo_to_team(repo)
-gh_remove_repo_from_team(repo)
-
-gh_add_user_to_team(user)
-gh_add_user_to_repo(user)
-gh_remove_user_from_team(user)
-gh_remove_user_from_repo(user)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_get_users</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_get_repos</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_get_team</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_get_org</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_download_repo</span>(repo)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_create_repo</span>(repo)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_add_repo_to_team</span>(repo)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_remove_repo_from_team</span>(repo)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_add_user_to_team</span>(user)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_add_user_to_repo</span>(user)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_remove_user_from_team</span>(user)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">gh_remove_user_from_repo</span>(user)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="zenodo-zen" class="level3">
 <h3 class="anchored" data-anchor-id="zenodo-zen">Zenodo (<code>zen</code>)</h3>
@@ -363,11 +359,11 @@ gh_remove_user_from_repo(user)</code></pre>
 <li>Objects: file, repo, metadata, record, token</li>
 <li>Actions: create, get,</li>
 </ul>
-<pre><code>zen_get_token()
-zen_create_file_metadata(path)
-zen_create_repo_metadata(path)
-zen_create_record(path, metadata)
-zen_get_record(id, token)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zen_get_token</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">zen_create_file_metadata</span>(path)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">zen_create_repo_metadata</span>(path)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">zen_create_record</span>(path, metadata)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">zen_get_record</span>(id, token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="general-or-internal" class="level3">
 <h3 class="anchored" data-anchor-id="general-or-internal">General or internal</h3>
@@ -375,27 +371,13 @@ zen_get_record(id, token)</code></pre>
 <li>Objects: gh, dx, cli, ukbaid</li>
 <li>Actions: verify, run</li>
 </ul>
-<pre><code>run_dx(command)
-run_gh(command)
-
-verify_dx()
-verify_gh()
-verify_cli()
-verify_ukbaid()</code></pre>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    path_rap_users() --&gt; path_rap_file --&gt; get_rap_file
-    get_rap_user
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_dx</span>(command)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">run_gh</span>(command)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">verify_dx</span>()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">verify_gh</span>()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">verify_cli</span>()</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">verify_ukbaid</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
