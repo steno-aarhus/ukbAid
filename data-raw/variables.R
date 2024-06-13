@@ -10,7 +10,8 @@ fields <- jsonlite::read_json("data-raw/schema.json")$model$entities$participant
 rap_variables <- tibble::tibble(
   id = purrr::map_chr(fields, "name"),
   title = purrr::map_chr(fields, "title")
-)
+) |>
+  dplyr::filter(id != "eid")
 
 usethis::use_data(rap_variables, overwrite = TRUE, version = 3)
 
