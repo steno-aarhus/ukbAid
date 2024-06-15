@@ -116,7 +116,7 @@ zen_create_file_record <- function(path, metadata, token, sandbox = TRUE) {
   }
   client <- deposits::depositsClient$new(
     service = "zenodo",
-    sandbox = TRUE,
+    sandbox = sandbox,
     metadata = metadata
   )
   client$deposit_new()
