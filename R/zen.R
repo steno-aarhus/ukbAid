@@ -79,7 +79,7 @@ zen_create_protocol_pdf <- function(path) {
     fs::path_dir(path),
     {
       quarto::quarto_render(
-        input = fs::path_file(protocol_path),
+        input = fs::path_file(path),
         output_format = "pdf"
       )
     }
