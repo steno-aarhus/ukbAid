@@ -116,6 +116,7 @@ proj_create_dataset <- function(fields,
     "run",
     "app-table-exporter",
     "--brief",
+    "--instance-type", "mem2_ssd2_v2_x8",
     "--priority", "high",
     "-y",
     # raw to reduce runtime
