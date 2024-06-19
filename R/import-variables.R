@@ -1,6 +1,9 @@
 
 #' Take the selected UKB variables from the protocol stage and subset the RAP specific variables list.
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
 #' This is done because RAP has a special naming system for their variables inside
 #' the UK Biobank dataset that is slightly different from how the UK Biobank names them.
 #'
@@ -18,6 +21,11 @@
 #'
 subset_rap_variables <- function(project_variables_file = "data-raw/project-variables.csv",
                                  rap_variables_file = "data-raw/rap-variables.csv", instances = 0:9, save = TRUE) {
+    lifecycle::deprecate_warn(
+      when = "0.1.0",
+      what = "subset_rap_variables()",
+      details = "This function is no longer recommended to use. See using `proj_create_dataset()` instead."
+    )
     instance_pattern <- glue::glue("Instance [{min(instances)}-{max(instances)}]")
     proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
         dplyr::select(id)
