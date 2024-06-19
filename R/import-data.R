@@ -59,18 +59,3 @@ upload_data <- function(path,
     with = "rap_copy_to()"
   )
 }
-
-#' Read a Parquet file and convert to DuckDB format.
-#'
-#' @param path Path to the Parquet file.
-#'
-#' @return A SQL database object.
-# read_parquet <- function(path) {
-#
-#   data <- path %>%
-#     arrow::open_dataset()
-#
-#
-#   %>%
-#     arrow::to_duckdb()
-# }
