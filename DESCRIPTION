@@ -49,15 +49,12 @@ Imports:
     yesno
 Suggests: 
     clipr,
-    duckdb,
     knitr,
     pkgdown,
-    prereg (>= 0.5.0),
     rmarkdown
 VignetteBuilder: 
     knitr
 Remotes: 
-    crsh/prereg,
     ropenscilabs/deposits
 Encoding: UTF-8
 LazyData: true
