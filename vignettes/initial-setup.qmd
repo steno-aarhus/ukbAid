@@ -43,7 +43,7 @@ properly. In your Console, type out the below code, replacing my name
 (Luke) and my email with your own:
 
 ```{r}
-ukbAid::setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
+ukbAid::proj_setup_git_config("Luke W. Johnston", "lwjohnst@gmail.com")
 ```
 
 You should get an output showing your `user.email` and `user.name`.
