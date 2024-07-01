@@ -9,7 +9,7 @@ of more interest to admin, contributors, or other package developers.
 
 As much as possible, functions:
 
--   require zero to two arguements
+-   require zero to two arguments
 -   output a vector or data frame
 
 ## Naming scheme
@@ -34,9 +34,6 @@ header_action_object()
 
 ``` r
 rap_get_user()
-
-rap_delete_file(path)
-
 rap_get_path_users()
 rap_get_path_dirs(path)
 rap_get_path_files(path)
@@ -47,12 +44,14 @@ rap_copy_from(rap_path, local_path)
 rap_copy_to(local_path, rap_path)
 
 rap_move_file(path, output_dir)
+
+rap_delete_file(path)
 ```
 
 ### Researchers' project while in RAP (`proj`)
 
 -   Objects: RStudio config, Git config, dataset, name (of project
-    folder), dependencies
+    folder), dependencies, rap
 -   Actions: get, setup, create
 
 ``` r
@@ -60,8 +59,11 @@ proj_get_name()
 proj_get_dependencies()
 proj_get_git_config()
 proj_get_rstudio_config()
+
+proj_setup_rap()
 proj_setup_git_config()
 proj_setup_rstudio_config()
+
 proj_create_dataset(fields, output_path)
 proj_create_path_dataset(user)
 ```
@@ -86,8 +88,8 @@ write_parquet(data, output_path)
 ### Admin (`admin`)
 
 -   Objects: proposals, projects and their IDs (abbreviations), paths,
-    Google Sheets ID
--   Actions: get, create, read
+    Google Sheets ID, site, quarto, pkgdown
+-   Actions: get, create, read, build
 
 ``` r
 admin_read_proposals()
@@ -99,7 +101,7 @@ admin_read_project(path)
 admin_read_projects()
 admin_get_project_ids()
 admin_get_path_projects()
-admin_create_projects()
+admin_create_project()
 ```
 
 ### GitHub (`gh`)
@@ -107,7 +109,7 @@ admin_create_projects()
 -   Objects: users, team, repos, org
 -   Actions: get, create, add, remove, download
 
-``` r        
+``` r
 gh_get_users()
 gh_get_repos()
 
@@ -131,7 +133,7 @@ gh_remove_user_from_repo(user)
 -   Objects: file, repo, metadata, record, token
 -   Actions: create, get,
 
-``` r        
+``` r
 zen_get_token()
 zen_create_file_metadata(path)
 zen_create_repo_metadata(path)
@@ -144,7 +146,7 @@ zen_get_record(id, token)
 -   Objects: gh, dx, cli, ukbaid
 -   Actions: verify, run
 
-``` r        
+``` r
 run_dx(command)
 run_gh(command)
 
