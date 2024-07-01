@@ -25,9 +25,11 @@ library(magrittr)
 #     ukbAid::proj_create_dataset(
 #       output_path = dataset_filename
 #     )
+
 # # Move the created dataset over.
 # ukbAid::rap_move_file(
 #   dataset_filename,
 #   rap_get_path_users() |>
+# TODO: Change this to the actual user name
 #     stringr::str_subset(ukbAid::rap_get_user())
 # )

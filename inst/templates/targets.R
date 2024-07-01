@@ -1,14 +1,11 @@
 # Load packages required to define the pipeline:
 library(targets)
+library(ukbAid)
 # library(tarchetypes) # Load other packages as needed.
-
-# Tell targets your needed packages.
-package_deps <- desc::desc_get_deps()$package |>
-  stringr::str_subset("^R$", negate = TRUE)
 
 # Set target options:
 tar_option_set(
-  packages = package_deps,
+  packages = proj_get_dependencies(),
   format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # This likely isn't necessary for most UK Biobank users at SDCA/AU.
@@ -30,9 +27,14 @@ tar_option_set(
 list(
     # TODO: Uncomment this *after* finishing running `data-raw/create-data.R`
     # tar_target(
-    #     name = download_project_data,
+    #     name = project_data,
           # TODO: This will eventually need to be changed to "parquet".
-    #     command = ukbAid::download_data(file_ext = "csv"),
+        # command = rap_copy_from(
+        #   rap_get_path_user_files(user = rap_get_user()) |>
+        #     sort() |>
+        #     head(1),
+        #   here::here("data/data.csv")
+        # ),
     #     format = "file"
     # )
 )
