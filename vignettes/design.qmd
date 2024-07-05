@@ -132,7 +132,7 @@ gh_remove_user_from_repo(user)
 ### Zenodo (`zen`)
 
 -   Objects: file, repo, metadata, record, token
--   Actions: create, get,
+-   Actions: create, get, update
 
 ``` r
 zen_get_token()
