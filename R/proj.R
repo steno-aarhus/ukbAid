@@ -6,6 +6,8 @@
 #'   (and the same as the name of the `.Rproj` folder).
 #' @export
 #'
+#' @examples
+#' proj_get_name()
 proj_get_name <- function() {
   options(usethis.quiet = TRUE)
   on.exit(options(usethis.quiet = NULL))
@@ -17,6 +19,8 @@ proj_get_name <- function() {
 #' @return A character vector of package names.
 #' @export
 #'
+#' @examples
+#' proj_get_dependencies()
 proj_get_dependencies <- function() {
   desc::desc_get_deps()$package |>
     stringr::str_subset("^R$", negate = TRUE)
