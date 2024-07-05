@@ -54,6 +54,7 @@ admin_start_approved_project <- function(user, proj_abbrev) {
   if (any(stringr::str_detect(gh_get_repos(), proj_abbrev))) {
     cli::cli_abort("This project is already on GitHub.")
   }
+  user <- rlang::arg_match(user, gh_get_users())
 
   temp_proj_path <- fs::path_temp(user, proj_abbrev)
   on.exit(fs::dir_delete(temp_proj_path))
