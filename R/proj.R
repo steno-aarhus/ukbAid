@@ -127,7 +127,7 @@ proj_create_path_dataset <- function(user) {
   user <- rlang::arg_match(
     user,
     rap_get_path_users() |>
-      stringr::str_remove("/$") |>
+      stringr::str_subset("/\\.?\\.?$", negate = TRUE) |>
       stringr::str_remove("^/users/")
   )
   project_id <- proj_get_name()
