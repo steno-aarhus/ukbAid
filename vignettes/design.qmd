@@ -37,6 +37,7 @@ rap_get_user()
 rap_get_path_users()
 rap_get_path_dirs(path)
 rap_get_path_files(path)
+rap_get_path_user_files(user)
 rap_get_path_schema()
 rap_get_path_database()
 
