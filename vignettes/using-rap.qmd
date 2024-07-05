@@ -65,7 +65,7 @@ to store their project.
 
     ```{r}
     #| eval: false
-    ukbAid::setup_ukb_rap()
+    ukbAid::proj_setup_rap()
     ```
 
     ::: callout-note
@@ -119,4 +119,3 @@ Otherwise all your work on the RAP will be lost next time you login.
     have discussed it with the organizing committee. You can save
     results for tables and figures, as long as they are aggregate or
     statistical results.
-
