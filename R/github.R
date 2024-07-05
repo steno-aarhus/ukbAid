@@ -95,8 +95,6 @@ gh_add_user_to_repo <- function(user, repo) {
 #' @export
 #'
 gh_add_repo_to_team <- function(repo) {
-  repo <- rlang::arg_match(repo, gh_get_repos())
-
   ghclass::repo_add_team(
     repo = glue::glue("{gh_get_org()}/{repo}"),
     team = gh_get_team(),
