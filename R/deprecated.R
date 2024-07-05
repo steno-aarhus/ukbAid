@@ -272,3 +272,14 @@ setup_ukb_rap <- function() {
   )
   proj_setup_rap()
 }
+
+#' @describeIn rap_get_user Deprecated function. Use `rap_get_user()` instead.
+#' @export
+get_username <- function() {
+  lifecycle::deprecate_soft(
+    when = "0.1.0",
+    what = "get_username()",
+    with = "rap_get_user()"
+  )
+  rap_get_user()
+}

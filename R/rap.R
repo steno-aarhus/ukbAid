@@ -13,17 +13,6 @@ rap_get_user <- function() {
   run_dx("whoami")
 }
 
-#' @describeIn rap_get_user Deprecated function. Use `rap_get_user()` instead.
-#' @export
-get_username <- function() {
-  lifecycle::deprecate_soft(
-    when = "0.1.0",
-    what = "get_username()",
-    with = "rap_get_user()"
-  )
-  rap_get_user()
-}
-
 #' Get the paths of all the users within the RAP project server.
 #'
 #' @return Character vector of folder paths.
