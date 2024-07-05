@@ -98,9 +98,9 @@ zen_get_token <- function() {
   askpass::askpass("Please paste in either the Zenodo Sandbox token or the normal Zenodo token.")
 }
 
-#' Create a record for a file on Zenodo.
+#' Create a record for files on Zenodo.
 #'
-#' @param path The path to the file to upload.
+#' @param paths The paths to the files to upload.
 #' @param metadata The metadata necessary for Zenodo to create a deposit record.
 #' @param token The token for Zenodo, via [zen_get_token()].
 #' @param sandbox Whether to test the upload on the sandbox first. Strongly recommended.
@@ -108,7 +108,7 @@ zen_get_token <- function() {
 #' @return Nothing, used for the side effect of creating a record on Zenodo.
 #' @export
 #'
-zen_create_file_record <- function(path, metadata, token, sandbox = TRUE) {
+zen_create_file_record <- function(paths, metadata, token, sandbox = TRUE) {
   if (sandbox) {
     Sys.setenv("ZENODO_SANDBOX_TOKEN" = token)
   } else {
@@ -120,6 +120,9 @@ zen_create_file_record <- function(path, metadata, token, sandbox = TRUE) {
     metadata = metadata
   )
   client$deposit_new()
-  client$deposit_upload_file(path, overwrite = TRUE)
+  purrr::walk(
+    paths,
+    \(path) client$deposit_upload_file(path, overwrite = TRUE)
+  )
 }
 
