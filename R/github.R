@@ -129,7 +129,7 @@ gh_create_repo <- function(path = ".") {
 
 # gh_remove_user_from_team(user)
 
-# Helper functions --------------------------------------------------------
+# Helpers -----------------------------------------------------------------
 
 run_gh <- function(command, call = rlang::caller_env()) {
   verify_gh(call = call)
