@@ -107,7 +107,7 @@ admin_create_project()
 
 ### GitHub (`gh`)
 
--   Objects: users, team, repos, org
+-   Objects: users, team, repos, org, tags
 -   Actions: get, create, add, remove, download
 
 ``` r
@@ -127,17 +127,20 @@ gh_add_user_to_team(user)
 gh_add_user_to_repo(user)
 gh_remove_user_from_team(user)
 gh_remove_user_from_repo(user)
+
+gh_get_tags()
+gh_create_tag(version, message)
 ```
 
 ### Zenodo (`zen`)
 
--   Objects: file, repo, metadata, record, token
--   Actions: create, get, update
+-   Objects: file, repo, metadata, record, token, JSON template
+-   Actions: create, get, update, copy
 
 ``` r
 zen_get_token()
-zen_create_file_metadata(path)
-zen_create_repo_metadata(path)
+zen_create_protocol_metadata(path)
+zen_copy_template_json()
 zen_create_record(path, metadata)
 zen_get_record(id, token)
 ```
