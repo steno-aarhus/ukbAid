@@ -125,6 +125,42 @@ gh_create_repo <- function(path = ".") {
   )
 }
 
+#' Create a Git tag and push it to GitHub as a release.
+#'
+#' @param version The version to set the tag (more specifically, the name of the tag).
+#' @param message The message to include when making the tag.
+#'
+#' @return Returns nothing, used for side effect of creating a tag on GitHub.
+#' @export
+#'
+gh_create_tag <- function(version, message) {
+  checkmate::assert_integer(version)
+  checkmate::assert_character(message)
+
+  desc::desc_set_version(version)
+  repo_version <- stringr::str_c("v", version)
+  version_tag <- gert::git_tag_create(
+    name = repo_version,
+    message = message
+  )
+  gert::git_push()
+  gert::git_tag_push(repo_version)
+
+  remote_host <- gert::git_remote_list() |>
+    dplyr::filter(name == "origin") |>
+    dplyr::pull(url) |>
+    stringr::str_extract("github\\.com[:/](.*/.*)\\.git$", group = 1) |>
+    stringr::str_remove_all(":|\\.git")
+  url_release <- glue::glue("https://github.com/{repo_name}/releases/new")
+
+  if (interactive()) {
+    browseURL(url_release)
+  }
+
+  return(invisible())
+}
+
+
 # Remove ------------------------------------------------------------------
 
 # gh_remove_user_from_team(user)
