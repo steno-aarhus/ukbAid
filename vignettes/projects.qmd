@@ -13,27 +13,36 @@ library(fs)
 #| results: asis
 project_description_template <- "
 \n
-## {project_abbrev}: {project_title}
-\n
-> **Lead author**: {full_name}, {job_position} at {affiliation}
+## {id}: {project_title}
 \n
 {project_description}
 \n
-GitHub: [github.com/steno-aarhus/{project_abbrev}](https://github.com/steno-aarhus/{project_abbrev})
+- Lead author: {full_name}, {job_position} at {affiliation}
+- GitHub repository: [github.com/steno-aarhus/{id}](https://github.com/steno-aarhus/{id})
+{doi}
 "
 
-add_project_abbrev <- function(x, y) {
-  project_abbrev <- fs::path_file(y) %>% 
-    fs::path_ext_remove()
-  x %>% 
-    tibble::as_tibble() %>% 
-    dplyr::mutate(project_abbrev = project_abbrev)
+format_doi_as_md_list <- function(data) {
+  doi_as_md_list <- data |>
+    dplyr::select(tidyselect::starts_with("doi")) |>
+    tidyr::pivot_longer(
+      cols = tidyselect::everything(),
+      names_to = "type", values_to = "doi"
+    ) |>
+    tidyr::drop_na() |>
+    dplyr::mutate(
+      type = stringr::str_remove(type, "doi_") |>
+        stringr::str_to_sentence(),
+      doi = glue::glue("- {type}: [{doi}](https://doi.org/{doi})")
+    ) |> 
+    dplyr::pull(doi) |> 
+    stringr::str_c(collapse = "\n")
+  data |> 
+    dplyr::mutate(doi = doi_as_md_list)
 }
 
-here::here("data-raw/projects/approved") %>% 
-  dir_ls(glob = "*.yaml") %>% 
-  map(yaml::read_yaml) %>% 
-  imap(add_project_abbrev) %>% 
-  map(~glue::glue_data(.x, project_description_template)) %>% 
-  walk(~cat(.x, sep = "\n\n"))
+admin_read_projects() |>
+  map(\(project) format_doi_as_md_list(project)) |>
+  map(\(project) glue::glue_data(project, project_description_template)) %>%
+  walk(~ cat(.x, sep = "\n\n"))
 ```
