@@ -137,6 +137,9 @@ admin_create_project <- function(path) {
         fs::file_delete("TODO.md")
         usethis::use_template("todo.md", "TODO.md", package = "ukbAid")
         git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
+
+        usethis::use_mit_license()
+        git_commit_file("LICENSE", "Add MIT License to the project")
     })
 }
 
