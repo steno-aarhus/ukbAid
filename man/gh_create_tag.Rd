@@ -7,7 +7,9 @@
 gh_create_tag(version, message)
 }
 \arguments{
-\item{version}{The version to set the tag (more specifically, the name of the tag).}
+\item{version}{The version to set the tag (more specifically, the name of the
+tag). Must be in the form of "##.##", like "1.0". A first number is for
+submissions, and the second number is for fixes after the submission.}
 
 \item{message}{The message to include when making the tag.}
 }
