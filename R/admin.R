@@ -150,7 +150,9 @@ admin_create_project <- function(path) {
         git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
 
         usethis::use_mit_license()
+        fs::file_delete("LICENSE")
         git_commit_file("LICENSE", "Add MIT License to the project")
+        git_commit_file("DESCRIPTION", "Update the DESCRIPTION file with the MIT License")
     })
 }
 
