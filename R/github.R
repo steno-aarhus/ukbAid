@@ -127,17 +127,20 @@ gh_create_repo <- function(path = ".") {
 
 #' Create a Git tag and push it to GitHub as a release.
 #'
-#' @param version The version to set the tag (more specifically, the name of the tag).
+#' @param version The version to set the tag (more specifically, the name of the
+#'   tag). Must be in the form of "##.##", like "1.0". A first number is for
+#'   submissions, and the second number is for fixes after the submission.
 #' @param message The message to include when making the tag.
 #'
 #' @return Returns nothing, used for side effect of creating a tag on GitHub.
 #' @export
 #'
 gh_create_tag <- function(version, message) {
-  checkmate::assert_integer(version)
+  checkmate::assert_character(version)
   checkmate::assert_character(message)
 
   desc::desc_set_version(version)
+  git_commit_file("DESCRIPTION", "chore: updated version number")
   repo_version <- stringr::str_c("v", version)
   version_tag <- gert::git_tag_create(
     name = repo_version,
@@ -146,7 +149,7 @@ gh_create_tag <- function(version, message) {
   gert::git_push()
   gert::git_tag_push(repo_version)
 
-  remote_host <- gert::git_remote_list() |>
+  repo_name <- gert::git_remote_list() |>
     dplyr::filter(name == "origin") |>
     dplyr::pull(url) |>
     stringr::str_extract("github\\.com[:/](.*/.*)\\.git$", group = 1) |>
