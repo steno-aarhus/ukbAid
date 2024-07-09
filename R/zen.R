@@ -70,7 +70,7 @@ zen_create_protocol_metadata <- function(path) {
 #' @export
 #'
 zen_copy_json_template <- function() {
-  fs::path_package("ukbAid", "inst", "templates", "zenodo.json") |>
+  fs::path_package("ukbAid", "templates", "zenodo.json") |>
     fs::file_copy(".zenodo.json")
 }
 
