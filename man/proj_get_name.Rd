@@ -21,3 +21,6 @@ Get the RAP project ID, will be the project main folder.
 \item \code{get_rap_project_id()}: Deprecated function. Use \code{proj_get_name()} instead.
 
 }}
+\examples{
+proj_get_name()
+}

@@ -2,12 +2,12 @@
 % Please edit documentation in R/zen.R
 \name{zen_create_file_record}
 \alias{zen_create_file_record}
-\title{Create a record for a file on Zenodo.}
+\title{Create a record for files on Zenodo.}
 \usage{
-zen_create_file_record(path, metadata, token, sandbox = TRUE)
+zen_create_file_record(paths, metadata, token, sandbox = TRUE)
 }
 \arguments{
-\item{path}{The path to the file to upload.}
+\item{paths}{The paths to the files to upload.}
 
 \item{metadata}{The metadata necessary for Zenodo to create a deposit record.}
 
@@ -19,5 +19,5 @@ zen_create_file_record(path, metadata, token, sandbox = TRUE)
 Nothing, used for the side effect of creating a record on Zenodo.
 }
 \description{
-Create a record for a file on Zenodo.
+Create a record for files on Zenodo.
 }

@@ -20,3 +20,6 @@ Get package dependencies from the DESCRIPTION file.
 \item \code{get_proj_dependencies()}: Deprecated function. Use \code{proj_get_dependencies()} instead.
 
 }}
+\examples{
+proj_get_dependencies()
+}

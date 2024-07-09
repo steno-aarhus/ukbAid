@@ -13,3 +13,8 @@ A tibble of project details.
 Show all approved projects, which are stored in YAML files, using the UK
 Biobank at SDCA. Display this information as a \code{\link[tibble:tibble]{tibble::tibble()}}.
 }
+\examples{
+\dontrun{
+admin_read_projects()[[1]]
+}
+}
