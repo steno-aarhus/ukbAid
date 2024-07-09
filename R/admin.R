@@ -10,6 +10,10 @@
 #' @return A tibble of project details.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' admin_read_projects()[[1]]
+#' }
 admin_read_projects <- function() {
   verify_ukbaid()
   admin_get_project_ids() |>
@@ -24,7 +28,14 @@ admin_read_project <- function(id) {
     stringr::str_subset(id) |>
     yaml::read_yaml() |>
     tibble::as_tibble() |>
-    dplyr::mutate(id = id)
+    dplyr::mutate(id = id) |>
+    dplyr::bind_rows(
+      tibble::tibble(
+        doi_protocol = character(),
+        doi_preprint = character(),
+        doi_repo = character()
+      )
+    )
 }
 
 admin_get_path_projects <- function() {
