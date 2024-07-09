@@ -61,6 +61,19 @@ zen_create_protocol_metadata <- function(path) {
   )
 }
 
+#' Copy the Zenodo metadata JSON template to the current working directory.
+#'
+#' This JSON template contains the metadata needed when submitting a repo release
+#' Zenodo.
+#'
+#' @return Invisibly returns copied file path.
+#' @export
+#'
+zen_copy_json_template <- function() {
+  fs::path_package("ukbAid", "inst", "templates", "zenodo.json") |>
+    fs::file_copy(".zenodo.json")
+}
+
 # Protocol specific -------------------------------------------------------
 
 #' Create a PDF of the protocol Rmd or qmd file.
