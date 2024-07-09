@@ -11,3 +11,4 @@ public/pkg
 .Renviron
 data-raw/*.json
 data-raw/*.json.gz
+dev
