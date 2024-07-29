@@ -157,6 +157,7 @@ proj_create_path_dataset <- function(user) {
 #'   Steno UK Biobank DARE project.
 #'
 #' @return Outputs character string of the results from the command sent to RAP.
+#' @export
 #'
 #' @examples
 #' \dontrun{
