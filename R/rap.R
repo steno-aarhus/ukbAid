@@ -1,5 +1,53 @@
 # Get ---------------------------------------------------------------------
 
+
+#' Get the unique ID for the RAP database.
+#'
+#' @return A character scalar.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rap_get_database_id()
+#' }
+rap_get_database_id <- function() {
+  run_dx(c("describe", "*dataset")) |>
+    stringr::str_subset("record-.*$") |>
+    stringr::str_extract("record-.*$")
+}
+
+#' Get the unique ID for the RAP project.
+#'
+#' @return A character scalar.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rap_get_project_id()
+#' }
+rap_get_project_id <- function() {
+  run_dx("env") |>
+    stringr::str_subset("project-.*$") |>
+    stringr::str_extract("project-.*$")
+}
+
+#' Get a list of entities within the RAP database.
+#'
+#' @return A character vector of entities within the RAP database.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rap_get_database_entities()
+#' }
+rap_get_database_entities <- function() {
+  run_dx(c(
+    "extract_dataset",
+    paste(rap_get_project_id(), rap_get_database_id(), sep = ":"),
+    "--list-entities"
+  ))
+}
+
 #' Get the username of the user who is working within the RAP RStudio session.
 #'
 #' @return Character vector with users username within the RAP session.
