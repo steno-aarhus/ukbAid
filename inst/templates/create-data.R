@@ -18,7 +18,7 @@ library(magrittr)
 # folder, comment it out again so you don't accidentally run it anymore (unless
 # you need to re-create the dataset).
 
-# dataset_filename <- ukbAid::proj_create_path_dataset(ukbAid::rap_get_user())
+# dataset_filename <- ukbAid::proj_create_path_dataset()
 # # Create the dataset csv file.
 # readr::read_csv(here::here("data-raw/rap-variables.csv")) %>%
 #     dplyr::pull(id) %>%
@@ -29,7 +29,7 @@ library(magrittr)
 # # Move the created dataset over.
 # ukbAid::rap_move_file(
 #   dataset_filename,
-#   rap_get_path_users() |>
-# TODO: Change this to the actual user name
-#     stringr::str_subset(ukbAid::rap_get_user())
+#   ukbAid::rap_get_path_users() |>
+#   TODO: Change this to the actual user name
+#   stringr::str_subset(ukbAid::rap_get_user())
 # )
