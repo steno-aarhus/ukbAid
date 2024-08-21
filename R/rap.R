@@ -135,6 +135,10 @@ rap_get_path_dirs <- function(path) {
 #' @return A path as a scalar character.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' rap_get_path_database()
+#' }
 rap_get_path_database <- function() {
   rap_get_path_files(".") |>
     stringr::str_subset("\\.dataset$")
@@ -145,6 +149,10 @@ rap_get_path_database <- function() {
 #' @return A path as a scalar character.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' rap_get_path_schema()
+#' }
 rap_get_path_schema <- function() {
   rap_get_path_files(".") |>
     stringr::str_subset("\\.json\\.gz")
