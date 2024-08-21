@@ -2,6 +2,8 @@
 
 -   Many new functions added, plus new redesign of the naming scheme,
     see the design page on the website.
+-   Remove dependency on duckdb (installing takes some time).
+-   Fixed issue with creating the database.
 
 # ukbAid 0.0.16
 
@@ -15,4 +17,3 @@
 # ukbAid 0.0.15
 
 -   Starting to use NEWS.
-
