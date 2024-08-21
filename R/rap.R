@@ -232,8 +232,7 @@ run_dx <- function(arguments, call = rlang::caller_env()) {
 
   output$stdout |>
     stringr::str_remove("\n$") |>
-    stringr::str_split("\n") |>
-    unlist()
+    stringr::str_split_1("\n")
 }
 
 verify_dx <- function(call = rlang::caller_env()) {
