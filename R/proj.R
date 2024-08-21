@@ -1,5 +1,6 @@
 # Get ---------------------------------------------------------------------
 
+
 #' Get the RAP project ID, will be the project main folder.
 #'
 #' @return The project abbreviation/id, which is the name of the project folder
@@ -181,13 +182,12 @@ proj_create_dataset <- function(fields,
   cli::cli_alert_warning("This function can take a while. You can watch it in RAP Monitor.")
   run_dx(c(
     "run",
-    "app-table-exporter",
+    "table-exporter",
     "--brief",
     "--instance-type", "mem2_ssd2_v2_x8",
     "--priority", "high",
     "-y",
-    # raw to reduce runtime
-    "-icoding_option=RAW",
+    "-ientity=eid",
     fields,
     glue::glue("-idataset_or_cohort_or_dashboard={database_id}"),
     glue::glue("-ioutput={fs::path_ext_remove(output_path)}")
