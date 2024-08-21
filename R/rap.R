@@ -96,7 +96,7 @@ rap_get_path_user_files <- function(user = rap_get_user()) {
   user <- users |>
     stringr::str_subset(user)
 
-  rap_get_path_files(user)
+  paste0(user, "/", rap_get_path_files(user))
 }
 
 #' Get paths of files within a folder based on a given path in the RAP project server.
