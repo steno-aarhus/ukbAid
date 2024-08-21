@@ -6,7 +6,7 @@ title: "Approved projects"
 #| include: false
 library(tidyverse)
 library(fs)
-devtools::load_all()
+library(ukbAid)
 ```
 
 ```{r}
