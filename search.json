@@ -242,7 +242,7 @@
     "href": "projects.html#crc-fs-replacing-animal-based-foods-with-plant-based-foods-and-risk-of-colorectal-cancer-in-uk-biobank-participants",
     "title": "Approved projects",
     "section": "crc-fs: Replacing animal-based foods with plant-based foods and risk of colorectal cancer in UK Biobank participants",
-    "text": "crc-fs: Replacing animal-based foods with plant-based foods and risk of colorectal cancer in UK Biobank participants\nReducing red and processed meat intake or adopting a plant-based diet may lower the risk of colorectal cancer. However, the effects of decreasing the consumption of one type of food while concomitantly increasing the intake of another on colorectal cancer risk are not well understood. Thus, this project aims to investigate the association of statistically modelled replacement of animal-based foods with a variety of plant-based foods and the risk of developing colorectal cancer.\n\nLead author: Niels Bock, Research student at Aarhus University\nGitHub repository: github.com/steno-aarhus/crc-fs"
+    "text": "crc-fs: Replacing animal-based foods with plant-based foods and risk of colorectal cancer in UK Biobank participants\nReducing red and processed meat intake or adopting a plant-based diet may lower the risk of colorectal cancer. However, the effects of decreasing the consumption of one type of food while concomitantly increasing the intake of another on colorectal cancer risk are not well understood. Thus, this project aims to investigate the association of statistically modelled replacement of animal-based foods with a variety of plant-based foods and the risk of developing colorectal cancer.\n\nLead author: Niels Bock, Research student at Aarhus University\nGitHub repository: github.com/steno-aarhus/crc-fs\nProtocol: 10.5281/zenodo.13387535"
   },
   {
     "objectID": "projects.html#dash-hf-dash-diet-and-heart-failure",
@@ -278,13 +278,6 @@
     "title": "Approved projects",
     "section": "lega: Legume consumption and risk of gallbladder disease",
     "text": "lega: Legume consumption and risk of gallbladder disease\nHigher legume consumption is recommended as a meat substitute to increase healthiness and minimize the climate impact from humans diets. Legumes has in animal studies and a few human studies shown to increase gallstone formation through altering the lipid metabolism in the liver. A high consumption of legumes may thus be associated with an increased risk of gallstones, yet there exists very few studies investigating this in human populations, particularly due to low consumption of legumes in many countries. Aim: To investigate the association between substituting meat, poultry, and fish for legumes and the risk of developing gallstone diseases in a cohort with moderate to high legume consumption.\n\nLead author: Fie Langmann, PhD student at Aarhus University\nGitHub repository: github.com/steno-aarhus/lega"
-  },
-  {
-    "objectID": "projects.html#legliv-legume-consumption-and-risk-of-primary-liver-cancer",
-    "href": "projects.html#legliv-legume-consumption-and-risk-of-primary-liver-cancer",
-    "title": "Approved projects",
-    "section": "legliv: Legume consumption and risk of primary liver cancer",
-    "text": "legliv: Legume consumption and risk of primary liver cancer\nNon-alcoholic fatty liver disease (NAFLD) may be considered the hepatic manifestation of metabolic syndrome. NAFLD-related primary liver cancer is a growing concern, and preventive interventions are critical. We will statistically model replacement of red meat consumption with legumes in relation to incident primary liver cancer and assess whether the association is mediated through NAFLD.\n\nLead author: Niels Bock, Research year student at Aarhus University\nGitHub repository: github.com/steno-aarhus/legliv\nProtocol: 10.5281/zenodo.11670569\nPreprint: 10.5281/zenodo.12666778\nRepo: 10.5281/zenodo.12702170"
   },
   {
     "objectID": "projects.html#leha-prospective-study-on-association-between-legume-consumption-and-risk-of-hepatic-and-biliary-disease-in-ukb",
