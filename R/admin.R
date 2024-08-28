@@ -14,23 +14,24 @@
 #' \dontrun{
 #' admin_read_projects()[[1]]
 #' }
-admin_read_projects <- function() {
+admin_read_projects <- function(type = "approved") {
   verify_ukbaid()
-  admin_get_project_ids() |>
-    purrr::map(admin_read_project)
+  admin_get_project_ids(type) |>
+    purrr::map(\(id) admin_read_project(id = id, type = type))
 }
 
-admin_read_project <- function(id) {
+admin_read_project <- function(id, type = "approved") {
   verify_ukbaid()
-  id <- rlang::arg_match(id, admin_get_project_ids())
+  id <- rlang::arg_match(id, admin_get_project_ids(type))
 
-  admin_get_path_projects() |>
+  admin_get_path_projects(type) |>
     stringr::str_subset(id) |>
     yaml::read_yaml() |>
     tibble::as_tibble() |>
     dplyr::mutate(id = id) |>
     dplyr::bind_rows(
       tibble::tibble(
+        doi_published = character(),
         doi_protocol = character(),
         doi_preprint = character(),
         doi_repo = character()
@@ -38,16 +39,17 @@ admin_read_project <- function(id) {
     )
 }
 
-admin_get_path_projects <- function() {
+admin_get_path_projects <- function(type = c("approved", "completed")) {
   verify_ukbaid()
+  type <- rlang::arg_match(type)
   rprojroot::find_package_root_file() |>
-    fs::path("data-raw", "projects", "approved") |>
+    fs::path("data-raw", "projects", type) |>
     fs::dir_ls()
 }
 
-admin_get_project_ids <- function() {
+admin_get_project_ids <- function(type = "approved") {
   verify_ukbaid()
-  admin_get_path_projects() |>
+  admin_get_path_projects(type) |>
     fs::path_file() |>
     fs::path_ext_remove()
 }
@@ -95,65 +97,82 @@ admin_start_approved_project <- function(user, proj_abbrev) {
 #' admin_create_project(fs::path_temp("testproj"))
 #' }
 admin_create_project <- function(path) {
-    prodigenr::setup_project(path)
-    options(usethis.quiet = TRUE)
-    # Get them to add git config settings (everytime I think)
-    usethis::with_project(path, code = {
-        gert::git_config_global_set("init.defaultbranch", "main")
-        gert::git_init()
-        gert::git_add(".")
-        gert::git_commit("First commit and creation of project")
+  prodigenr::setup_project(path)
+  options(usethis.quiet = TRUE)
+  # Get them to add git config settings (everytime I think)
+  usethis::with_project(path, code = {
+    gert::git_config_global_set("init.defaultbranch", "main")
+    gert::git_init()
+    gert::git_add(".")
+    gert::git_commit("First commit and creation of project")
 
-        # DESCRIPTION file changes
-        desc::desc_del_dep("distill")
-        desc::desc_set_dep("qs", type = "Imports")
-        desc::desc_set_dep("quarto", type = "Imports")
-        desc::desc_set_dep("tidyverse", type = "Imports")
-        desc::desc_set_dep("here", type = "Imports")
-        desc::desc_set_dep("gert", type = "Imports")
-        desc::desc_set_dep("targets", type = "Imports")
-        desc::desc_set_dep("usethis", type = "Imports")
-        desc::desc_set_dep("ukbAid", type = "Imports")
-        desc::description$new()$set_remotes("steno-aarhus/ukbAid")$write()
-        usethis::use_blank_slate("project")
-        git_commit_file("DESCRIPTION", "Add some package dependencies to the project")
+    # DESCRIPTION file changes
+    desc::desc_del_dep("distill")
+    desc::desc_set_dep("qs", type = "Imports")
+    desc::desc_set_dep("quarto", type = "Imports")
+    desc::desc_set_dep("tidyverse", type = "Imports")
+    desc::desc_set_dep("here", type = "Imports")
+    desc::desc_set_dep("gert", type = "Imports")
+    desc::desc_set_dep("targets", type = "Imports")
+    desc::desc_set_dep("usethis", type = "Imports")
+    desc::desc_set_dep("ukbAid", type = "Imports")
+    desc::description$new()$set_remotes("steno-aarhus/ukbAid")$write()
+    usethis::use_blank_slate("project")
+    git_commit_file("DESCRIPTION", "Add some package dependencies to the project")
 
-        desc::desc_set(Title = "UK Biobank Project")
-        desc::desc_set(Version = "0.0")
-        git_commit_file("DESCRIPTION", "Add a title to the description file")
+    desc::desc_set(Title = "UK Biobank Project")
+    desc::desc_set(Version = "0.0")
+    git_commit_file("DESCRIPTION", "Add a title to the description file")
 
-        # Updates to the gitignore
-        usethis::use_git_ignore(c("data/data.*",".Rhistory", ".RData", ".DS_Store", ".Rbuildignore"))
-        git_commit_file(".gitignore", "Add files that Git should ignore")
+    # Updates to the gitignore
+    usethis::use_git_ignore(c("data/data.*", ".Rhistory", ".RData", ".DS_Store", ".Rbuildignore"))
+    git_commit_file(".gitignore", "Add files that Git should ignore")
 
-        # Add processing files to the data-raw folder
-        fs::dir_create("data-raw")
-        usethis::use_template("create-data.R", "data-raw/create-data.R", package = "ukbAid")
-        git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
-        readr::write_csv(rap_variables, "data-raw/rap-variables.csv")
-        git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
+    # Add processing files to the data-raw folder
+    fs::dir_create("data-raw")
+    usethis::use_template("create-data.R", "data-raw/create-data.R", package = "ukbAid")
+    git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
+    readr::write_csv(rap_variables, "data-raw/rap-variables.csv")
+    git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
-        # Add protocol to `doc/` folder
-        usethis::use_template("protocol.qmd", "doc/protocol.qmd", package = "ukbAid")
-        git_commit_file("doc/protocol.qmd", "Add the template protocol Quarto document")
+    # Add protocol to `doc/` folder
+    usethis::use_template("protocol.qmd", "doc/protocol.qmd", package = "ukbAid")
+    git_commit_file("doc/protocol.qmd", "Add the template protocol Quarto document")
 
-        # Add other misc items
-        usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
-        git_commit_file("_targets.R", "Add targets pipeline to project")
+    # Add other misc items
+    usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
+    git_commit_file("_targets.R", "Add targets pipeline to project")
 
-        fs::file_delete("README.md")
-        usethis::use_template("project-readme.md", "README.md", package = "ukbAid")
-        git_commit_file("README.md", "Update the README with the version from ukbAid")
+    fs::file_delete("README.md")
+    usethis::use_template("project-readme.md", "README.md", package = "ukbAid")
+    git_commit_file("README.md", "Update the README with the version from ukbAid")
 
-        fs::file_delete("TODO.md")
-        usethis::use_template("todo.md", "TODO.md", package = "ukbAid")
-        git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
+    fs::file_delete("TODO.md")
+    usethis::use_template("todo.md", "TODO.md", package = "ukbAid")
+    git_commit_file("TODO.md", "Update the TODO file with the version from ukbAid")
 
-        usethis::use_mit_license()
-        fs::file_delete("LICENSE")
-        git_commit_file("LICENSE", "Add MIT License to the project")
-        git_commit_file("DESCRIPTION", "Update the DESCRIPTION file with the MIT License")
-    })
+    usethis::use_mit_license()
+    fs::file_delete("LICENSE")
+    git_commit_file("LICENSE", "Add MIT License to the project")
+    git_commit_file("DESCRIPTION", "Update the DESCRIPTION file with the MIT License")
+  })
+}
+
+admin_list_projects_as_md <- function(type = "approved") {
+  project_description_template <- "
+    \n
+    ### {id}: {project_title}
+    \n
+    {project_description}
+    \n
+    - Lead author: {full_name}, {job_position} at {affiliation}
+    - GitHub repository: [github.com/steno-aarhus/{id}](https://github.com/steno-aarhus/{id})
+    {doi}
+    "
+  admin_read_projects(type) |>
+    purrr::map(\(project) format_doi_as_md_list(project)) |>
+    purrr::map(\(project) glue::glue_data(project, project_description_template)) %>%
+    purrr::walk(\(text) cat(text, sep = "\n\n"))
 }
 
 # Proposals ---------------------------------------------------------------
@@ -246,7 +265,9 @@ admin_build_quarto <- function() {
   }
   withr::with_dir(
     new = fs::path_package("vignettes", package = "ukbAid"),
-    {quarto::quarto_render(as_job = FALSE)}
+    {
+      quarto::quarto_render(as_job = FALSE)
+    }
   )
   return(invisible(NULL))
 }
@@ -274,7 +295,8 @@ verify_ukbaid <- function(call = rlang::caller_env()) {
   if (basename(rprojroot::find_package_root_file()) != "ukbAid") {
     cli::cli_abort(
       "You can only run this function while inside the {.val 'ukbAid'} project.",
-      call = call)
+      call = call
+    )
   }
   return(invisible())
 }
@@ -311,4 +333,23 @@ git_commit_file <- function(file, message) {
   gert::git_add(file)
   gert::git_commit(message)
   return(invisible(NULL))
+}
+
+format_doi_as_md_list <- function(data) {
+  doi_as_md_list <- data |>
+    dplyr::select(tidyselect::starts_with("doi")) |>
+    tidyr::pivot_longer(
+      cols = tidyselect::everything(),
+      names_to = "type", values_to = "doi"
+    ) |>
+    tidyr::drop_na() |>
+    dplyr::mutate(
+      type = stringr::str_remove(type, "doi_") |>
+        stringr::str_to_sentence(),
+      doi = glue::glue("- {type}: [{doi}](https://doi.org/{doi})")
+    ) |>
+    dplyr::pull(doi) |>
+    stringr::str_c(collapse = "\n")
+  data |>
+    dplyr::mutate(doi = doi_as_md_list)
 }
