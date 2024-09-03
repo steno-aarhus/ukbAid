@@ -41,5 +41,5 @@ jobs:
             --head new-proposal-${PROPOSAL} \
             --label "proposal" \
             --title "Project proposal: ${PROPOSAL}" \
-            --assignee AlisaDK,danielibsen,lwjohnst86 \
+            --assignee danielibsen,lwjohnst86 \
             --body "Provide feedback on the proposal here as comments below. You can also directly comment on the file itself in the 'Files changed' tab."
