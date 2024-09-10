@@ -14,7 +14,7 @@ library(ukbAid)
 ```{r}
 #| echo: false
 #| results: asis
-admin_list_projects_as_md("completed")
+ukbAid:::admin_list_projects_as_md("completed")
 ```
 
 ## Ongoing
@@ -22,5 +22,5 @@ admin_list_projects_as_md("completed")
 ```{r}
 #| echo: false
 #| results: asis
-admin_list_projects_as_md("approved")
+ukbAid:::admin_list_projects_as_md("approved")
 ```
