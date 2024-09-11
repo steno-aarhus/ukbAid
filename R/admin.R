@@ -39,7 +39,7 @@ admin_read_project <- function(id, type = "approved") {
     )
 }
 
-admin_get_path_projects <- function(type = c("approved", "completed")) {
+admin_get_path_projects <- function(type = c("approved", "completed", "abandoned")) {
   verify_ukbaid()
   type <- rlang::arg_match(type)
   rprojroot::find_package_root_file() |>
