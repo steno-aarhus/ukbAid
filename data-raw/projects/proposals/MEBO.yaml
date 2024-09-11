@@ -1,0 +1,39 @@
+submitted_on: '2024-09-10'
+full_name: Jie Zhang
+github_username: Jie_evezhang (arborzhang)
+job_position: Postdoc researcher
+phd_supervisor: ''
+affiliation: Region Midt (through Steno or AUH)
+project_title: Investigating the Mediating Role of Biomarkers in the Relationship
+  Between Socioeconomic Status and Multimorbidity
+project_description: Socioeconomic status (SES) is a key upstream determinant of multimorbidity.
+  Accumulating evidence, including findings from our recent study, has demonstrated
+  an inverse association between SES and the risk of developing multiple chronic conditions.
+  However, the underlying mechanisms remain poorly understood. There have been increasing
+  calls to explore pathways that can help reduce social inequalities in morbidity
+  and mortality. SES influences various health-related behaviors; for example, individuals
+  from lower socioeconomic backgrounds are more likely to engage in unhealthy lifestyle
+  choices, such as smoking, poor diet, and physical inactivity. These behaviors are
+  further linked to detrimental metabolic changes through various biological pathways.
+  Lifestyle factors and biomarkers may thus mediate the causal relationship between
+  SES and multimorbidity. A systematic review has reported that lifestyle factors
+  account for approximately 20%-30% of the socioeconomic disparity in health outcomes.However,
+  few studies have quantified the proportion of the association between SES and multimorbidity
+  mediated by metabolic biomarkers, particularly in distinguishing biomarkers from
+  different metabolic pathways. Understanding the extent to which these biomarkers
+  mediate the total effect is crucial for elucidating treatment mechanisms and evaluating
+  their potential as intervention targets. Traditional mediation analyses are limited
+  in their ability to handle high-dimensional mediators, and intermediate confounding
+  presents a further challenge by complicating the estimation of path-specific effects.
+  In this study, we aim to provide a comprehensive investigation of the mediating
+  role of lifestyle factors (i.e., smoking, unhealthy diet, physical inactivity, alcohol
+  consumption, and sleep deprivation) and biomarkers (including blood lipids, HbA1c,
+  glucose, IGF, CRP, Cystatin C, blood pressure, and other plasma metabolites). Specifically,
+  we will quantify the extent to which the association between SES and multimorbidity
+  is mediated through different pathways. The findings will contribute to understanding
+  the metabolic mechanisms underlying the link between SES disadvantage, unhealthy
+  lifestyle, and multimorbidity risk, providing evidence for potential disease prevention
+  strategies. Causal machine learning methods, which can handle high-dimensional mediators
+  and intermediate confounders will be applied.
+agree_to_conditions: 'Yes'
+
