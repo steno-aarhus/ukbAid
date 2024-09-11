@@ -131,7 +131,7 @@ admin_create_project <- function(path) {
     # Add processing files to the data-raw folder
     fs::dir_create("data-raw")
     usethis::use_template("create-data.R", "data-raw/create-data.R", package = "ukbAid")
-    git_commit_file("data-raw", "Add R scripts used for getting raw data from UKB")
+    git_commit_file("data-raw/create-data.R", "Add R scripts used for getting raw data from UKB")
     readr::write_csv(rap_variables, "data-raw/rap-variables.csv")
     git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
@@ -153,7 +153,7 @@ admin_create_project <- function(path) {
 
     usethis::use_mit_license()
     fs::file_delete("LICENSE")
-    git_commit_file("LICENSE", "Add MIT License to the project")
+    git_commit_file("LICENSE.md", "Add MIT License to the project")
     git_commit_file("DESCRIPTION", "Update the DESCRIPTION file with the MIT License")
   })
 }
