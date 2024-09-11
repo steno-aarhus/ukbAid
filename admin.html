@@ -287,6 +287,15 @@ Warning
 <li>See a list of approved projects with <code>admin_get_projects()</code> and <code>gh_get_repos()</code> for projects on GitHub.</li>
 <li>Run <code>admin_start_approved_project()</code>, using the user name and project abbreviation to create the project, add it to the Steno GitHub, set up permissions, and add the user to the repo.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of how to run the functions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Find what the correct id is for the project</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">:::</span><span class="fu">admin_get_project_ids</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirm the username to use</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">:::</span><span class="fu">gh_get_users</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Then create the project!</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">:::</span><span class="fu">admin_start_approved_project</span>(<span class="st">"USER"</span>, <span class="st">"PROJECT_ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="general-admin" class="level2">
 <h2 class="anchored" data-anchor-id="general-admin">General admin</h2>
@@ -302,15 +311,15 @@ Warning
 <h3 class="anchored" data-anchor-id="uploading-to-zenodo">Uploading to Zenodo</h3>
 <p>For protocols, the code to use would be:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"path/to/protocol.qmd"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> <span class="fu">zen_create_protocol_pdf</span>(path)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">zen_create_file_record</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> pdf_path,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metadata =</span> <span class="fu">zen_create_protocol_metadata</span>(path),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> <span class="fu">zen_get_token</span>(),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test it in the sandbox first</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sandbox =</span> <span class="cn">TRUE</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"path/to/protocol.qmd"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> <span class="fu">zen_create_protocol_pdf</span>(path)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">zen_create_file_record</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> pdf_path,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metadata =</span> <span class="fu">zen_create_protocol_metadata</span>(path),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> <span class="fu">zen_get_token</span>(),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test it in the sandbox first</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sandbox =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Always test it in the sandbox first, which you can check that it uploads by going to the <a href="https://sandbox.zenodo.org/me/uploads">Zenodo sandbox</a>.</p>
 
