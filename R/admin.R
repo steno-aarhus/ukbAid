@@ -160,15 +160,19 @@ admin_create_project <- function(path) {
 
 admin_list_projects_as_md <- function(type = "approved") {
   project_description_template <- "
-    \n
-    ### {id}: {project_title}
-    \n
-    {project_description}
-    \n
-    - Lead author: {full_name}, {job_position} at {affiliation}
-    - GitHub repository: [github.com/steno-aarhus/{id}](https://github.com/steno-aarhus/{id})
-    {doi}
-    "
+\n
+::: {{.callout-note appearance='minimal' icon='false' collapse='true'}}
+\n
+### {id}: {project_title}
+\n
+{project_description}
+\n
+- Lead author: {full_name}, {job_position} at {affiliation}
+- GitHub repository: [github.com/steno-aarhus/{id}](https://github.com/steno-aarhus/{id})
+{doi}
+:::
+\n
+"
   admin_read_projects(type) |>
     purrr::map(\(project) format_doi_as_md_list(project)) |>
     purrr::map(\(project) glue::glue_data(project, project_description_template)) %>%
