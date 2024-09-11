@@ -36,6 +36,17 @@ Still in development.
     project abbreviation to create the project, add it to the Steno
     GitHub, set up permissions, and add the user to the repo.
 
+```{r}
+#| eval: false
+# Example of how to run the functions
+# Find what the correct id is for the project
+ukbAid:::admin_get_project_ids()
+# Confirm the username to use
+ukbAid:::gh_get_users()
+# Then create the project!
+ukbAid:::admin_start_approved_project("USER", "PROJECT_ID")
+```
+
 ## General admin
 
 ### On GitHub or own computer
