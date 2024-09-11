@@ -24,3 +24,16 @@ ukbAid:::admin_list_projects_as_md("completed")
 #| results: asis
 ukbAid:::admin_list_projects_as_md("approved")
 ```
+
+## Abandoned
+
+There are many reasons a project might be abandoned, for instance, to
+split the work into smaller projects or because the lead researcher
+moved on.
+
+```{r}
+#| echo: false
+#| results: asis
+ukbAid:::admin_list_projects_as_md("abandoned")
+```
+
