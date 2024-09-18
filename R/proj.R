@@ -178,7 +178,7 @@ proj_create_dataset <- function(fields,
     "--priority", "high",
     "-y",
     # To reduce compute time
-    "-icoding_options=RAW",
+    "-icoding_option=RAW",
     "-ientity=participant",
     fields,
     glue::glue("-idataset_or_cohort_or_dashboard={database_id}"),
