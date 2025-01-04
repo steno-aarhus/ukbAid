@@ -1,4 +1,4 @@
-pandoc: 2.9.2.1
+pandoc: 3.1.3
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
@@ -15,7 +15,7 @@ articles:
   request-access: request-access.html
   using-rap: using-rap.html
   workflow: workflow.html
-last_built: 2024-12-13T09:59Z
+last_built: 2025-01-04T10:04Z
 urls:
   reference: https://steno-aarhus.github.io/ukbAid/reference
   article: https://steno-aarhus.github.io/ukbAid/articles
