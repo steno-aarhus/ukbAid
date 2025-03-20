@@ -107,7 +107,6 @@ admin_create_project <- function(path) {
     gert::git_commit("First commit and creation of project")
 
     # DESCRIPTION file changes
-    desc::desc_del_dep("distill")
     desc::desc_set_dep("qs", type = "Imports")
     desc::desc_set_dep("quarto", type = "Imports")
     desc::desc_set_dep("tidyverse", type = "Imports")
@@ -136,8 +135,8 @@ admin_create_project <- function(path) {
     git_commit_file("data-raw/rap-variables.csv", "Add variable list that is specific to RAP")
 
     # Add protocol to `doc/` folder
-    usethis::use_template("protocol.qmd", "doc/protocol.qmd", package = "ukbAid")
-    git_commit_file("doc/protocol.qmd", "Add the template protocol Quarto document")
+    usethis::use_template("protocol.qmd", "docs/protocol.qmd", package = "ukbAid")
+    git_commit_file("docs/protocol.qmd", "Add the template protocol Quarto document")
 
     # Add other misc items
     usethis::use_template("targets.R", "_targets.R", package = "ukbAid")
