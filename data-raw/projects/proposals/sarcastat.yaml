@@ -9,20 +9,26 @@ project_description: Statins, widely used as lipid-lowering therapy for
   cardiovascular prevention, have demonstrated significant benefits in reducing
   CVD events and all-cause mortality. However, their impact on muscle health
   remains debated. While statins might have muscle-related side effects such as
-  myalgia and, rarely, rhabdomyolysis, concerns have also emerged about their
-  role in sarcopenia, a progressive muscle disorder associated with aging.
+  myalgia and, rarely, rhabdomyolysis, concerns have also emerged about their role
+  in sarcopenia, a progressive muscle disorder associated with aging. This
+  relationship is particularly important as sarcopenia represents not only a
+  decline in physical function but also a metabolic liability. The loss of
+  metabolically active muscle tissue can impair glucose homeostasis, reduce
+  resting energy expenditure, and contribute to insulin resistance, creating a
+  vicious cycle where declining muscle health further compromises metabolic
+  function, leading to even less physical activity and accelerated muscle loss.
   Epidemiological evidence on statins and muscle performance (e.g., strength) is
-  mixed. Some retrospective studies suggest that statins may help maintain
-  muscle mass in certain patients, potentially offering protective effects in
-  those with metabolic disorders. However, prospective data in healthy
-  individuals remain inconclusive. Some studies report benefits when statin use
-  is combined with resistance training, while others show no impact on muscle
-  strength or exercise capacity. Understanding these interactions is essential,
-  particularly in populations at risk for diabetes and related conditions, as
-  optimizing both cardiovascular protection and muscle health could improve
-  overall patient management. To fill this gap, we will use UK Biobank data to
-  investigate the long-term effects of statin therapy on handgrip strength and
-  thigh muscle volume. We will compare statin users with matched non-statin
-  users with the working hypothesis that statins prevent sarcopenia.
+  mixed. Some retrospective studies suggest that statins may help maintain muscle
+  mass in certain patients, potentially offering protective effects in those with
+  metabolic disorders. However, prospective data in healthy individuals remain
+  inconclusive. Some studies report benefits when statin use is combined with
+  resistance training, while others show no impact on muscle strength or exercise
+  capacity. Understanding these interactions is essential, particularly in
+  populations at risk for diabetes and related conditions, as optimizing both
+  cardiovascular protection and muscle health could improve overall patient
+  management. To fill this gap, we will use UK Biobank data to investigate the
+  long-term effects of statin therapy on handgrip strength and thigh muscle
+  volume. We will compare statin users with matched non-statin users with the
+  working hypothesis that statins prevent sarcopenia.
 agree_to_conditions: 'Yes'
 
