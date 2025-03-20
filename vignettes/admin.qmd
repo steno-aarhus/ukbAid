@@ -30,7 +30,7 @@ Still in development.
 
 ## Todo after project acceptance
 
-1.  See a list of approved projects with `admin_get_projects()` and
+1.  See a list of approved projects with `admin_get_project_ids()` and
     `gh_get_repos()` for projects on GitHub.
 2.  Run `admin_start_approved_project()`, using the user name and
     project abbreviation to create the project, add it to the Steno
