@@ -9,16 +9,16 @@ project_title: The association between intake of anthocyanins and dietary fiber 
   without T2D
 project_description: 'Aim: To estimate the association between intake of anthocyanins
   and dietary fiber and the risk of cardiovascular and microangiopathy risk factors
-  among people with and without T2D in the UK Biobank cohortExposure: The intake of
+  among people with and without T2D in the UK Biobank cohort. Exposure: The intake of
   anthocyanins and other flavonoid subclasses is calculated by assigning values to
   each food item from the Oxford WebQ 24-hour dietary assessments (as previously done
   by Bell et al. 2024). Similarly, the content of a recipe is determined by summing
-  the flavonoid content of each individual food item.Dietary fiber intake will be
+  the flavonoid content of each individual food item. Dietary fiber intake will be
   calculated using the Englyst method. Outcomes: Hard endpoints (death, cardiovascular
   events, microangiopathic events, renal-related events, platelet-related thrombotic
-  events).Study population and data: The study population includes healthy participants
+  events). Study population and data: The study population includes healthy participants
   completing >2 Oxford WebQ 24-hour dietary assessments and participants with diagnosed
-  T2D.Statistical analysis: The risk of cardiovascular disease and mortality will
+  T2D. Statistical analysis: The risk of cardiovascular disease and mortality will
   be investigated using a Cox Proportional Hazards Model with age as the underlying
   timescale in all participants, excluding those with the outcome of interest. In
   another analysis, only patients with T2D will be included at baseline. Quintiles
