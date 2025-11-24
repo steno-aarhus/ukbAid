@@ -30,7 +30,6 @@ Imports:
     here,
     lifecycle,
     magrittr,
-    parquetize,
     prodigenr,
     purrr,
     quarto,
