@@ -1,8 +1,6 @@
-
 #' Downloads your UKB data file to the `data/data.csv` folder.
 #'
 #' @description
-#'
 #' `r lifecycle::badge("deprecated")`
 #'
 #' Use this function every time you open a new RStudio Session, aka every time you
@@ -82,34 +80,37 @@ upload_data <- function(path,
 #'
 subset_rap_variables <- function(project_variables_file = "data-raw/project-variables.csv",
                                  rap_variables_file = "data-raw/rap-variables.csv", instances = 0:9, save = TRUE) {
-    lifecycle::deprecate_warn(
-      when = "0.1.0",
-      what = "subset_rap_variables()",
-      details = "This function is no longer recommended to use. See using `proj_create_dataset()` instead."
-    )
-    instance_pattern <- glue::glue("Instance [{min(instances)}-{max(instances)}]")
-    proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
-        dplyr::select(id)
-    rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE) %>%
-        dplyr::filter(stringr::str_detect(rap_variable_name, instance_pattern) |
-                          # To keep also variables like Sex that don't have instances
-                          stringr::str_detect(rap_variable_name, " \\| Instance", negate = TRUE))
+  lifecycle::deprecate_warn(
+    when = "0.1.0",
+    what = "subset_rap_variables()",
+    details = "This function is no longer recommended to use. See using `proj_create_dataset()` instead."
+  )
+  instance_pattern <- glue::glue("Instance [{min(instances)}-{max(instances)}]")
+  proj_vars <- readr::read_csv(here::here(project_variables_file), show_col_types = FALSE) %>%
+    dplyr::select(id)
+  rap_vars <- readr::read_csv(here::here(rap_variables_file), show_col_types = FALSE) %>%
+    dplyr::filter(stringr::str_detect(rap_variable_name, instance_pattern) |
+      # To keep also variables like Sex that don't have instances
+      stringr::str_detect(rap_variable_name, " \\| Instance", negate = TRUE))
 
-    new_rap_vars <- rap_vars %>%
-        dplyr::mutate(id = stringr::str_extract(field_id, "^p[:digit:]+")) %>%
-        dplyr::right_join(proj_vars, by = "id")
+  new_rap_vars <- rap_vars %>%
+    dplyr::mutate(id = stringr::str_extract(field_id, "^p[:digit:]+")) %>%
+    dplyr::right_join(proj_vars, by = "id")
 
-    if (save) {
-        cli::cli_alert_info("Updated the {.val {rap_variables_file}} based on the selected project variables.")
-        readr::write_csv(new_rap_vars, here::here(rap_variables_file))
-    }
+  if (save) {
+    cli::cli_alert_info("Updated the {.val {rap_variables_file}} based on the selected project variables.")
+    readr::write_csv(new_rap_vars, here::here(rap_variables_file))
+  }
 
-    return(new_rap_vars)
+  return(new_rap_vars)
 }
 
 dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 
 #' Extract variables you want from the UKB database and create a CSV file to later upload to your own project.
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
 #'
 #' This function tells RAP to extract the variables you want from the `.dataset`
 #' database file and to create a CSV file within the main RAP project folder.
@@ -189,6 +190,9 @@ timestamp_now <- function() {
 }
 
 #' Build, but not run, the dx table exporter command.
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
 #'
 #' This is mostly for testing purposes.
 #'

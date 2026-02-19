@@ -4,7 +4,7 @@
 \alias{proj_create_dataset}
 \title{Extract the variables you want from the UKB database and create a CSV dataset.}
 \usage{
-proj_create_dataset(fields, output_path, database_id = dare_project_record_id)
+proj_create_dataset(fields, output_path, database_id = rap_get_database_id())
 }
 \arguments{
 \item{fields}{A character vector of field IDs you want to extract from the
@@ -12,8 +12,7 @@ UKB database. Select the variable ids from the \link{rap_variables} dataset.}
 
 \item{output_path}{The name of the output CSV file.}
 
-\item{database_id}{The ID of the dataset, defaults to the one we use in the
-Steno UK Biobank DARE project.}
+\item{database_id}{The ID of the dataset, found using \code{\link[=rap_get_database_id]{rap_get_database_id()}}.}
 }
 \value{
 Outputs character string of the results from the command sent to RAP.
@@ -22,7 +21,7 @@ Outputs character string of the results from the command sent to RAP.
 This function tells RAP to extract the variables you want from the \code{.dataset}
 database file and to create a CSV file within the main RAP project folder.
 When you want to use the CSV file in your own data analysis project, use
-\code{download_project_data()}. You probably don't need to run this function often,
+\code{rap_copy_from()}. You probably don't need to run this function often,
 probably only once at the start of your project. NOTE: This function takes
 5-60 minutes to run on the UKB RAP, so be careful with just randomly running it.
 }
@@ -30,7 +29,7 @@ probably only once at the start of your project. NOTE: This function takes
 \dontrun{
 proj_create_dataset(
   c("eid", "p31", "p34"),
-  proj_create_path_dataset(rap_get_user())
+  proj_create_path_dataset()
 )
 }
 }

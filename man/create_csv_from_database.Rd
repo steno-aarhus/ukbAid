@@ -39,6 +39,8 @@ successful or not. Used for the side effect of creating the CSV on the RAP
 server. The newly created CSV will have your username in the filename.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 This function tells RAP to extract the variables you want from the \code{.dataset}
 database file and to create a CSV file within the main RAP project folder.
 When you want to use the CSV file in your own data analysis project, use

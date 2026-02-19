@@ -12,3 +12,8 @@ A path as a scalar character.
 \description{
 Get the path to the RAP UK Biobank dataset.
 }
+\examples{
+\dontrun{
+rap_get_path_database()
+}
+}

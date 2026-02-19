@@ -2,21 +2,18 @@
 % Please edit documentation in R/proj.R
 \name{proj_create_path_dataset}
 \alias{proj_create_path_dataset}
-\title{Create a file name unique for a project and user, along with timestamp.}
+\title{Create a file name unique for a project, along with timestamp.}
 \usage{
-proj_create_path_dataset(user)
-}
-\arguments{
-\item{user}{The name of the user you are creating this dataset for.}
+proj_create_path_dataset()
 }
 \value{
 A character scalar.
 }
 \description{
-You use this when you want to create a dataset when using \code{\link[=proj_create_database]{proj_create_database()}}.
+You use this when you want to create a dataset when using \code{\link[=proj_create_dataset]{proj_create_dataset()}}.
 }
 \examples{
 \dontrun{
-proj_create_path_dataset("lwjohnst")
+proj_create_path_dataset()
 }
 }

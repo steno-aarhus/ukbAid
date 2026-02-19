@@ -37,6 +37,8 @@ Steno project \code{dare_project_record_id}.}
 Outputs character string of command sent to \code{dx}.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 This is mostly for testing purposes.
 }
 \examples{
