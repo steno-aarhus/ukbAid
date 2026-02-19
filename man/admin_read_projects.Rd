@@ -4,7 +4,7 @@
 \alias{admin_read_projects}
 \title{Read all approved projects.}
 \usage{
-admin_read_projects()
+admin_read_projects(type = "approved")
 }
 \value{
 A tibble of project details.
