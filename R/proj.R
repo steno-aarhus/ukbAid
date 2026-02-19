@@ -34,10 +34,10 @@ proj_get_dependencies <- function() {
 #' @examples
 #' proj_get_git_config()
 proj_get_git_config <- function() {
-    gert::git_config_global() %>%
-        dplyr::filter(name %in% c("user.name", "user.email")) %>%
-        dplyr::arrange(name) %>%
-        dplyr::select(name, value)
+  gert::git_config_global() %>%
+    dplyr::filter(name %in% c("user.name", "user.email")) %>%
+    dplyr::arrange(name) %>%
+    dplyr::select(name, value)
 }
 
 # proj_get_rstudio_config()
@@ -54,19 +54,19 @@ proj_get_git_config <- function() {
 #' @export
 #'
 proj_setup_git_config <- function(name, email) {
-    if (verify_git_config(name = name, email = email)) {
-        git_config <- proj_get_git_config()
-        cli::cli_alert_info(c(
-          "Git config has already been set correctly: ",
-          "{.val {git_config$name[2]}} = {.val {git_config$value[2]}}; ",
-          "{.val {git_config$name[1]}} = {.val {git_config$value[1]}}"
-        ))
-        return(invisible(git_config))
-    }
-    gert::git_config_global_set("user.name", name)
-    gert::git_config_global_set("user.email", email)
-    cli::cli_alert_success("Git config has been set, see output below.")
-    proj_get_git_config()
+  if (verify_git_config(name = name, email = email)) {
+    git_config <- proj_get_git_config()
+    cli::cli_alert_info(c(
+      "Git config has already been set correctly: ",
+      "{.val {git_config$name[2]}} = {.val {git_config$value[2]}}; ",
+      "{.val {git_config$name[1]}} = {.val {git_config$value[1]}}"
+    ))
+    return(invisible(git_config))
+  }
+  gert::git_config_global_set("user.name", name)
+  gert::git_config_global_set("user.email", email)
+  cli::cli_alert_success("Git config has been set, see output below.")
+  proj_get_git_config()
 }
 
 #' Run standard setup tasks in the UKB RAP after opening it up.
@@ -75,38 +75,38 @@ proj_setup_git_config <- function(name, email) {
 #' @export
 #'
 proj_setup_rap <- function() {
-    if (!interactive()) {
-        cli::cli_abort("The `proj_setup_rap()` function only works in interactive mode.")
-    }
+  if (!interactive()) {
+    cli::cli_abort("The `proj_setup_rap()` function only works in interactive mode.")
+  }
 
-    # Add some wait time so it isn't popping up so fast.
-    Sys.sleep(1.5)
+  # Add some wait time so it isn't popping up so fast.
+  Sys.sleep(1.5)
 
-    # Git config
-    cli::cli_h1("Setting up your Git")
-    cli::cli_alert_info("We need to setup your Git config. Please answer these questions.")
-    user_name <- rstudioapi::showPrompt("User name for Git", "What's your full name?")
-    Sys.sleep(1.5)
-    user_email <- rstudioapi::showPrompt("User email for Git", "What's your email?")
-    ukbAid::proj_setup_git_config(user_name, user_email)
-    cli::cli_alert_success("Added your name and email to the Git config.")
+  # Git config
+  cli::cli_h1("Setting up your Git")
+  cli::cli_alert_info("We need to setup your Git config. Please answer these questions.")
+  user_name <- rstudioapi::showPrompt("User name for Git", "What's your full name?")
+  Sys.sleep(1.5)
+  user_email <- rstudioapi::showPrompt("User email for Git", "What's your email?")
+  ukbAid::proj_setup_git_config(user_name, user_email)
+  cli::cli_alert_success("Added your name and email to the Git config.")
 
-    # GitHub authentication
-    Sys.sleep(1.5)
-    cli::cli_h1("Authenticating for GitHub")
-    cli::cli_alert_info("We need to set your Git credentials to GitHub. Copy and paste your GitHub PAT below.")
-    Sys.sleep(1.5)
-    gitcreds::gitcreds_set()
+  # GitHub authentication
+  Sys.sleep(1.5)
+  cli::cli_h1("Authenticating for GitHub")
+  cli::cli_alert_info("We need to set your Git credentials to GitHub. Copy and paste your GitHub PAT below.")
+  Sys.sleep(1.5)
+  gitcreds::gitcreds_set()
 
-    # Download project
-    Sys.sleep(1.5)
-    cli::cli_h1("Downloading your GitHub project")
-    cli::cli_alert_info("Lastly, we need to download your project. Please answer this question.")
-    Sys.sleep(1.5)
-    project_repo <- rstudioapi::showPrompt("Git repository for project", "What is the name of your project (should be the same as your GitHub repository)? For instance, Luke's is: mesh.")
-    usethis::create_from_github(paste0("steno-aarhus/", project_repo), open = FALSE)
-    cli::cli_alert_success("Done! Now you can open the project by clicking the {.val .Rproj} file and following the instructions in the {.val README.md} file.")
-    return(invisible(NULL))
+  # Download project
+  Sys.sleep(1.5)
+  cli::cli_h1("Downloading your GitHub project")
+  cli::cli_alert_info("Lastly, we need to download your project. Please answer this question.")
+  Sys.sleep(1.5)
+  project_repo <- rstudioapi::showPrompt("Git repository for project", "What is the name of your project (should be the same as your GitHub repository)? For instance, Luke's is: mesh.")
+  usethis::create_from_github(paste0("steno-aarhus/", project_repo), open = FALSE)
+  cli::cli_alert_success("Done! Now you can open the project by clicking the {.val .Rproj} file and following the instructions in the {.val README.md} file.")
+  return(invisible(NULL))
 }
 
 # proj_setup_rstudio_config()
@@ -197,11 +197,12 @@ proj_create_dataset <- function(fields,
 #' @noRd
 #'
 verify_git_config <- function(name, email) {
-    configs <- proj_get_git_config()
+  configs <- proj_get_git_config()
 
-    already_exists <- FALSE
-    if (nrow(configs) == 2)
-        already_exists <- all(configs$value[1] == email, configs$value[2] == name)
+  already_exists <- FALSE
+  if (nrow(configs) == 2) {
+    already_exists <- all(configs$value[1] == email, configs$value[2] == name)
+  }
 
-    return(already_exists)
+  return(already_exists)
 }
