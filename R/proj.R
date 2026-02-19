@@ -115,7 +115,7 @@ proj_setup_rap <- function() {
 
 #' Create a file name unique for a project, along with timestamp.
 #'
-#' You use this when you want to create a dataset when using [proj_create_database()].
+#' You use this when you want to create a dataset when using [proj_create_dataset()].
 #'
 #' @return A character scalar.
 #' @export

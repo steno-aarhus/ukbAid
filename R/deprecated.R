@@ -1,8 +1,6 @@
-
 #' Downloads your UKB data file to the `data/data.csv` folder.
 #'
 #' @description
-#'
 #' `r lifecycle::badge("deprecated")`
 #'
 #' Use this function every time you open a new RStudio Session, aka every time you
@@ -111,6 +109,9 @@ dare_project_record_id <- "record-GXZ2k40JbxZx7xYGF66y45Yq"
 
 #' Extract variables you want from the UKB database and create a CSV file to later upload to your own project.
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
 #' This function tells RAP to extract the variables you want from the `.dataset`
 #' database file and to create a CSV file within the main RAP project folder.
 #' When you want to use the CSV file in your own data analysis project, use
@@ -189,6 +190,9 @@ timestamp_now <- function() {
 }
 
 #' Build, but not run, the dx table exporter command.
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
 #'
 #' This is mostly for testing purposes.
 #'
