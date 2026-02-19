@@ -1,0 +1,16 @@
+submitted_on: '2026-02-13'
+full_name: Sara Schwartz
+github_username: saras-clin
+job_position: PhD student
+phd_supervisor: Jens Meldgaard Bruun, Sigrid Gribsholt, Daniel Borch Ibsen
+affiliation: Aarhus University
+project_title: UK Diabetes Classifier
+project_description: We aim to develop an open-source algorithm/R package to classify
+  prevalent and incident diabetes cases, including type in UK-based electronic health
+  record (EHR) data, with primary emphasis on the UK Biobank.The classification will
+  utilize data from both primary and secondary health care, including medication and
+  procedure codes. We will include clinically relevant validation steps to improve
+  specificity and sensitivity, particularly for distinguishing diabetes subtypes.
+  The classification will not include self-reported data and biomarkers.
+agree_to_conditions: 'Yes'
+
