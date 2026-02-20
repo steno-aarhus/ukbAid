@@ -15,6 +15,7 @@ Depends:
     R (>= 4.0.0),
     tidyverse
 Imports: 
+    frictionless,
     arrow,
     checkmate,
     cli (>= 3.6.0),
