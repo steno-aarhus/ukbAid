@@ -4,7 +4,7 @@ github_username: arborzhang
 job_position: Postdoc researcher
 phd_supervisor: ''
 affiliation: Aarhus University
-project_title: Multimorbidity-Disease trajectories, risk factors and the consequence
+project_title: Socioeconomic status multimorbidity-disease trajectories, risk factors and the consequences
 project_description: With the growing number of people suffering from diabetes-multimorbidity,
   and its heterogeneity in presentation and outcome, there is an urgent need to gain
   a deeper understanding of the mechanisms that determine different courses of progression
@@ -19,9 +19,6 @@ project_description: With the growing number of people suffering from diabetes-m
   forest classifier to enhance the results. 2) To understand mortality risk at different
   stages of the diabetes-multimorbidity trajectory, by comparing mortality as people
   transition from a healthy condition to single disease, and diabetes-multimorbidity
-  using multi-state models. To develop a web application that helps clinicians visualize
-  the potential impact of an intervention or achieving tighter therapeutic targets
-  on the future risk of all components of diabetes-multimorbidity. This step will
-  be conducted by integrating results from aims 1 and 2 using simulation approaches.
+  using multi-state models.
 agree_to_conditions: 'Yes'
 
