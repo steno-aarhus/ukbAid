@@ -1,7 +1,6 @@
 # Projects ----------------------------------------------------------------
 
 
-
 #' Read all approved projects.
 #'
 #' Show all approved projects, which are stored in YAML files, using the UK
@@ -76,9 +75,13 @@ admin_start_approved_project <- function(user, proj_abbrev) {
   gh_create_repo(temp_proj_path)
   cli::cli_alert_info("Pushed the repo to GitHub.")
 
+  Sys.sleep(1)
   gh_add_user_to_team(user = user)
+  Sys.sleep(1)
   gh_add_repo_to_team(repo = proj_abbrev)
+  Sys.sleep(1)
   gh_add_user_to_repo(user = user, repo = proj_abbrev)
+  Sys.sleep(1)
   cli::cli_alert_info("Connected the user and team to the repo, with the right permissions.")
   return(invisible())
 }
