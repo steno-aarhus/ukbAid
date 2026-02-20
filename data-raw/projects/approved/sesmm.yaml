@@ -21,4 +21,5 @@ project_description: With the growing number of people suffering from diabetes-m
   transition from a healthy condition to single disease, and diabetes-multimorbidity
   using multi-state models.
 agree_to_conditions: 'Yes'
-
+doi_preprint: 10.2139/ssrn.5265909
+doi_protocol: 10.5281/zenodo.18713721
