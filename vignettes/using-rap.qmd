@@ -73,6 +73,13 @@ This will undo the last commit (`HEAD~1`), but keep your file changes
 (`--soft`). Then you can remove the data from the staged listed of
 changes and commit again, without the data.
 
+::: callout-note
+Don't worry about potential consequences to you personally. We rarely
+if ever will blame or punish the person who made the mistake, as long 
+as they report it immediately. We want and aim to learn from these mistakes 
+and improve our processes to prevent them from happening again.
+:::
+
 ## Steps *everytime* you enter into the UKB RAP
 
 1.  Whenever you open up the UKB RAP, you won't have your project files
