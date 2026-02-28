@@ -19,6 +19,13 @@ these repositories (either as a result of being incorporated within the
 analysis code, or otherwise being referenced in a manner that leads to
 its inclusion).
 
+::: callout-important
+This callout block added by us to clarify things. When they say don't
+upload UK Biobank data, they dont just mean saving a data file but also
+if you paste any data into the code or Quarto files themselves. This is
+also **NOT** allowed.
+:::
+
 Making any participant-level UK Biobank data available on a web-based
 repository is not acceptable. As such, UK Biobank would re-iterate that
 all researchers exercise appropriate oversight, care and control to

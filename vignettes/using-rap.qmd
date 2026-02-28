@@ -38,6 +38,41 @@ Because of these reasons, we expect everyone working on the Steno UK
 Biobank project to use Git and use Steno's GitHub Organization account
 to store their project.
 
+## Important notes
+
+Because you will be working with Git and uploading your work to GitHub
+and because you will be working with personal health data, there are
+some important notes to keep in mind: **do not save any data in the Git
+history**. This includes not only saving data files, but also pasting
+any data into R scripts or Quarto files. You can save results for tables
+and figures, as long as they are aggregate or statistical results. See
+the [Important notes on using GitHub](important-notes.qmd) page for more
+details.
+
+If you do accidentally save data in the Git history and push to GitHub,
+you need to inform one of the steering committee members immediately
+(likely your supervisor) so we can take the necessary steps to remove
+the data from GitHub and report the incident to the relevant
+authorities.
+
+We are obligated to report any data security incidents to the UK
+Biobank. You may feel personally guilty or embarrassed, and that's ok,
+but it's still an obligation we have to report it. Don't hide any of
+these
+
+If you accidentally committed personal data while in the RAP but haven't
+yet pushed to GitHub, the easiest way to solve that is by opening the
+RStudio **Terminal** (not the R Console) and run the following command
+to fix things:
+
+``` bash
+git reset --soft HEAD~1
+```
+
+This will undo the last commit (`HEAD~1`), but keep your file changes
+(`--soft`). Then you can remove the data from the staged listed of
+changes and commit again, without the data.
+
 ## Steps *everytime* you enter into the UKB RAP
 
 1.  Whenever you open up the UKB RAP, you won't have your project files
@@ -69,7 +104,7 @@ to store their project.
     ```
 
     ::: callout-note
-    Since UKB RAP deletes everything when you Terminate the session,
+    Since UKB RAP deletes everything when you terminate the session,
     you'll be backing up your project on GitHub. What this function
     above does is install the necessary packages, installs the ukbAid
     package, sets up your Git config, sets up your authentication
@@ -107,15 +142,9 @@ to store their project.
 Remember to frequently commit and push your file changes to your GitHub.
 Otherwise all your work on the RAP will be lost next time you login.
 
-## Other notes
-
--   **Save your changes in the Git history and push to your GitHub
-    BEFORE Terminating your UKB-RAP project**: If you terminate before
-    saving and pushing to GitHub, you *will* lose your work! Read the
-    [Important notes on using GitHub](important-notes.qmd) page for more
-    detail.
-
--   **Remember**, do not save any data in the Git history unless you
-    have discussed it with the organizing committee. You can save
-    results for tables and figures, as long as they are aggregate or
-    statistical results.
+::: callout-important
+**Save your changes in the Git history and push to your GitHub BEFORE
+Terminating your UKB-RAP project**: If you terminate before saving and
+pushing to GitHub, you *will* lose your work! Read the [Important notes
+on using GitHub](important-notes.qmd) page for more detail.
+:::
