@@ -34,9 +34,9 @@ the next steps.
     below.
 
 5.  Read through everything on this website and make sure you understand
-    what we expect of you and what you need to do (and NOT do) when working
-    with the UK Biobank data. In particular read through the [Important
-    Notes](important-notes.qmd) page.
+    what we expect of you and what you need to do (and NOT do) when
+    working with the UK Biobank data. In particular read through the
+    [Important Notes](important-notes.qmd) page.
 
 ::: callout-important
 A project in this sense would be considered a Git repository (hosted on
@@ -71,6 +71,17 @@ contributors.
     then log into the [RAP](https://ukbiobank.dnanexus.com/login) and
     familiarize yourself with the RAP.
 
+::: callout-important
+Finished your project but still want to publish more papers based on
+your work? You need to submit a new project proposal then! One project
+should link to only one paper, which should only link to one GitHub
+repository. Once your paper is finished and published, we will upload
+your project (with the code) to Zenodo and convert the project to
+archived state. Which means you can't work on it anymore. So you need to
+make a new project proposal to work on a new paper. You can always copy
+the code from the previous project, it never disappears.
+:::
+
 ## Being a contributor to an existing project
 
 If you want to contribute to one or more existing projects, you will
@@ -82,4 +93,3 @@ control).
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexnnpKboJI27Yv51HR_VelrQnkZkdr5qtxF6h-pev3CgdcLw/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">
 
 </iframe>
-
