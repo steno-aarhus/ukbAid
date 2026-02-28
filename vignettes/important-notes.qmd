@@ -53,3 +53,18 @@ https://www.ukbiobank.ac.uk/media/1vhh2vip/github-3rd-party-sharing.pdf
 Best wishes,
 
 UK Biobank
+
+## Your access to RAP will be revoked if you don't use Steno's GitHub
+
+This is to clarify the importance that you need to use the repository we
+set up for you on GitHub **within the Steno GitHub Organization**. If
+you don't use this repository to do your work, we will remove your
+access to the RAP and you will no longer be able to work on the UK
+Biobank data within our project.
+
+Why does we have this policy? Because we need to be able to monitor the
+work being done on the UK Biobank data to make sure we are following
+their rules and don't accidentally upload data to a public GitHub
+repository. We have several automated and manual processes in place that
+work with our Steno GitHub Organization setup, so if you aren't using
+that, it makes the steering committee's job a lot harder.
