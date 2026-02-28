@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/code-review.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/projects.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/important-notes.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/initial-setup.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/workflow.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/request-access.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
+    <loc>https://steno-aarhus.github.io/ukbAid/faq.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://steno-aarhus.github.io/ukbAid/admin.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/index.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
-  </url>
-  <url>
-    <loc>https://steno-aarhus.github.io/ukbAid/faq.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
+    <loc>https://steno-aarhus.github.io/ukbAid/initial-setup.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://steno-aarhus.github.io/ukbAid/project-description.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/request-access.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://steno-aarhus.github.io/ukbAid/design.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/index.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/workflow.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/important-notes.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/projects.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://steno-aarhus.github.io/ukbAid/governance.html</loc>
-    <lastmod>2026-02-20T19:31:15.369Z</lastmod>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://steno-aarhus.github.io/ukbAid/code-review.html</loc>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://steno-aarhus.github.io/ukbAid/using-rap.html</loc>
-    <lastmod>2026-02-20T19:31:15.370Z</lastmod>
+    <lastmod>2026-02-28T11:28:50.626Z</lastmod>
   </url>
 </urlset>

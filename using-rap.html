@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-02-20">
+<meta name="dcterms.date" content="2026-02-28">
 
 <title>Working in the Research Analysis Platform (RAP) – ukbAid</title>
 <style>
@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9c478dad5f3ba731fc4f62337a92aeba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-029090d4a18407eb03d0598c9fcc706e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -211,8 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#steps-everytime-you-enter-into-the-ukb-rap" id="toc-steps-everytime-you-enter-into-the-ukb-rap" class="nav-link active" data-scroll-target="#steps-everytime-you-enter-into-the-ukb-rap">Steps <em>everytime</em> you enter into the UKB RAP</a></li>
-  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes">Other notes</a></li>
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link active" data-scroll-target="#important-notes">Important notes</a></li>
+  <li><a href="#steps-everytime-you-enter-into-the-ukb-rap" id="toc-steps-everytime-you-enter-into-the-ukb-rap" class="nav-link" data-scroll-target="#steps-everytime-you-enter-into-the-ukb-rap">Steps <em>everytime</em> you enter into the UKB RAP</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/steno-aarhus/ukbAid/edit/main/using-rap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/steno-aarhus/ukbAid/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 20, 2026</p>
+      <p class="date">February 28, 2026</p>
     </div>
   </div>
   
@@ -253,22 +253,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Because all code will be stored on the SDCA GitHub, it will be easier to share code and how we do things through it. So you the PhD student, postdoc, or researcher can better make use of all the efforts everyone is doing.</p></li>
 </ol>
 <p>Because of these reasons, we expect everyone working on the Steno UK Biobank project to use Git and use Steno’s GitHub Organization account to store their project.</p>
+<section id="important-notes" class="level2">
+<h2 class="anchored" data-anchor-id="important-notes">Important notes</h2>
+<p>Because you will be working with Git and uploading your work to GitHub and because you will be working with personal health data, there are some important notes to keep in mind: <strong>do not save any data in the Git history</strong>. This includes not only saving data files, but also pasting any data into R scripts or Quarto files. You can save results for tables and figures, as long as they are aggregate or statistical results. See the <a href="./important-notes.html">Important notes on using GitHub</a> page for more details.</p>
+<p>If you do accidentally save data in the Git history and push to GitHub, you need to inform one of the steering committee members immediately (likely your supervisor) so we can take the necessary steps to remove the data from GitHub and report the incident to the relevant authorities.</p>
+<p>We are obligated to report any data security incidents to the UK Biobank. You may feel personally guilty or embarrassed, and that’s ok, but it’s still an obligation we have to report it. Don’t hide any of these</p>
+<p>If you accidentally committed personal data while in the RAP but haven’t yet pushed to GitHub, the easiest way to solve that is by opening the RStudio <strong>Terminal</strong> (not the R Console) and run the following command to fix things:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will undo the last commit (<code>HEAD~1</code>), but keep your file changes (<code>--soft</code>). Then you can remove the data from the staged listed of changes and commit again, without the data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t worry about potential consequences to you personally. We rarely if ever will blame or punish the person who made the mistake, as long as they report it immediately. We want and aim to learn from these mistakes and improve our processes to prevent them from happening again.</p>
+</div>
+</div>
+</section>
 <section id="steps-everytime-you-enter-into-the-ukb-rap" class="level2">
 <h2 class="anchored" data-anchor-id="steps-everytime-you-enter-into-the-ukb-rap">Steps <em>everytime</em> you enter into the UKB RAP</h2>
 <ol type="1">
 <li><p>Whenever you open up the UKB RAP, you won’t have your project files nor have any packages installed. So you’ll need to do a few set up tasks <em>each time</em> you work in the RAP. I’ve written a function that you can source directly that will take you through the steps needed to have everything set up. Run these two lines of code in the R Console, and afterwards follow the instructions on the Console.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rstudioapi<span class="sc">::</span><span class="fu">restartSession</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rstudioapi<span class="sc">::</span><span class="fu">restartSession</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once this finishes restarting the session, run the next line:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"steno-aarhus/ukbAid"</span>, <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rstudioapi<span class="sc">::</span><span class="fu">restartSession</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"steno-aarhus/ukbAid"</span>, <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>rstudioapi<span class="sc">::</span><span class="fu">restartSession</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And, unfortunately, you’ll have to restart again to then run the next line:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">::</span><span class="fu">proj_setup_rap</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ukbAid<span class="sc">::</span><span class="fu">proj_setup_rap</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -280,30 +302,36 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Since UKB RAP deletes everything when you Terminate the session, you’ll be backing up your project on GitHub. What this function above does is install the necessary packages, installs the ukbAid package, sets up your Git config, sets up your authentication (credentials) to connect to GitHub, and finally downloads your GitHub repository into the RAP environment.</p>
+<p>Since UKB RAP deletes everything when you terminate the session, you’ll be backing up your project on GitHub. What this function above does is install the necessary packages, installs the ukbAid package, sets up your Git config, sets up your authentication (credentials) to connect to GitHub, and finally downloads your GitHub repository into the RAP environment.</p>
 </div>
 </div></li>
 <li><p>Once the project is downloaded from GitHub and created the project in the RAP, you can open it by clicking the <code>.Rproj</code> file inside the project folder.</p></li>
 <li><p>You <em>may</em> have to update your credentials after opening up your project, so run this code to paste in your GitHub PAT token.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Then, run these two lines of code in the Console while inside your RStudio Project:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>More details about this step is also found in your own project’s main <code>README.md</code> file.</p></li>
 <li><p>When you’ve finished selecting the variables you want in the <code>data-raw/project-variables.csv</code>, you will need to open up the <code>data-raw/create-data.R</code> script and follow the instructions there to create your dataset.</p></li>
 </ol>
 <p>Remember to frequently commit and push your file changes to your GitHub. Otherwise all your work on the RAP will be lost next time you login.</p>
-</section>
-<section id="other-notes" class="level2">
-<h2 class="anchored" data-anchor-id="other-notes">Other notes</h2>
-<ul>
-<li><p><strong>Save your changes in the Git history and push to your GitHub BEFORE Terminating your UKB-RAP project</strong>: If you terminate before saving and pushing to GitHub, you <em>will</em> lose your work! Read the <a href="./important-notes.html">Important notes on using GitHub</a> page for more detail.</p></li>
-<li><p><strong>Remember</strong>, do not save any data in the Git history unless you have discussed it with the organizing committee. You can save results for tables and figures, as long as they are aggregate or statistical results.</p></li>
-</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Save your changes in the Git history and push to your GitHub BEFORE Terminating your UKB-RAP project</strong>: If you terminate before saving and pushing to GitHub, you <em>will</em> lose your work! Read the <a href="./important-notes.html">Important notes on using GitHub</a> page for more detail.</p>
+</div>
+</div>
 
 
 </section>
