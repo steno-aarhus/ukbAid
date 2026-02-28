@@ -259,6 +259,13 @@
     "text": "Your access to RAP and GitHub repo will be removed if you haven’t worked on the project for a while\nWe follow the security practice of giving the minimal required access permissions to the RAP and GitHub repositories. This includes only giving access to those who are actively and regularly working on the UK Biobank data for an approved project. So these are the conditions under which we will remove your access to the RAP and the GitHub repositories:\n\nIf you are done with a project where the paper has been published, you no longer need access so we will remove you.\nIf you go on paternity leave, sick leave, or any other kind of longer-term leave, we will (temporarily) remove your access until you are back and ready to work on the project again. You can easily request access again when you are back. You will need to inform us of these leaves, so we know not to delete your repository permanently. It’s easy enough to give you access again when you are back.\nIf you haven’t worked on the project actively for 6 months, we will remove your access and convert your repository to an archived state (or delete it completely), and declare it abandoned. This is just a security and management practice we have to make sure that the number of repositories doesn’t become unmanageable and that the existing repositories actually reflect the work that is being done.\n\n\n\n\n\n\n\nImportant\n\n\n\nWe will only delete your GitHub repository permanently if you haven’t finished your project, haven’t worked on the project for more than 6 months, and have made very little changes to the repository (meaning there isn’t much work to save). So importantly, we will convert it to an archived state only if you haven’t done much work on the repository and there isn’t much work necessary to save."
   },
   {
+    "objectID": "important-notes.html#update-your-project-status-through-github-issues",
+    "href": "important-notes.html#update-your-project-status-through-github-issues",
+    "title": "Important notes on using GitHub",
+    "section": "Update your project status through GitHub issues",
+    "text": "Update your project status through GitHub issues\nWhenever you’re protocol is ready to be uploaded to Zenodo, or when you are ready to publish and so need to upload a preprint, or when your paper has been published, you need to update the status by creating a new issue in the GitHub repository for your project.\nThis is important because it allows us to keep track of the status of all the projects and to know when to assist or do certain tasks (e.g. upload the files to Zenodo)."
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Approved projects",
