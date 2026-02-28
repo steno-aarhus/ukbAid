@@ -33,6 +33,11 @@ the next steps.
     one already. You will need your user name when filling in the Form
     below.
 
+5.  Read through everything on this website and make sure you understand
+    what we expect of you and what you need to do (and NOT do) when working
+    with the UK Biobank data. In particular read through the [Important
+    Notes](important-notes.qmd) page.
+
 ::: callout-important
 A project in this sense would be considered a Git repository (hosted on
 GitHub). And one project should link to *only one* paper. So 1 project =
