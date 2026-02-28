@@ -103,3 +103,14 @@ there isn't much work to save). So importantly, we will convert it to an
 archived state only if you haven't done much work on the repository and
 there isn't much work necessary to save.
 :::
+
+## Update your project status through GitHub issues
+
+Whenever you're protocol is ready to be uploaded to Zenodo,
+or when you are ready to publish and so need to upload a preprint,
+or when your paper has been published, you need to update the status
+by creating a new issue in the GitHub repository for your project.
+
+This is important because it allows us to keep track of the status of
+all the projects and to know when to assist or do certain tasks
+(e.g. upload the files to Zenodo).
