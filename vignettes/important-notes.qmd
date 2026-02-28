@@ -106,11 +106,28 @@ there isn't much work necessary to save.
 
 ## Update your project status through GitHub issues
 
-Whenever you're protocol is ready to be uploaded to Zenodo,
-or when you are ready to publish and so need to upload a preprint,
-or when your paper has been published, you need to update the status
-by creating a new issue in the GitHub repository for your project.
+Whenever your protocol is ready to be uploaded to Zenodo, or when you
+are ready to publish and so need to upload a preprint, or when your
+paper has been published, you need to update the status by creating a
+new issue in the GitHub repository for your project.
 
 This is important because it allows us to keep track of the status of
-all the projects and to know when to assist or do certain tasks
-(e.g. upload the files to Zenodo).
+all the projects and to know when to assist or do certain tasks (e.g.
+upload the files to Zenodo).
+
+## What you do in your paper doesn't have to be the same as what you wrote in the protocol
+
+The purpose of the protocol is not to make a strict, inflexible plan
+that you have to follow exactly as written. The purpose of the protocol
+is to help give you a guide and to clarify to others what you intended
+to do when you started the project. It helps a lot to take a step back
+and *design* how you might do your work. This can help immensely when
+you come up to challenges later on if you've taken the time to think
+about what it is you actually want to do.
+
+Protocols are used to communicate initial intent for the research so
+that you can communicate to others that you aren't doing "fishing
+expeditions" or "p-hacking". But it also is completely fine to deviate
+from the protocol, as long as you describe why you had to deviate from
+it and what you actually did in the paper. So that it is an explanation
+of the process and that you are trying to be transparent about it.
