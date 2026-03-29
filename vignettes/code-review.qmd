@@ -2,6 +2,15 @@
 title: "Code review"
 ---
 
+::: callout-important
+We initially had formal and regular code reviews, but it was too time
+consuming for the reviewer. It also required much more cohesive 
+collaboration between researchers working on their individual projects 
+so that "lessons learned" in one project could be applied to other 
+projects. So we no longer do them, but we leave this here as a record
+of how we did them.
+:::
+
 This document describes how we do code reviewing as well as things we've
 learned over time. We aim to have formal and virtual code review
 sessions once a month (done on Discord), with some code review done
