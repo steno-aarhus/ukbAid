@@ -49,6 +49,34 @@ ukbAid:::admin_start_approved_project("USER", "PROJECT_ID")
 
 ## General admin
 
+### Google Forms to maintain submission to PR flow
+
+We use Google Forms on a shared `ukbiobank-sdca` Drive folder for
+researchers to submit project proposals. When a researcher submits a
+project proposal, we have an "Apps Script" that takes the submission and
+creates a Pull Request on the `ukbAid` repository. There is some
+maintenance required for this workflow.
+
+1.  Create a GitHub [fine-grained personal access
+    token](https://github.com/settings/personal-access-tokens) with the
+    following permissions on the "steno-aarhus" organization for the
+    `ukbAid` repository (note: only someone with admin permissions for
+    the organization can do this). Make sure this token only lasts for
+    90 days.
+    -   Read-only access to: "Contents" and "Metadata" (which is default
+        and required)
+    -   Read and write access to: "Actions", "Pull requests", and
+        "Workflows"
+2.  Copy the generated token and go into Google Drive. Open the
+    `project-proposal-registration` Google Sheet (not the Form) and go
+    to "Extensions -\> Apps Script". In this new page, on the line that
+    says `var gh_token`, replace the string that starts with
+    `github_pat_` with the token you just generated and copied. You may
+    need to click "Run" to trigger the authorisation flow, but usually
+    you don't need to.
+
+You only need to do this flow whenever the token expires.
+
 ### On GitHub or own computer
 
 Need to set a `SURVEY_ID` variable for the Google Forms Sheet ID (the
