@@ -270,6 +270,19 @@ Important
 </section>
 <section id="next-steps" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is the flow we aim/aspire to, but depends heavily on the available time and expertise of the committee and individual researchers.</p>
+</div>
+</div>
 <div class="cell page-columns page-full" data-layout-align="default">
 <div class="cell-output-display column-body-outset">
 <div>
@@ -278,42 +291,47 @@ Important
 <pre class="mermaid mermaid-js">flowchart LR
     subgraph Submission
         direction TB
-        submit_request&gt;Submit project&lt;br&gt;proposal]:::yours --&gt; 
-            pr_created([Proposal created&lt;br&gt;on GitHub]) --&gt; 
-            committee_approved([Reviewed and approved&lt;br&gt;by committee]) --&gt;
-            proj_created([Project created&lt;br&gt;for you])
+        submit_request[Submit project&lt;br&gt;proposal]:::yours --&gt; 
+            pr_created([Proposal created&lt;br&gt;on GitHub]):::others --&gt; 
+            committee_approved([Reviewed and approved&lt;br&gt;by committee]):::others --&gt;
+            proj_created([Project created&lt;br&gt;for you]):::others
     end 
  
     subgraph Protocol
         direction TB
-        review_variables&gt;Review and select&lt;br&gt;variables you need]:::yours --&gt;
-            write_protocol&gt;Write up a&lt;br&gt;draft protocol]:::yours --&gt;
-            protocol_reviewed([Protocol reviewed by&lt;br&gt;contributors/committee]) --&gt;
-            upload_protocol&gt;Upload protocol&lt;br&gt;to Zenodo]:::yours
+        review_variables[Review and select&lt;br&gt;variables you need]:::yours --&gt;
+            write_protocol[Write up a&lt;br&gt;draft protocol]:::yours --&gt;
+            protocol_reviewed([Protocol reviewed by&lt;br&gt;contributors/committee]):::others --&gt;
+            upload_protocol([Upload protocol&lt;br&gt;to Zenodo]):::others
     end
     
     subgraph RAP [Working in RAP]
         direction TB
-        work_on_rap&gt;Conduct analysis]:::yours --&gt;
-          create_output&gt;Create output results&lt;br&gt;like tables, figures,&lt;br&gt;and other values]:::yours --&gt;
-          code_review([Code reviewed&lt;br&gt;])
+        work_on_rap[Conduct analysis]:::yours --&gt;
+          create_output[Create output results&lt;br&gt;like tables, figures,&lt;br&gt;and other values]:::yours --&gt;
+          code_review(["Code reviewed&lt;br&gt;(by supervisor?)"]):::others
     end
     
     subgraph Local [Working outside of RAP]
         direction TB
-        write_paper&gt;Write up the&lt;br&gt;paper using the&lt;br&gt;results]:::yours --&gt;
-          paper_review([Paper reviewed]) --&gt;
-          authorship([Discussion on authorship&lt;br&gt;based on contributorship]) --&gt;
-          upload_archive&gt;Upload paper to&lt;br&gt; Zenodo archive]:::yours --&gt;
-          submit_journal&gt;Submit to journal]:::yours
+        write_paper[Write up the&lt;br&gt;paper using the&lt;br&gt;results]:::yours --&gt;
+          paper_review([Paper reviewed]):::others --&gt;
+          authorship([Discussion on authorship&lt;br&gt;based on contributorship]):::others --&gt;
+          upload_archive([Upload code&lt;br&gt;and pre-print to&lt;br&gt; Zenodo archive]):::others --&gt;
+          submit_journal[Submit to journal]:::yours
     end
 
     Submission --&gt; Protocol --&gt; RAP --&gt; Local
     
-    classDef yours stroke:#000000,stroke-width:0.75px
+    classDef yours fill:#ADD8E6;
+    classDef others fill:#FFA07A;
+    style Submission fill:#FFFFFF, color:#000000;
+    style Protocol fill:#FFFFFF, color:#000000;
+    style RAP fill:#FFFFFF, color:#000000;
+    style Local fill:#FFFFFF, color:#000000;
 </pre>
 </div>
-<p></p><figcaption> The boxes that are in bold are things you are responsible for doing. The circular ones are others, like the committe members.</figcaption> </figure><p></p>
+<p></p><figcaption> Flow for tasks done in individual projects. The rectangular boxes in light blue are tasks you are responsible for doing. The circular ones in light orange are for others to do, like the committee members.</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
