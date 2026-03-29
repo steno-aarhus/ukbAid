@@ -300,6 +300,19 @@ Warning
 </section>
 <section id="general-admin" class="level2">
 <h2 class="anchored" data-anchor-id="general-admin">General admin</h2>
+<section id="google-forms-to-maintain-submission-to-pr-flow" class="level3">
+<h3 class="anchored" data-anchor-id="google-forms-to-maintain-submission-to-pr-flow">Google Forms to maintain submission to PR flow</h3>
+<p>We use Google Forms on a shared <code>ukbiobank-sdca</code> Drive folder for researchers to submit project proposals. When a researcher submits a project proposal, we have an “Apps Script” that takes the submission and creates a Pull Request on the <code>ukbAid</code> repository. There is some maintenance required for this workflow.</p>
+<ol type="1">
+<li>Create a GitHub <a href="https://github.com/settings/personal-access-tokens">fine-grained personal access token</a> with the following permissions on the “steno-aarhus” organization for the <code>ukbAid</code> repository (note: only someone with admin permissions for the organization can do this). Make sure this token only lasts for 90 days.
+<ul>
+<li>Read-only access to: “Contents” and “Metadata” (which is default and required)</li>
+<li>Read and write access to: “Actions”, “Pull requests”, and “Workflows”</li>
+</ul></li>
+<li>Copy the generated token and go into Google Drive. Open the <code>project-proposal-registration</code> Google Sheet (not the Form) and go to “Extensions -&gt; Apps Script”. In this new page, on the line that says <code>var gh_token</code>, replace the string that starts with <code>github_pat_</code> with the token you just generated and copied. You may need to click “Run” to trigger the authorisation flow, but usually you don’t need to.</li>
+</ol>
+<p>You only need to do this flow whenever the token expires.</p>
+</section>
 <section id="on-github-or-own-computer" class="level3">
 <h3 class="anchored" data-anchor-id="on-github-or-own-computer">On GitHub or own computer</h3>
 <p>Need to set a <code>SURVEY_ID</code> variable for the Google Forms Sheet ID (the unique string that comes after the <code>/spreadsheets/d/</code> in the URL). This needs to be set on GitHub as well as on your own computer if you are going to download the survey data.</p>
