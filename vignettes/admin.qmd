@@ -82,14 +82,16 @@ You only need to do this flow whenever the token expires.
 Need to set a `SURVEY_ID` variable for the Google Forms Sheet ID (the
 unique string that comes after the `/spreadsheets/d/` in the URL). This
 needs to be set on GitHub as well as on your own computer if you are
-going to download the survey data.
+going to download the survey data. This variable is used to download
+the project proposal registration data, and you only need it (locally)
+if you want to download the data to check something. 
 
 1.  On GitHub, add a secret in Settings called `SURVEY_ID` with the
     Google Sheet ID.
 2.  On your computer, you can either add a new variable in the form of
     `SURVEY_ID=""` in a `.Renviron` file or always get asked for it
-    whenever you run the functions that require the variable (which use
-    the `ukbAid:::get_survey_id()` function).
+    whenever you run the functions that require the variable (which uses
+    the `ukbAid:::get_survey_id()` function that requires the ID).
 
 ### Uploading to Zenodo
 
