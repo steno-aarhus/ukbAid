@@ -81,15 +81,3 @@ archived state. Which means you can't work on it anymore. So you need to
 make a new project proposal to work on a new paper. You can always copy
 the code from the previous project, it never disappears.
 :::
-
-## Being a contributor to an existing project
-
-If you want to contribute to one or more existing projects, you will
-need to fill in this registration form. Please fill in the Google Form
-below. We will add you once we've determined if you are able to be added
-as a contributor (for legal and admin purposes that are outside of our
-control).
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexnnpKboJI27Yv51HR_VelrQnkZkdr5qtxF6h-pev3CgdcLw/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">
-
-</iframe>
