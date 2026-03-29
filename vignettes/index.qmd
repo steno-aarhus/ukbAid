@@ -110,46 +110,56 @@ AU/AUH and their ethics consideration:
 
 ## Next steps {#next-steps}
 
+::: callout-important
+This is the flow we aim/aspire to, but depends heavily on the available 
+time and expertise of the committee and individual researchers.
+:::
+
 ```{mermaid}
 %%| echo: false
 %%| column: body-outset
-%%| fig-cap: The boxes that are in bold are things you are responsible for doing. The circular ones are others, like the committe members. 
+%%| fig-cap: Flow for tasks done in individual projects. The rectangular boxes in light blue are tasks you are responsible for doing. The circular ones in light orange are for others to do, like the committee members. 
 flowchart LR
     subgraph Submission
         direction TB
-        submit_request>Submit project<br>proposal]:::yours --> 
-            pr_created([Proposal created<br>on GitHub]) --> 
-            committee_approved([Reviewed and approved<br>by committee]) -->
-            proj_created([Project created<br>for you])
+        submit_request[Submit project<br>proposal]:::yours --> 
+            pr_created([Proposal created<br>on GitHub]):::others --> 
+            committee_approved([Reviewed and approved<br>by committee]):::others -->
+            proj_created([Project created<br>for you]):::others
     end 
  
     subgraph Protocol
         direction TB
-        review_variables>Review and select<br>variables you need]:::yours -->
-            write_protocol>Write up a<br>draft protocol]:::yours -->
-            protocol_reviewed([Protocol reviewed by<br>contributors/committee]) -->
-            upload_protocol>Upload protocol<br>to Zenodo]:::yours
+        review_variables[Review and select<br>variables you need]:::yours -->
+            write_protocol[Write up a<br>draft protocol]:::yours -->
+            protocol_reviewed([Protocol reviewed by<br>contributors/committee]):::others -->
+            upload_protocol([Upload protocol<br>to Zenodo]):::others
     end
     
     subgraph RAP [Working in RAP]
         direction TB
-        work_on_rap>Conduct analysis]:::yours -->
-          create_output>Create output results<br>like tables, figures,<br>and other values]:::yours -->
-          code_review([Code reviewed<br>])
+        work_on_rap[Conduct analysis]:::yours -->
+          create_output[Create output results<br>like tables, figures,<br>and other values]:::yours -->
+          code_review(["Code reviewed<br>(by supervisor?)"]):::others
     end
     
     subgraph Local [Working outside of RAP]
         direction TB
-        write_paper>Write up the<br>paper using the<br>results]:::yours -->
-          paper_review([Paper reviewed]) -->
-          authorship([Discussion on authorship<br>based on contributorship]) -->
-          upload_archive>Upload paper to<br> Zenodo archive]:::yours -->
-          submit_journal>Submit to journal]:::yours
+        write_paper[Write up the<br>paper using the<br>results]:::yours -->
+          paper_review([Paper reviewed]):::others -->
+          authorship([Discussion on authorship<br>based on contributorship]):::others -->
+          upload_archive([Upload code<br>and pre-print to<br> Zenodo archive]):::others -->
+          submit_journal[Submit to journal]:::yours
     end
 
     Submission --> Protocol --> RAP --> Local
     
-    classDef yours stroke:#000000,stroke-width:0.75px
+    classDef yours fill:#ADD8E6;
+    classDef others fill:#FFA07A;
+    style Submission fill:#FFFFFF, color:#000000;
+    style Protocol fill:#FFFFFF, color:#000000;
+    style RAP fill:#FFFFFF, color:#000000;
+    style Local fill:#FFFFFF, color:#000000;
 ```
 
 1.  Review the [project description](project-description.qmd) page.
