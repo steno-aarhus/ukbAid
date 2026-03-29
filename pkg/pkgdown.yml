@@ -4,7 +4,6 @@ pkgdown_sha: ~
 articles:
   admin: admin.html
   code-review: code-review.html
-  design: design.html
   faq: faq.html
   governance: governance.html
   important-notes: important-notes.html
