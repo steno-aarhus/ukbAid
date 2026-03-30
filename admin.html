@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-29">
+<meta name="dcterms.date" content="2026-03-30">
 
 <title>Administration – ukbAid</title>
 <style>
@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 29, 2026</p>
+      <p class="date">March 30, 2026</p>
     </div>
   </div>
   
@@ -321,21 +321,40 @@ Warning
 <li>On your computer, you can either add a new variable in the form of <code>SURVEY_ID=""</code> in a <code>.Renviron</code> file or always get asked for it whenever you run the functions that require the variable (which uses the <code>ukbAid:::get_survey_id()</code> function that requires the ID).</li>
 </ol>
 </section>
-<section id="uploading-to-zenodo" class="level3">
-<h3 class="anchored" data-anchor-id="uploading-to-zenodo">Uploading to Zenodo</h3>
-<p>For protocols, the code to use would be:</p>
+<section id="uploading-protocol-or-pre-print-to-zenodo" class="level3">
+<h3 class="anchored" data-anchor-id="uploading-protocol-or-pre-print-to-zenodo">Uploading protocol or pre-print to Zenodo</h3>
+<p>For protocols or pre-prints, the code to use would be:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"path/to/protocol.qmd"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> <span class="fu">zen_create_protocol_pdf</span>(path)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">zen_create_file_record</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> pdf_path,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metadata =</span> <span class="fu">zen_create_protocol_metadata</span>(path),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> <span class="fu">zen_get_token</span>(),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test it in the sandbox first</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sandbox =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Or "pre-print"/"paper" if you want to upload a pre-print instead of a </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># protocol.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"path/to/protocol.pdf"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>qmd_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"path/to/protocol.qmd"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">zen_create_file_record</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> pdf_path,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This metadatat function isn't fully working, so you'll </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># have to manually fill in the metadata on the Zenodo upload page</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># before publishing.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">metadata =</span> <span class="fu">zen_create_protocol_metadata</span>(qmd_path),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> <span class="fu">zen_get_token</span>(),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test it in the sandbox first</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">sandbox =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Always test it in the sandbox first, which you can check that it uploads by going to the <a href="https://sandbox.zenodo.org/me/uploads">Zenodo sandbox</a>.</p>
+<p>You can generate a token for either the sandbox or the main Zenodo site by clicking your profile menu on the top right and then clicking “Applications”. Inside of the new page, there is a section to create a new “Personal access token”. Create one for both the sandbox and the main site. Whenever you run the code (or similar) above, the <code>zen_get_token()</code> function will ask you which token you want to use, as well as a text box to paste the token in.</p>
+</section>
+<section id="uploading-the-repository-to-zenodo" class="level3">
+<h3 class="anchored" data-anchor-id="uploading-the-repository-to-zenodo">Uploading the repository to Zenodo</h3>
+<p>The process for uploading a repository to Zenodo is currently a bit more manual. You need to connect your GitHub account to Zenodo, which you can do by going to the <a href="https://zenodo.org/account/settings/github/">GitHub section of your Zenodo account</a>. You may have to click “Sync now” to see the repository (which only organisation admins will have access to) and refresh the page. Scroll down to find the repository you want to upload and click the switch to enable it.</p>
+<p>Now, you need to create a release from GitHub. Go to the GitHub repository you want to upload the code to Zenodo for and follow these steps:</p>
+<ol type="1">
+<li>Convert the repository to be public, not private.</li>
+<li>Create a <code>.zenodo.json</code> file in the root of the repository. Use the <a href="https://github.com/steno-aarhus/legliv/blob/main/.zenodo.json">legliv repository</a> as an example. This file is required for Zenodo to correctly create a record for the repository.</li>
+<li>Click the “Tags” button in the “Code” tab (should be near the top, beside the “branches” button).</li>
+<li>Click the “Create a new release” button and follow the instructions there by filling in the tag version, title, and description.</li>
+<li>Click “Publish release” on the bottom of the page.</li>
+</ol>
+<p>You’ve now created a Zenodo record with a DOI! You can check it by going back to Zenodo and looking at your Dashboard. You’ll want to copy that DOI and add it to the ukbAid repository for the project (in <code>data-raw/projects/approved/</code>). Then move the project file from <code>approved/</code> into <code>completed/</code>. That’s it!</p>
 
 
 </section>
