@@ -4,6 +4,15 @@ execute:
   eval: false
 ---
 
+::: callout-important
+Note that the use of UK Biobank data has currently been paused due to a
+data breach issue. A phased opening of the research analysis platform 
+is currently being planned. However, the exact dates are not know.
+
+We aim to resume the work in ongoing and new projects when data access
+has been established again. 
+:::
+
 In order to access and analyze the UK Biobank data, we need to work on
 the Research Analysis Platform (RAP). The easiest way that we've found
 is to do your work through Git and GitHub on the [SDCA GitHub
