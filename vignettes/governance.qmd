@@ -4,6 +4,8 @@ title: "Governance"
 
 The steering committee is made up of:
 
--   Christina Dahm
--   Daniel Ibsen
--   Daniel Witte
+-   Professor Christina Dahm
+-   Associate Professor Daniel Ibsen
+-   Professor Daniel Witte
+
+The steering committee have regular meetings where new project protocols and updates on ongoing projects are discussed. 
